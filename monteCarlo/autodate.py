@@ -217,7 +217,7 @@ if __name__ == "__main__":
    #     #print(x[2], x[3])
    #     print(x[-2], "latin aligned")
    #     print(x[-1], "irish aligned")
-   #     print( x[5])
+   #     print( x[6])
    #     print("date:", x[4])
    #     print("\n")
    # print("#####")
