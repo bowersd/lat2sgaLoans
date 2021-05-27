@@ -177,27 +177,39 @@ def date(*proc_v):
     return h
 
 if __name__ == "__main__":
-    data = read_in("irish_latin_loans.csv")
-    stems = read_in("orthStem_ipaWord_ipaStem.csv")
+    #input is csv where: 
+    #   column[0] is phonological latin stem, 
+    #   column[1] is phonological irish form, 
+    #   column[2] is orthographic latin word (don't worry about replacing macrons)
+    #   column[3] is orthographic irish word (don't worry about replacing acute accents)
+    data = read_in(sys.argv[1]) 
+    #data = read_in("irish_latin_loans.csv")
+    #stems = read_in("orthStem_ipaWord_ipaStem.csv")
     hand = hackydata.data2
     undone = []
     match  = []
     unmatch  = []
-    for s in stems:
-        #print(s)
-        for d in data:
-            if s[0] == d[3] and s[1] == d[4]:
-                latin, irish = needleman.align(clean_transcription(s[2]), clean_transcription(d[1]), 1, needleman.read_similarity_matrix('simMatrix.txt'))
-                if (length_mod(d[2]), length_mod(d[0])) in hand:
-                    info = (length_mod(d[2]), length_mod(d[0]), d[4], d[1], date(*check_procs(latin, irish)),hand[(length_mod(d[2]), length_mod(d[0]))][:2],check_procs(latin, irish), latin, irish)
-                if (length_mod(d[2]), length_mod(d[0])) in hand and date(*check_procs(latin, irish)) == hand[(length_mod(d[2]), length_mod(d[0]))][:2] and info not in match: 
-                    match.append(info)
-                    #match.append((length_mod(d[2]), length_mod(d[0]), d[4], d[1], date(*check_procs(latin, irish)),check_procs(latin, irish), latin, irish))
-                elif (length_mod(d[2]), length_mod(d[0])) in hand and date(*check_procs(latin, irish)) != hand[(length_mod(d[2]), length_mod(d[0]))][:2] and info not in unmatch: 
-                    unmatch.append(info)
-                    #unmatch.append((length_mod(d[2]), length_mod(d[0]), d[4], d[1], date(*check_procs(latin, irish)),hand[(length_mod(d[2]), length_mod(d[0]))][:2],check_procs(latin, irish), latin, irish))
-                #beware uncommenting this: will crash on key errors due to _ being included in target span
-                #elif (length_mod(d[2]), length_mod(d[0]),  date(*check_procs(latin, irish), latin, irish)) not in undone: undone.append((length_mod(d[2]), length_mod(d[0]),  date(*check_procs(latin, irish)),latin, irish))
+    for d in data:
+        latin, irish = needleman.align(clean_transcription(d[0]), clean_transcription(d[1]), 1, needleman.read_similarity_matrix('simMatrix.txt'))
+        if (length_mod(d[2]), length_mod(d[3])) in hand: 
+            info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),hand[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
+        if (length_mod(d[2]), length_mod(d[3])) in hand and info[2] == info[3] and info not in match: match.append(info)
+        elif (length_mod(d[2]), length_mod(d[3])) in hand and info[2] != info[3] and info not in unmatch: unmatch.append(info)
+    #for s in stems:
+    #    #print(s)
+    #    for d in data:
+    #        if s[0] == d[3] and s[1] == d[4]:
+    #            latin, irish = needleman.align(clean_transcription(s[2]), clean_transcription(d[1]), 1, needleman.read_similarity_matrix('simMatrix.txt'))
+    #            if (length_mod(d[2]), length_mod(d[0])) in hand:
+    #                info = (length_mod(d[2]), length_mod(d[0]), d[4], d[1], date(*check_procs(latin, irish)),hand[(length_mod(d[2]), length_mod(d[0]))][:2],check_procs(latin, irish), latin, irish)
+    #            if (length_mod(d[2]), length_mod(d[0])) in hand and date(*check_procs(latin, irish)) == hand[(length_mod(d[2]), length_mod(d[0]))][:2] and info not in match: 
+    #                match.append(info)
+    #                #match.append((length_mod(d[2]), length_mod(d[0]), d[4], d[1], date(*check_procs(latin, irish)),check_procs(latin, irish), latin, irish))
+    #            elif (length_mod(d[2]), length_mod(d[0])) in hand and date(*check_procs(latin, irish)) != hand[(length_mod(d[2]), length_mod(d[0]))][:2] and info not in unmatch: 
+    #                unmatch.append(info)
+    #                #unmatch.append((length_mod(d[2]), length_mod(d[0]), d[4], d[1], date(*check_procs(latin, irish)),hand[(length_mod(d[2]), length_mod(d[0]))][:2],check_procs(latin, irish), latin, irish))
+    #            #beware uncommenting this: will crash on key errors due to _ being included in target span
+    #            #elif (length_mod(d[2]), length_mod(d[0]),  date(*check_procs(latin, irish), latin, irish)) not in undone: undone.append((length_mod(d[2]), length_mod(d[0]),  date(*check_procs(latin, irish)),latin, irish))
     print("####################")
     print("####################")
     print("####################")
@@ -207,12 +219,11 @@ if __name__ == "__main__":
     print("####################")
     for x in unmatch: 
         print(x[0], x[1])
-        #print(x[2], x[3])
         print(x[-2], "latin aligned")
         print(x[-1], "irish aligned")
-        print( x[6])
-        print("auto:", x[4])
-        print("hand:", x[5])
+        print( x[4])
+        print("auto:", x[2])
+        print("hand:", x[3])
         print("\n")
    # print("####################")
    # print("####################")
@@ -223,11 +234,10 @@ if __name__ == "__main__":
    # print("####################")
    # for x in match:
    #     print(x[0], x[1])
-   #     #print(x[2], x[3])
    #     print(x[-2], "latin aligned")
    #     print(x[-1], "irish aligned")
-   #     print( x[6])
-   #     print("date:", x[4])
+   #     print( x[4])
+   #     print("date:", x[2])
    #     print("\n")
    # print("####################")
    # print("####################")
@@ -240,7 +250,7 @@ if __name__ == "__main__":
    #     print(x[0], x[1])
    #     print(x[-2], "latin aligned")
    #     print(x[-1], "irish aligned")
-   #     print(x[3])
+   #     print(x[4])
                     
                 #print(latin, irish)
                 #print(date(*check_procs(latin, irish)), check_procs(latin, irish), d, irish)
