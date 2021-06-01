@@ -59,7 +59,7 @@ def clean_transcription(string):
             h.append(string[i-1].upper())
             i -= 2
             #if not re.match('[aeiouə]', string[i-1]): i -= 1
-        elif re.match("['./ʲ]", string[i]): 
+        elif re.match("[ˈ'./ʲ]", string[i]): 
             i -= 1
         elif string[i] == "ʃ": 
             h.append("s")
