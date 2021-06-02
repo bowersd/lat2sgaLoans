@@ -1,0 +1,421 @@
+####################
+####################
+####################
+UNMATCHED
+####################
+####################
+####################
+alta:re alto:ir
+altAre latin aligned
+altOr_ irish aligned
+[[], [], [], [], [], [0]]
+auto: [6, 7] #EJFL: I don't understand auto.
+hand: [4, 7]
+
+
+apostolus apstal
+apostol latin aligned
+ab_stəl irish aligned
+[[0], [], [], [], [], [1]]
+auto: [1, 6]
+hand: [2, 6] #EJFL: Hand more accurate. Lenition could have occurred but did not.
+
+
+calicem cailech
+kalIgO latin aligned
+kaləx_ irish aligned
+[[], [], [], [], [1], [0]]
+auto: [6, 5] #EJFL: I don't understand auto.
+hand: [0, 2]
+
+
+cancella caingel
+kaŋkeL latin aligned
+kaŋgəl irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7] 
+hand: [0, 2] #EJFL: Hand is more accurate if /nk/ > /ng/ is pre-lenition.
+
+
+cande:la caindel
+kandEl latin aligned
+kandəl irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4] #EJFL: I guess Hand more accurate @
+hand: [2, 4] 
+
+
+cippus cepp
+kiP latin aligned
+kep irish aligned
+[[0], [], [], [], [], []] #EJFL: Harmony applies.
+auto: [1, 7]
+hand: [1, 2] #EJFL: IF /p:/ to /p/ is part of Lenition, then Hand is more accurate.
+
+
+cista ces
+kist latin aligned
+kes_ irish aligned
+[[], [], [], [], [], []] #EJFL: Harmony applies.
+auto: [0, 7]
+hand: [0, 2] #EJFL: If st > s is part of Lenition, Hand dating is better.
+
+
+coctu:ra cuchtar
+koktUr latin aligned
+kuxtər irish aligned
+[[], [1], [], [1], [], []] #EJFL: Harmony applies. VL /kt/ to /xt/ might have applied rather than Lenition.
+auto: [0, 2]
+hand: [0, 3] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate.
+
+
+crepusculum crapscuil
+krepuskul latin aligned
+krab_skul irish aligned
+[[0], [], [], [], [], [1]]
+auto: [1, 6]
+hand: [3, 6] #EJFL: Hand more accurate. Lenition could have applied but did not. Harmony could have applies but did not.
+
+
+crux cros
+kruks latin aligned
+kro_s irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 2] #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate.
+
+
+culi:na *cuilenn
+kulIn latin aligned
+kuləN irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4] #EJFL: I don't think Harmony applied. Hand more accurate.
+hand: [0, 7]
+
+
+cultrum coltar
+kult_r latin aligned
+koltər irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 3] #EJFL: Harmony applied. Hand more accurate.
+
+
+ecle:sia eclais
+eklEsi latin aligned
+egləs_ irish aligned
+[[], [0, 0], [], [], [], [0]]
+auto: [6, 7] #EJFL: I don't understand auto. @
+hand: [2, 4]
+
+
+exhibernum esarn
+ekshibern latin aligned
+e_s___ərn irish aligned
+[[], [], [], [], [], [1]]
+auto: [0, 6]
+hand: [0, 2]  #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate.
+
+fata:le fa:tal
+fatAle latin aligned
+fAdəl_ irish aligned
+[[], [0, 0], [], [], [1], [0]]
+auto: [6, 5] #EJFL: I don't understand auto.
+hand: [2, 5]
+
+
+figu:ra figor
+fIgUr latin aligned
+fiɣər irish aligned
+[[], [0, 1], [], [1], [], []]
+auto: [2, 2]
+hand: [0, 2]
+
+
+fu:stis su:st
+fUst latin aligned
+sUst irish aligned
+[[], [1], [], [0], [], []]
+auto: [4, 2] #EJFL: I don't understand auto.
+hand: [0, 2]
+
+
+genea:logia genelach
+geneAlogi latin aligned
+gen_ələx_ irish aligned
+[[], [], [], [], [], [0]] #EJFL: Syncope applies.
+auto: [6, 7]
+hand: [0, 2]
+
+
+habe:na abann
+habEn latin aligned
+_avəN irish aligned
+[[], [], [], [1], [], []] #EJFL: Lenition applies. Hand seems more accurate.
+auto: [0, 4]
+hand: [0, 2]
+
+
+i:do:lum i:dol
+IdOl latin aligned
+Iðəl irish aligned
+[[], [], [], [1], [], []]  #EJFL: Lenition applies. Hand seems more accurate.
+auto: [0, 4]
+hand: [0, 2]
+
+
+ido:neus idan
+idOne latin aligned
+iðən_ irish aligned
+[[], [], [], [], [1], [0]]
+auto: [6, 5] #EJFL: I don't understand auto.
+hand: [3, 4]
+
+
+innocuus ennac
+iNoku latin aligned
+eNəg_ irish aligned
+[[], [0], [], [], [], [0]] #EJFL: Stem as borrowed was probably innok-. I don't know how this affects the dating.
+auto: [6, 7] 
+hand: [2, 3] 
+
+
+intellectus intliucht
+inteLekt latin aligned
+int_luxt irish aligned
+[[], [1], [], [], [], [1]]
+auto: [0, 2]
+hand: [0, 6] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate.
+
+
+labo:rem lubair
+labOr latin aligned
+luvər irish aligned
+[[], [], [], [1], [], []] #EJFL: Lenition and Harmony apply. Hand is more accurate.
+auto: [0, 4]
+hand: [0, 2]
+
+
+leo: leo
+le_O latin aligned
+lew_ irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7] #EJFL: Auto is more accurate because none of the processes are relevant, especially Lenition.
+hand: [0, 2]
+
+
+levia:than lebeda:n
+le_wi_Atan latin aligned
+lev_əðA__n irish aligned
+[[], [], [], [], [0], [0]]
+auto: [6, 7] #EJFL: I don't understand auto.
+hand: [0, 2]
+
+
+li:tus li:th
+lIt latin aligned
+lIθ irish aligned
+[[], [1], [], [0], [], []]
+auto: [4, 2] #EJFL: I don't understand auto. Hand seems accurate: this entered in before Lenition.
+hand: [0, 2] 
+
+
+litania lita:n
+litani latin aligned
+lidAn_ irish aligned
+[[], [0], [0], [], [], [0]]
+auto: [6, 7] #EJFL: I don't understand auto. Hand seems accurate: this is a post-Harmony loan.
+hand: [3, 7] 
+
+
+mi:ra:bilis mi:rbail
+mIrAbil latin aligned
+mIr_vəl irish aligned
+[[], [], [], [], [], [1]] #EJFL: Lenition applies. Hand is more accurate.
+auto: [0, 6]
+hand: [0, 2]
+
+
+modius muide
+modi latin aligned
+muðe irish aligned
+[[], [], [1], [], [], []] #EJFL: Lenition applies. Hand is more accurate.
+auto: [0, 3]
+hand: [0, 2]
+
+
+moli:na muilenn
+molIn latin aligned
+muləN irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]
+hand: [0, 3] #EJFL: Harmony applies. Hand more accurate.
+
+
+moniste:rium muinter
+monistEri latin aligned
+mun__tər_ irish aligned
+[[], [], [1], [], [], [0]] #EJFL: Syncope applies.
+auto: [6, 3] #EJFL: I don't understand auto. Harmony applies. Hand is more accurate. 
+hand: [0, 3]
+
+mu:rus mu:r
+mUr latin aligned
+mUr irish aligned
+[[], [], [], [0], [], []] #EJFL: Apocope Applies.
+auto: [4, 7] #EJFL: I don't understand auto. 
+hand: [0, 7]
+
+
+numerus nuimir
+numer latin aligned
+nuɱər irish aligned
+[[], [1], [], [], [], []]
+auto: [0, 2]  
+hand: [0, 7] #EJFL: Although Auto seems more accurate, the palatalization of /ɱ/ implies that the Irish SR is due analogy after Syncope. 
+
+
+oleum olae
+ole latin aligned
+ole irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7] #EJFL: Auto seems more accurate.
+hand: [0, 2] 
+
+
+parabola parbail
+parabol latin aligned
+par_vəl irish aligned
+[[0], [], [], [], [], [1]]
+auto: [1, 6]
+hand: [1, 2] #Lenition applies. Hand seems more accurate. @
+
+
+pa:scha ca:sc
+pAsk latin aligned
+kAsk irish aligned
+[[1], [], [], [0], [], []]
+auto: [4, 1] #EJFL: I don't understand auto.
+hand: [0, 1]
+
+
+patricius cothrige
+patriki latin aligned
+koθrəɣe irish aligned
+[[1], [1, 1], [], [], [], [0]]
+auto: [6, 1] #EJFL: I don't understand auto.
+hand: [0, 1]
+
+
+plu:ma clu:m
+plUm latin aligned
+klUɱ irish aligned
+[[1], [1], [], [0], [], []]
+auto: [4, 1] #EJFL: I don't understand auto.
+hand: [0, 1]
+
+
+psallendum salland
+psaLend latin aligned
+_saLənd irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7] #EJFL: Auto probably more accurate but it depends on the analysis of /ps/ -> /s/; could that change be part of Lenition?
+hand: [2, 7]
+
+
+psalte:rium saltair
+psaltEri latin aligned
+_saltər_ irish aligned
+[[], [], [], [], [], [0]]
+auto: [6, 7] #EJFL: I don't understand auto.
+hand: [0, 4]
+
+
+quaestio: ceist
+kwEstiO latin aligned
+k_est__ irish aligned
+[[], [], [], [], [], [0]]
+auto: [6, 7] #EJFL: I don't understand auto.
+hand: [3, 7]
+
+
+rubrum robur
+r__ubr latin aligned
+rovu_r irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 2] #Hand more accurate. Lenition applies.
+
+
+sacellus sachall
+sakeLus latin aligned
+saxəL__ irish aligned
+[[], [1], [], [], [], [0]]
+auto: [6, 2] #EJFL: I don't understand auto.
+hand: [0, 2]
+
+
+sacerdo:s sacart
+sakerdOs latin aligned
+sagərt__ irish aligned
+[[], [0], [], [], [], [0]]
+auto: [6, 7] #EJFL: I don't understand auto.
+hand: [2, 7]
+
+
+sco:pa scu:ap
+sk_Op latin aligned
+skuəb irish aligned
+[[0], [], [], [1], [], []]
+auto: [1, 4]
+hand: [2, 7] #EJFL: Hand more accurate. Lenition could have applied but did not.
+
+
+scriptu:ra screptar
+skrIptUr latin aligned
+skrebtər irish aligned
+[[0], [], [], [1], [], []] #EJFL: Harmony applies. McManus has PI *scriptra.
+auto: [1, 4]
+hand: [2, 3] 
+
+
+seca:le secal
+sekAle latin aligned
+segəl_ irish aligned
+[[], [0], [], [], [1], [0]]
+auto: [6, 5] #EJFL: I don't understand auto.
+hand: [2, 4]
+
+
+secundi:nus sechnall
+sekundI_n latin aligned
+sex_n_əL_ irish aligned
+[[], [1], [0], [1], [], [1]]
+auto: [3, 2] #EJFL: I don't understand auto.
+hand: [0, 2]
+
+
+stra:ta sra:it
+strAt latin aligned
+s_rAd irish aligned
+[[], [0], [], [0], [], []] #EJFL: Apocope applies.
+auto: [4, 7]
+hand: [2, 7] #EJFL: Hand dating seems better. Why should this enter after apocope?]
+
+
+stuppa sopp
+stuP latin aligned
+s_op irish aligned
+[[0], [], [], [], [], []] #EJFL: If st > s is part of Lenition, Hand dating is better.
+auto: [1, 7]
+hand: [1, 2]
+
+
+tribu:nus trebunn
+tribUn latin aligned
+trevuN irish aligned
+[[], [], [], [1], [], []] #EJFL: Lenition applies. Hand dating is better.
+auto: [0, 4]
+hand: [0, 2]
+
+
