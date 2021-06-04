@@ -130,7 +130,7 @@ def check_procs(latin, irish):
             #        {"i":"i", "e":"e", "u":"u", "o":"o"}
             #        )
             #    ),
-            ((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"A", "I":"I", "O":"O", "U":"U"})), #apocope-apply to root!
+            ((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope-apply to root!
             #((re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U", "A":"a@", "E":"e@", "I":"i@", "O":"o@", "U":"u@"}), (re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"a@", "e":"e@", "i":"i@", "o":"o@", "u":"u@", "A":"A", "E":"E", "I":"I", "O":"O", "U":"U"})) #compensatory lengthening
             ((re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U", "A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}), (re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u", "A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})) #compensatory lengthening
             ]
