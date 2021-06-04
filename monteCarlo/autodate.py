@@ -93,7 +93,8 @@ def check_procs(latin, irish):
             re.compile('[Pp]'), #pk
             re.compile('((?<=[aeiouAEIOU])_*[tkbdgms])|f'), #lenition
             ##re.compile('(?<=^[^aeiouAEIOU]{0,3})(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), #affection ... o->u can be detected in non-initial sylls. also need class information on monosyllabic roots (-> need root analysis here) maybe just flag monosyllables
-            re.compile('(?<=^[^aeiouAEIOU])_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), #affection ... o->u can be detected in non-initial sylls. also need class information on monosyllabic roots (-> need root analysis here) maybe just flag monosyllables
+            #re.compile('(?<=^[^aeiouAEIOU])_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), #affection ... o->u can be detected in non-initial sylls. also need class information on monosyllabic roots (-> need root analysis here) maybe just flag monosyllables
+            re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish)
             #re.compile('('+
             #'_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
             #'(?<=^[^aeiouAEIOU])_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
@@ -108,7 +109,8 @@ def check_procs(latin, irish):
             ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
             ((re.compile('((?<=[aeiouAEIOU])_*[tkgms])|f'), { "t":"θð", "k":"xɣ", "g":"ɣ", "m":"ɱ", "s":"h", "f":"s"}), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))|f'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", "f":"f"})),
             ##((re.compile('(?<=^[^aeiouAEIOU]{0,3})(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(?<=^[^aeiouAEIOU]{0,3})(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})),
-            ((re.compile('(?<=^[^aeiouAEIOU])(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(?<=^[^aeiouAEIOU])(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})),
+            #((re.compile('(?<=^[^aeiouAEIOU])(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(?<=^[^aeiouAEIOU])(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})),
+            ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
             #(
             #    (
             #        re.compile(
