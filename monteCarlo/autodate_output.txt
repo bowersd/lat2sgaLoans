@@ -9,8 +9,10 @@ alta:re alto:ir
 altAre latin aligned
 altOr_ irish aligned
 [[], [], [], [], [], [0]]
-auto: [6, 7] #EJFL: I don't understand auto.
-hand: [4, 7]
+auto: [6, 7]
+hand: [4, 7] #EJFL: Hand is more accurate. The final vowel undergoes apocope before syncope. In fact, since Latin long a is
+                    represented by Irish long o this must have past through British. The loss of final e can be ascribed
+                    to British apocope. Either way, the word would not have met the structural description of syncope.
 
 
 apostolus apstal
@@ -18,7 +20,8 @@ apostol latin aligned
 ab_stəl irish aligned
 [[0], [], [], [], [], [1]]
 auto: [1, 6]
-hand: [2, 6] #EJFL: Hand more accurate. Lenition could have occurred but did not.
+hand: [2, 6] #EJFL: Hand more accurate. Since this would past through British lenition (/b/ for Latin /p/),
+            Can
 
 
 calicem cailech
