@@ -252,7 +252,7 @@ le_wi_Atan latin aligned
 lev_əðA__n irish aligned
 [[], [], [], [], [0], [0]]
 auto: [6, 7] #EJFL: I don't understand auto.
-hand: [0, 2]
+hand: [0, 2] #DAB: I'm going to try to get a better alignment before I try anything else
 
 
 li:tus li:th
@@ -260,7 +260,7 @@ lIt latin aligned
 lIθ irish aligned
 [[], [1], [], [0], [], []]
 auto: [4, 2] #EJFL: I don't understand auto. Hand seems accurate: this entered in before Lenition.
-hand: [0, 2] 
+hand: [0, 2] #DAB: I don't understand why autodate is saying the word entered after apocope. It shouldn't be triggered, and with it obviously being triggered, it should be saying the word was after apocope
 
 
 litania lita:n
@@ -269,6 +269,8 @@ lidAn_ irish aligned
 [[], [0], [0], [], [], [0]]
 auto: [6, 7] #EJFL: I don't understand auto. Hand seems accurate: this is a post-Harmony loan.
 hand: [3, 7] 
+             #DAB: this is just the result of syncope being falsely eligible and failing to apply
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 mi:ra:bilis mi:rbail
@@ -277,6 +279,7 @@ mIr_vəl irish aligned
 [[], [], [], [], [], [1]] #EJFL: Lenition applies. Hand is more accurate.
 auto: [0, 6]
 hand: [0, 2]
+            #DAB: I disagree, d->D is not informative
 
 
 modius muide
@@ -285,6 +288,7 @@ muðe irish aligned
 [[], [], [1], [], [], []] #EJFL: Lenition applies. Hand is more accurate.
 auto: [0, 3]
 hand: [0, 2]
+            #DAB: I disagree, d->D is not informative
 
 
 moli:na muilenn
@@ -293,6 +297,7 @@ muləN irish aligned
 [[], [], [], [1], [], []]
 auto: [0, 4]
 hand: [0, 3] #EJFL: Harmony applies. Hand more accurate.
+            #DAB: I hope the new harmony implementation catches this
 
 
 moniste:rium muinter
