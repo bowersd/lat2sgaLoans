@@ -667,7 +667,9 @@ data2 = {
         }
 
 if __name__ == "__main__":
-    for i in range(len(forms)):
-        for x in data2:
-            if forms[i] == x[0] and data[i] != data2[x][:2]: print(forms[i], data[i], x, data2[x])
+    pass
+    #this was checking to see if forms or data2 was more accurate, data2 is more accurate
+    #for i in range(len(forms)):
+    #    for x in data2:
+    #        if forms[i] == x[0] and data[i] != data2[x][:2]: print(forms[i], data[i], x, data2[x])
 
