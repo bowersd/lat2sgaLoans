@@ -9,8 +9,10 @@ alta:re alto:ir
 altAre latin aligned
 altOr_ irish aligned
 [[], [], [], [], [], [0]]
-auto: [6, 7] #EJFL: I don't understand auto.
-hand: [4, 7]
+auto: [6, 7]
+hand: [4, 7] #EJFL: Hand is more accurate. The final vowel undergoes apocope before syncope. In fact, since Latin long a is
+             #       represented by Irish long o this must have past through British. The loss of final e can be ascribed
+             #       to British apocope. Either way, the word would not have met the structural description of syncope.
 
 
 apostolus apstal
@@ -18,8 +20,9 @@ apostol latin aligned
 ab_stəl irish aligned
 [[0], [], [], [], [], [1]]
 auto: [1, 6]
-hand: [2, 6] #EJFL: Hand more accurate. Lenition could have occurred but did not.
-
+hand: [2, 6] #EJFL: Hand is more accurate. To recap: we're saying that b>v lenition is both British and Irish and so we exclude it as not
+             #      diagnostic. Here, we know that British lenition applied so that /p/ --> /b/ and the fact that /b/ was not further
+             #      lenited to /v/ shows that this entered after Irish lenition. @
 
 calicem cailech
 kalIgO latin aligned
@@ -34,15 +37,17 @@ kaŋkeL latin aligned
 kaŋgəl irish aligned
 [[], [], [], [], [], []]
 auto: [0, 7] 
-hand: [0, 2] #EJFL: Hand is more accurate if /nk/ > /ng/ is pre-lenition.
+hand: [0, 2] #EJFL: Hand is more accurate if /nk/ > /ng/ is pre-lenition. I know this isn't mentioned in autodate anywhere though.
 
 
 cande:la caindel
 kandEl latin aligned
 kandəl irish aligned
 [[], [], [], [1], [], []]
-auto: [0, 4] #EJFL: I guess Hand more accurate @
-hand: [2, 4] 
+auto: [0, 4] #EJFL: I guess Hand more accurate --> I understand this better now. Basically because the Latin long vowel was
+hand: [2, 4] #      shortened in Irish we have to say that this occurred before apocope. This is because before apocope occurred,
+             #      There was a prohibition on long vowels in non-final, non-stressed syllables. So cande:la would become candela.
+             #      It's unclear to me why it is dated after lenition in Hand.
 
 
 cippus cepp
@@ -50,7 +55,7 @@ kiP latin aligned
 kep irish aligned
 [[0], [], [], [], [], []] #EJFL: Harmony applies.
 auto: [1, 7]
-hand: [1, 2] #EJFL: IF /p:/ to /p/ is part of Lenition, then Hand is more accurate.
+hand: [1, 2] #EJFL: IF /p:/ to /p/ is part of Lenition, then Hand is more accurate. Hand is also more accurate because it allows for Harmony.
 
 
 cista ces
@@ -58,7 +63,8 @@ kist latin aligned
 kes_ irish aligned
 [[], [], [], [], [], []] #EJFL: Harmony applies.
 auto: [0, 7]
-hand: [0, 2] #EJFL: If st > s is part of Lenition, Hand dating is better.
+hand: [0, 2] #EJFL: If st > s is part of Lenition, Hand dating is better. I know this is not mentioned in autodate though.
+             #Hand is also more accurate because it allows for Harmony.
 
 
 coctu:ra cuchtar
@@ -66,7 +72,7 @@ koktUr latin aligned
 kuxtər irish aligned
 [[], [1], [], [1], [], []] #EJFL: Harmony applies. VL /kt/ to /xt/ might have applied rather than Lenition.
 auto: [0, 2]
-hand: [0, 3] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate.
+hand: [0, 3] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate. @
 
 
 crepusculum crapscuil
@@ -74,23 +80,27 @@ krepuskul latin aligned
 krab_skul irish aligned
 [[0], [], [], [], [], [1]]
 auto: [1, 6]
-hand: [3, 6] #EJFL: Hand more accurate. Lenition could have applied but did not. Harmony could have applies but did not.
-
+hand: [3, 6] #EJFL: Hand more accurate. Lenition could have applied but did not. Harmony could have applied but did not.
+             #For the p --> b change and its interaction with Lenition, see aposolus @
 
 crux cros
 kruks latin aligned
 kro_s irish aligned
 [[], [], [], [], [], []]
 auto: [0, 7]
-hand: [0, 2] #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate.
+hand: [0, 2] #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate. I know that minor change is not in autodate though.
+            #Harmony also applies here, analogically. The word was assigned to the "a-stem declension" which typically has a low vowel
+            in the 1 syllable nouns if the vowel is short.
 
 
 culi:na *cuilenn
 kulIn latin aligned
 kuləN irish aligned
 [[], [], [], [1], [], []]
-auto: [0, 4] #EJFL: I don't think Harmony applied. Hand more accurate.
-hand: [0, 7]
+auto: [0, 4] #EJFL: I don't think Harmony applied. Hand more accurate. ---> Actually, I was wrong. But I am confused about Hand now.
+hand: [0, 7] #In google-sheets, we clearly show that this underwent Harmony. So, while Auto is more accurate here (since Harmony is before
+             #Apocope, saying this entered before Apocope leaves open the possibility for Harmony to apply), I am not sure why Auto and Hand
+             differ. @
 
 
 cultrum coltar
@@ -98,15 +108,16 @@ kult_r latin aligned
 koltər irish aligned
 [[], [], [], [], [], []]
 auto: [0, 7]
-hand: [0, 3] #EJFL: Harmony applied. Hand more accurate.
+hand: [0, 3] #EJFL: Harmony applied. Hand more accurate. ---> I guess this kind of "Harmony" is distinct from the kind found in autodate.py.
 
 
 ecle:sia eclais
 eklEsi latin aligned
 egləs_ irish aligned
 [[], [0, 0], [], [], [], [0]]
-auto: [6, 7] #EJFL: I don't understand auto. @
-hand: [2, 4]
+auto: [6, 7]
+hand: [2, 4] Hand is more accurate. This entered after lenition but before apocope. Lenition would have changed g to gamma and s to h.
+             Also, since the non-stressed vowel was shortened, this clearly entered before apocope.
 
 
 exhibernum esarn
@@ -114,15 +125,17 @@ ekshibern latin aligned
 e_s___ərn irish aligned
 [[], [], [], [], [], [1]]
 auto: [0, 6]
-hand: [0, 2]  #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate.
+hand: [0, 2]  #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate. I know that minor change is not in autodate though.
+
 
 fata:le fa:tal
 fatAle latin aligned
 fAdəl_ irish aligned
 [[], [0, 0], [], [], [1], [0]]
 auto: [6, 5] #EJFL: I don't understand auto.
-hand: [2, 5]
-
+hand: [2, 5]  Hand is more accurate. This entered after lenition and before apocope. Lenition would have changed d to edh.
+             Also, since the non-stressed vowel was shortened, this clearly entered before apocope. I am not sure about why
+               Hand and Auto say that Lengthening applied.
 
 figu:ra figor
 fIgUr latin aligned
