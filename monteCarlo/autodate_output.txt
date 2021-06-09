@@ -13,6 +13,7 @@ auto: [6, 7]
 hand: [4, 7] #EJFL: Hand is more accurate. The final vowel undergoes apocope before syncope. In fact, since Latin long a is
              #       represented by Irish long o this must have past through British. The loss of final e can be ascribed
              #       to British apocope. Either way, the word would not have met the structural description of syncope.
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 apostolus apstal
@@ -23,6 +24,7 @@ auto: [1, 6]
 hand: [2, 6] #EJFL: Hand is more accurate. To recap: we're saying that b>v lenition is both British and Irish and so we exclude it as not
              #      diagnostic. Here, we know that British lenition applied so that /p/ --> /b/ and the fact that /b/ was not further
              #      lenited to /v/ shows that this entered after Irish lenition. @
+             #DAB: isn't there some amount of voicing neutralization that just happens word-internally though? so [b] could be a vanilla allophone of /p/?
 
 calicem cailech
 kalIgO latin aligned
@@ -31,6 +33,8 @@ kaləx_ irish aligned
 auto: [6, 5] #EJFL: I don't understand auto.
 hand: [0, 2]
 
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+             #DAB: I don't know why compensatory lengthening is getting triggered here
 
 cancella caingel
 kaŋkeL latin aligned
@@ -38,7 +42,7 @@ kaŋgəl irish aligned
 [[], [], [], [], [], []]
 auto: [0, 7] 
 hand: [0, 2] #EJFL: Hand is more accurate if /nk/ > /ng/ is pre-lenition. I know this isn't mentioned in autodate anywhere though.
-
+             #DAB: I thought NC clusters (where C is voiceless) became legal again with syncope
 
 cande:la caindel
 kandEl latin aligned
@@ -48,6 +52,7 @@ auto: [0, 4] #EJFL: I guess Hand more accurate --> I understand this better now.
 hand: [2, 4] #      shortened in Irish we have to say that this occurred before apocope. This is because before apocope occurred,
              #      There was a prohibition on long vowels in non-final, non-stressed syllables. So cande:la would become candela.
              #      It's unclear to me why it is dated after lenition in Hand.
+             #DAB: will have to check spreadsheet for hand reasoning
 
 
 cippus cepp
@@ -56,6 +61,9 @@ kep irish aligned
 [[0], [], [], [], [], []] #EJFL: Harmony applies.
 auto: [1, 7]
 hand: [1, 2] #EJFL: IF /p:/ to /p/ is part of Lenition, then Hand is more accurate. Hand is also more accurate because it allows for Harmony.
+             #DAB: degemination is expected on either side of lenition though, right? before lenition, geminates were legal and lenition shortens them
+             #      after lenition, geminates are illegal and so are phoneme substituted with singletons
+             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
 
 
 cista ces
@@ -65,6 +73,7 @@ kes_ irish aligned
 auto: [0, 7]
 hand: [0, 2] #EJFL: If st > s is part of Lenition, Hand dating is better. I know this is not mentioned in autodate though.
              #Hand is also more accurate because it allows for Harmony.
+             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
 
 
 coctu:ra cuchtar
@@ -73,6 +82,7 @@ kuxtər irish aligned
 [[], [1], [], [1], [], []] #EJFL: Harmony applies. VL /kt/ to /xt/ might have applied rather than Lenition.
 auto: [0, 2]
 hand: [0, 3] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate. @
+             #DAB: yup, need to add this restriction
 
 
 crepusculum crapscuil
@@ -82,6 +92,8 @@ krab_skul irish aligned
 auto: [1, 6]
 hand: [3, 6] #EJFL: Hand more accurate. Lenition could have applied but did not. Harmony could have applied but did not.
              #For the p --> b change and its interaction with Lenition, see aposolus @
+             #DAB: I think it is good for autodate to fail on this. even though harmony failed, the resulting changed vowel is weird
+             #DAB: I'll ponder the lenition problem... seems like this needs a representation with /b/ instead of /p/ if we are to enact your proposal
 
 crux cros
 kruks latin aligned
@@ -91,6 +103,7 @@ auto: [0, 7]
 hand: [0, 2] #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate. I know that minor change is not in autodate though.
             #Harmony also applies here, analogically. The word was assigned to the "a-stem declension" which typically has a low vowel
             in the 1 syllable nouns if the vowel is short.
+            #DAB: Are there reasons we should not count /ks/ > /s/?
 
 
 culi:na *cuilenn
@@ -101,6 +114,9 @@ auto: [0, 4] #EJFL: I don't think Harmony applied. Hand more accurate. ---> Actu
 hand: [0, 7] #In google-sheets, we clearly show that this underwent Harmony. So, while Auto is more accurate here (since Harmony is before
              #Apocope, saying this entered before Apocope leaves open the possibility for Harmony to apply), I am not sure why Auto and Hand
              differ. @
+             #DAB: This is crucially harmony of a non-initial syllable, where vowel quality distinctions are neutralized.
+             #DAB: McManus gives a few examples with harmony in non-initial syllables, but this seems unrecoverable given the neutralization
+             #DAB: What am I missing that would align my mind with McManus' analysis?
 
 
 cultrum coltar
@@ -109,6 +125,7 @@ koltər irish aligned
 [[], [], [], [], [], []]
 auto: [0, 7]
 hand: [0, 3] #EJFL: Harmony applied. Hand more accurate. ---> I guess this kind of "Harmony" is distinct from the kind found in autodate.py.
+             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
 
 
 ecle:sia eclais
@@ -118,7 +135,7 @@ egləs_ irish aligned
 auto: [6, 7]
 hand: [2, 4] Hand is more accurate. This entered after lenition but before apocope. Lenition would have changed g to gamma and s to h.
              Also, since the non-stressed vowel was shortened, this clearly entered before apocope.
-
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 exhibernum esarn
 ekshibern latin aligned
@@ -126,6 +143,7 @@ e_s___ərn irish aligned
 [[], [], [], [], [], [1]]
 auto: [0, 6]
 hand: [0, 2]  #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate. I know that minor change is not in autodate though.
+            #DAB: Are there reasons we should not count /ks/ > /s/?
 
 
 fata:le fa:tal
@@ -136,6 +154,8 @@ auto: [6, 5] #EJFL: I don't understand auto.
 hand: [2, 5]  Hand is more accurate. This entered after lenition and before apocope. Lenition would have changed d to edh.
              Also, since the non-stressed vowel was shortened, this clearly entered before apocope. I am not sure about why
                Hand and Auto say that Lengthening applied.
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+             #DAB: as for lengthening, is it some weird mis-firing on the initial /a/ lengthening?
 
 figu:ra figor
 fIgUr latin aligned
@@ -143,6 +163,7 @@ fiɣər irish aligned
 [[], [0, 1], [], [1], [], []]
 auto: [2, 2]
 hand: [0, 2]
+    #DAB: I actually am a little concerned about the mixing of /f/ and lenited /g/. Didn't we have a story where f>s was clearly pre-lenition, but f>f could be any time?
 
 
 fu:stis su:st
@@ -150,7 +171,7 @@ fUst latin aligned
 sUst irish aligned
 [[], [1], [], [0], [], []]
 auto: [4, 2] #EJFL: I don't understand auto.
-hand: [0, 2]
+hand: [0, 2] #DAB: I suspect the regex for apocope was triggered because it only counts the distance from the right edge of the word, and ignores the left edge
 
 
 genea:logia genelach
@@ -159,6 +180,7 @@ gen_ələx_ irish aligned
 [[], [], [], [], [], [0]] #EJFL: Syncope applies.
 auto: [6, 7]
 hand: [0, 2]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 habe:na abann
@@ -167,6 +189,7 @@ _avəN irish aligned
 [[], [], [], [1], [], []] #EJFL: Lenition applies. Hand seems more accurate.
 auto: [0, 4]
 hand: [0, 2]
+            #DAB: I disagree, b->v is uninformative
 
 
 i:do:lum i:dol
@@ -175,6 +198,7 @@ Iðəl irish aligned
 [[], [], [], [1], [], []]  #EJFL: Lenition applies. Hand seems more accurate.
 auto: [0, 4]
 hand: [0, 2]
+            #DAB: I disagree, d->D is uninformative
 
 
 ido:neus idan
@@ -183,6 +207,9 @@ iðən_ irish aligned
 [[], [], [], [], [1], [0]]
 auto: [6, 5] #EJFL: I don't understand auto.
 hand: [3, 4]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+             #DAB: hopefully harmony failure is detected here
+             #DAB: as I have it, lenition is uninformative, affection fails, shortening applies (so it must be pre-apocope), and apocope/suffix substitution on 'roids bleeds syncope
 
 
 innocuus ennac
@@ -191,6 +218,7 @@ eNəg_ irish aligned
 [[], [0], [], [], [], [0]] #EJFL: Stem as borrowed was probably innok-. I don't know how this affects the dating.
 auto: [6, 7] 
 hand: [2, 3] 
+            #DAB: great, I'll fix the representation. Everything should work after that (for this word)
 
 
 intellectus intliucht
@@ -199,6 +227,7 @@ int_luxt irish aligned
 [[], [1], [], [], [], [1]]
 auto: [0, 2]
 hand: [0, 6] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate.
+            #DAB: yup, will update lenition
 
 
 labo:rem lubair
@@ -207,6 +236,7 @@ luvər irish aligned
 [[], [], [], [1], [], []] #EJFL: Lenition and Harmony apply. Hand is more accurate.
 auto: [0, 4]
 hand: [0, 2]
+            #DAB: I disagree. b->v is uninformative and whatever happened to the vowels was bigger than harmony.
 
 
 leo: leo
