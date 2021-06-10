@@ -305,14 +305,15 @@ monistEri latin aligned
 mun__tər_ irish aligned
 [[], [], [1], [], [], [0]] #EJFL: Syncope applies.
 auto: [6, 3] #EJFL: I don't understand auto. Harmony applies. Hand is more accurate. 
-hand: [0, 3]
+hand: [0, 3] #DAB: the modified script should handle this correctly.
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 mu:rus mu:r
 mUr latin aligned
 mUr irish aligned
 [[], [], [], [0], [], []] #EJFL: Apocope Applies.
 auto: [4, 7] #EJFL: I don't understand auto. 
-hand: [0, 7]
+hand: [0, 7] #apocope is oversensitive to monosyllables
 
 
 numerus nuimir
@@ -321,6 +322,7 @@ nuɱər irish aligned
 [[], [1], [], [], [], []]
 auto: [0, 2]  
 hand: [0, 7] #EJFL: Although Auto seems more accurate, the palatalization of /ɱ/ implies that the Irish SR is due analogy after Syncope. 
+             #DAB: I'm confused by this comment. surely later analogy is not evidence of later entrance into the language?
 
 
 oleum olae
@@ -337,6 +339,8 @@ par_vəl irish aligned
 [[0], [], [], [], [], [1]]
 auto: [1, 6]
 hand: [1, 2] #Lenition applies. Hand seems more accurate. @
+            #DAB: I disagree, b>v is not diagnostic
+
 
 
 pa:scha ca:sc
@@ -344,7 +348,7 @@ pAsk latin aligned
 kAsk irish aligned
 [[1], [], [], [0], [], []]
 auto: [4, 1] #EJFL: I don't understand auto.
-hand: [0, 1]
+hand: [0, 1] #DAB: apocope is oversensitive to monosyllables
 
 
 patricius cothrige
@@ -352,7 +356,7 @@ patriki latin aligned
 koθrəɣe irish aligned
 [[1], [1, 1], [], [], [], [0]]
 auto: [6, 1] #EJFL: I don't understand auto.
-hand: [0, 1]
+hand: [0, 1] #DAB: the syncope problems mislead the upper bound detection
 
 
 plu:ma clu:m
@@ -360,7 +364,7 @@ plUm latin aligned
 klUɱ irish aligned
 [[1], [1], [], [0], [], []]
 auto: [4, 1] #EJFL: I don't understand auto.
-hand: [0, 1]
+hand: [0, 1] #DAB: apocope is oversensitive to monosyllables
 
 
 psallendum salland
@@ -368,7 +372,7 @@ psaLend latin aligned
 _saLənd irish aligned
 [[], [], [], [], [], []]
 auto: [0, 7] #EJFL: Auto probably more accurate but it depends on the analysis of /ps/ -> /s/; could that change be part of Lenition?
-hand: [2, 7]
+hand: [2, 7] #DAB: word-initial is not a great environment for lenition. this one instance of /ps/>/s/ isn't great evidence for anything special in Irish unless we can show independently that such clusters existed and were repaired
 
 
 psalte:rium saltair
@@ -377,6 +381,7 @@ _saltər_ irish aligned
 [[], [], [], [], [], [0]]
 auto: [6, 7] #EJFL: I don't understand auto.
 hand: [0, 4]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 quaestio: ceist
@@ -385,6 +390,8 @@ k_est__ irish aligned
 [[], [], [], [], [], [0]]
 auto: [6, 7] #EJFL: I don't understand auto.
 hand: [3, 7]
+             #DAB: even once apocope is fixed, this will mismatch on whether it was eligible for harmony
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 rubrum robur
@@ -393,6 +400,7 @@ rovu_r irish aligned
 [[], [], [], [], [], []]
 auto: [0, 7]
 hand: [0, 2] #Hand more accurate. Lenition applies.
+            #DAB: even with better alignment, b->v is not diagnostic
 
 
 sacellus sachall
@@ -401,6 +409,7 @@ saxəL__ irish aligned
 [[], [1], [], [], [], [0]]
 auto: [6, 2] #EJFL: I don't understand auto.
 hand: [0, 2]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 sacerdo:s sacart
@@ -409,6 +418,7 @@ sagərt__ irish aligned
 [[], [0], [], [], [], [0]]
 auto: [6, 7] #EJFL: I don't understand auto.
 hand: [2, 7]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 sco:pa scu:ap
@@ -417,6 +427,7 @@ skuəb irish aligned
 [[0], [], [], [1], [], []]
 auto: [1, 4]
 hand: [2, 7] #EJFL: Hand more accurate. Lenition could have applied but did not.
+            #DAB: This is the apstal-class of cases.
 
 
 scriptu:ra screptar
@@ -425,6 +436,7 @@ skrebtər irish aligned
 [[0], [], [], [1], [], []] #EJFL: Harmony applies. McManus has PI *scriptra.
 auto: [1, 4]
 hand: [2, 3] 
+        #DAB: representation needs to be updated then
 
 
 seca:le secal
@@ -433,6 +445,8 @@ segəl_ irish aligned
 [[], [0], [], [], [1], [0]]
 auto: [6, 5] #EJFL: I don't understand auto.
 hand: [2, 4]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+            #DAB: not sure why comp len is firing here
 
 
 secundi:nus sechnall
@@ -441,6 +455,7 @@ sex_n_əL_ irish aligned
 [[], [1], [0], [1], [], [1]]
 auto: [3, 2] #EJFL: I don't understand auto.
 hand: [0, 2]
+            #DAB: this is potentially a problem! we should get raising! does raising/harmony not cross [x]?
 
 
 stra:ta sra:it
@@ -449,6 +464,7 @@ s_rAd irish aligned
 [[], [0], [], [0], [], []] #EJFL: Apocope applies.
 auto: [4, 7]
 hand: [2, 7] #EJFL: Hand dating seems better. Why should this enter after apocope?]
+            #DAB: apocope overfiring on monosyllables
 
 
 stuppa sopp
@@ -457,6 +473,8 @@ s_op irish aligned
 [[0], [], [], [], [], []] #EJFL: If st > s is part of Lenition, Hand dating is better. Also Harmony applies!
 auto: [1, 7]
 hand: [1, 2]
+            #DAB: monosyllable problem for harmony (no triggering environment present in representation)
+            #DAB: not sure what to do about st > s. Need to review McManus' inconsistency claim
 
 
 tribu:nus trebunn
@@ -465,5 +483,6 @@ trevuN irish aligned
 [[], [], [], [1], [], []] #EJFL: Lenition applies. Hand dating is better.
 auto: [0, 4]
 hand: [0, 2]
+        #DAB: I disagree, b->v is not diagnostic. Why do we get anti-harmony??
 
 
