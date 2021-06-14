@@ -282,7 +282,7 @@ mIr_vəl irish aligned
 [[], [], [], [], [], [1]] #EJFL: Lenition applies. Hand is more accurate.
 auto: [0, 6]
 hand: [0, 2]
-            #DAB: I disagree, d->D is not informative
+            #DAB: I disagree, b->v is not informative
 
 
 modius muide
