@@ -157,6 +157,7 @@ hand: [2, 5]  Hand is more accurate. This entered after lenition and before apoc
                Hand and Auto say that Lengthening applied.
              #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
              #DAB: as for lengthening, is it some weird mis-firing on the initial /a/ lengthening?
+             #DAB: --> the reduction of A->@ could only happen if this was a pre-lengthening loan (given this representation). If the final /e/ is removed from Latin, this needs to be a pre-apocope loan
 
 figu:ra figor
 fIgUr latin aligned
