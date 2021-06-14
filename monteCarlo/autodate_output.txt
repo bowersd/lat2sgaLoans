@@ -262,7 +262,7 @@ lIt latin aligned
 lIθ irish aligned
 [[], [1], [], [0], [], []]
 auto: [4, 2] #EJFL: I don't understand auto. Hand seems accurate: this entered in before Lenition.
-hand: [0, 2] #DAB: I don't understand why autodate is saying the word entered after apocope. It shouldn't be triggered, and with it obviously being triggered, it should be saying the word was after apocope
+hand: [0, 2] #DAB: I don't understand why autodate is saying the word entered after apocope. It shouldn't be triggered, and with it obviously being triggered, it should be saying the word was before apocope
 
 
 litania lita:n
