@@ -174,7 +174,7 @@ sUst irish aligned
 [[], [1], [], [0], [], []]
 auto: [4, 2] #EJFL: I don't understand auto.
 hand: [0, 2] #DAB: I suspect the regex for apocope was triggered because it only counts the distance from the right edge of the word, and ignores the left edge
-
+             #DAB: TODO: do post-processing to manage harmony non-triggering, apocope/comp len over-triggering in monosyllables. this will allow improved regexen
 
 genea:logia genelach
 geneAlogi latin aligned
