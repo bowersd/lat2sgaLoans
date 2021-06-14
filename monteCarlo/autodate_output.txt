@@ -422,7 +422,7 @@ sagərt__ irish aligned
 auto: [6, 7] #EJFL: I don't understand auto.
 hand: [2, 7]
              #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
-
+             #DAB: apocope detection fix won't work here
 
 sco:pa scu:ap
 sk_Op latin aligned
