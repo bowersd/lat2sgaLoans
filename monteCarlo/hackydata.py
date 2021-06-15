@@ -511,7 +511,7 @@ data2 = {
         ("crucem",          "croch"):[0,2,0,0,0,0,0,0],
         ("exhibernum",      "esarn"):[0,2,0,0,0,0,0,0], ##idiosyncratic changes applied (hi deletion, b->B to get ksB->ks(v|w)->xs(v|w)->s(v|w)->s)
         ("figu:ra",         "figor"):[0,2,0,0,0,0,0,0],
-        ("febra:rius",     "febra"):[0,2,0,0,0,0,0,0],
+        ("*febra:rius",     "febra"):[0,2,0,0,0,0,0,0],
         ("crux",            "cros"):[0,2,0,0,0,0,0,0],
         ("culcita",         "colcaid"):[0,2,0,0,0,0,0,0], ##problem derivation
         ("cucullus",        "cochall"):[0,2,0,0,0,0,0,0], ##problem derivation
