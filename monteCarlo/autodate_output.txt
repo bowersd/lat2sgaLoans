@@ -73,6 +73,9 @@ kes_ irish aligned
 auto: [0, 7]
 hand: [0, 2] #EJFL: If st > s is part of Lenition, Hand dating is better. I know this is not mentioned in autodate though.
              #Hand is also more accurate because it allows for Harmony.
+             #DAB: st>s I suppose should be evidence for early borrowing, but st>st shouldn't be evidence of anything: 
+                cf McManus p. 54 discussing fenestra>senester, fustis>sust, ostiarius>aistire, strata>srait
+                all of which I assume are early loans but not all of them simplify st
              #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
 
 
