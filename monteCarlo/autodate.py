@@ -154,9 +154,7 @@ def check_procs(latin, irish):
     parity = count_sylls.alt_w_fin_degen(sylls)
     #also need to allow for an extra syll at end in irish, check if any non-weak sylls are deleted
     #print(parity)
-    if len(sylls) == 1: 
-        print(latin)
-        values = monosyllable_repair(latin, irish, values)
+    if len(sylls) == 1: values = monosyllable_repair(latin, irish, values)
     if all([irish[sylls[i]] == "_"  for i in range(len(sylls)) if not parity[i]]) and not all(parity) and not any([irish[sylls[i]] == "_"  for i in range(len(sylls)) if parity[i]]): values.append([1])
     elif all([irish[sylls[i]] == "_"  for i in range(len(sylls)-1) if not parity[i]]) and all(parity[-2:]) and irish[sylls[-1]] == "_" and re.match("[aeiouə]", irish[sylls[-1]+1:]): values.append([1])
     elif len(sylls)>2: values.append([0])
