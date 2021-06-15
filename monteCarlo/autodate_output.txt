@@ -5,15 +5,6 @@ UNMATCHED
 ####################
 ####################
 ####################
-alta:re alto:ir
-altAre latin aligned
-altOr_ irish aligned
-[[], [], [], [], [], [0]]
-auto: [6, 7]
-hand: [4, 7] #EJFL: Hand is more accurate. The final vowel undergoes apocope before syncope. In fact, since Latin long a is
-             #       represented by Irish long o this must have past through British. The loss of final e can be ascribed
-             #       to British apocope. Either way, the word would not have met the structural description of syncope.
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 apostolus apstal
@@ -26,15 +17,6 @@ hand: [2, 6] #EJFL: Hand is more accurate. To recap: we're saying that b>v lenit
              #      lenited to /v/ shows that this entered after Irish lenition. @
              #DAB: isn't there some amount of voicing neutralization that just happens word-internally though? so [b] could be a vanilla allophone of /p/?
 
-calicem cailech
-kalIgO latin aligned
-kaləx_ irish aligned
-[[], [], [], [], [1], [0]]
-auto: [6, 5] #EJFL: I don't understand auto.
-hand: [0, 2]
-
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
-             #DAB: I don't know why compensatory lengthening is getting triggered here
 
 cancella caingel
 kaŋkeL latin aligned
@@ -123,23 +105,6 @@ hand: [0, 7] #In google-sheets, we clearly show that this underwent Harmony. So,
              #DAB: What am I missing that would align my mind with McManus' analysis?
 
 
-cultrum coltar
-kult_r latin aligned
-koltər irish aligned
-[[], [], [], [], [], []]
-auto: [0, 7]
-hand: [0, 3] #EJFL: Harmony applied. Hand more accurate. ---> I guess this kind of "Harmony" is distinct from the kind found in autodate.py.
-             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
-
-
-ecle:sia eclais
-eklEsi latin aligned
-egləs_ irish aligned
-[[], [0, 0], [], [], [], [0]]
-auto: [6, 7]
-hand: [2, 4] Hand is more accurate. This entered after lenition but before apocope. Lenition would have changed g to gamma and s to h.
-             Also, since the non-stressed vowel was shortened, this clearly entered before apocope.
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 exhibernum esarn
 ekshibern latin aligned
@@ -171,21 +136,6 @@ hand: [0, 2]
     #DAB: I actually am a little concerned about the mixing of /f/ and lenited /g/. Didn't we have a story where f>s was clearly pre-lenition, but f>f could be any time?
 
 
-fu:stis su:st
-fUst latin aligned
-sUst irish aligned
-[[], [1], [], [0], [], []]
-auto: [4, 2] #EJFL: I don't understand auto.
-hand: [0, 2] #DAB: I suspect the regex for apocope was triggered because it only counts the distance from the right edge of the word, and ignores the left edge
-             #DAB: TODO: do post-processing to manage harmony non-triggering, apocope/comp len over-triggering in monosyllables. this will allow improved regexen
-
-genea:logia genelach
-geneAlogi latin aligned
-gen_ələx_ irish aligned
-[[], [], [], [], [], [0]] #EJFL: Syncope applies.
-auto: [6, 7]
-hand: [0, 2]
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 habe:na abann
@@ -205,34 +155,6 @@ auto: [0, 4]
 hand: [0, 2]
             #DAB: I disagree, d->D is uninformative
 
-
-ido:neus idan
-idOne latin aligned
-iðən_ irish aligned
-[[], [], [], [], [1], [0]]
-auto: [6, 5] #EJFL: I don't understand auto.
-hand: [3, 4]
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
-             #DAB: hopefully harmony failure is detected here
-             #DAB: as I have it, lenition is uninformative, affection fails, shortening applies (so it must be pre-apocope), and apocope/suffix substitution on 'roids bleeds syncope
-
-
-innocuus ennac
-iNoku latin aligned
-eNəg_ irish aligned
-[[], [0], [], [], [], [0]] #EJFL: Stem as borrowed was probably innok-. I don't know how this affects the dating.
-auto: [6, 7] 
-hand: [2, 3] 
-            #DAB: great, I'll fix the representation. Everything should work after that (for this word)
-
-
-intellectus intliucht
-inteLekt latin aligned
-int_luxt irish aligned
-[[], [1], [], [], [], [1]]
-auto: [0, 2]
-hand: [0, 6] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate.
-            #DAB: yup, will update lenition
 
 
 labo:rem lubair
@@ -260,23 +182,6 @@ auto: [6, 7] #EJFL: I don't understand auto.
 hand: [0, 2] #DAB: I'm going to try to get a better alignment before I try anything else
 
 
-li:tus li:th
-lIt latin aligned
-lIθ irish aligned
-[[], [1], [], [0], [], []]
-auto: [4, 2] #EJFL: I don't understand auto. Hand seems accurate: this entered in before Lenition.
-hand: [0, 2] #DAB: I don't understand why autodate is saying the word entered after apocope. It shouldn't be triggered, and with it obviously being triggered, it should be saying the word was before apocope
-             #DAB: apocope is being falsely triggered due to monosyllable
-
-
-litania lita:n
-litani latin aligned
-lidAn_ irish aligned
-[[], [0], [0], [], [], [0]]
-auto: [6, 7] #EJFL: I don't understand auto. Hand seems accurate: this is a post-Harmony loan.
-hand: [3, 7] 
-             #DAB: this is just the result of syncope being falsely eligible and failing to apply
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 mi:ra:bilis mi:rbail
@@ -296,30 +201,6 @@ auto: [0, 3]
 hand: [0, 2]
             #DAB: I disagree, d->D is not informative
 
-
-moli:na muilenn
-molIn latin aligned
-muləN irish aligned
-[[], [], [], [1], [], []]
-auto: [0, 4]
-hand: [0, 3] #EJFL: Harmony applies. Hand more accurate.
-            #DAB: I hope the new harmony implementation catches this
-
-
-moniste:rium muinter
-monistEri latin aligned
-mun__tər_ irish aligned
-[[], [], [1], [], [], [0]] #EJFL: Syncope applies.
-auto: [6, 3] #EJFL: I don't understand auto. Harmony applies. Hand is more accurate. 
-hand: [0, 3] #DAB: the modified script should handle this correctly.
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
-
-mu:rus mu:r
-mUr latin aligned
-mUr irish aligned
-[[], [], [], [0], [], []] #EJFL: Apocope Applies.
-auto: [4, 7] #EJFL: I don't understand auto. 
-hand: [0, 7] #apocope is oversensitive to monosyllables
 
 
 numerus nuimir
@@ -349,12 +230,6 @@ hand: [1, 2] #Lenition applies. Hand seems more accurate. @
 
 
 
-pa:scha ca:sc
-pAsk latin aligned
-kAsk irish aligned
-[[1], [], [], [0], [], []]
-auto: [4, 1] #EJFL: I don't understand auto.
-hand: [0, 1] #DAB: apocope is oversensitive to monosyllables
 
 
 patricius cothrige
@@ -365,14 +240,6 @@ auto: [6, 1] #EJFL: I don't understand auto.
 hand: [0, 1] #DAB: the syncope problems mislead the upper bound detection
 
 
-plu:ma clu:m
-plUm latin aligned
-klUɱ irish aligned
-[[1], [1], [], [0], [], []]
-auto: [4, 1] #EJFL: I don't understand auto.
-hand: [0, 1] #DAB: apocope is oversensitive to monosyllables
-
-
 psallendum salland
 psaLend latin aligned
 _saLənd irish aligned
@@ -380,14 +247,6 @@ _saLənd irish aligned
 auto: [0, 7] #EJFL: Auto probably more accurate but it depends on the analysis of /ps/ -> /s/; could that change be part of Lenition?
 hand: [2, 7] #DAB: word-initial is not a great environment for lenition. this one instance of /ps/>/s/ isn't great evidence for anything special in Irish unless we can show independently that such clusters existed and were repaired
 
-
-psalte:rium saltair
-psaltEri latin aligned
-_saltər_ irish aligned
-[[], [], [], [], [], [0]]
-auto: [6, 7] #EJFL: I don't understand auto.
-hand: [0, 4]
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
 
 quaestio: ceist
@@ -445,14 +304,6 @@ hand: [2, 3]
         #DAB: representation needs to be updated then
 
 
-seca:le secal
-sekAle latin aligned
-segəl_ irish aligned
-[[], [0], [], [], [1], [0]]
-auto: [6, 5] #EJFL: I don't understand auto.
-hand: [2, 4]
-             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
-            #DAB: not sure why comp len is firing here
 
 
 secundi:nus sechnall
@@ -464,13 +315,6 @@ hand: [0, 2]
             #DAB: this is potentially a problem! we should get raising! does raising/harmony not cross [x]?
 
 
-stra:ta sra:it
-strAt latin aligned
-s_rAd irish aligned
-[[], [0], [], [0], [], []] #EJFL: Apocope applies.
-auto: [4, 7]
-hand: [2, 7] #EJFL: Hand dating seems better. Why should this enter after apocope?]
-            #DAB: apocope overfiring on monosyllables
 
 
 stuppa sopp
@@ -491,4 +335,169 @@ auto: [0, 4]
 hand: [0, 2]
         #DAB: I disagree, b->v is not diagnostic. Why do we get anti-harmony??
 
+#########
+#########
+#########
+#########
+alta:re alto:ir
+altAre latin aligned
+altOr_ irish aligned
+[[], [], [], [], [], [0]]
+auto: [6, 7]
+hand: [4, 7] #EJFL: Hand is more accurate. The final vowel undergoes apocope before syncope. In fact, since Latin long a is
+             #       represented by Irish long o this must have past through British. The loss of final e can be ascribed
+             #       to British apocope. Either way, the word would not have met the structural description of syncope.
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
 
+calicem cailech
+kalIgO latin aligned
+kaləx_ irish aligned
+[[], [], [], [], [1], [0]]
+auto: [6, 5] #EJFL: I don't understand auto.
+hand: [0, 2]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+             #DAB: I don't know why compensatory lengthening is getting triggered here
+
+cultrum coltar
+kult_r latin aligned
+koltər irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 3] #EJFL: Harmony applied. Hand more accurate. ---> I guess this kind of "Harmony" is distinct from the kind found in autodate.py.
+             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
+
+
+ecle:sia eclais
+eklEsi latin aligned
+egləs_ irish aligned
+[[], [0, 0], [], [], [], [0]]
+auto: [6, 7]
+hand: [2, 4] Hand is more accurate. This entered after lenition but before apocope. Lenition would have changed g to gamma and s to h.
+             Also, since the non-stressed vowel was shortened, this clearly entered before apocope.
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+
+fu:stis su:st
+fUst latin aligned
+sUst irish aligned
+[[], [1], [], [0], [], []]
+auto: [4, 2] #EJFL: I don't understand auto.
+hand: [0, 2] #DAB: I suspect the regex for apocope was triggered because it only counts the distance from the right edge of the word, and ignores the left edge
+             #DAB: TODO: do post-processing to manage harmony non-triggering, apocope/comp len over-triggering in monosyllables. this will allow improved regexen
+
+genea:logia genelach
+geneAlogi latin aligned
+gen_ələx_ irish aligned
+[[], [], [], [], [], [0]] #EJFL: Syncope applies.
+auto: [6, 7]
+hand: [0, 2]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+
+ido:neus idan
+idOne latin aligned
+iðən_ irish aligned
+[[], [], [], [], [1], [0]]
+auto: [6, 5] #EJFL: I don't understand auto.
+hand: [3, 4]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+             #DAB: hopefully harmony failure is detected here
+             #DAB: as I have it, lenition is uninformative, affection fails, shortening applies (so it must be pre-apocope), and apocope/suffix substitution on 'roids bleeds syncope
+
+
+innocuus ennac
+iNoku latin aligned
+eNəg_ irish aligned
+[[], [0], [], [], [], [0]] #EJFL: Stem as borrowed was probably innok-. I don't know how this affects the dating.
+auto: [6, 7] 
+hand: [2, 3] 
+            #DAB: great, I'll fix the representation. Everything should work after that (for this word)
+
+
+intellectus intliucht
+inteLekt latin aligned
+int_luxt irish aligned
+[[], [1], [], [], [], [1]]
+auto: [0, 2]
+hand: [0, 6] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate.
+            #DAB: yup, will update lenition
+
+li:tus li:th
+lIt latin aligned
+lIθ irish aligned
+[[], [1], [], [0], [], []]
+auto: [4, 2] #EJFL: I don't understand auto. Hand seems accurate: this entered in before Lenition.
+hand: [0, 2] #DAB: I don't understand why autodate is saying the word entered after apocope. It shouldn't be triggered, and with it obviously being triggered, it should be saying the word was before apocope
+             #DAB: apocope is being falsely triggered due to monosyllable
+
+
+litania lita:n
+litani latin aligned
+lidAn_ irish aligned
+[[], [0], [0], [], [], [0]]
+auto: [6, 7] #EJFL: I don't understand auto. Hand seems accurate: this is a post-Harmony loan.
+hand: [3, 7] 
+             #DAB: this is just the result of syncope being falsely eligible and failing to apply
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+
+moli:na muilenn
+molIn latin aligned
+muləN irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]
+hand: [0, 3] #EJFL: Harmony applies. Hand more accurate.
+            #DAB: I hope the new harmony implementation catches this
+
+
+moniste:rium muinter
+monistEri latin aligned
+mun__tər_ irish aligned
+[[], [], [1], [], [], [0]] #EJFL: Syncope applies.
+auto: [6, 3] #EJFL: I don't understand auto. Harmony applies. Hand is more accurate. 
+hand: [0, 3] #DAB: the modified script should handle this correctly.
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+
+mu:rus mu:r
+mUr latin aligned
+mUr irish aligned
+[[], [], [], [0], [], []] #EJFL: Apocope Applies.
+auto: [4, 7] #EJFL: I don't understand auto. 
+hand: [0, 7] #apocope is oversensitive to monosyllables
+
+pa:scha ca:sc
+pAsk latin aligned
+kAsk irish aligned
+[[1], [], [], [0], [], []]
+auto: [4, 1] #EJFL: I don't understand auto.
+hand: [0, 1] #DAB: apocope is oversensitive to monosyllables
+
+
+plu:ma clu:m
+plUm latin aligned
+klUɱ irish aligned
+[[1], [1], [], [0], [], []]
+auto: [4, 1] #EJFL: I don't understand auto.
+hand: [0, 1] #DAB: apocope is oversensitive to monosyllables
+
+psalte:rium saltair
+psaltEri latin aligned
+_saltər_ irish aligned
+[[], [], [], [], [], [0]]
+auto: [6, 7] #EJFL: I don't understand auto.
+hand: [0, 4]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+
+seca:le secal
+sekAle latin aligned
+segəl_ irish aligned
+[[], [0], [], [], [1], [0]]
+auto: [6, 5] #EJFL: I don't understand auto.
+hand: [2, 4]
+             #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
+            #DAB: not sure why comp len is firing here
+
+stra:ta sra:it
+strAt latin aligned
+s_rAd irish aligned
+[[], [0], [], [0], [], []] #EJFL: Apocope applies.
+auto: [4, 7]
+hand: [2, 7] #EJFL: Hand dating seems better. Why should this enter after apocope?]
+            #DAB: apocope overfiring on monosyllables
