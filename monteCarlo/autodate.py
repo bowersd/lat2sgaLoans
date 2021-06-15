@@ -103,7 +103,7 @@ def check_procs(latin, irish):
             #    ')'), #affection ... o->u can be detected in non-initial sylls. also need class information on monosyllabic roots (-> need root analysis here) maybe just flag monosyllables
             re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope-apply to root!
             #re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), #compensatory lengthening
-            re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), #compensatory lengthening
+            re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), #compensatory lengthening ... this doesn't truly capture non-initial sylls, just non-initial sylls not preceded by clusters
             ]
     processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
             ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
@@ -154,11 +154,22 @@ def check_procs(latin, irish):
     parity = count_sylls.alt_w_fin_degen(sylls)
     #also need to allow for an extra syll at end in irish, check if any non-weak sylls are deleted
     #print(parity)
+    if len(sylls) == 1: 
+        print(latin)
+        values = monosyllable_repair(latin, irish, values)
     if all([irish[sylls[i]] == "_"  for i in range(len(sylls)) if not parity[i]]) and not all(parity) and not any([irish[sylls[i]] == "_"  for i in range(len(sylls)) if parity[i]]): values.append([1])
     elif all([irish[sylls[i]] == "_"  for i in range(len(sylls)-1) if not parity[i]]) and all(parity[-2:]) and irish[sylls[-1]] == "_" and re.match("[aeiouə]", irish[sylls[-1]+1:]): values.append([1])
     elif len(sylls)>2: values.append([0])
     else: values.append([])
     return values
+
+def monosyllable_repair(latin, irish, vector):
+    nu = [x for x in vector]
+    if nu[3]: nu[3] = [] #fixing apocope
+    #fixing harmony
+    #we have no way of knowing whether failure to harmonize was due to lack of environment or being too late. would need actual morphological class information
+    if ('e' in latin and 'i' in irish) or ('i' in latin and 'e' in irish) or ('o' in latin and 'u' in irish) or ('u' in latin and 'o' in irish): nu[2] = [1] 
+    return nu
 
 def date(*proc_v):
     h = [0,7]
