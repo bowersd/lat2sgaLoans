@@ -313,15 +313,6 @@ hand: [0, 2]
 
 
 
-stuppa sopp
-stuP latin aligned
-s_op irish aligned
-[[0], [], [], [], [], []] #EJFL: If st > s is part of Lenition, Hand dating is better. Also Harmony applies!
-auto: [1, 7]
-hand: [1, 2]
-            #DAB: monosyllable problem for harmony (no triggering environment present in representation)
-            #DAB: not sure what to do about st > s. Need to review McManus' inconsistency claim
-
 
 tribu:nus trebunn
 tribUn latin aligned
@@ -516,3 +507,12 @@ hand: [0, 2] #EJFL: If st > s is part of Lenition, Hand dating is better. I know
                 all of which I assume are early loans but not all of them simplify st
             #DAB: this is now fixed!
              #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
+
+stuppa sopp
+stuP latin aligned
+s_op irish aligned
+[[0], [], [], [], [], []] #EJFL: If st > s is part of Lenition, Hand dating is better. Also Harmony applies!
+auto: [1, 7]
+hand: [1, 2]
+            #DAB: monosyllable problem for harmony (no triggering environment present in representation)
+            #DAB: not sure what to do about st > s. Need to review McManus' inconsistency claim
