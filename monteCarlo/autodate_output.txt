@@ -15,7 +15,8 @@ auto: [1, 6]
 hand: [2, 6] #EJFL: Hand is more accurate. To recap: we're saying that b>v lenition is both British and Irish and so we exclude it as not
              #      diagnostic. Here, we know that British lenition applied so that /p/ --> /b/ and the fact that /b/ was not further
              #      lenited to /v/ shows that this entered after Irish lenition. @
-             #DAB: isn't there some amount of voicing neutralization that just happens word-internally though? so [b] could be a vanilla allophone of /p/?
+             #DAB: isn't there some amount of voicing neutralization though? so [b] could be a vanilla allophone of /p/?
+             #DAB: modulo my comment above, autodate would match hand/our reasoning if the input Latin stem was /abostol/ instead of /apostol/
 
 
 cancella caingel
