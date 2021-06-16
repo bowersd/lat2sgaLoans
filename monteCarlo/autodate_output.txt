@@ -58,8 +58,9 @@ kuxtər irish aligned
 [[], [1], [], [1], [], []] #EJFL: Harmony applies. VL /kt/ to /xt/ might have applied rather than Lenition.
 auto: [0, 2]
 hand: [0, 3] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Hand is more accurate. @
-             #DAB: yup, need to add this restriction.
+             #DAB: yup, need to add this restriction. 
              #DAB: I thought harmony could not raise over a consonant cluster
+             #DAB: kt>xt no longer triggers a lenition application flag, but harmony environment still isn't met, so no harmony flag
 
 
 crepusculum crapscuil
