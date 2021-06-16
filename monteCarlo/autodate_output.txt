@@ -253,6 +253,7 @@ hand: [3, 7]
              #DAB: even once apocope is fixed, this will mismatch on whether it was eligible for harmony
              #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
              #DAB: apocope detection fix needs to remove more than the last vowel, but stem-final vowel strings...
+             #DAB: update: currently we get [0,7] because raising harmony can't cross a cluster. My own inclination is that there isn't even an [i] when this gets borrowed
  
 rubrum robur
 r__ubr latin aligned
