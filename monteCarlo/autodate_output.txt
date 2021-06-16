@@ -51,18 +51,6 @@ hand: [1, 2] #EJFL: IF /p:/ to /p/ is part of Lenition, then Hand is more accura
              #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
 
 
-cista ces
-kist latin aligned
-kes_ irish aligned
-[[], [], [], [], [], []] #EJFL: Harmony applies.
-auto: [0, 7]
-hand: [0, 2] #EJFL: If st > s is part of Lenition, Hand dating is better. I know this is not mentioned in autodate though.
-             #Hand is also more accurate because it allows for Harmony.
-             #DAB: st>s I suppose should be evidence for early borrowing, but st>st shouldn't be evidence of anything: 
-                cf McManus p. 54 discussing fenestra>senester, fustis>sust, ostiarius>aistire, strata>srait
-                all of which I assume are early loans but not all of them simplify st
-             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
-
 
 coctu:ra cuchtar
 koktUr latin aligned
@@ -340,6 +328,7 @@ hand: [0, 2]
 
 #########
 #########
+######### Early improvements
 #########
 #########
 alta:re alto:ir
@@ -504,3 +493,21 @@ s_rAd irish aligned
 auto: [4, 7]
 hand: [2, 7] #EJFL: Hand dating seems better. Why should this enter after apocope?]
             #DAB: apocope overfiring on monosyllables
+
+#####
+#####
+##### improvements from catching st>s
+#####
+#####
+cista ces
+kist latin aligned
+kes_ irish aligned
+[[], [], [], [], [], []] #EJFL: Harmony applies.
+auto: [0, 7]
+hand: [0, 2] #EJFL: If st > s is part of Lenition, Hand dating is better. I know this is not mentioned in autodate though.
+             #Hand is also more accurate because it allows for Harmony.
+             #DAB: st>s I suppose should be evidence for early borrowing, but st>st shouldn't be evidence of anything: 
+                cf McManus p. 54 discussing fenestra>senester, fustis>sust, ostiarius>aistire, strata>srait
+                all of which I assume are early loans but not all of them simplify st
+            #DAB: this is now fixed!
+             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
