@@ -36,6 +36,8 @@ hand: [2, 4] #      shortened in Irish we have to say that this occurred before 
              #      There was a prohibition on long vowels in non-final, non-stressed syllables. So cande:la would become candela.
              #      It's unclear to me why it is dated after lenition in Hand.
              #DAB: will have to check spreadsheet for hand reasoning
+             #DAB: it looks like this was a case where X's were used instead of -'s ... the first rule it encounters is shortening, 
+             #      this is preceded by a long string of X's even though there is no evidence it failed to undergo the processes
 
 
 cippus cepp
