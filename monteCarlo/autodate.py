@@ -136,7 +136,7 @@ def check_procs(latin, irish):
             ((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope-apply to root!
             #((re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U", "A":"a@", "E":"e@", "I":"i@", "O":"o@", "U":"u@"}), (re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"a@", "e":"e@", "i":"i@", "o":"o@", "u":"u@", "A":"A", "E":"E", "I":"I", "O":"O", "U":"U"})) #compensatory lengthening
             #((re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U", "A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}), (re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u", "A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})) #compensatory lengthening
-            ((re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U", "A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}), (re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u", "A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})) #compensatory lengthening
+            ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"})) #compensatory lengthening
             ]
     for i in range(len(triggers)):
         #print(i)
@@ -158,7 +158,7 @@ def check_procs(latin, irish):
         shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"}
         for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
             if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-1].append(1)
-            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]]: values[-1].append(0)
+            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-1].append(0)
     parity = count_sylls.alt_w_fin_degen(sylls)
     #also need to allow for an extra syll at end in irish, check if any non-weak sylls are deleted
     #print(parity)
