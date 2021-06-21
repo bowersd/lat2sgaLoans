@@ -104,7 +104,7 @@ def check_procs(latin, irish):
             re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope-apply to root!
             #re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), #compensatory lengthening
             #re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), #compensatory lengthening ... this doesn't truly capture non-initial sylls, just non-initial sylls not preceded by clusters
-            re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), #compensatory lengthening ... this doesn't truly capture non-initial sylls, just non-initial sylls not preceded by clusters
+            re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), #compensatory lengthening ... this doesn't truly capture non-initial sylls, just non-initial sylls not preceded by clusters
             ]
     processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
             ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
