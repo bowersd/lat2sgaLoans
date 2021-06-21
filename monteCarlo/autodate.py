@@ -151,6 +151,12 @@ def check_procs(latin, irish):
         values.append([x[1] for x in sorted(pvals)])
     sylls = count_sylls.count_syll(latin)
     #print(sylls)
+    if len(sylls) > 2: #detecting shortening of stem-internal syllables (diagnoses pre/post-compensatory lengthening)
+        longv = re.compile('[AEIOU]') 
+        shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"}
+        for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
+            if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-1].append(1)
+            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]]: values[-1].append(0)
     parity = count_sylls.alt_w_fin_degen(sylls)
     #also need to allow for an extra syll at end in irish, check if any non-weak sylls are deleted
     #print(parity)
@@ -231,6 +237,7 @@ if __name__ == "__main__":
     print("####################")
     print("####################")
     print("####################")
+    print(len(match), len(unmatch))
     for x in unmatch: 
         print(x[0], x[1])
         print(x[-2], "latin aligned")
