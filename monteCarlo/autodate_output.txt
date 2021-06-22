@@ -17,6 +17,11 @@ hand: [2, 6] #EJFL: Hand is more accurate. To recap: we're saying that b>v lenit
              #      lenited to /v/ shows that this entered after Irish lenition. @
              #DAB: isn't there some amount of voicing neutralization though? so [b] could be a vanilla allophone of /p/?
              #DAB: modulo my comment above, autodate would match hand/our reasoning if the input Latin stem was /abostol/ instead of /apostol/
+             #EJFL: There is no voicing neutralization of plosives in Irish. Any internal voiced plosive is either derived from sequences of nasal + voiceless plosive or from 
+             #      British lenition. I am not really comfortable with saying that the Latin stem was /abostol/. I know that certain varieties of Vulgar Latin voiced medial  
+             #      plosives at various times, but I don't know how it works for this word. The Welsh is /abostol/ or /abostəl/. I assume if it were borrowed into Brittonic as
+             #      /abostol/, lenition would have resulted in /avostol/, which would have given Irish /avstal/. Obviously it depends on the chronology of events, but it seems
+             #      like sleight of hand to have a Latin stem /abostol/
 
 
 cancella caingel
@@ -26,6 +31,7 @@ kaŋgəl irish aligned
 auto: [0, 7] 
 hand: [0, 2] #EJFL: Hand is more accurate if /nk/ > /ng/ is pre-lenition. I know this isn't mentioned in autodate anywhere though.
              #DAB: I thought NC clusters (where C is voiceless) became legal again with syncope
+             #EJFL: That's probably so, but I don't see how it's relevant here...the Irish cluster is clearly voiced. Clarification?
 
 cande:la caindel
 kandEl latin aligned
@@ -49,6 +55,7 @@ hand: [1, 2] #EJFL: IF /p:/ to /p/ is part of Lenition, then Hand is more accura
              #DAB: degemination is expected on either side of lenition though, right? before lenition, geminates were legal and lenition shortens them
              #      after lenition, geminates are illegal and so are phoneme substituted with singletons
              #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
+             #EJFL Agreed about geminates. I guess the harmony issue is resolved.
 
 
 
@@ -61,6 +68,15 @@ hand: [0, 3] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Han
              #DAB: yup, need to add this restriction. 
              #DAB: I thought harmony could not raise over a consonant cluster
              #DAB: kt>xt no longer triggers a lenition application flag, but harmony environment still isn't met, so no harmony flag
+             #EJFL: I think the actual environment for raising is rather unclear. McCone (pg. 110) writes: "raising in (b) by contrast frequently failed to take place over a 
+             #    voiceless consonant or a group of consonants, although the precise details have yet to be worked out". From my own examination of the evidence back in 2016, I 
+             #    found that there are two paradigms for o-stems that differ from each other in the presence/absence of raising: type 1 is raising, type 2 is non-raising in Old
+             #    Irish (Middle Irish shows innovations in both types). Crucially, type 1 and type 2 don't necessarily have different phonological shapes. 
+             #    Type 1 examples are: loc /log/, doth /doT/, fer /fjer/, bedg /bjeDg/ : gen. sg. /lugj/, /duTj/, /fjirj/, /bjiDjgj/. 
+             #    Type 2 examples are: ech /ex/, roth /roT/, folt /folt/, corp /korp/, nert /njert/ : gen. sg. /exj/, /roTj/, /foltjj/, /korjpj/, /njerjtj/
+             #    Note that both type 1 and type 2 have stems with a final consonant cluster and both of them have stems ending in /T/ (doth and roth). Type 2 does have
+             #    all voiceless final consonants but Type 1 seems to be more varied. In any event, I think a blanket generalization that prohibits raising over voiceless 
+             #    consonants or group of consonants is not going to work.
 
 
 crepusculum crapscuil
@@ -73,6 +89,7 @@ hand: [3, 6] #EJFL: Hand more accurate. Lenition could have applied but did not.
              #DAB: I think it is good for autodate to fail on this. even though harmony failed, the resulting changed vowel is weird
              #DAB: I'll ponder the lenition problem... seems like this needs a representation with /b/ instead of /p/ if we are to enact your proposal
              #DAB: update: I think we in fact need the latin stem input to have /b/ instead of /p/
+             #EJFL: I think we need to talk about the implications of /b/ a bit before we change the Latin stem.
 
 crux cros
 kruks latin aligned
@@ -83,6 +100,7 @@ hand: [0, 2] #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurat
             #Harmony also applies here, analogically. The word was assigned to the "a-stem declension" which typically has a low vowel
             in the 1 syllable nouns if the vowel is short.
             #DAB: Are there reasons we should not count /ks/ > /s/?
+            #EJFL: I'm not sure I understand. I thought I was advocating that /ks/ > /s/ should be counted under the broader lenition umbrella.
 
 
 culi:na *cuilenn
@@ -96,7 +114,11 @@ hand: [0, 7] #In google-sheets, we clearly show that this underwent Harmony. So,
              #DAB: This is crucially harmony of a non-initial syllable, where vowel quality distinctions are neutralized.
              #DAB: McManus gives a few examples with harmony in non-initial syllables, but this seems unrecoverable given the neutralization
              #DAB: What am I missing that would align my mind with McManus' analysis?
-
+             #EJFL: Did the emails I sent last week or the wek before help? I think the crucial evidence is stems that end in a final vowel in Old Irish where the final vowel can
+             #     is -e. The standard explanation of -e is that it is the result of harmony (specifically lowering) from i to e before a case ending containing a low vowel, e.g.
+             #     -as (nom.sg.), -an (acc.sg.) etc. A straightforward example is *ke:li[j]as (j could be superfluous). This becomes /kje:lje/ in Old Irish (céile). If we date 
+             #      shortening to before harmony then any long /i/s that precede low vowels should also undergo harmony to -e. The same should be true even if a consonant 
+             #       intevenes between the original /i/ and the triggering case ending  
 
 
 exhibernum esarn
@@ -106,6 +128,7 @@ e_s___ərn irish aligned
 auto: [0, 6]
 hand: [0, 2]  #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate. I know that minor change is not in autodate though.
             #DAB: Are there reasons we should not count /ks/ > /s/?
+            #EJFL: Again, I don't understand the question. Clarify?
 
 
 fata:le fa:tal
@@ -120,6 +143,8 @@ hand: [2, 5]  Hand is more accurate. This entered after lenition and before apoc
              #DAB: as for lengthening, is it some weird mis-firing on the initial /a/ lengthening?
              #DAB: --> the reduction of A->@ could only happen if this was a pre-lengthening loan (given this representation). If the final /e/ is removed from Latin, this needs to be a pre-apocope loan
              #DAB: update: now this gets [2, 4] (post-lenition, pre-apocope). Whether it is pre-apocope or pre-lengthening depends on how we think the /e/ was removed (Irish apocope or suffix substitution/British apocope)
+             #EJFL: I would say it get removed by suffix substitution. It's the easiest. Either Irish or British apocope run into problems with palatalization since apocope of a
+             # front vowel typically leaves behind palatalization, which doesn't happen here.
 
 figu:ra figor
 fIgUr latin aligned
@@ -158,6 +183,9 @@ luvər irish aligned
 auto: [0, 4]
 hand: [0, 2]
             #DAB: I disagree. b->v is uninformative and whatever happened to the vowels was bigger than harmony.
+            #EJFL: The crucial change is the a>u change which is the result of monophthongization of /au/ to /u/. The only way to get /au/ is to assume harmony with a following
+            #      /u/ in the next syllable. The only way to get this /u/ to assume that this passed through British, where in fact /o:/ becomes /u/. So yes the vowels get messed
+            #     up generally speaking, but harmony clearly did happen in the crucial first syllable. 
 
 
 leo: leo
