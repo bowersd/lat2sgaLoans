@@ -108,6 +108,7 @@ hand: [0, 2] #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurat
             in the 1 syllable nouns if the vowel is short.
             #DAB: Are there reasons we should not count /ks/ > /s/?
             #EJFL: I'm not sure I understand. I thought I was advocating that /ks/ > /s/ should be counted under the broader lenition umbrella.
+            #DAB: Irish *ks simplified to s and went to h by lenition. So, ks was illegal and coda s would not survive if it was pre-lenition
 
 
 culi:na *cuilenn
