@@ -60,6 +60,7 @@ hand: [1, 2] #EJFL: IF /p:/ to /p/ is part of Lenition, then Hand is more accura
              #      after lenition, geminates are illegal and so are phoneme substituted with singletons
              #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
              #EJFL Agreed about geminates. I guess the harmony issue is resolved.
+             #DAB: check paradigm affiliation for application and non-application of harmony 
 
 
 
