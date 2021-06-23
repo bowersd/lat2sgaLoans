@@ -252,6 +252,7 @@ auto: [6, 7] #EJFL: I don't understand auto.
 hand: [0, 2] #DAB: I'm going to try to get a better alignment before I try anything else
                 #DAB: update: things now look more sane, but we have lenition being triggered and harmony failing! space-time has ruptured!
                 #EJFL: Lenition failure is not a problem if we use the form libedán /ljivjeDa:n/, which is also attested, as was mentionedin loan_tabulation_annotated.
+                #EJFL: Nevermind. Libedán is Mid.Ir. There is also an issue with unexpected /w/ -> /v/.
 
 
 mi:ra:bilis mi:rbail
