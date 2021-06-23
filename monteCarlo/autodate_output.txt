@@ -280,6 +280,7 @@ hand: [0, 2]
             # is after British lenition and that this word was borrowed into Irish from British before British apocope could chop off the final syllabe. If on the other hand
             # British lenition is after British apocope (unlikely to be sure, since there would need to be tons of analogical change in the morphological lenition department) then 
             # our reasoning about d-->D doesn't hold up.
+            #DAB: this looks like a case for having conservative vs liberal datings (and autodate.py should make the conservative choice)
 
 
 numerus nuimir
