@@ -207,15 +207,9 @@ hand: [0, 2]
             # (e.g. for instance labo:rem --> labu:rem and then borrowed into Irish with a backing/rounding causing u: in the second syllable, hence Irish laubair>lubair.
             # If it can be shown that British lenition is ordered after the British changes to long vowels which involved diphthongization of /e:/ to /ej/, then words with b--> 
             # v but normal Irish shortening of long to short vowels can't have passed through British lenition and then have been borrowed into Irish because we'd expect a 
-<<<<<<< HEAD
             dipthong in the second syllabe, similar to cathaír /kaTajr/, which is assumed to have come from British. If on the other hand British lenition is ordered before 
             # British changes to long vowels, then b-> is indeed uninformative. As far as I know British lenition was phonemicized in the 5th/6th century and Changes to long 
             # vowels, esp. e: > ei is dated to sometime in the 5th/6th century as well, if I follow McCone's discussion toward the end of his Relative Chronology. So basically,
-=======
-            # diphthong in the second syllable, similar to cathaír /kaTajr/, which is assumed to have come from British. If on the other hand British lenition is ordered before
-            # British changes to long vowels, then b->v is indeed uninformative. As far as I know British lenition was phonemicized in the 5th/6th century and Changes to long
-            # vowels, esp. e: > ei is dated to sometime in the 5th/6th century as well, if I follow McCone's discussion toward the end of his Relative Chronology. So basically, 
->>>>>>> 92759fc75bdb253167d6c04a524ed2e7bf0f8302
             # the two changes are of similar date and their ordering with regard to each other is in doubt. I don't really know what this implies in the end for us, but it's 
             # important to be aware of it.
             #DAB: great, how about we try things both ways (both for b>v and for any other point where we think we can squeeze anything extra out of the data (coctura>cuchtar could be harmony and lenition))
