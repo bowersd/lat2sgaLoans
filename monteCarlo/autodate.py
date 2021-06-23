@@ -6,6 +6,11 @@ import hackydata
 import re
 import sys
 
+#todo: syncope clusters
+#todo: g->G
+#todo: ks>s
+#todo: raising blocked by x
+#todo: u-affection (a->u)
 #align the latin root with the irish word and pass the pair to check_procs()
 #aligned = needleman.align(latin, irish, 1, needleman.read_similarity_matrix("simMatrix.txt")) #don't like calls to something outside of fun definition
 
