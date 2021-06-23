@@ -34,6 +34,7 @@ auto: [0, 7]
 hand: [0, 2] #EJFL: Hand is more accurate if /nk/ > /ng/ is pre-lenition. I know this isn't mentioned in autodate anywhere though.
              #DAB: I thought NC clusters (where C is voiceless) became legal again with syncope
              #EJFL: That's probably so, but I don't see how it's relevant here...the Irish cluster is clearly voiced. Clarification?
+             #DAB: not sure why I thought syncope was relevant. but McManus has nk->ng as sometime pre-syncope
 
 cande:la caindel
 kandEl latin aligned
