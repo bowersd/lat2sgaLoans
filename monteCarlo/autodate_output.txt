@@ -245,6 +245,7 @@ hand: [0, 2]
             #EJFL: The crucial change is the a>u change which is the result of monophthongization of /au/ to /u/. The only way to get /au/ is to assume harmony with a following
             #      /u/ in the next syllable. The only way to get this /u/ to assume that this passed through British, where in fact /o:/ becomes /u/. So yes the vowels get messed
             #     up generally speaking, but harmony clearly did happen in the crucial first syllable. 
+            #DAB: a>u is a distinct change from the non-low vowel harmony that we have been focusing on. What do we know about it's chronology?
 
 
 leo: leo
@@ -274,6 +275,7 @@ auto: [0, 6]
 hand: [0, 2]
             #DAB: I disagree, b->v is not informative
             #EJFL: you're probably right in this case since the long vowel that could be undergo British changes to vowels is syncopated anyway. (see habe:na, i:do:lum, labo:rem).
+            #DAB: loss of the long vowel indicates a pre-lengthening borrowing (so that the long vowel can shorten and then syncopate)
 
 
 modius muide
