@@ -364,6 +364,7 @@ hand: [0, 2]
              #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
              #DAB: apocope detection fix won't work here
              #EJFL: I don't understand this, there is no penult long vowel, even in Latin.
+             #EJFL: Remove -us
 
 sacerdo:s sacart
 sakerdOs latin aligned
