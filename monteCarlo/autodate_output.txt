@@ -127,6 +127,8 @@ hand: [0, 7] #In google-sheets, we clearly show that this underwent Harmony. So,
              #     -as (nom.sg.), -an (acc.sg.) etc. A straightforward example is *ke:li[j]as (j could be superfluous). This becomes /kje:lje/ in Old Irish (céile). If we date 
              #     shortening to before harmony then any long /i/s that precede low vowels should also undergo harmony to -e. The same should be true even if a consonant 
              #     intevenes between the original /i/ and the triggering case ending  
+             #DAB: I agree that the /i/ would lower by affection. THe problem is that all we have is orthographic <e>, which could spell either affected /e/ or non-affected /i/, right?
+             #DAB: Further, doesn't <e> indicate the preceding C is palatalized? and wouldn't that only happen if it was unaffected /i/?
 
 
 exhibernum esarn
