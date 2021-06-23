@@ -433,6 +433,7 @@ hand: [0, 2]
         # seen as semantically/morphologically similar in some way to the Latin word tribus (the root of tribu:nus) which was loaned into Irish as triub. Influence from *treba:
         # to triub and triub to *treba: could I guess have created a situation where */trivuN/ was replaced by */trevuN/.
         #DAB: like an eggcorn situation?
+        #DAB: do you have thoughts about the long vowel, since we are being cautious with throwing out b>v?
 
 #########
 #########
