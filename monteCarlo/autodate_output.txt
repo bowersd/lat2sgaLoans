@@ -117,8 +117,8 @@ hand: [0, 7] #In google-sheets, we clearly show that this underwent Harmony. So,
              #EJFL: Did the emails I sent last week or the wek before help? I think the crucial evidence is stems that end in a final vowel in Old Irish where the final vowel can
              #     is -e. The standard explanation of -e is that it is the result of harmony (specifically lowering) from i to e before a case ending containing a low vowel, e.g.
              #     -as (nom.sg.), -an (acc.sg.) etc. A straightforward example is *ke:li[j]as (j could be superfluous). This becomes /kje:lje/ in Old Irish (céile). If we date 
-             #      shortening to before harmony then any long /i/s that precede low vowels should also undergo harmony to -e. The same should be true even if a consonant 
-             #       intevenes between the original /i/ and the triggering case ending  
+             #     shortening to before harmony then any long /i/s that precede low vowels should also undergo harmony to -e. The same should be true even if a consonant 
+             #     intevenes between the original /i/ and the triggering case ending  
 
 
 exhibernum esarn
@@ -153,8 +153,39 @@ fiɣər irish aligned
 auto: [2, 2]
 hand: [0, 2]
     #DAB: I actually am a little concerned about the mixing of /f/ and lenited /g/. Didn't we have a story where f>s was clearly pre-lenition, but f>f could be any time?
-
-
+    #EJFL: Our story on f>s, f>f was not fully written. Here are the main points of discussion:
+    #YOU commenting on faba > seib in loan_tabulation_annotated: "I hate to pick at this scab, but mcmanus p 53 sec 64 (and before) gives the ordering differently for f->s words  
+    #(and so we need to have our story straight). He says they were borrowed after lenition because lenition created [f] in an allophonic distribution with [sw], and so, even
+    #though there is not an [f~sw] alternation (because lenition is done, I presume), via some meta-analogy based on the complementary distribution of [f] and [sw] they swap one
+    #allophone for another.  Honestly, our story sounds a lot cleaner to me..."
+    #
+    #My reply to this was: "To be clear: Our story is that there was no /f/ in Primitive Irish before the changes w>f and hw>f, which are dated after lenition, for us. So Latin
+    # f>s must a sound substitution before lenition made by speakers who lacked /f/. Right? 
+    # I think that this works for the basic citation forms of f>s words like Latin furnus, Irish sorn "oven". But part of McManus' concern is the fact that none of the f>s words 
+    # show any trace of /f/, even in lenited forms. E.g. "my oven" is <mo sorn> /mo horn/ not <mo forn> /mo forn/. His approach makes some sense of this, since he says that f>s is
+    # after lenition and that since the general lenition of /s/ is to /h/ not /f/ then we should not expect f>s words to show /f/ in lenited forms. 
+    # Our approach makes things a bit complicated in a different way. We could avoid having to deal with the morphological lenition problem associated with the majority of f>s 
+    # words by saying that /f/ went to just /s/ not to /sw/ and so there was no way that /f/ would ever have been the lenited variant. Meanwhile, we also need f>s to be /f/ > /sw/
+    # for words like flagellum (VL fragillum), otherwise we have no account for the /o/ in the Irish derivative, sroigell. 
+    # But if we say that f>s loans really involved /f/ > /sw/ we have no account for why post-f>s loans like figura and februarius behave distinctly with regard to morphological 
+    # lenition. This is because we order both post-f>s and f>s before lenition and I made the claim that the /f/ in post-f>s loans should be treated as the result of levelling of 
+    # the lenition variants, but in the opposite direction to the loans with /s/ for Latin /f/...There is probably a way out of this muddle but I am muddled."
+    #
+    #For reference, my argument that figor and febrae have initial f because of levelling in favor of the lenited variant is found in resolved comments in some column in the
+    # derivation of these two words in loan_tabulation_annotated. I'm not sure which column, but the comments are:
+    #
+    # "I don't know about that (i.e. your claim that British lenition was involved in the derivation of figor) because British lenition of g was to zero, although I suppose there
+    # was an intermediate step. The sequence could be figu:ra --> swigu:ra: -->  swiGu:ra: -> siGu:ra: in environments where the initial was not lenited and -> hwiGu:ra: in 
+    # environments where the initial was lenited. This would give fiGu:ra: where hw was replaced with f. At a certain point f/s alternation in morphological lenition context was
+    # levelled out in favor of either s or f so that there was no lenition. Since the connection between figor and Latin figura was probably still understood, I could see the 
+    # levelling favoring /f/ in this context."
+    #
+    # Likewise, for febr(u)arius --> febrae, I said: "As I mentioned with the problem with figu:ra:, I am not sure that we need to invoke British lenition. Basically I think that
+    # febra:rijas becomes swebra:rijas and then gets lenited to swevra:rijah. In environments when it can undergo morphological lenition you get hwevra:rijah and with hw>f you get
+    # fevra:rijah. So now you have a contrast between unlenited swevra:rijah (> sevra:rijah) and lenited fevra:rijah. Eventually this contrast is levelled out in favor of f or s.
+    # Since the connection with februarius was probably still recognized, there was a factor that favored /f/."
+    #
+    # I can't find any other discussion of this issue at the moment.
 
 
 habe:na abann
@@ -164,6 +195,16 @@ _avəN irish aligned
 auto: [0, 4]
 hand: [0, 2]
             #DAB: I disagree, b->v is uninformative
+            #EJFL: You're probably right, but I think we should be careful here. In the general case, b-->v is uninformative precisely because we can't rule out that the word went
+            # through British rather than Irish lenition. But that type of reasoning should be used sparingly because British does different things to long vowels than Irish does
+            # (e.g. for instance labo:rem --> labu:rem and then borrowed into Irish with a backing/rounding causing u: in the second syllable, hence Irish laubair>lubair.
+            # If it can be shown that British lenition is ordered after the British changes to long vowels which involved diphthongization of /e:/ to /ej/, then words with b--> 
+            # v but normal Irish shortening of long to short vowels can't have passed through British lenition and then have been borrowed into Irish because we'd expect a 
+            dipthong in the second syllabe, similar to cathaír /kaTajr/, which is assumed to have come from British. If on the other hand British lenition is ordered before 
+            # British changes to long vowels, then b-> is indeed uninformative. As far as I know British lenition was phonemicized in the 5th/6th century and Changes to long 
+            # vowels, esp. e: > ei is dated to sometime in the 5th/6th century as well, if I follow McCone's discussion toward the end of his Relative Chronology. So basically, 
+            # the two changes are of similar date and their ordering with regard to each other is in doubt. I don't really know what this implies in the end for us, but it's 
+            # important to be aware of it.
 
 
 i:do:lum i:dol
@@ -173,7 +214,8 @@ Iðəl irish aligned
 auto: [0, 4]
 hand: [0, 2]
             #DAB: I disagree, d->D is uninformative
-
+            #EJFL: see comment above on habe:na. Here it's pretty clear that this word did not undergo the British sound change of o: to u because we would have expected /i:ðul/ 
+            # in Irish, but this is never expected.
 
 
 labo:rem lubair
@@ -203,8 +245,7 @@ lev_əðA__n irish aligned
 auto: [6, 7] #EJFL: I don't understand auto.
 hand: [0, 2] #DAB: I'm going to try to get a better alignment before I try anything else
                 #DAB: update: things now look more sane, but we have lenition being triggered and harmony failing! space-time has ruptured!
-
-
+                #EJFL: Lenition failure is not a problem if we use the form libedán /ljivjeDa:n/, which is also attested, as was mentionedin loan_tabulation_annotated.
 
 
 mi:ra:bilis mi:rbail
@@ -214,6 +255,7 @@ mIr_vəl irish aligned
 auto: [0, 6]
 hand: [0, 2]
             #DAB: I disagree, b->v is not informative
+            #EJFL: you're probably right in this case since the long vowel that could be undergo British changes to vowels is syncopated anyway. (see habe:na, i:do:lum, labo:rem).
 
 
 modius muide
@@ -223,7 +265,11 @@ muðe irish aligned
 auto: [0, 3]
 hand: [0, 2]
             #DAB: I disagree, d->D is not informative
-
+            #EJFL: Again we have to be careful here. The assumption is d-->D is not informative if it comes from British lenition rather than Irish lenition. But, we have to be
+            # sure we understand the interaction, if any, between British lenition and British apocope. Our assumption that d-->D is not informative only works if British apocope 
+            # is after British lenition and that this word was borrowed into Irish from British before British apocope could chop off the final syllabe. If on the other hand
+            # British lenition is after British apocope (unlikely to be sure, since there would need to be tons of analogical change in the morphological lenition department) then 
+            # our reasoning about d-->D doesn't hold up.
 
 
 numerus nuimir
@@ -233,6 +279,7 @@ nuɱər irish aligned
 auto: [0, 2]  
 hand: [0, 7] #EJFL: Although Auto seems more accurate, the palatalization of /ɱ/ implies that the Irish SR is due analogy after Syncope. 
              #DAB: I'm confused by this comment. surely later analogy is not evidence of later entrance into the language?
+             #EFF: You're right of course.
 
 
 oleum olae
@@ -250,9 +297,7 @@ par_vəl irish aligned
 auto: [1, 6]
 hand: [1, 2] #Lenition applies. Hand seems more accurate. @
             #DAB: I disagree, b>v is not diagnostic
-
-
-
+            #EJFL: I agree here.
 
 
 patricius cothrige
@@ -269,6 +314,7 @@ _saLənd irish aligned
 [[], [], [], [], [], []]
 auto: [0, 7] #EJFL: Auto probably more accurate but it depends on the analysis of /ps/ -> /s/; could that change be part of Lenition?
 hand: [2, 7] #DAB: word-initial is not a great environment for lenition. this one instance of /ps/>/s/ isn't great evidence for anything special in Irish unless we can show independently that such clusters existed and were repaired
+#EJFL: fair enough.
 
 
 
@@ -282,6 +328,12 @@ hand: [3, 7]
              #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
              #DAB: apocope detection fix needs to remove more than the last vowel, but stem-final vowel strings...
              #DAB: update: currently we get [0,7] because raising harmony can't cross a cluster. My own inclination is that there isn't even an [i] when this gets borrowed
+             #EJFL: Doesn't your last comment correspond to the theory that British apocope basically totally destroyed final vowels and that the palatalization in Irish 
+             # which is characteristic of most of the stems to which British apocope applied is in some sense due to some version of "suffix substitution"? 
+             # The problem I have with that kind of thing is why would post-British apocope consonant-final stems fairly consistently targeted for inclusion into a palatalizing
+             # morphological class when there is no prompt in the input after British apocope? IF on the other hand British apocope went in stages: (1) lost of back vowels (so
+             # here -io: --> -i) and (2) only later to loss of -i, we could say that Irish borrowed the words with final palatalized consonants before the second stage of British
+             # Apocope.
  
 rubrum robur
 r__ubr latin aligned
@@ -290,6 +342,7 @@ rovu_r irish aligned
 auto: [0, 7]
 hand: [0, 2] #Hand more accurate. Lenition applies.
             #DAB: even with better alignment, b->v is not diagnostic
+            #EJFL: Since this word underwent affection, auto still isn't as accurate as it could be, but I agree that b->v is non-diagnostic. 
 
 
 sacellus sachall
@@ -300,6 +353,7 @@ auto: [6, 2] #EJFL: I don't understand auto.
 hand: [0, 2]
              #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
              #DAB: apocope detection fix won't work here
+             #EJFL: I don't understand this, there is no penult long vowel, even in Latin.
 
 sacerdo:s sacart
 sakerdOs latin aligned
@@ -309,6 +363,7 @@ auto: [6, 7] #EJFL: I don't understand auto.
 hand: [2, 7]
              #DAB: yup. need to make sure apocope detection works here too (because a penult long vowel is preserved -> nuke the final vowel before process check)
              #DAB: apocope detection fix won't work here
+             #EJFL: There is no penult long vowel....?
 
 sco:pa scu:ap
 sk_Op latin aligned
@@ -326,8 +381,7 @@ skrebtər irish aligned
 auto: [1, 4]
 hand: [2, 3] 
         #DAB: representation needs to be updated then
-
-
+        #EJFL: Will sort it out.
 
 
 secundi:nus sechnall
@@ -337,9 +391,8 @@ sex_n_əL_ irish aligned
 auto: [3, 2] #EJFL: I don't understand auto.
 hand: [0, 2]
             #DAB: this is potentially a problem! we should get raising! does raising/harmony not cross [x]?
-
-
-
+            #EJFL: Precisely right, if the paradigm of "ech" "horse" is anything to go by. I sent you the grammar book pdf that I made for my blockseminar in November right?
+            # On pages 34 and 35 I show examples of the paradigm of "ech". Basically this has no raising.
 
 
 tribu:nus trebunn
@@ -348,7 +401,11 @@ trevuN irish aligned
 [[], [], [], [1], [], []] #EJFL: Lenition applies. Hand dating is better.
 auto: [0, 4]
 hand: [0, 2]
-        #DAB: I disagree, b->v is not diagnostic. Why do we get anti-harmony??
+        #DAB: I disagree, b->v is not diagnostic. Why do we get anti-harmony?
+        #EJFL: tribu:nus denotes some kind of official in the Roman administration. McManus's explanation was that there is some kind of influence from the native word *treba:
+        #which denoted a unit of administration in the Irish political system –– it's usually translated as "household, farm". Anyway, supposedly the native word *treba: was 
+        # seen as semantically/morphologically similar in some way to the Latin word tribus (the root of tribu:nus) which was loaned into Irish as triub. Influence from *treba:
+        # to triub and triub to *treba: could I guess have created a situation where */trivuN/ was replaced by */trevuN/.
 
 #########
 #########
