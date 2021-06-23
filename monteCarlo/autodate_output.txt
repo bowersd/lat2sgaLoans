@@ -82,6 +82,7 @@ hand: [0, 3] #EJFL: VL /kt/ to /xt/ might have applied rather than Lenition. Han
              #    Note that both type 1 and type 2 have stems with a final consonant cluster and both of them have stems ending in /T/ (doth and roth). Type 2 does have
              #    all voiceless final consonants but Type 1 seems to be more varied. In any event, I think a blanket generalization that prohibits raising over voiceless 
              #    consonants or group of consonants is not going to work.
+             #DAB: let's just call this irregular and not count it as harmony
 
 
 crepusculum crapscuil
