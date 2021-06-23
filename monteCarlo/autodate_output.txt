@@ -22,6 +22,8 @@ hand: [2, 6] #EJFL: Hand is more accurate. To recap: we're saying that b>v lenit
              #      plosives at various times, but I don't know how it works for this word. The Welsh is /abostol/ or /abostəl/. I assume if it were borrowed into Brittonic as
              #      /abostol/, lenition would have resulted in /avostol/, which would have given Irish /avstal/. Obviously it depends on the chronology of events, but it seems
              #      like sleight of hand to have a Latin stem /abostol/
+             #DAB: label it however works for you, autodate needs abostol
+             #DAB: g->0 may not be a thing, looks like g->G (Breton data) ... tentatively, EJFL will check
 
 
 cancella caingel
