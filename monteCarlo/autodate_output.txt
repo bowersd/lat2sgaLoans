@@ -275,7 +275,7 @@ auto: [0, 6]
 hand: [0, 2]
             #DAB: I disagree, b->v is not informative
             #EJFL: you're probably right in this case since the long vowel that could be undergo British changes to vowels is syncopated anyway. (see habe:na, i:do:lum, labo:rem).
-            #DAB: loss of the long vowel indicates a pre-lengthening borrowing (so that the long vowel can shorten and then syncopate)
+            #DAB: loss of the long vowel indicates a pre-lengthening borrowing (so that the long vowel can shorten and then syncopate). auto needs to do: 0,4
 
 
 modius muide
@@ -364,6 +364,7 @@ auto: [0, 7]
 hand: [0, 2] #Hand more accurate. Lenition applies.
             #DAB: even with better alignment, b->v is not diagnostic
             #EJFL: Since this word underwent affection, auto still isn't as accurate as it could be, but I agree that b->v is non-diagnostic. 
+            #DAB: affection is now detected
 
 
 sacellus sachall
