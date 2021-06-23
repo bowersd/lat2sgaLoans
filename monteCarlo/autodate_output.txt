@@ -139,6 +139,11 @@ auto: [0, 6]
 hand: [0, 2]  #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accurate. I know that minor change is not in autodate though.
             #DAB: Are there reasons we should not count /ks/ > /s/?
             #EJFL: Again, I don't understand the question. Clarify?
+            #DAB: you said "If ks>s is part of lenition". I'm wondering what the counter argument is. 
+            #DAB: I don't know an argument for ks>s being part of lenition, since ks would be illegal until syncope and so could just be borrowed as /s/. 
+            #DAB: We definitely do know that Vs# would not survive lenition though, so this would have to be post-lenition
+            #DAB: The crucial question is whether there were loans that had this change: ks#>#, which would be the pre-lenition borrowing outcome if ks was just borrowed as /s/
+            #DAB: I suppose <esarn> from <exhibernum> would point to pre-lenition loans doing ks>s, though this depends on <esarn> looking really old more than anything concretely phonological
 
 
 fata:le fa:tal
