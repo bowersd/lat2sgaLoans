@@ -16,4 +16,25 @@ p 142:
     We do have some hybrids in the data
 
 p 144:
-    Stopped reading 6/23
+    Didn't pay too much attention until pre/post-apocope loans sections, though there could be insights for how to analyze the morphological composition of the loan words here
+
+pre-apocope section:
+    affection requires Irish suffixes, not Latin
+        not totally open and shut, since he tries to make it seem mysterious how @ could trigger a/o affection (which isn't *too* hard to imagine)
+        but the affection story deals with known entities, while the Latin/Vulgar latin story is pretty speculative
+
+post-apocope section:
+    there isn't a knock-down argument in favor of suffix substitution in the post-apocope language
+    points out that if it happened in pre-apocope, why not post-apocope too?
+    stipulates that there was a morphological class assignment process
+        gives pretty unsubstantiated reasons to believe that the dominant categories that received loans are the categories that you would expect to receive them
+        acknowledges that there are a lot of variables in determining how a morphological class assignment process will work
+        points out that a phonological rendering of class assignment does not work for all forms -> this is probably the key 
+            the words that lose a stem vowel in addition to Latin case endings is probably relevant to figuring out what the phonology of the post-apocope period was like
+
+    Nothing major hinges on this at the moment, but I'm not totally on board with the idea that apocope has to cease applying once the sound change is complete.
+        It could apply to all available words and still be productive for some time
+            Applying a null case ending and still losing a stem vowel would seem to be such a case...
+
+    Very weird: eclais < ecclesia is listed as post-apocope, even though the Irish final syllable has been shortened! None of the other post-apocope loans cited have shortening
+    Tantalizing: pace of borrowing claimed to have increased in post-apocope language ... but these loans were literary (aka not able to enter spoken language)? or loans stopped getting assimilated (aka more familiar with Latin?)
