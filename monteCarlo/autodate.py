@@ -118,7 +118,7 @@ def check_procs(latin, irish):
             ((re.compile('((?<=[aeiouAEIOU])_*[tgm]|(s|k)(?![Tt]))|f|st'), { "t":"θð", "k":"xɣ",  "m":"ɱ", "s":"h", "f":"s", "st":"s_"}), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))|f'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", })),
             ##((re.compile('(?<=^[^aeiouAEIOU]{0,3})(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(?<=^[^aeiouAEIOU]{0,3})(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})),
             #((re.compile('(?<=^[^aeiouAEIOU])(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(?<=^[^aeiouAEIOU])(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})),
-            ((re.compile('(((e|o)(?=_*[^AEIOUaeioux]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(((e|o)(?=_*[^AEIOUaeioux]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
+            ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
             #(
             #    (
             #        re.compile(
