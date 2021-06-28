@@ -7,7 +7,12 @@ import re
 import sys
 
 #todo: syncope clusters
-#todo: ks>s
+    #nk>engma pre-syncope (?), nk>nk post-syncope (McManus 60, cagey bc <nk> not actually created by syncope ... but cmon, its a natural class)
+    #nt>nd pre-syncope (but word-final >nd is early and word-final >nt is learned imitation McManus 61), nt>nt post-syncope
+    #ns>ns post syncope (McManus 61), else: unknown bc VL also reduced the cluster
+    #nf>nf post syncope, do not understand nf>v discussion on splitting cluster at morpheme boundary (McManus 61)
+    #ks>s: pre-syncope (McManus 62), while ks>(x|k)s is post-syncope
+    #       IGNORE prefix ex>es(s)
 #todo: raising blocked by x
 #todo: u-affection (a->u) p 138 Mccone, cf hock 2019?
 #todo: make sure to prevent voice neutralization in stops
