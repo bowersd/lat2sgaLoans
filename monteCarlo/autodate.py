@@ -15,7 +15,9 @@ import sys
     #       IGNORE prefix ex>es(s)
 #todo: raising blocked by x
 #todo: u-affection (a->u) p 138 Mccone, cf hock 2019?
+#   when is this dated? lumping it with the other affection processes seems dicey, since our sources don't do this
 #todo: make sure to prevent voice neutralization in stops
+#   eh...this is variable borrowing behavior (t borrowed as either t or d), not free variation in phones (/t/ written <tt> or <t>), so nothing to change
 #align the latin root with the irish word and pass the pair to check_procs()
 #aligned = needleman.align(latin, irish, 1, needleman.read_similarity_matrix("simMatrix.txt")) #don't like calls to something outside of fun definition
 
