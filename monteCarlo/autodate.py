@@ -110,6 +110,7 @@ def check_procs(latin, irish):
             re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
             re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
             re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), #compensatory lengthening
+            #re.compile('(n(k|t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below)
             ]
     processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
             ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
