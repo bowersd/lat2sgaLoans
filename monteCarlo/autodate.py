@@ -106,57 +106,22 @@ def check_procs(latin, irish):
     values = []
     triggers = [#what to look for in Latin
             re.compile('[Pp]'), #pk
-            re.compile('((?<=[aeiouAEIOU])_*[tkbdgms])|f|st'), #lenition
-            ##re.compile('(?<=^[^aeiouAEIOU]{0,3})(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), #affection ... o->u can be detected in non-initial sylls. also need class information on monosyllabic roots (-> need root analysis here) maybe just flag monosyllables
-            #re.compile('(?<=^[^aeiouAEIOU])_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), #affection ... o->u can be detected in non-initial sylls. also need class information on monosyllabic roots (-> need root analysis here) maybe just flag monosyllables
-            re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish)
-            #re.compile('('+
-            #'_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #'(?<=^[^aeiouAEIOU])_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #'(?<=^[^aeiouAEIOU]{2})_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #'(?<=^[^aeiouAEIOU]{3})_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #    ')'), #affection ... o->u can be detected in non-initial sylls. also need class information on monosyllabic roots (-> need root analysis here) maybe just flag monosyllables
-            re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope-apply to root!
-            #re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), #compensatory lengthening
-            #re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), #compensatory lengthening ... this doesn't truly capture non-initial sylls, just non-initial sylls not preceded by clusters
+            re.compile('((?<=[aeiouAEIOU])_*[tkbdgms])|f|st'), #lenition (f>s and st>s also in here)
+            re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
+            re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
             re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), #compensatory lengthening
             ]
     processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
             ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
             ((re.compile('((?<=[aeiouAEIOU])_*[tgm]|(s|k)(?![Tt]))|f|st'), { "t":"θð", "k":"xɣ",  "m":"ɱ", "s":"h", "f":"s", "st":"s_"}), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))|f'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", })),
-            ##((re.compile('(?<=^[^aeiouAEIOU]{0,3})(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(?<=^[^aeiouAEIOU]{0,3})(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})),
-            #((re.compile('(?<=^[^aeiouAEIOU])(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(?<=^[^aeiouAEIOU])(((e|o)(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})),
             ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
-            #(
-            #    (
-            #        re.compile(
-            #            '('+
-            #            '_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #            '(?<=^[^aeiouAEIOU])_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #            '(?<=^[^aeiouAEIOU]{2})_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #            '(?<=^[^aeiouAEIOU]{3})_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+ ')'), 
-            #        {"e":"i", "o":"u", "i":"e", "u":"o"}
-            #        ),
-            #    (
-            #        re.compile(
-            #            '('+ 
-            #            '_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #            '(?<=^[^aeiouAEIOU])_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #            '(?<=^[^aeiouAEIOU]{2})_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #            '(?<=^[^aeiouAEIOU]{3})_*(((e|o)_*(?=[^AEIOUaeiou]?[iu]))|((i|u)(?=[^AEIOUaeiou]*[ao])))|'+
-            #            ')'), 
-            #        {"i":"i", "e":"e", "u":"u", "o":"o"}
-            #        )
-            #    ),
-            ((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope-apply to root!
-            #((re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U", "A":"a@", "E":"e@", "I":"i@", "O":"o@", "U":"u@"}), (re.compile('(([aeiou](?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU]{0,3})[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"a@", "e":"e@", "i":"i@", "o":"o@", "u":"u@", "A":"A", "E":"E", "I":"I", "O":"O", "U":"U"})) #compensatory lengthening
-            #((re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U", "A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}), (re.compile('(([aeiou]_*(?=[dg][^aeiouAEIOU]))|((?<=[aeiouAEIOU][^aeiouAEIOU])_*[AEIOU](?=.*[AEIOUaeiou])))'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u", "A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})) #compensatory lengthening
+            ((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
             ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"})) #compensatory lengthening
             ]
     for i in range(len(triggers)):
         #print(i)
         pvals = []
-        if triggers[i].search(latin): #may need to be lroot in some cases ... 
+        if triggers[i].search(latin): 
             #print(i)
             for x in processes[i][0][0].finditer(latin):
                 #print(latin, irish, x.span(), processes[i][0][0])
