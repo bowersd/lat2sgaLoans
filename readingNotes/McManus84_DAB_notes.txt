@@ -38,3 +38,7 @@ post-apocope section:
 
     Very weird: eclais < ecclesia is listed as post-apocope, even though the Irish final syllable has been shortened! None of the other post-apocope loans cited have shortening
     Tantalizing: pace of borrowing claimed to have increased in post-apocope language ... but these loans were literary (aka not able to enter spoken language)? or loans stopped getting assimilated (aka more familiar with Latin?)
+
+
+Maybe ecle:sia was reanalyzed as ecle:s-ja, the "Latin" inflectional ending -ja was dropped by the morphological replacement process and the new Irish morphoogical system of consonant quality changes and mutation was substituted for it. This clarifies McManus otherwise sort of wishy-washy approach to these data.
+(Also note that Vulgar Latin is said to have had a change of /ia/ to /ja/)dadad
