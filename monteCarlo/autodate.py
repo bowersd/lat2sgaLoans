@@ -110,18 +110,19 @@ def check_procs(latin, irish):
             re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
             re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
             re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), #compensatory lengthening
-            #re.compile('(ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below)
+            re.compile('(ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below)
             ]
     processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
             ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
-            ((re.compile('((?<=[aeiouAEIOU])_*[tgm]|(s|k)(?![Tt]))|f|st'), { "t":"θð", "k":"xɣ",  "m":"ɱ", "s":"h", "f":"s", "st":"s_"}), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))|f'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", })),
+            ((re.compile('((?<=[aeiouAEIOU])_*[tm]|(s|k)(?![Tt]))|f|st'), { "t":"θð", "k":"xɣ",  "m":"ɱ", "s":"h", "f":"s", "st":"s_"}), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", })),
             ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
             ((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
             ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"})), #compensatory lengthening
-            #((re.compile('(ŋk|n(t(?!$)))|((?<!^e)ks)'),{"ŋk":"ŋg", "nt":"nd", "ks":"_s"}),(re.compile('(ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"}) #syncope (phonotactics here, V deletion handled below)
+            ((re.compile('(ŋk|n(t(?!$)))|((?<!^e)ks)'),{"ŋk":"ŋg", "nt":"nd", "ks":"_s"}),(re.compile('(ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"})), #syncope (phonotactics here, V deletion handled below)
             ]
+    print(latin, irish)
     for i in range(len(triggers)):
-        #print(i)
+        print(i)
         pvals = []
         if triggers[i].search(latin): 
             #print(i)
@@ -139,16 +140,16 @@ def check_procs(latin, irish):
         longv = re.compile('[AEIOU]') 
         shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"}
         for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
-            if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-1].append(1)
-            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-1].append(0)
+            if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-2].append(1)
+            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-2].append(0)
     parity = count_sylls.alt_w_fin_degen(sylls)
     #also need to allow for an extra syll at end in irish, check if any non-weak sylls are deleted
     #print(parity)
     if len(sylls) == 1: values = monosyllable_repair(latin, irish, values)
-    if all([irish[sylls[i]] == "_"  for i in range(len(sylls)) if not parity[i]]) and not all(parity) and not any([irish[sylls[i]] == "_"  for i in range(len(sylls)) if parity[i]]): values.append([1])
-    elif all([irish[sylls[i]] == "_"  for i in range(len(sylls)-1) if not parity[i]]) and all(parity[-2:]) and irish[sylls[-1]] == "_" and re.match("[aeiouə]", irish[sylls[-1]+1:]): values.append([1])
-    elif len(sylls)>2: values.append([0])
-    else: values.append([])
+    if all([irish[sylls[i]] == "_"  for i in range(len(sylls)) if not parity[i]]) and not all(parity) and not any([irish[sylls[i]] == "_"  for i in range(len(sylls)) if parity[i]]): values[-1].append(1)
+    elif all([irish[sylls[i]] == "_"  for i in range(len(sylls)-1) if not parity[i]]) and all(parity[-2:]) and irish[sylls[-1]] == "_" and re.match("[aeiouə]", irish[sylls[-1]+1:]): values[-1].append(1)
+    elif len(sylls)>2: values[-1].append(0)
+    #else: values.append([])
     return values
 
 def monosyllable_repair(latin, irish, vector):
