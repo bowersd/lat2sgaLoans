@@ -120,9 +120,9 @@ def check_procs(latin, irish):
             ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"})), #compensatory lengthening
             ((re.compile('(ŋk|n(t(?!$)))|((?<!^e)ks)'),{"ŋk":"ŋg", "nt":"nd", "ks":"_s"}),(re.compile('(ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"})), #syncope (phonotactics here, V deletion handled below)
             ]
-    print(latin, irish)
+    #print(latin, irish)
     for i in range(len(triggers)):
-        print(i)
+        #print(i)
         pvals = []
         if triggers[i].search(latin): 
             #print(i)
