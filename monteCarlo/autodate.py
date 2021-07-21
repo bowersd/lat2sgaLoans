@@ -134,6 +134,7 @@ def check_procs(latin, irish):
         #else: pvals.append(("?", ""))
         #print(pvals)
         values.append([x[1] for x in sorted(pvals)])
+    if values[2] == [0] and latin[re.search('[aeiouAEIOU]', latin).start()] in 'eo' and irish[re.search('[aeiouAEIOU]', irish).start()+1] in 'xɣ': values[2] = [] #failure to raise across 'x' is not diagnostic
     sylls = count_sylls.count_syll(latin)
     #print(sylls)
     if len(sylls) > 2: #detecting shortening of stem-internal syllables (diagnoses pre/post-compensatory lengthening)
