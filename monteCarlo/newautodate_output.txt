@@ -1,0 +1,499 @@
+####################
+####################
+####################
+UNMATCHED
+####################
+####################
+####################
+108 59
+ante tertiam antert
+antetert latin aligned
+an__tərt irish aligned
+[[], [0], [], [], [], [1]]
+auto: [2, 6] #EJFL: This seems good, but it is also possible to agree with Hand in the following way:
+hand: [0, 6] #If the word passed through lenition giving /anteθert/-, syncope would have produced /antθert/-.
+			 #Cluster reduction would have produced /antert/- (see Thurneysen GOI §107 for delenition). A comparable example is:
+			 #<marcír> /markji:r/ 'horse comb' from <marc> /mark/ 'horse' and <cír> /kji:r/ 'comb'. The initial consonant of 
+			 #a second element in a compound usually is lenited so *marc-chír /markxji:r/ but if the final consonant
+			 #of the first element is a homoorganic consonant, the initial consonant is delenited and the geminate cluster is 
+			 #reduced to a singleton. So, I don't see how to disambiguate between auto and hand dating at this point.
+
+
+*antita:tem ando:it
+antitAt latin aligned
+an__dOd irish aligned
+[[], [0, 0], [], [0], [], [1]]
+auto: [4, 6] #EJFL: I am concerned about the treatment of this word by auto. I understand that auto and hand think this is post-apocope
+hand: [4, 7] #to account for the presereved long vowel in the second syllable. But it also is saying that it is pre-syncope. 
+			 #Ostensibly this is because the /i/ in the Latin is lost. But this can't be due to syncope; if it were due to syncope,
+			 #we should expect /andjo:d/ <aindeóit> with a palatalized cluster due to palatalization assimilation after syncope.
+			 #In Loan_Tabulation we have an "ideosyncratic" change to the British Latin to produce anto:dem before any further 
+			 #Irish adjustments — this is in column H. Really this loss of /i/ seems quite close to British syncope, but the 
+			 #specifics are irrelevant. The main thing is that the Latin stem for autodate_input probably should actually be 
+			 #"anta:tem" to start with.
+
+
+axilla ochsal
+aksiL latin aligned
+oxsəl irish aligned
+[[], [1], [], [], [], [0]]
+auto: [6, 2] #Screwball! 
+hand: [0, 2] #Hand seems better.
+
+
+*batisma baithes
+batism latin aligned
+baθəs_ irish aligned
+[[], [1, 0], [], [], [], []]
+auto: [2, 2]
+hand: [0, 2] #EJFL: I am not sure how to interpret the difference between auto and hand. I understand that [1,0] in the lenition 
+			 #slot says that the /t/ was lenited and the /s/ wasn't — but this is a coding issue I suppose. Autodate encodes 
+			 #fricativation of /t/ as lenition but has nothing to say about degemination of s, which is probably what happened here.
+			 
+
+
+britto:ne:s bretain
+briTOn latin aligned
+bretən irish aligned
+[[], [], [1], [1], [], []]
+auto: [0, 3]  
+hand: [0, 2] #EJFL: Since autodate doesn't say anything about degemination, auto makes sense. If autodate had something to say 
+			 #about degemination, then the hand dating would possibly work if degemination were part of lenition.
+
+
+calicem cailech
+kalIg latin aligned
+kaləx irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4] #EJFL: I agree with auto in that this word is clearly pre-apocope (the long vowel is shortened) but I also agree with
+hand: [0, 2] #hand because some kind of lenition went on. There is some alternation between /G/ and /x/ in unstressed syllables
+			 #I would have to dig up the reference. Also there are actually two Latin words that become <cailech>. One is caligō,
+			 #The other is calicem.
+
+
+cancella caingel
+kaŋkeL latin aligned
+kaŋgəl irish aligned
+[[], [], [], [], [], [1]]
+auto: [0, 6] #EJFL: Why does auto say anything about syncope? I think this has to do with line 112 in autodate, but I am not
+hand: [0, 2] #sure how to interpret that line. What should happen is: /nk/ becomes illegal at some point in prehistory.
+			 #Any incoming words with /nk/, as here, are assimilated with /ng/, which is always legal. Then /nk/ becomes
+			 #legal again after syncope. — Actually writing this out makes it make sense: auto is saying that this is pre-syncope.
+			 #That's right. It is more accurate than hand too, because while the change that made /nk/ illegal is almost certainly
+			 #pre-lenition, that doesn't mean that the substitution of /ng/ for incoming /nk/ is also pre-lenition.
+
+
+cippus cepp
+kiP latin aligned
+kep irish aligned
+[[0], [], [1], [], [], []]
+auto: [1, 3]  #I agree with auto because I know that autodate has nothing to say about degemination.
+hand: [1, 2]
+
+
+coctu:ra cuchtar
+koktUr latin aligned
+kuxtər irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]  #EJFL: I think we agreed that the "raising" seen hear is probably irregular and not due to harmony, so I am 
+hand: [0, 3]  #happy with auto. Nonetheless, where in the code is this "exception" covered?
+
+
+co:nfessio: cobais
+kOnfeSi latin aligned
+ko_vəs_ irish aligned
+[[], [], [], [], [], [0]]
+auto: [6, 7]
+hand: [2, 7]
+
+
+crepusculum crapscuil
+krepuskul latin aligned
+krab_skul irish aligned
+[[0], [], [], [], [], [1]]
+auto: [1, 6]
+hand: [3, 6]
+
+
+crux cros
+kruks latin aligned
+kro_s irish aligned
+[[], [], [1], [], [], [1]]
+auto: [0, 3]
+hand: [0, 2]
+
+
+culi:na *cuilenn
+kulIn latin aligned
+kuləN irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]
+hand: [0, 7]
+
+
+dicto: decht\aid
+dikt__ latin aligned
+dextəð irish aligned
+[[], [], [1], [], [], []]
+auto: [0, 3]
+hand: [0, 2]
+
+
+*epscopus epscop
+epskop latin aligned
+ebskəb irish aligned
+[[0, 0], [], [], [], [], []]
+auto: [1, 7]
+hand: [2, 7]
+
+
+exhibernum esarn
+ekshibern latin aligned
+e_s___ərn irish aligned
+[[], [], [], [], [], [1]]
+auto: [0, 6]
+hand: [0, 2]
+
+
+fata:le fa:tal
+fatAl latin aligned
+fAdəl irish aligned
+[[], [0], [], [1], [], []]
+auto: [2, 4]
+hand: [2, 5]
+
+
+*febra:rius febra
+febrAri latin aligned
+fev__rə irish aligned
+[[], [], [], [], [1], [1]]
+auto: [0, 5]
+hand: [0, 2]
+
+
+figu:ra figor
+fIgUr latin aligned
+fiɣər irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]
+hand: [0, 2]
+
+
+firma:mentum firmint
+firmAment latin aligned
+fir__mənt irish aligned
+[[], [0], [0], [], [1], [1]]
+auto: [3, 5]
+hand: [6, 7]
+
+
+genea:logia genelach
+geneAlog latin aligned
+gen_ələx irish aligned
+[[], [], [], [], [1], [1]]
+auto: [0, 5]
+hand: [0, 2]
+
+
+habe:na abann
+habEn latin aligned
+_avəN irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]
+hand: [0, 2]
+
+
+ia:iu:nium ai:ne
+jAjUni latin aligned
+_aj_ne irish aligned
+[[], [], [], [], [1], [1]]
+auto: [0, 5]
+hand: [0, 6]
+
+
+i:do:lum i:dol
+IdOl latin aligned
+Iðəl irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]
+hand: [0, 2]
+
+
+*ifernum ifern
+Ifern latin aligned
+ifərn irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [2, 7]
+
+
+intellectus intliucht
+inteLekt latin aligned
+int_luxt irish aligned
+[[], [], [], [], [], [0, 1]]
+auto: [6, 6]
+hand: [0, 6]
+
+
+labo:rem lubair
+labOr latin aligned
+luvər irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]
+hand: [0, 2]
+
+
+leo: leo
+le_ latin aligned
+lew irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 2]
+
+
+levia:than lebeda:n
+lewiAtan latin aligned
+lev_əðAn irish aligned
+[[], [1], [0], [], [1], [1]]
+auto: [3, 2]
+hand: [0, 2]
+
+
+librum lebor
+lib_r latin aligned
+levər irish aligned
+[[], [], [1], [], [], []]
+auto: [0, 3]
+hand: [0, 2]
+
+
+*maldictio: maldacht
+maldikti latin aligned
+maldəxt_ irish aligned
+[[], [], [], [], [], [0]]
+auto: [6, 7]
+hand: [0, 7]
+
+
+mi:ra:bilis mi:rbail
+mIrAbil latin aligned
+mIr_vəl irish aligned
+[[], [], [], [], [1], [1]]
+auto: [0, 5]
+hand: [0, 2]
+
+
+modius muide
+modi latin aligned
+muðe irish aligned
+[[], [], [1], [], [], []]
+auto: [0, 3]
+hand: [0, 2]
+
+
+morta:lita:tem mortlaith
+mortAlitAt latin aligned
+mort_l__əθ irish aligned
+[[], [1], [], [1], [1], [0]]
+auto: [6, 2]
+hand: [0, 2]
+
+
+numerus nuimir
+numer latin aligned
+nuɱər irish aligned
+[[], [1], [], [], [], []]
+auto: [0, 2]
+hand: [0, 7]
+
+
+oleum olae
+ole latin aligned
+ole irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 2]
+
+
+*ora:clum aracol
+orAk_l latin aligned
+arəgəl irish aligned
+[[], [0], [], [1], [], []]
+auto: [2, 4]
+hand: [2, 5]
+
+
+*ora:tio: oro:it
+orAti latin aligned
+orOd_ irish aligned
+[[], [0], [], [], [0], [0]]
+auto: [6, 7]
+hand: [4, 7]
+
+
+*ora:tio: ortha
+orAtiO latin aligned
+or_θ_ə irish aligned
+[[], [1], [], [1], [1], [0]]
+auto: [6, 2]
+hand: [0, 2]
+
+
+parabola parbail
+parabol latin aligned
+par_vəl irish aligned
+[[0], [], [], [], [], [1]]
+auto: [1, 6]
+hand: [1, 2]
+
+
+patricius cothrige
+patriki latin aligned
+koθrəɣe irish aligned
+[[1], [1, 1], [], [], [], [0]]
+auto: [6, 1]
+hand: [0, 1]
+
+
+probo: prom\aid
+prob__ latin aligned
+proɱəð irish aligned
+[[0], [], [], [], [], []]
+auto: [1, 7]
+hand: [1, 2]
+
+
+psallendum salland
+psaLend latin aligned
+_saLənd irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [2, 7]
+
+
+quaestio: ceist
+kwEsti latin aligned
+k_est_ irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [3, 7]
+
+
+re:gula ri:agol
+r_Egul latin aligned
+riəɣul irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 2]
+
+
+rubrum robur
+rub_r latin aligned
+rovur irish aligned
+[[], [], [1], [], [], []]
+auto: [0, 3]
+hand: [0, 2]
+
+
+sagitta saiget
+sagiT latin aligned
+saɣəd irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 2]
+
+
+sco:pa scu:ap
+sk_Op latin aligned
+skuəb irish aligned
+[[0], [], [], [], [], []]
+auto: [1, 7]
+hand: [2, 7]
+
+
+*scriplus screpul
+skrip_l latin aligned
+skrebul irish aligned
+[[0], [], [1], [], [], []]
+auto: [1, 3]
+hand: [2, 3]
+
+
+*storia stoir
+stor latin aligned
+stor irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [3, 7]
+
+
+stra:ta sra:it
+strAt latin aligned
+s_rAd irish aligned
+[[], [1, 0], [], [], [], []]
+auto: [2, 2]
+hand: [2, 7]
+
+
+*ta:bula ta:ball
+tAbul latin aligned
+tAvəL irish aligned
+[[], [], [], [], [], []]
+auto: [0, 7]
+hand: [0, 2]
+
+
+*tribla:tio: treblait
+triblAti latin aligned
+trevləd_ irish aligned
+[[], [0], [1], [], [1], [0]]
+auto: [6, 3]
+hand: [2, 3]
+
+
+tribu:nus trebunn
+tribUn latin aligned
+trevuN irish aligned
+[[], [], [], [1], [], []]
+auto: [0, 4]
+hand: [0, 2]
+
+
+*trida:na tredan
+tridAn latin aligned
+treðən irish aligned
+[[], [], [1], [1], [], []]
+auto: [0, 3]
+hand: [0, 2]
+
+
+tri:nita:tem tri:ndo:it
+trInitAt latin aligned
+trIn_dOd irish aligned
+[[], [0, 0], [], [0], [], [1]]
+auto: [4, 6]
+hand: [4, 7]
+
+
+tympanum timpa:n
+timpan latin aligned
+timpAn irish aligned
+[[0], [0], [0], [], [], []]
+auto: [3, 7]
+hand: [6, 7]
+
+
+uncia ungae
+uŋki latin aligned
+uŋge irish aligned
+[[], [], [], [], [], [1]]
+auto: [0, 6]
+hand: [0, 7]
+
+
+ungo: ong\aid
+uŋg__ latin aligned
+oŋgəð irish aligned
+[[], [], [1], [], [], []]
+auto: [0, 3]
+hand: [0, 2]
