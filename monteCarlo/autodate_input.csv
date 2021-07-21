@@ -11,7 +11,7 @@ ab.sti.'nen.ti.,/ˈav.stə.nədʲ/,abstinentia,abstanait
 a.'bis.s,/ˈa.vʲəʃ/,abyssus,aibis
 ok.'ka:.si.o:,/ˈa.kuʃ/,*accāsiō,accuis
 ak.'ken.t,/ˈa.kʲənd/,accentus,aiccend
-ak.ki.'den.t,/ˈa.kʲə.ðʲədʲ/,accidentia,aiccidit
+ak.ki.'den.ti.,/ˈa.kʲə.ðʲədʲ/,accidentia,aiccidit
 a.'ke:.t,/ˈa.kʲe:t/,acētum,acét
 a.'ki.to.fel,/a.xʲə.təfəl/,Achitophel,Achitofel
 a.kri.si.'o:.ne:,/ˈa.kʲrʲə.ʃən.de/,Acrisiōnē,acrision\dae
@@ -32,7 +32,7 @@ e:.kwi.'nok.t,/ˈe.gʲə.nəxt/',aequinoctium,ecenocht
 'a:.e:r,/ˈa.er/',āēr,aër
 e:.ti.'o.pi.,/ˈe.θʲəbʲ/,Aethiopia,Ethioip
 'a:.fri.k,/ˈa.frək.ðe/,āfricus,afrac\dae
-a.le.'san.der,/a.ləx.sən.dər/,Alexander,Alaxander
+a.lek.'san.der,/a.ləx.sən.dər/,Alexander,Alaxander
 al.le.'lu:.ja,/ˈa.Lʲe/,allelūia,aille
 al.'mo:.si.n,/ˈalɱ.sən/,*almōsina,almsan
 'al.p,/ˈal.pe/,Alpēs,Alpae
@@ -56,7 +56,7 @@ an.ti.'kris.t,/ˈant.xri:st/,Antichristus,Antchríst
 an.ti.'ta:.t,/ˈan.do:dʲ/,*antitātem,andóit
 an.'to:.ni.,/ˈan.tə.na:n/,Antōnius,antonán
 a.'pol.lo:,/ˈa.bəLʲ/',Apollō,Apoill
-a.'pos.to.l,/ˈab.stəl/,apostolus,apstal
+a.'bos.to.l,/ˈab.stəl/,apostolus,apstal
 a.'pos.to.l,/ˈax.səl/,apostolus,axal
 a.'pos.tro.f,/ˈa.bə.strəfʲ/,apostrophus,apostroiph
 a.'pri:.l,/ˈa.bʲrʲe:lʲ/,Aprīlis,Apréil
@@ -188,7 +188,7 @@ kon.'trak.t,/ˈkon.trəxt/,contractus,contracht
 ko.'rin.t,/ˈko.rʲənt/,Corinthus,Corint
 kor.'ne:.li.,/ˈkor.nəlʲ/,Cornēlius,Cornil
 ko.'ro:.n,/ˈko.rəN/,corōna,corann
-'kor.pus,/ˈkorp/,corpus,corp
+'kor.pus,/ˈkorp/,corpus,corp#kor.p?
 kre.'pus.ku.l,/ˈkrab.skulʲ/,crepusculum,crapscuil
 kre.'ter.r,/ˈkʲrʲe.θʲərʲ/,*creterra,creithir
 'kro:.k,/ˈkro:x/,*crōcus,cróch
@@ -563,8 +563,8 @@ ro:.'ma:.n,/ˈro:.ɱa:n/,rōmānus,rómán
 'rus.k,/ˈru:sk/,ruscum,rúsc
 'sab.ba.t,/ˈsa.bədʲ/,sabbatum,sabbait
 sa.'bi:.n,/ˈsa.vʲən.de/,Sabīnī,sabin\dae
-sa.'kel.lus,/ˈsa.xəL/,Sacellus,Sachall
-sa.'ker.do:s,/ˈsa.gərt/,sacerdōs,sacart
+sa.'kel.l,/ˈsa.xəL/,Sacellus,Sachall
+sa.'ker.d,/ˈsa.gərt/,sacerdōs,sacart
 sa.'ker.do.tal,/ˈsa.gər.də.tə.ləxt/,sacerdotal,sacerdotal\acht
 sa.kər.'fi.ki.,/ˈsa.kər.vəkʲ/,*sacrficium,sacarbaicc
 ˈsaj.ku.l,/ˈsaj.ɣul/,saeculum,sáegul
@@ -587,8 +587,8 @@ sko:.'pa:.ri.,/ˈʃkʲi.bəl/,scōpārium,scioból
 'skri:.b,/ˈʃkʲrʲi:.vəðʲ/,scrībō,scríb\aid
 skri:.'ben.d,/ˈʃkʲrʲi:.vʲənd/,scrībendum,scríbend
 'skri.pl,/ˈʃkʲrʲe.bul/,*scriplus,screpul
-ˈskrip.tr,/ˈʃkʲrʲeb.tər/,*scriptra,screptar
-skri:p.'tu:.r,/ˈʃkʲrʲib.turʲ/,scrīptūra,scriptuir
+ˈskrib.tr,/ˈʃkʲrʲeb.tər/,*scriptra,screptar
+skri:p.'tu:.r,/ˈʃkʲrʲip.turʲ/,scrīptūra,scriptuir
 'skru:.pu.l,/ˈskru.vəl/,scrūpulus,scrubl
 'skru:.t,/ˈskru:.dəðʲ/,scrūtor,scrút\aid
 skru:.'ti.ni.,/ˈskru:.dən/,scrūtinium,scrútan

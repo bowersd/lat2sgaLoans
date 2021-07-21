@@ -24,6 +24,8 @@ hand: [2, 6] #EJFL: Hand is more accurate. To recap: we're saying that b>v lenit
              #      like sleight of hand to have a Latin stem /abostol/
              #DAB: label it however works for you, autodate needs abostol
              #DAB: g->0 may not be a thing, looks like g->G (Breton data) ... tentatively, EJFL will check
+             #EJFL: Apparently Common Brittonic, post-lenition, had /G/ and the lost of /G/ is a development that happened in individually in Welsh, Breton, Cornish, in 
+             # different environments.
 
 
 cancella caingel
@@ -35,6 +37,10 @@ hand: [0, 2] #EJFL: Hand is more accurate if /nk/ > /ng/ is pre-lenition. I know
              #DAB: I thought NC clusters (where C is voiceless) became legal again with syncope
              #EJFL: That's probably so, but I don't see how it's relevant here...the Irish cluster is clearly voiced. Clarification?
              #DAB: not sure why I thought syncope was relevant. but McManus has nk->ng as sometime pre-syncope
+             #EJFL: McCone posits the following chronology: Lenition --> Loss of Nasals + Compensatory lengthening (VnC[+Stop, -Voice] --> V:C[+Stop, +Voice]) before the 5th
+             #century. After nasal loss/compensatory lengthening, loans with -nt- (e.g. planta) and -nk- (e.g. uncia, cancella) were borrowed and -nt-/-nk- replaced with
+             #-nd-/-ng- because there were no instances of -nt-/-nk- in native words, and -nd-/-ng- were the closest sounds (For argumentation see: McCone, Relative Chronology, 
+             #pg.108). Loss of nasals is attested in Ogam.
 
 cande:la caindel
 kandEl latin aligned
@@ -47,7 +53,10 @@ hand: [2, 4] #      shortened in Irish we have to say that this occurred before 
              #DAB: will have to check spreadsheet for hand reasoning
              #DAB: it looks like this was a case where X's were used instead of -'s ... the first rule it encounters is shortening, 
              #      this is preceded by a long string of X's even though there is no evidence it failed to undergo the processes
-             #DAB: update spreadsheet and hand dating
+             #DAB: update spreadsheet and hand dating 
+             #EJFL: I realized I don't know how to update the spreadsheet and the hand dating. I assume that in the hand dating in hackydata I would get rid of the 2 for 
+             #lenition, but what do I put in its place? As for the spreadsheet, I think I removed the Xs the right way, but I am not sure. Right now, I put kandela:, with
+             #shortening in the shortening column, but since shortening is persistant, it could go into some other column as well.
 
 
 cippus cepp
@@ -58,7 +67,8 @@ auto: [1, 7]
 hand: [1, 2] #EJFL: IF /p:/ to /p/ is part of Lenition, then Hand is more accurate. Hand is also more accurate because it allows for Harmony.
              #DAB: degemination is expected on either side of lenition though, right? before lenition, geminates were legal and lenition shortens them
              #      after lenition, geminates are illegal and so are phoneme substituted with singletons
-             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to suffix substitution and apocope)
+             #DAB:  as for harmony ... I could check monosyllables for affection-type vowel quality changes without checking for the triggering environment (which is lost to 
+             # suffix substitution and apocope)
              #EJFL Agreed about geminates. I guess the harmony issue is resolved.
              #DAB: check paradigm affiliation for application and non-application of harmony 
 
@@ -122,12 +132,15 @@ hand: [0, 7] #In google-sheets, we clearly show that this underwent Harmony. So,
              #DAB: This is crucially harmony of a non-initial syllable, where vowel quality distinctions are neutralized.
              #DAB: McManus gives a few examples with harmony in non-initial syllables, but this seems unrecoverable given the neutralization
              #DAB: What am I missing that would align my mind with McManus' analysis?
-             #EJFL: Did the emails I sent last week or the wek before help? I think the crucial evidence is stems that end in a final vowel in Old Irish where the final vowel can
-             #     is -e. The standard explanation of -e is that it is the result of harmony (specifically lowering) from i to e before a case ending containing a low vowel, e.g.
+             #EJFL: Did the emails I sent last week or the wek before help? I think the crucial evidence is stems that end in a final vowel in Old Irish where the final vowel 
+             can
+             #     is -e. The standard explanation of -e is that it is the result of harmony (specifically lowering) from i to e before a case ending containing a low vowel,
+             e.g.
              #     -as (nom.sg.), -an (acc.sg.) etc. A straightforward example is *ke:li[j]as (j could be superfluous). This becomes /kje:lje/ in Old Irish (céile). If we date 
              #     shortening to before harmony then any long /i/s that precede low vowels should also undergo harmony to -e. The same should be true even if a consonant 
              #     intevenes between the original /i/ and the triggering case ending  
-             #DAB: I agree that the /i/ would lower by affection. THe problem is that all we have is orthographic <e>, which could spell either affected /e/ or non-affected /i/, right?
+             #DAB: I agree that the /i/ would lower by affection. THe problem is that all we have is orthographic <e>, which could spell either affected /e/ or non-affected /i/,
+             right?
              #DAB: Further, doesn't <e> indicate the preceding C is palatalized? and wouldn't that only happen if it was unaffected /i/?
 
 
@@ -144,6 +157,7 @@ hand: [0, 2]  #EJFL: If /ks/ to /s/ part of Lenition, Hand dating is more accura
             #DAB: We definitely do know that Vs# would not survive lenition though, so this would have to be post-lenition
             #DAB: The crucial question is whether there were loans that had this change: ks#>#, which would be the pre-lenition borrowing outcome if ks was just borrowed as /s/
             #DAB: I suppose <esarn> from <exhibernum> would point to pre-lenition loans doing ks>s, though this depends on <esarn> looking really old more than anything concretely phonological
+            #Why should <esarn> be pre-lenition?
 
 
 fata:le fa:tal
@@ -233,6 +247,7 @@ hand: [0, 2]
             #DAB: I disagree, d->D is uninformative
             #EJFL: see comment above on habe:na. Here it's pretty clear that this word did not undergo the British sound change of o: to u because we would have expected /i:ðul/ 
             # in Irish, but this is never expected.
+            #EJFL  Actualy I'm not sure that */i:ðul/ would be the outcome.
 
 
 labo:rem lubair
@@ -246,8 +261,18 @@ hand: [0, 2]
             #      /u/ in the next syllable. The only way to get this /u/ to assume that this passed through British, where in fact /o:/ becomes /u/. So yes the vowels get messed
             #     up generally speaking, but harmony clearly did happen in the crucial first syllable. 
             #DAB: a>u is a distinct change from the non-low vowel harmony that we have been focusing on. What do we know about it's chronology?
-
-
+            #EJFL: it is a>au>u. So it's not really distinct. u's in following syllables created diphthongs across the board. Sometimes u/i also raised the vowels, but that is 
+            #more limited in scope – it raising certainly occurred across voiced consonants but voiceless consonants typically prevent raising (although there is more too it 
+            than that):
+            # eks-biru: --> as-biur "I say" /@sbjiwr/    Rounding
+            # ekwu: --> euch "horse" (dat.sg.) /eux/      Rounding
+            # Calunas --> Caulann>Culann "Culann" (personal name) /kawlaN/>/kulaN/  Rounding
+            # rotu: --> routh "wheel" (dat.sg.) /rowT/    Rounding
+            # sonu: --> sun "sound" (dat.sg.) /sun/  Raising
+            # genu: --> giun "mouth" (dat.sg.) /gjiwn/ Raising/Rounding
+            # It's typically thought that roundig predates lowering.
+        
+           
 leo: leo
 le_O latin aligned
 lew_ irish aligned
@@ -274,8 +299,10 @@ mIr_vəl irish aligned
 auto: [0, 6]
 hand: [0, 2]
             #DAB: I disagree, b->v is not informative
-            #EJFL: you're probably right in this case since the long vowel that could be undergo British changes to vowels is syncopated anyway. (see habe:na, i:do:lum, labo:rem).
+            #EJFL: you're probably right in this case since the long vowel that could be undergo British changes to vowels is syncopated anyway. (see habe:na, i:do:lum, 
+            #labo:rem).
             #DAB: loss of the long vowel indicates a pre-lengthening borrowing (so that the long vowel can shorten and then syncopate). auto needs to do: 0,4
+            #EJFL Doesn't this depend on whether we think that syncope could affect long vowels or not?
 
 
 modius muide
@@ -286,9 +313,11 @@ auto: [0, 3]
 hand: [0, 2]
             #DAB: I disagree, d->D is not informative
             #EJFL: Again we have to be careful here. The assumption is d-->D is not informative if it comes from British lenition rather than Irish lenition. But, we have to be
-            # sure we understand the interaction, if any, between British lenition and British apocope. Our assumption that d-->D is not informative only works if British apocope 
+            # sure we understand the interaction, if any, between British lenition and British apocope. Our assumption that d-->D is not informative only works if British 
+            apocope 
             # is after British lenition and that this word was borrowed into Irish from British before British apocope could chop off the final syllabe. If on the other hand
-            # British lenition is after British apocope (unlikely to be sure, since there would need to be tons of analogical change in the morphological lenition department) then 
+            # British lenition is after British apocope (unlikely to be sure, since there would need to be tons of analogical change in the morphological lenition department) 
+            then 
             # our reasoning about d-->D doesn't hold up.
             #DAB: this looks like a case for having conservative vs liberal datings (and autodate.py should make the conservative choice)
 
@@ -353,8 +382,8 @@ hand: [3, 7]
              # which is characteristic of most of the stems to which British apocope applied is in some sense due to some version of "suffix substitution"? 
              # The problem I have with that kind of thing is why would post-British apocope consonant-final stems fairly consistently targeted for inclusion into a palatalizing
              # morphological class when there is no prompt in the input after British apocope? IF on the other hand British apocope went in stages: (1) lost of back vowels (so
-             # here -io: --> -i) and (2) only later to loss of -i, we could say that Irish borrowed the words with final palatalized consonants before the second stage of British
-             # Apocope.
+             # here -io: --> -i) and (2) only later to loss of -i, we could say that Irish borrowed the words with final palatalized consonants before the second stage of 
+             British Apocope.
  
 rubrum robur
 r__ubr latin aligned
@@ -388,7 +417,8 @@ hand: [2, 7]
              #DAB: apocope detection fix won't work here
              #EJFL: There is no penult long vowel....?
              #DAB: disregard comments about penult long vowels (copy-paste error). 
-             #DAB: should [Os] get removed from stem?
+             #DAB: should [Os] get removed from stem? 
+             #EJFL: Yes -o:s is removed, as if the whole thing were a case ending, even though technically only -s is.
 
 sco:pa scu:ap
 sk_Op latin aligned
@@ -434,6 +464,8 @@ hand: [0, 2]
         # to triub and triub to *treba: could I guess have created a situation where */trivuN/ was replaced by */trevuN/.
         #DAB: like an eggcorn situation?
         #DAB: do you have thoughts about the long vowel, since we are being cautious with throwing out b>v?
+        #EJFL: Since I think it is kind of like an eggcorn (or what McManus describes as a loan-blend), there wouldn't be any interaction between the long vowel and the b-->v 
+        change anyway. Basicaly b-->v is a consequence of inserting the native word <treb> /trev/ into the first syllable.
 
 #########
 #########

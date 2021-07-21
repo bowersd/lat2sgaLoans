@@ -1,28 +1,62 @@
-p 137:
+DAB: p 137:
     Jackson proposed that suffix substitution happened even in the apocope era by replacing latin inflectional suffixes with null suffixes 
         a ref to jackson fleshing out how suffix substitution worked
     McManus wants to propose that doing this did not depend on the existence of an analogous inflectional pattern in Irish to whatever Latin had
     McManus is looking to establish what the fate of final syllables tells us about the borrowing process into Irish
 
-p 138:
+#EJFL:
+Jackson never proposed null suffixes and McManus does not say so. Jackson's proposal for the post-apocope era was that Latin loanwords simply dropped their inflectional suffixes and what was borrowed as the bare stem. For the pre-apocope era, Jackson said that Latin loanwords were borrowed with Latin case suffixes. McManus argues against this.
+
+DAB: p 138:
     I have no contact with the literature on loanword adaptation, and so I can't tell if there is something more up to date than the literature he goes through
         Perhaps the article from the socio person at Lethbridge (Genee) would be a way in
         Though I don't recall her talking about the final syllable situation
 
-p 141:
+EJFL: p 139 - There are two more loans mentioned in fn. 5: cingtid (<quin[c]tum i:dus) and fínacat (<ui:num ace:tum). These are not in our database.
+
+DAB: p 141:
     I doubt that direct calques can be phonologically informative for dating, but I guess this should be thought about.
 
-p 142:
+EJFL: I don't know why most of the words at the top of the page are said to be unassimilated loans - the Loanwords have been integrated into the Irish phonology esp. with regard to the use of palatalization.
+EJFL: I agree that calques are not useful for phonological dating.
+
+DAB: p 142:
     We do have some hybrids in the data
 
-p 144:
+EJFL: I think that trebann is a loan-blend. Our data also includes carmocol, which McManus mentions in fn.14 as a loan-blend.
+
+EJFL: p 143 - I am not sure that forms like gentlide, spirtálde, neuturáldae, masculinda are "blends" in the same way that trebann or carmocol are blends. I would say that Irish borrowed both the nouns (geint, spiurt, mascul, neutur) and the adjectives (spirtálde < spiritalis, neuturáldae < neutralis, gentlide < gentilis, masculinda < masculinus) and then added the native adjective ending to them at some point. That is, there were two instances of borrowing, rather than one as in the case of trebann/carmocol. Basically, McManus makes use of this "two borrowing" idea in fn. 16 for other words. 
+
+DAB: p 144:
     Didn't pay too much attention until pre/post-apocope loans sections, though there could be insights for how to analyze the morphological composition of the loan words here
 
+EJFL: p 145 - It seems like borrowers need to have some knowledge of how to separate stems from inflectional endings in the loaning language. 
+
+EJFL: p 146 - The idea that importation of the derivational morphology from the loaning language to the borrowing language involves borrowing both members of a basic and derived pair and not just the derivational suffix itself is interesting. This implies that Latin notarius (with the suffix -arius) and nota were both borrowed into Irish. This is a bit problematic if the borrowing was presyncope since notarius becomes notire not notrae/nothrae or something. One might have to say that syncope was prevented here because -aire had by then been totally assimilated into the derivational morphology of Irish based on the borrowing of derivational pairs like nota and notarius. Saying that "syncope was prevented" here means basically that the suffix -aire was reapplied to recreate notaire.
+
+EJFL: p 148 - McManus says that bendacht and maldacht have derivation suffix substition with the native Irish -acht replacing the final part of the Latin words benedictio/maledictio. If we adopt this, we don't have to worry about why bendacht lacks palatalization of nd!
+
+EJFL: p 149 - I kind of get what McManus is saying here but it is a bit confusing. It seems like borrowers need to simultaneously be able to recognize the infectlional grammar of the loaning language but at the same time not be able to analyze the morphology at any level... 
+
+EJFL: p 151 - This is where Jackson/Thurneysens theory of the pre-apocope period is spelled out. Basically they thought that Latin inflectional suffixes were imported into Primitive Irish: -us --> -us, -a --> -a, -is --> -s, -um --> -um etc. Then they were subject ot apocope. There are three objections to this that McManus gives:
+(a) This is cross-linguistically uncommon. ###I think more evidence is needed here!
+(b) He thinks it is unlikely that there would be two systems of inflection in Primitive Irish, the Latin and the Irish one. ###Seems complicated, but Latin did well enough with Greek morphology in some cases. Also witness English use of -a plurals (?)
+(c) The phonological form predicted by the Latin endings (esp. with regard to harmony) is not what is actually found in Old Irish.
+
+***
+DAB:
 pre-apocope section:
     affection requires Irish suffixes, not Latin
         not totally open and shut, since he tries to make it seem mysterious how @ could trigger a/o affection (which isn't *too* hard to imagine)
         but the affection story deals with known entities, while the Latin/Vulgar latin story is pretty speculative
+***
 
+#EJFL : I actually think that Vulgar Latin -u is pretty well established, so we can dispense with the hypothetical @. The problem with saying that Vulgar Latin endings had -u is still that this would result in unattested Irish forms by misapplication of the wrong types of harmony.
+
+EJFL: pg 155, fn. 39 - This is important becacuse here he spells out the basic correspondences between Irish and Latin stem classes: Latin vocalic stem inflectional endings were replaced with Primitive Irish vocalic stem endings. Third declension stems in Latin are transferred to vocalic stems in Irish, and only a very few retain consonantal inflection. Another important part of this fn. is that Mcmanus says that io/ia-stems in Latin were transferred to io/ia-stems in Irish only in the pre-apocope era. This implies that McManus thinks that Latin -ius (io-stem nom.sg.) and -ia (ia-stem nom.sg.) were subject to IRISH apocope and the output of apocope was treated differently to the input of apocope with regard to inflectional suffix substitution. This is McManus's idea to replace British apocope totally as an explanatory device. I am doubtful. 
+
+***
+DAB:
 post-apocope section:
     there isn't a knock-down argument in favor of suffix substitution in the post-apocope language
     points out that if it happened in pre-apocope, why not post-apocope too?
@@ -38,7 +72,12 @@ post-apocope section:
 
     Very weird: eclais < ecclesia is listed as post-apocope, even though the Irish final syllable has been shortened! None of the other post-apocope loans cited have shortening
     Tantalizing: pace of borrowing claimed to have increased in post-apocope language ... but these loans were literary (aka not able to enter spoken language)? or loans stopped getting assimilated (aka more familiar with Latin?)
-
-
+    
+EJFL: I think we can ignore what McManus says here about eclais < eccle:sia. In his 1983 article he clearly states that while this is "post-apocope" supposedly, it is certainly before compensatory lengthening (see pages 30–31 and 59). scrín and fín are also problematic since the long vowel is in the first syllable. There is no need to assign them to the post-apocope, pre-lengthening period. Long vowels in the first syllable were always allowed in Irish.
+    McManus mentions that British Apocope is the typical way people have analyzed the lack of final syllables in eclais, santáir, oróit, fís, scrín, coróin, etc. He is not too happy with that kind of analysis (see bottom of p.156 and top of p.157). Instead he thinks the Latin final syllables were removed and the new Irish morphological system was applied to them. 
+    McManus argues that essentially the same kind of morphological replacement occured in the pre- and post-apocope stages, it's just that the actual morphological machinery in the two stages of Irish was different. In pre-apocope Irish, morphological replacement involved dropping Latin inflectional endings and adding Primitive Irish inflectional endings, e.g. Latin palli-um --> Primitive *kwalli-an --> OIr. caille (lowering of i to e, apocope of -an). In the post-apocope stage, morphological replacement involved dropping the Latin inflectional endings and using the new consonant quality/mutation-based morphological system of Old Irish, e.g. ecle:sia --> eglais (assigned to a Feminine palatalizing class with lenition of following adjectives in the nominative singular). This was based on an adaptive morphological process so that the quality of the final consonants in post-apocope adoptions cannot be explained in simple phonological terms (see fn. 48, pg. 161). 
+    My question with all of this is: if morphological replacement happened in the same way in pre- and post-apocope stages, why is it that borrowers were better able to separate inflection from stem in the pre-apocope stage? That is, why did they realize that the stem in pallium is palli- and the ending is -um, while post-apocope borrowers apparently erroneously thought that the ending in ecle:sia was -ia not -a. Also, why is it the case that this morphological replacement process exactly replicates the phonological process of British apocope and largely effects the same words (e.g. ecle:sia --> eclais in Irish and eglwys in Welsh)? Moreover, McManus' adaptive process is not sketched out well enough to show why stems like eclesia which end in /ia/ were transferred to palatalizing classes while stems that end in /a/ alone were not normally; a phonological approach makes sense of this fact. 
+  
+  
 Maybe ecle:sia was reanalyzed as ecle:s-ja, the "Latin" inflectional ending -ja was dropped by the morphological replacement process and the new Irish morphoogical system of consonant quality changes and mutation was substituted for it. This clarifies McManus otherwise sort of wishy-washy approach to these data.
-(Also note that Vulgar Latin is said to have had a change of /ia/ to /ja/)dadad
+(Also note that Vulgar Latin is said to have had a change of /ia/ to /ja/).

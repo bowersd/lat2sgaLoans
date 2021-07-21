@@ -597,7 +597,7 @@ data2 = {
         ("scriptu:ra",      "scriptuir"):[2,4,0,0,0,0,0,0], ##why post lenition?? not p->f->(s?)?
         ("stra:ta",         "sra:it"):[2,7,0,0,0,0,0,0],
         ("*the:sis",          "te:is"):[2,7,0,0,0,0,0,0], ##thought to be quite late (why??)  ---> Not really Late, but "literary" since it is used in such a specific context.
-        ("cande:la",        "caindel"):[2,4,0,0,0,0,0,0],
+        ("cande:la",        "caindel"):[0,4,0,0,0,0,0,0],
         ("bendictio:",     "bendacht"):[3,7,0,0,0,0,0,0], #post harmony loans ##problem derivation
         ("ido:neus",        "idan"):[3,4,0,0,0,0,0,0], ##idiosyncratic changes applied (shortening, not problematic)
         ("quaestio:",       "ceist"):[3,7,0,0,0,0,0,0],
