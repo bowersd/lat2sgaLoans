@@ -6,6 +6,7 @@ import hackydata
 import re
 import sys
 
+#todo: st>s should diagnose pre-affection
 #todo: u-affection (a->u) p 138 Mccone, cf hock 2019?
 #   when is this dated? lumping it with the other affection processes seems dicey, since our sources don't do this
 
@@ -89,6 +90,7 @@ def check_appl(string, *regexen, **mappings):
     pass
 
 def check_procs(latin, irish):
+    #print(latin, irish)
     values = []
     triggers = [#what to look for in Latin
             re.compile('[Pp]'), #pk
@@ -106,7 +108,6 @@ def check_procs(latin, irish):
             ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"})), #compensatory lengthening
             ((re.compile('(ŋk|n(t(?!$)))|((?<!^e)ks)'),{"ŋk":"ŋg", "nt":"nd", "ks":"_s"}),(re.compile('(ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"})), #syncope (phonotactics here, V deletion handled below)
             ]
-    #print(latin, irish)
     for i in range(len(triggers)):
         #print(i)
         pvals = []
@@ -178,7 +179,10 @@ if __name__ == "__main__":
     undone = []
     match  = []
     unmatch  = []
+    #i = 1
     for d in data:
+        #print(i)
+        #i += 1
         latin, irish = clean_transcription(d[0]), clean_transcription(d[1])
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #working around british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         latin, irish = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
@@ -186,6 +190,8 @@ if __name__ == "__main__":
             info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),hand[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
         if (length_mod(d[2]), length_mod(d[3])) in hand and info[2] == info[3] and info not in match: match.append(info)
         elif (length_mod(d[2]), length_mod(d[3])) in hand and info[2] != info[3] and info not in unmatch: unmatch.append(info)
+        #else: undone.append((length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)), check_procs(latin, irish), latin, irish))
+
     #for s in stems:
     #    #print(s)
     #    for d in data:
