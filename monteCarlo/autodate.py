@@ -101,7 +101,7 @@ def check_procs(latin, irish):
             re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
             re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
             re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), #compensatory lengthening
-            re.compile('(ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below)
+            re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
             ]
     processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
             ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
@@ -109,7 +109,7 @@ def check_procs(latin, irish):
             ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o"}),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o"})), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
             ((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
             ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"})), #compensatory lengthening
-            ((re.compile('(ŋk|n(t(?!$)))|((?<!^e)ks)'),{"ŋk":"ŋg", "nt":"nd", "ks":"_s"}),(re.compile('(ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"})), #syncope (phonotactics here, V deletion handled below)
+            ((re.compile('(mp|ŋk|n(t(?!$)))|((?<!^e)ks)'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd", "ks":"_s"}),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"})), #syncope (phonotactics here, V deletion handled below)
             ]
     for i in range(len(triggers)):
         #print(i)
