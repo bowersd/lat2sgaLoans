@@ -190,13 +190,13 @@ if __name__ == "__main__":
         latin, irish = clean_transcription(d[0]), clean_transcription(d[1])
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #working around british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         latin, irish = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
-        if not date(*check_procs(latin, irish))[0] < date(*check_procs(latin, irish))[1]:
-            with open('date_inconsistency_nu.txt', 'a') as file_out:
-                file_out.write(latin+'\n')
-                file_out.write(irish+'\n')
-                file_out.write(" ".join(['['+','.join([str(y) for y in x])+']' if x else '[_]' for x in check_procs(latin, irish)])+'\n')
-                file_out.write(" ".join([str(x) for x in date(*check_procs(latin, irish))])+'\n')
-                file_out.write('\n')
+        #if not date(*check_procs(latin, irish))[0] < date(*check_procs(latin, irish))[1]:
+        #    with open('date_inconsistency_nu.txt', 'a') as file_out:
+        #        file_out.write(latin+'\n')
+        #        file_out.write(irish+'\n')
+        #        file_out.write(" ".join(['['+','.join([str(y) for y in x])+']' if x else '[_]' for x in check_procs(latin, irish)])+'\n')
+        #        file_out.write(" ".join([str(x) for x in date(*check_procs(latin, irish))])+'\n')
+        #        file_out.write('\n')
         if (length_mod(d[2]), length_mod(d[3])) in hand: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),hand[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
         if (length_mod(d[2]), length_mod(d[3])) in hand and info[2] == info[3] and info not in match: match.append(info)
         elif (length_mod(d[2]), length_mod(d[3])) in hand and info[2] != info[3] and info not in unmatch: unmatch.append(info)
