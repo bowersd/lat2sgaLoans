@@ -6,7 +6,7 @@ import hackydata
 import re
 import sys
 
-#todo: st>s should diagnose pre-affection
+#todo: incorporate manual override for dating
 #todo: u-affection (a->u) p 138 Mccone, cf hock 2019?
 #   when is this dated? lumping it with the other affection processes seems dicey, since our sources don't do this
 # It is typically dated after raising but before lowering: */kalunas/ > ROUNDING: */kaulunas/ > LOWERING: */kaulonas/ > APOCOPE */kaulon/ > REDUCTION */kaul@n/: Attested as the name <Caulann>.
