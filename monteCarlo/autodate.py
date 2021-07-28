@@ -191,7 +191,7 @@ if __name__ == "__main__":
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #working around british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         latin, irish = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
         if not date(*check_procs(latin, irish))[0] < date(*check_procs(latin, irish))[1]:
-            with open('date_inconsistency.txt', 'a') as file_out:
+            with open('date_inconsistency_nu.txt', 'a') as file_out:
                 file_out.write(latin+'\n')
                 file_out.write(irish+'\n')
                 file_out.write(" ".join(['['+','.join([str(y) for y in x])+']' if x else '[_]' for x in check_procs(latin, irish)])+'\n')
