@@ -1,0 +1,505 @@
+aarOn
+_arən
+[_] [_] [_] [1] [_] [0]
+6 4
+
+abekedAr
+ab_ɣədər
+[_] [0,1,0] [_] [1] [_] [1]
+2 2
+
+abimelek
+avəɱələx
+[_] [1,1] [_] [_] [_] [0]
+6 2
+
+AbrahE
+avra_e
+[_] [_] [_] [1] [_] [0]
+6 4
+
+Abraham
+avra_aɱ
+[_] [1] [_] [_] [_] [0]
+6 2
+
+akitofel
+axətəfəl
+[_] [1,0] [_] [_] [_] [0]
+6 2
+
+akrisiOn_E
+akrəs_ənde
+[_] [0,0] [_] [1] [1] [0]
+6 4
+
+Egiptiak__
+Eɣəpt_əxðe
+[0] [1] [_] [_] [_] [0]
+6 2
+
+EmiliAn__
+eɱəlE_nde
+[_] [1] [_] [_] [_] [0]
+6 2
+
+ajn_E_a
+ajneeðe
+[_] [_] [_] [_] [1] [0]
+6 5
+
+ajnEAs
+ajneas
+[_] [0] [_] [1] [1] [0]
+6 4
+
+EolEn_s
+ewlənte
+[_] [_] [_] [1] [_] [0]
+6 4
+
+aleksander
+aləxsəndər
+[_] [1] [_] [_] [_] [0,0]
+6 2
+
+aLelUja
+aLe____
+[_] [_] [0] [_] [1] [0]
+6 5
+
+ananiA
+__aNe_
+[_] [_] [1] [_] [_] [0]
+6 3
+
+antikrist
+ant_xrIst
+[_] [1] [_] [_] [_] [0,1]
+6 2
+
+antO__n
+antənAn
+[_] [_] [_] [1] [_] [0]
+6 4
+
+argUment
+arguɱənt
+[_] [1] [_] [_] [1] [0]
+6 2
+
+atom
+adəɱ
+[_] [0,1] [_] [_] [_] [_]
+2 2
+
+awktOritAs
+awxtər_tAs
+[_] [0,0] [_] [0] [1] [0]
+6 5
+
+aksiL
+oxsəl
+[_] [1] [_] [_] [_] [0]
+6 2
+
+batism
+baθəs_
+[_] [1,0] [_] [_] [_] [_]
+2 2
+
+benedIk__
+ben_dəxəð
+[_] [0,1] [_] [1] [_] [1]
+2 2
+
+benjamin
+ben_əɱIn
+[_] [1] [_] [_] [_] [0]
+6 2
+
+berEEns__
+ber_ənste
+[_] [_] [_] [1] [1] [0,1]
+6 4
+
+bEt_le_hEm
+beθələɱðe_
+[_] [1] [_] [1] [_] [0]
+6 2
+
+biSekst
+bisəxs_
+[_] [1] [1] [_] [_] [0]
+6 2
+
+kad_Uk
+kaðxəx
+[_] [1] [_] [1] [0] [_]
+5 2
+
+kajAfAs
+ka_ifəs
+[_] [0] [_] [1] [_] [0]
+6 4
+
+kapiLAti
+kab_ləd_
+[0] [0] [_] [_] [1] [0]
+6 5
+
+katEkUmen__
+kaθ_xəɱ_nəð
+[_] [1,1,1] [_] [_] [1,1] [0]
+6 2
+
+kent_r
+kintər
+[_] [_] [1] [_] [_] [0]
+6 3
+
+kerubIn
+xerufIn
+[_] [1] [0] [0] [_] [0]
+6 2
+
+kerubIn
+_irufIn
+[_] [_] [1] [0] [_] [0]
+6 3
+
+kirkumfleks
+kirkunfləxs
+[_] [1] [_] [_] [_] [0,0]
+6 2
+
+kolumb
+koluɱ_
+[_] [1] [0] [_] [_] [_]
+3 2
+
+koMUni
+komən_
+[_] [_] [0] [_] [1] [0]
+6 5
+
+komparAtIw
+kompərəd__
+[0] [0,0] [_] [_] [1] [0,0]
+6 5
+
+kOnstantInopol
+konstəntənəbəl
+[0] [_] [_] [_] [1] [0,0,0]
+6 5
+
+kOnsuMAti
+ko_s_ɱəð_
+[_] [1] [_] [_] [1] [0]
+6 2
+
+kiklas_ia
+kigləste_
+[_] [0,0] [0,1] [_] [_] [0]
+6 3
+
+dam_nAti
+damən___
+[_] [0] [_] [_] [1] [0]
+6 5
+
+derbEns__
+derbənste
+[_] [_] [_] [1] [_] [0]
+6 4
+
+dewteronom
+dewtər_nəɱ
+[_] [1] [_] [_] [_] [0]
+6 2
+
+diameter
+di__əθər
+[_] [1] [0] [_] [_] [1]
+3 2
+
+diktAtOr
+dixtədOr
+[_] [0] [0] [0] [1] [0]
+6 5
+
+duumwir
+d_Oɱ_Or
+[_] [1] [_] [_] [_] [0]
+6 2
+
+efrat__E
+efrədəðe
+[_] [0] [_] [1] [_] [0]
+6 4
+
+ekskoMUnikAti
+e_sk_ɱən_____
+[_] [_] [_] [_] [1,1] [0]
+6 5
+
+eksorkist__
+exsərkəstəð
+[_] [1] [_] [_] [_] [0]
+6 2
+
+gent_
+genti
+[_] [_] [1] [_] [_] [0]
+6 3
+
+heriosolim
+_ir_usələɱ
+[_] [0,1] [1] [_] [_] [0]
+6 2
+
+horatiAn__
+_orət_ənde
+[_] [0] [_] [1] [_] [0]
+6 4
+
+humilitAt
+_uɱəl_dOd
+[_] [1,0,0] [_] [0] [_] [0]
+6 2
+
+ImAg
+IɱAɣ
+[_] [1] [_] [0] [_] [_]
+4 2
+
+inak__
+inəxðe
+[_] [1] [0] [_] [_] [_]
+3 2
+
+infInIt
+infənəd
+[_] [0] [_] [1] [1] [0,0]
+6 4
+
+inteLekt
+int_luxt
+[_] [_] [_] [_] [_] [0,1]
+6 6
+
+jonatAn
+jonaθan
+[_] [1] [_] [1] [_] [0]
+6 2
+
+isaAk
+isaak
+[_] [0,0] [0] [1] [_] [0]
+6 4
+
+isrAEl
+israel
+[_] [0] [0] [1] [1] [0]
+6 4
+
+laks
+laxs
+[_] [1] [_] [_] [_] [0]
+6 2
+
+lewiAtan
+lev_əðAn
+[_] [1] [0] [_] [1] [1]
+3 2
+
+maKab_E
+maxəvðe
+[_] [_] [_] [1] [_] [0]
+6 4
+
+maKabE
+maxəve
+[_] [_] [_] [1] [_] [0]
+6 4
+
+marIa
+maria
+[_] [_] [_] [_] [1] [0]
+6 5
+
+mardoke_
+mordəxei
+[_] [1] [_] [_] [_] [0]
+6 2
+
+maskulIn__
+maskulənde
+[_] [_] [_] [1] [_] [0]
+6 4
+
+melkisedek
+melkəsəðəx
+[_] [0,1] [_] [_] [_] [0]
+6 2
+
+meretrik
+mer_drəx
+[_] [0,1] [_] [_] [_] [1]
+2 2
+
+mikaEl
+mIx_El
+[_] [1] [_] [0] [_] [1]
+4 2
+
+monastEr
+monəstər
+[_] [_] [_] [1] [_] [0]
+6 4
+
+mortAlitAt
+mort_l__əθ
+[_] [1] [_] [1] [1] [0]
+6 2
+
+moIsE
+moisi
+[_] [0] [0] [_] [1] [0]
+6 5
+
+optAtIw
+obtəd__
+[0] [0] [_] [_] [1] [0]
+6 5
+
+orAtiO
+or_θ_ə
+[_] [1] [_] [1] [1] [0]
+6 2
+
+palEstIna
+paləstəna
+[0] [_] [_] [_] [1,1] [0]
+6 5
+
+paL_ak_In
+palnəxðe_
+[0] [1] [_] [_] [_] [0]
+6 2
+
+patriki
+koθrəɣe
+[1] [1,1] [_] [_] [_] [0]
+6 1
+
+filEmOn
+filəɱOn
+[_] [1] [_] [0] [1] [0]
+6 2
+
+filipianEns__
+filəp___ənste
+[0] [_] [_] [1] [_] [0,0]
+6 4
+
+pontipilAt
+pont_fələt
+[0] [0] [_] [1] [_] [0,1]
+6 4
+
+primit
+prIɱəd
+[0] [1,0] [_] [_] [_] [_]
+2 2
+
+promEte
+proɱəðe
+[0] [1,1] [_] [_] [1] [0]
+6 2
+
+puglAri
+p_Oləre
+[0] [_] [_] [_] [1] [0]
+6 5
+
+kwiŋkwAgEsm
+k_iŋk_əɣəs_
+[_] [0] [0] [1] [1] [0,0]
+6 4
+
+rOmAn
+rOɱAn
+[_] [1] [_] [0] [_] [_]
+4 2
+
+samsOn
+saɱsOn
+[_] [1] [_] [0] [_] [_]
+4 2
+
+semeI
+seɱei
+[_] [1] [0] [1] [_] [0]
+6 2
+
+simOn
+siɱOn
+[_] [1] [0] [0] [_] [_]
+4 2
+
+solomOn
+soləɱ__
+[_] [1] [_] [_] [_] [0]
+6 2
+
+sOstenEs
+sustənəs
+[_] [0] [_] [1] [_] [0]
+6 4
+
+superlAtIw
+suberləd__
+[0] [0] [_] [_] [1] [0]
+6 5
+
+siMak
+siməx
+[_] [1] [0] [_] [_] [_]
+3 2
+
+telamOn__
+teləɱOnde
+[_] [1] [_] [0] [_] [0]
+6 2
+
+testimOn
+testəɱən
+[_] [1] [_] [1] [_] [0]
+6 2
+
+tomAs
+toɱAs
+[_] [1,0] [_] [0] [_] [_]
+4 2
+
+triblAti
+trevləd_
+[_] [0] [1] [_] [1] [0]
+6 3
+
+wErOnEns__
+ferənənste
+[_] [_] [_] [1] [1] [0,0]
+6 4
+
+wespasiAn
+fespəsiən
+[0] [0] [0] [1] [_] [0]
+6 4
+
+wespertIn
+_espərtə_
+[0] [_] [_] [1] [_] [0]
+6 4
+
