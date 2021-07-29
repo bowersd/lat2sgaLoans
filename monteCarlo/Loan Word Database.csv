@@ -1,6 +1,6 @@
 Latin Stem Phonology,Irish Phonology,Latin Word,Latin Stem,Irish Word,Latin Word Phonology
 'a.a.ro:n,/ˈa.rən/,Aarōn,Aaron,Aron,/'a.a.ro:n/
-'ab.ba:,/ˈab/,abbās,abba,abb,/'ab.ba:s/
+'ab.ba,/ˈab/,abbas,abba,abb,/'ab.bas/
 a.be.ke.'da:.ri.,/ˈabʲ.ɣʲə.dʲərʲ/,abecedārium,abecedari,aipgitir,/a.be.ke.'da:.ri.um/
 'a.bel,/ˈa.vʲe:l/,Abel,Abel,Abél,/'a.bel/
 a.'bi.me.lek,/ˈa.vʲə.ɱʲə.lʲəx/,Abimelech,Abimelech,Abimelech,/a.'bi.me.lek/
@@ -54,7 +54,7 @@ an.'dre:a,/ˈanʲ.dʲrʲa/,Andrēās,andrea,Aindrea,/an.'dre:.a:s/
 an.te.ˈter.ti.,/ˈan.tʲərt/,ante tertiam,ante terti,antert,/ˈan.te/+/ˈter.ti.am/
 an.te.paj.'nul.ti.m,/ˈan.tʲə.bʲə.nʲulʲtʲ/,antepaenultima,antepaenultim,antepeneuilt,/an.te.paj.'nul.ti.ma/
 an.ti.'kris.t,/ˈant.xri:st/,Antichristus,antichrist,Antchríst,/an.ti.'kris.tus/
-an.ti.'ta:.t,/ˈan.do:dʲ/,*antitātem,antitat,andóit,/an.ti.'ta:.tem/
+an.'da:.t,/ˈan.do:dʲ/,*andātem,andat,andóit,/an.'da:.tem/
 an.'to:.ni.,/ˈan.tə.na:n/,Antōnius,antoni,antonán,/an.'to:.ni.us/
 a.'pol.lo:,/ˈa.bəLʲ/',Apollō,apollo,Apoill,/a.'pol.lo:/
 a.'bos.to.l,/ˈab.stəl/,apostolus,apostol,apstal,/a.'pos.to.lus/
@@ -261,7 +261,7 @@ fe:.ri.'a:.l,/ˈfʲe:.ro:lʲ/,fēriālis,ferial,féróil,/fe:.ri.'a:.lis/
 'fi:.bu.l,/ˈʃi:.vəl/,fībula,fibul,síbal,/'fi:.bu.la/
 ˈfik.t,/ˈʃext/,fictus,fict,secht,/ˈfik.tus/
 'fi:.ku.l,/ˈfʲi:.gul.de/,fīcula,ficul,fícul\dae,/'fi:.ku.la/
-'fi:.gu:.r,/ˈfʲi.ɣər/,figūra,figur,figor,/'fi:.gu:.ra/
+'fi.gu:.r,/ˈfʲi.ɣər/,figūra,figur,figor,/'fi.gu:.ra/
 fir.ma:.'men.t,/ˈfʲirʲ.mʲənʲtʲ/,firmāmentum,firmament,firmint,/fir.ma:.'men.tum/
 fle:k.t,/ˈʃlʲe:x.təðʲ/,flēctō,flect,slécht\aid,/fle:k.to:/
 'flo:.k,/ˈslo:x/,*flōcus,flocc,slóch,/'flo:.kus/
@@ -311,7 +311,7 @@ i.du.'me:.,/ˈiə.ðuɱ.ðe/,Idumaea,Idumae,íadum\dae,/i.du.'me:.a/
 je.'na:.ri.,/ˈje.nər/,*ienārius,ienari,Ienar,/je.'na:.ri.us/
 'je:.su:,/ˈi:.su/,Iēsūs,iesu,Ísu,/'je:.su:s/
 'je.su.a,/ˈʲe.su/,Iesua,Iesua,Iessu,/'je.su.a/
-i:.ˈfer.n,/ˈi.fʲərn/,*ifernum,ifern,ifern,/i:.ˈfer.nus/
+i.ˈfer.n,/ˈi.fʲərn/,*ifernum,ifern,ifern,/i.ˈfer.nus/
 'i:.li.k,/ˈi.lʲəx.ðe,īlicem,ilic,ilec\de,/'i:.li.kem/
 'i:.liŋ.n,/ˈi.lʲəɣ.nʲə.ðʲe/,īlignus,ilign,ilign\ide,/'i:.liŋ.nus/
 i:.'ma:.go:,/ˈi:.ɱa:ɣʲ/,*īmāgō,imago,ímáig,/i:.'ma:.go:/
@@ -429,7 +429,7 @@ mo.nas.'te:.ri.,/ˈmo.nʲə.ʃtʲərʲ/,monastērium,monasteri,moinistir,/mo.nas
 mo.'ne:.t,/ˈmo.nəð/,monēta,monet,monad,/mo.'ne:.ta/
 mo.nis.'te.ri.,/ˈmunʲ.tʲər/,*monistērium,monisteri,muinter,/mo.nis.'te.ri.um/
 mo:.'ra:.lis,/ˈmo.ra:.lus/,*morālis,moralis,morálus,/mo:.'ra:.lis/
-mor.ta:.li.ˈta:.t,/ˈmor.tləθʲ/,mortālitātem,mortālitāt,mortlaith,/mor.ta:.li.ˈta:.tem/
+mor.ˈta:.li.ta,/ˈmor.tləθʲ/,mortālitas,mortālita,mortlaith,/mor.ˈta:.li.ta.s/
 mor.ti.'ki.ni.,/ˈmorʲtʲ.xʲəN/,morticinium,morticini,moirtchenn,/mor.ti.'ki.ni.um/
 mo.ˈi:.se:,/ˈmo.i.ʃi/,Mō̆ȳsēs,Mō̆ȳsē,Moysi,/mo.ˈi:.se:s/
 'mu:.l,/ˈmu:l/,mūlus,mul,múl,/'mu:.lus/
@@ -553,7 +553,7 @@ kwiŋ.kwa:.'ge:s.m,/ˈkʲiŋ.kʲə.ɣʲəs/,*quinquāgēsma,quinquagesm,cingcige
 'rab.sa.ke:n,/ˈrav.sə.kʲe:n/,Rabsacēn,Rabsacen,Rabsacen,/'rab.sa.ke:n/
 ˈra:.m,/ˈra:ɱʲ/,rāmus,ram,ráim,/ˈra:.mus/
 're:.a.t,/ˈrʲe:.du/,*rēatus,reat,rétu,/'re:.a.tus/
-'re:.gu.l,/ˈrʲiə.ɣul/,rēgula,regul,riagol,/'re:.gu.la/
+'re:.gu.l,/ˈrʲiə.ɣəl/,rēgula,regul,riagol,/'re:.gu.la/
 re.'li.kwi.,/ˈre.lʲəgʲ/,reliquiae,reliqui,reilic,/re.'li.kwi.e:/
 re.'to.ri.k,/ˈrʲe.do.rʲəgʲ/,*rhetoricē,rhetorice,retoiric,/re.'to.ri.ke:/
 'ro:.m,/ˈro:ɱ/,Rōma,rom,Rúam,/'ro:.ma/
@@ -666,7 +666,7 @@ to:.t,/ˈtod/,tōtus,tot,tot,/to:.tus/
 ˈtra:ns.tr,/ˈtrost/,trānstrum,transtr,trost,/tra:ns.trum/
 'tri.b,/ˈtʲrʲiwv/,tribus,trib,triub,/'tri.bus/
 tri.'bla:.ti.o:,/ˈtʲrʲe.vlədʲ/,*triblātiō,triblatio,treblait,/tri.'bla:.ti.o:/
-tri.'bu:.n,/ˈtʲrʲe.vuN/,tribūnus,tribun,trebunn,/tri.'bu:.nus/
+tri.'bu:.n,/ˈtʲrʲe.vəN/,tribūnus,tribun,trebann,/tri.'bu:.nus/
 tri.'da:.n,/ˈtʲrʲe.ðən/,*tridāna,tridan,tredan,/tri.'da:.na/
 tri:.ni.'ta:t,/ˈtʲrʲi:n.do:dʲ/,trīnitātem,trinitatem,tríndóit,/tri:.ni.'ta:tem/
 'tro:.j,/ˈtroʲ/,Trōia,Troia,Troí,/'tro:.ja/
