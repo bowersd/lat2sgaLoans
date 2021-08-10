@@ -55,8 +55,10 @@ def length_mod(string):
     return "".join(h)
 
 def clean_transcription(string):
-    #prefixes will mess up stress computation
     #print(string)
+    #convert length marking to single characters
+    #remove palatalization, suprasegmentals and "/"
+    #NB: prefixes will mess up stress computation
     h = []
     i = len(string)-1
     while i > -1:
