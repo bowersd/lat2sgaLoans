@@ -126,7 +126,7 @@ def check_procs(latin, irish):
         #else: pvals.append(("?", ""))
         #print(pvals)
         values.append([x[1] for x in sorted(pvals)])
-    if any([irish[x.start():x.end()] == "s_" for x in re.finditer("st", latin)]): values[2].append(1) #st>s happened in strata>srait (a post-lenition loan) and so diagnoses pre-affection
+    if any([irish[x.start():x.end()] == "s_" for x in re.finditer("st", latin)]): values[2].append(1) #st>s happened in strata>srait (a post-lenition loan) and so diagnoses pre-affection (this is latest datable occurrence of st>s)
     if values[2] == [0] and latin[re.search('[aeiouAEIOU]', latin).start()] in 'eo' and irish[re.search('[aeiouAEIOU]', irish).start()+1] in 'xɣ': values[2] = [] #failure to raise across 'x' is not diagnostic of affection failure
     sylls = count_sylls.count_syll(latin)
     #print(sylls)
