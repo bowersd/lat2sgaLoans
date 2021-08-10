@@ -128,6 +128,7 @@ def check_procs(latin, irish):
         values.append([x[1] for x in sorted(pvals)])
     if any([irish[x.start():x.end()] == "s_" for x in re.finditer("st", latin)]): values[2].append(1) #st>s happened in strata>srait (a post-lenition loan) and so diagnoses pre-affection (this is latest datable occurrence of st>s)
     if values[2] == [0] and latin[re.search('[aeiouAEIOU]', latin).start()] in 'eo' and irish[re.search('[aeiouAEIOU]', irish).start()+1] in 'xɣ': values[2] = [] #failure to raise across 'x' is not diagnostic of affection failure
+    if latin[-1] in "Ii" and irish[-1] == "e": values[2].append(1) #detecting lowering of Latin /i/ by /-a.../. Are we sure that there wasn't a post-affection suffix -e that just replaced the Latin /i/ directly?
     sylls = count_sylls.count_syll(latin)
     #print(sylls)
     if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] == "ə": values[2].append(1) #detecting lowering>reduction of /u/ in stem-final syllables
