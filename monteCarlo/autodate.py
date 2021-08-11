@@ -128,10 +128,10 @@ def check_procs(latin, irish):
         values.append([x[1] for x in sorted(pvals)])
     if any([irish[x.start():x.end()] == "s_" for x in re.finditer("st", latin)]): values[2].append(1) #st>s happened in strata>srait (a post-lenition loan) and so diagnoses pre-affection (this is latest datable occurrence of st>s)
     if values[2] == [0] and latin[re.search('[aeiouAEIOU]', latin).start()] in 'eo' and irish[re.search('[aeiouAEIOU]', irish).start()+1] in 'xɣ': values[2] = [] #failure to raise across 'x' is not diagnostic of affection failure
-    if latin[-1] in "Ii" and irish[-1] == "e": values[2].append(1) #detecting lowering of Latin /i/ by /-a.../. Are we sure that there wasn't a post-affection suffix -e that just replaced the Latin /i/ directly?
+    if latin[-1] in "Ii" and irish[-1] == "e": values[2].append(1) #detecting lowering of Latin /i/ by /-a.../. Are we sure that there wasn't a post-affection suffix -e that just replaced the Latin /i/ directly? -> may need a failure watch as in monosyllable_repair()
     sylls = count_sylls.count_syll(latin)
     #print(sylls)
-    if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] == "ə": values[2].append(1) #detecting lowering>reduction of /u/ in stem-final syllables
+    if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] == "ə": values[2].append(1) #detecting lowering>reduction of /u/ in stem-final syllables -> need a failure watch as in monosyllable_repair()
     if len(sylls) > 2: #detecting shortening of stem-internal syllables (diagnoses pre/post-compensatory lengthening)
         longv = re.compile('[AEIOU]') 
         shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"}
@@ -154,6 +154,10 @@ def monosyllable_repair(latin, irish, vector):
     #fixing harmony
     #we have no way of knowing whether failure to harmonize was due to lack of environment or being too late. would need actual morphological class information
     if ('e' in latin and 'i' in irish) or ('i' in latin and 'e' in irish) or ('o' in latin and 'u' in irish) or ('u' in latin and 'o' in irish): nu[2] = [1] 
+    elif ('e' in latin and 'e' in irish) or ('i' in latin and 'i' in irish) or ('o' in latin and 'o' in irish) or ('u' in latin and 'u' in irish): 
+        print("was failure due to envi not met or was loan too late?")
+        print(latin)
+        print(irish)
     return nu
 
 def date(*proc_v):
