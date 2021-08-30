@@ -1,0 +1,318 @@
+aarOn
+_arən
+[_] [_] [_] [1] [_] [0]
+6 4
+REMOVE HEBREW
+
+abekedAr
+ab_ɣədər
+[_] [0,1,0] [_] [1] [_] [1]
+2 2
+WHY 3 LENITIONS?
+
+abimelek
+avəɱələx
+[_] [1,1] [_] [_] [_] [0]
+6 2
+REMOVE HEBREW
+
+AbrahE
+avra_e
+[_] [_] [_] [1] [_] [0]
+6 4
+REMOVE HEBREW?
+
+Abraham
+avra_aɱ
+[_] [1] [_] [_] [_] [0]
+6 2
+REMOVE HEBREW
+
+akitofel
+axətəfəl
+[_] [1,0] [_] [_] [_] [0]
+6 2
+INCONSISTENT LENITION
+
+akrisiOn_E
+akrəs_ənde
+[_] [0,0] [_] [1] [1] [0]
+6 4
+FINAL V PROCESSING, VV SEQ? 
+
+Egiptiak__
+Eɣəpt_əxðe
+[0] [1] [_] [_] [_] [0]
+6 2
+VV SEQ? IS k>x REAL?
+
+EmiliAn__
+eɱəlE_nde
+[_] [1] [_] [_] [_] [0]
+6 2
+VV SEQ? ARE WE SURE ABOUT m lenition
+
+ajn_E_a
+ajneeðe
+[_] [_] [_] [_] [1] [0]
+6 5
+VV SEQ?
+
+
+ajnEAs
+ajneas
+[_] [0] [_] [1] [1] [0]
+6 4
+VV SEQ?
+
+EolEn_s
+ewlənte
+[_] [_] [_] [1] [_] [0]
+6 4
+??
+
+Etiob
+eθ_əb
+[_] [1,0] [_] [_] [_] [1]
+2 2
+REMOVE HEBREW?
+
+aleksander
+aləxsəndər
+[_] [1] [_] [_] [_] [0,0]
+6 2
+k>x real?
+
+aLelUja
+aLe____
+[_] [_] [0] [_] [1] [0]
+6 5
+SO MESSED UP. WHY IS HARMONY TRIGGERED?
+
+ananiA
+__aNe_
+[_] [_] [1] [_] [_] [0]
+6 3
+SO MESSED UP.
+
+antebEnultim
+antəbənult__
+[_] [0] [_] [_] [1] [0,0]
+6 5
+IS SHORTENING REAL? WHICH IS LENITION TARGET (M?)?
+
+antikrist
+ant_xrIst
+[_] [1] [_] [_] [_] [0,1]
+6 2
+IS NT THE SYNCOPE 0-TRIGGER?
+
+antO__n
+antənAn
+[_] [_] [_] [1] [_] [0]
+6 4
+SO MESSED UP.
+
+argUment
+arguɱənt
+[_] [1] [_] [_] [1] [0]
+6 2
+IS SHORTENING REAL? I DOUBT M-LENITION
+
+artikul
+artəgəl
+[_] [0] [1] [_] [_] [0]
+6 3
+HARMONY TRIGGERED BY u-REDUCING?
+
+atom
+adəɱ
+[_] [0,1] [_] [_] [_] [_]
+2 2
+I DOUBT M-LENITION
+
+awktOritAs
+awxtər_tAs
+[_] [0,0] [_] [0] [1] [0]
+6 5
+WHAT IS FIRST LENITION? IS SHORTENING REAL?
+
+awksili
+__Usəle
+[_] [_] [1] [_] [_] [0]
+6 3
+SO MESSED UP.
+
+aksiL
+oxsəl
+[_] [1] [_] [_] [_] [0]
+6 2
+TROUBLE FROM ks
+
+batism
+baθəs_
+[_] [1,0] [_] [_] [_] [_]
+2 2
+I DON'T THINK WE GET A REAL CASE OF s-LENITION AT ALL IN OUR DATA...
+
+benedIk__
+ben_dəxəð
+[_] [0,1] [_] [1] [_] [1]
+2 2
+WHAT IS FIRST LENITION TARGET? IF SHORTENING REAL SHOULD BE PRE-LENGTHENING (by hand?)
+
+benjamin
+ben_əɱIn
+[_] [1] [_] [_] [_] [0]
+6 2
+REMOVE HEBREW
+
+berEEns__
+ber_ənste
+[_] [_] [_] [1] [1] [0,1]
+6 4
+SO MESSED UP
+
+bEt_le_hEm
+beθələɱðe_
+[_] [1] [_] [1] [_] [0]
+6 2
+REMOVE HEBREW
+
+biSekst
+bisəxs_
+[_] [1] [1] [_] [_] [0]
+6 2
+TROUBLE FROM ks. ARE WE SURE ABOUT HARMONY?
+
+kad_Uk
+kaðxəx
+[_] [1] [1] [1] [0] [_]
+5 2
+SO MESSED UP.
+
+kajAfAs
+ka_ifəs
+[_] [0] [_] [1] [_] [0]
+6 4
+REMOVE HEBREW?
+
+kabiLAti
+kab_ləd_
+[_] [0,0] [_] [_] [1] [0]
+6 5
+FINAL V CAUSING TROUBLE
+
+karbuŋkul
+karbuŋkəl
+[_] [_] [1] [_] [_] [0,0]
+6 3
+u-REDUCTION CAUSING TROUBLE, NEED TO TRACK SYNCOPE PHONOTACTICS PRECISION
+
+karbuŋkul
+karɱə_gəl
+[_] [_] [1] [_] [_] [0]
+6 3
+HAND DATE? nk>g! u-REDUCTION?
+
+katEkUmen__
+kaθ_xəɱ_nəð
+[_] [1,1,1] [_] [_] [1,1] [0]
+6 2
+IRISH SUFFIX THROWING OFF SYNCOPE CALC
+
+kent_r
+kintər
+[_] [_] [1] [_] [_] [0]
+6 3
+HARMONY ERROR, NO?
+
+kerubIn
+xerufIn
+[_] [1] [0] [0] [_] [0]
+6 2
+REMOVE HEBREW. WHAT IS LENITING??
+
+kerubIn
+_irufIn
+[_] [_] [1] [0] [_] [0]
+6 3
+REMOVE HEBREW
+
+kirkumfleks
+kirkunfləxs
+[_] [1] [_] [_] [_] [0,0]
+6 2
+I DON'T THINK k>x IS REAL
+
+kolumb
+koluɱ_
+[_] [1] [0] [_] [_] [_]
+3 2
+I DOUBT m>M
+
+koMUni
+komən_
+[_] [_] [0] [_] [1] [0]
+6 5
+FINAL V THROWING OFF SYNC CALC, APOC V LENGTHENING
+
+komparAtIw
+kompərəd__
+[0] [0,0] [_] [_] [1] [0,0]
+6 5
+I DON'T THINK SHORTENING IS REAL, TOO MANY LENITION POINTS REPORTED (maybe not, m, t)
+
+kOnstantInobol
+konstəntənəbəl
+[_] [0] [_] [_] [1] [0,0,0]
+6 5
+I DON'T THINK SHORTENING IS REAL. WHAT IS LENITING??
+
+kOnsul
+konsəl
+[_] [_] [1] [_] [_] [0]
+6 3
+IS u-HARMONY WRONG OR IS NS SENSITIVITY WRONG?
+
+kOnsuMAti
+ko_s_ɱəð_
+[_] [1] [_] [_] [1] [0]
+6 2
+FINAL V, ns OUTCOME, I DOUBT m-LENITION, t too?
+
+kiklas_ia
+kigləste_
+[_] [0,0] [0,1] [_] [_] [0]
+6 3
+WHY IS THERE st? AGAIN, s-DOESN'T LENITE, WHAT IS THE SUCCESSFUL HARMONY?
+
+dam_nAti
+damən___
+[_] [0] [_] [_] [1] [0]
+6 5
+SO MESSED UP
+
+derbEns__
+derbənste
+[_] [_] [_] [1] [_] [0]
+6 4
+IS SHORTENING REAL?
+
+dewteronom
+dewtər_nəɱ
+[_] [1] [_] [_] [_] [0]
+6 2
+I DON'T THINK m>M IS REAL
+
+diameter
+di__əθər
+[_] [1] [0] [_] [_] [1]
+3 2
+SO MESSED UP
+
+diktAtOr
+dixtədOr
+[_] [0] [0] [0] [1] [0]
+6 5
+WAS SHORTENING REAL?
