@@ -8,140 +8,145 @@ abekedAr
 ab_ɣədər
 [_] [0,1,0] [_] [1] [_] [1]
 2 2
-LENITION COUNT IS RIGHT. FAITHFUL VOICED C COUNTS AS 0. SO WHAT TO DO WITH THIS? I THINK THE TRANSCRIPTION IS WRONG <g> SPELLS [g] HERE
+LENITION COUNT IS RIGHT. FAITHFUL VOICED C COUNTS AS 0. SO WHAT TO DO WITH THIS? I THINK THE TRANSCRIPTION IS WRONG <g> SPELLS [g] HERE 
+#EJFL: Actually, g is clearly lenited in modern Irish, where it is spelled aibghitir (pre-1950s reform) or aibítir (post-1950s reform). Since the g is totally effaced, it is clearly lenited. The problem is the b and t (also the modern Irish implies that the orthographic <t> is also phonetic [t]). I don't know what to do with this.
 
 abimelek
 avəɱələx
 [_] [1,1] [_] [_] [_] [0]
 6 2
-REMOVE HEBREW
+REMOVE HEBREW #EJFL Sure.
 
 AbrahE
 avra_e
 [_] [_] [_] [1] [_] [0]
 6 4
-REMOVE HEBREW?
+REMOVE HEBREW? #EJFL Sure.
 
 Abraham
 avra_aɱ
 [_] [1] [_] [_] [_] [0]
 6 2
-REMOVE HEBREW
+REMOVE HEBREW #EJFL Sure.
 
 akitofel
 axətəfəl
 [_] [1,0] [_] [_] [_] [0]
 6 2
-INCONSISTENT LENITION. SO WHAT TO DO WITH THIS ESP. GIVEN CLEAR SYNC FAILURE?
+INCONSISTENT LENITION. SO WHAT TO DO WITH THIS ESP. GIVEN CLEAR SYNC FAILURE? #EJFL: The orthography in Old Irish is <achitofel>. Perhaps this was just pronounced /akitofel/.
 
 akrisiOn_E
 akrəs_ənde
 [_] [0,0] [_] [1] [1] [0]
 6 4
-CLEARLY NOT SYNCOPE COMPLIANT, APOCOPE/COMP LEN INVOLVES FINAL V PROCESSING, VV SEQ. I BET THIS IS POST-SYNCOPE WITH A DASH OF CONFUSION
+CLEARLY NOT SYNCOPE COMPLIANT, APOCOPE/COMP LEN INVOLVES FINAL V PROCESSING, VV SEQ. I BET THIS IS POST-SYNCOPE WITH A DASH OF CONFUSION  #EJFL The final syllable /de/ in Irish is an Irish suffix. I forgot to remove Irish suffixes from the input. The comparison should be between akrisiOn_E and akrəs_ən. 
 
 Egiptiak__
 Eɣəpt_əxðe
 [0] [1] [_] [_] [_] [0]
 6 2
-PROBLEMS IN A VV SEQ. IS k>x REAL (PERHAPS A LATER ADDED SUFFIX)? I BET THIS IS POST-SYNCOPE
+PROBLEMS IN A VV SEQ. IS k>x REAL (PERHAPS A LATER ADDED SUFFIX)? I BET THIS IS POST-SYNCOPE #EJFL: it is possible that there are two Irish suffixes, -ach /əx/ + -de /ðe/ (or maybe /de/?) attached to the stem Éigipt /Eɣəpt/.
 
 EmiliAn__
 eɱəlE_nde
 [_] [1] [_] [_] [_] [0]
 6 2
-I BET THIS IS POST SYNCOPE (syncope clearly didn't happen, and we can't be sure about m lenition). PROBLEM WITH A VV SEQ 
+I BET THIS IS POST SYNCOPE (syncope clearly didn't happen, and we can't be sure about m lenition). PROBLEM WITH A VV SEQ #EJFL: the final syllable /de/ in Irish is an Irish suffix. I forgot to remove Irish suffixes from the input.
 
 ajn_E_a
 ajneeðe
 [_] [_] [_] [_] [1] [0]
 6 5
-PROBLEMS IN A VV SEQ. -- I BET PAGAN LITERARY HEROS WEREN'T THE STUFF OF NATIVIZED LOANS...
+PROBLEMS IN A VV SEQ. -- I BET PAGAN LITERARY HEROS WEREN'T THE STUFF OF NATIVIZED LOANS... #EJFL: the final syllable /ðe/ in Irish is an Irish suffix. I forgot to remove Irish suffixes from the input. I don't know that this is so difficult, since it is pretty regular to me. If it were a native word it would be the following in Primtive Irish:
+*aine:adias > aine:aðiah (lenition) > aineaðiah (shortening) > aineaðeah (affection) > aineaðea (rhinoglottalic loss) > aineaðe (apocope) > aineəðe (reduction - only affects second vowels in hiatus). The stem ajneeðe is basically the same as aineəðe. So there is no problem with this word. In fact it is much more likely to be a loan than the name ajneas (below) itself, since -s- doesn't get deleted so easily. The only problem is something with autodate.
+
 
 
 ajnEAs
 ajneas
 [_] [0] [_] [1] [1] [0]
 6 4
-PROBLEMS IN A VV SEQ.-- I BET PAGAN LITERARY HEROS WEREN'T THE STUFF OF NATIVIZED LOANS...
+PROBLEMS IN A VV SEQ.-- I BET PAGAN LITERARY HEROS WEREN'T THE STUFF OF NATIVIZED LOANS... #EJFL: OK!
 
 EolEn_s
 ewlənte
 [_] [_] [_] [1] [_] [0]
 6 4
-BUNCH OF WEIRD THINGS, AND I DON'T TRUST SHORTENING. THIS IS CLEARLY POST-SYNCOPE
+BUNCH OF WEIRD THINGS, AND I DON'T TRUST SHORTENING. THIS IS CLEARLY POST-SYNCOPE #EJFL: There is a problem with the stem. It should be ewlənste with an s. The -te is a suffix. There is no difference major difference between the Latin stem EolEns and the Irish stem ewləns(te), except the suffix. Maybe a post-syncope loan, but that's not guaranteed by anything.
 
 Etiob
 eθ_əb
 [_] [1,0] [_] [_] [_] [1]
-2 2
-REMOVE HEBREW?
+2 
+REMOVE HEBREW?  #EJFL: It's not really Hebrew. It's Greek (via Latin). Same word as Ethiopia. The word is Ethioip in Irish. It has undergone suffix substition (or British apocope) and so is much more integreated into the system than words like Achitofel or Aeneas which are not modified from the original Latin/Hebrew shape. So, I'm not sure what to do with it.
 
 aleksander
 aləxsəndər
 [_] [1] [_] [_] [_] [0,0]
 6 2
-k>x real?
+k>x real? #EJFL The word is from Wb. (so 8th century at the latest). It is spelled <alaxander>. <x> typically spells /xs/ in Old Irish, but the Latin orthography has <x> for /ks/, so who knows. The only reason to suspect that this has been Irishized is the spelled <a> for for the second vowel — this indicates some kind of reduction.
 
 aLelUja
 aLe____
 [_] [_] [0] [_] [1] [0]
 6 5
-SO MESSED UP. IF THIS STAYS, IT NEEDS TO BE HAND DATED (CUTTING OFF THE LAST TWO SYLLS IS NOT WHAT WE HAD IN MIND FOR SHORTENING! AND THE SYNC CALC WON'T WORK HERE), BUT I FAVOR REMOVING IT BECAUSE IT IS SO ABNORMAL.
+SO MESSED UP. IF THIS STAYS, IT NEEDS TO BE HAND DATED (CUTTING OFF THE LAST TWO SYLLS IS NOT WHAT WE HAD IN MIND FOR SHORTENING! AND THE SYNC CALC WON'T WORK HERE), BUT I FAVOR REMOVING IT BECAUSE IT IS SO ABNORMAL. #EJFL : The sequence of events is: ale:lu:ja > ale:li:ja (probably) > alelija (shortening) > aleleja (affection) > alele (apocope) > alle (syncope with palatalization). The output is essentially /aLje/. The only "unusual" thing is the change u: > i:. I don't have any other comparanda, but it could have happened. 
+Besides this, not much problem. Hand-dating is preferable to removal.
 
 ananiA
 __aNe_
 [_] [_] [1] [_] [_] [0]
 6 3
-WAS THIS anania->an_ne? PRE-SYNCOPE, UNCLEAR HARMONY, NEED TO DO SOMETHING SYSTEMATIC FOR FINAL V (SEQS)
+WAS THIS anania->an_ne? PRE-SYNCOPE, UNCLEAR HARMONY, NEED TO DO SOMETHING SYSTEMATIC FOR FINAL V (SEQS) #EJFL: The sequence of events is: 
+anania:s > ananias (suffix-substition) > ananiah (lenition) > ananeah (affect) > ananea (rhinoglottalic loss) > anane > anne (syncope). VERY CLEAR HARMONY: i > e before a.
 
 antebEnultim
 antəbənult__
 [_] [0] [_] [_] [1] [0,0]
 6 5
-I DOUBT THAT SHORTENING IS REAL (LOOKS LIKE A WORD YOU WOULD READ, AND LATIN ORTH UNCLARITY ON LENGTH WILL SCREW YOU UP).
+I DOUBT THAT SHORTENING IS REAL (LOOKS LIKE A WORD YOU WOULD READ, AND LATIN ORTH UNCLARITY ON LENGTH WILL SCREW YOU UP). #EJFL: I agree.
 
 antikrist
 ant_xrIst
 [_] [1] [_] [_] [_] [0,1]
 6 2
-WASN'T CHRIST SPELLED WITH A <CH>? I MIGHT BE PERSUADED RE: LENITION IF [x] WERE THE MODERN PRONUNCIATION. NT IS THE SYNCOPE 0-TRIGGER -- NOT SURE HOW TO RESOLVE (NT CAN'T BE A 1-TRIGGER! MAYBE SOMETHING LIKE 0.5)
+WASN'T CHRIST SPELLED WITH A <CH>? I MIGHT BE PERSUADED RE: LENITION IF [x] WERE THE MODERN PRONUNCIATION. NT IS THE SYNCOPE 0-TRIGGER -- NOT SURE HOW TO RESOLVE (NT CAN'T BE A 1-TRIGGER! MAYBE SOMETHING LIKE 0.5) #EJFL: I don't think that lenition of /k/ -> /x/  is phonological here. It is analogical because prefixes on nouns cause lenition. As for the prefix itself, I think that what is going on is the following. The normal Irish negative prefix (corresponding to un- in English) is an-. The word is also spelled anchríst, which must be just "Un-Christ". The spelling with ant- is basically a totally artificial/orthographci way of identifying the Irish prefix an- with the Latin prefix anti- and <t> can be ignored for the perposes of calulating date. In fact, the whole word can be removed - there should be no comparison between antichristus and an(t)chríst - the word is derived witin Irish from Críst (spelled so in Irish).
 
 antO__n
 antənAn
 [_] [_] [_] [1] [_] [0]
 6 4
-I GUESS I BUY SHORTENING, BUT WHAT IS GOING ON WITH FEWER SYLLS IN LATIN THAN IRISH?
+I GUESS I BUY SHORTENING, BUT WHAT IS GOING ON WITH FEWER SYLLS IN LATIN THAN IRISH? #EJFL: The word is Antonius in Latin. Clearly suffix substitution (or British apocope) created the stem Anton- to which the Irish suffix -án was suffixed. The stems to be compared should be Latin: antoni-/anton- and Irish: antən
 
 argUment
 arguɱənt
 [_] [1] [_] [_] [1] [0]
 6 2
-IS SHORTENING REAL? I DOUBT M-LENITION
+IS SHORTENING REAL? I DOUBT M-LENITION #EJFL: You are right. The modern Irish is argaimint, with no lenition of m. 
 
 artikul
 artəgəl
 [_] [0] [1] [_] [_] [0]
 6 3
-HARMONY TRIGGERED BY u-REDUCING
+HARMONY TRIGGERED BY u-REDUCING #EJFL: Probably right.
 
 atom
 adəɱ
 [_] [0,1] [_] [_] [_] [_]
 2 2
-I DOUBT M-LENITION
+I DOUBT M-LENITION #EJFL: Don't be such a Debbie-Doubter. Modern Irish has adamh /adəɱ/ so, m-lenition is assured
 
 awktOritAs
 awxtər_tAs
 [_] [0,0] [_] [0] [1] [0]
 6 5
-I DON'T THINK SHORTENING IS REAL
+I DON'T THINK SHORTENING IS REAL #EJFL But clearly is, given all derivatives in Modern Irish. The probably is more with the suffix. Was it -ita:s or just ta:s in Latin? 
 
 awksili
 __Usəle
 [_] [_] [1] [_] [_] [0]
 6 3
-SO MESSED UP, AND I DON'T REALLY BUY HARMONY.
+SO MESSED UP, AND I DON'T REALLY BUY HARMONY. 
 
 aksiL
 oxsəl
@@ -171,13 +176,13 @@ berEEns__
 ber_ənste
 [_] [_] [_] [1] [1] [0,1]
 6 4
-SO MESSED UP, PLEASE TELL ME WHAT IS GOING ON WITH THIS WORD
+SO MESSED UP, PLEASE TELL ME WHAT IS GOING ON WITH THIS WORD  #EJFL: The final syllable in the Irish is a suffix.
 
 bEt_le_hEm
 beθələɱðe_
 [_] [1] [_] [1] [_] [0]
 6 2
-REMOVE HEBREW
+REMOVE HEBREW #EJFL: Maybe. The final syllable in the Irish is a suffix.
 
 biSekst
 bisəxs_
@@ -189,7 +194,7 @@ kad_Uk
 kaðxəx
 [_] [1] [1] [1] [0] [_]
 5 2
-SO MESSED UP. IS THIS kadUK>kad_x-@x? DOESN'T LOOK LATIN, REMOVE HEBREW?
+SO MESSED UP. IS THIS kadUK>kad_x-@x? DOESN'T LOOK LATIN, REMOVE HEBREW? #EJFL: This is Latin <cadu:cus> > <cadu:c-> (getting rid of the suffix). Lenition and shortening happen. The Irish suffix -ach is added /kaðux/ + /əx/. Then you get syncope: /kaðx/ + /əx/. The only problem autodate has is that the Irish -ach suffix is not removed. 
 
 kajAfAs
 ka_ifəs
@@ -273,19 +278,19 @@ kOnsul
 konsəl
 [_] [_] [1] [_] [_] [0]
 6 3
-IS u-HARMONY WRONG OR IS NS SENSITIVITY WRONG?
+IS u-HARMONY WRONG OR IS NS SENSITIVITY WRONG? #EJFL: /ns/ may be treated as voiceless and u-harmony doesn't necessarily happen across voiceless clusters.
 
 kOnsuMAti
 ko_s_ɱəð_
 [_] [1] [_] [_] [1] [0]
 6 2
-FINAL V, ns OUTCOME, I DOUBT m-LENITION, though [t] is what is triggerig it? (DOES IRISH HAVE A NEW SUFF HERE?)
+FINAL V, ns OUTCOME, I DOUBT m-LENITION, though [t] is what is triggerig it? (DOES IRISH HAVE A NEW SUFF HERE?) #EJFL: McManus thinks this is a verbal noun of the verb cosmaid "annoints". The ending -əð is the normal verbal noun suffix. The verb is derived from Latin consumm-are > cosm-aid - So the Latin stem is incorrect. 
 
 kiklas_ia
 kigləste_
 [_] [0,0] [0,1] [_] [_] [0]
 6 3
-WHY IS THERE st? AGAIN, s-DOESN'T LENITE. SUCCESSFUL HARMONY IS ia->e, WHICH IS MANAGEABLE BY A NATIVE SUFFIX?
+WHY IS THERE st? AGAIN, s-DOESN'T LENITE. SUCCESSFUL HARMONY IS ia->e, WHICH IS MANAGEABLE BY A NATIVE SUFFIX? #EJFL: No. There was suffix substition/british apocope (second preferable to me) so that kiklasia became kiklas- and then -te is an Irish suffix. 
 
 dam_nAti
 damən___
@@ -297,7 +302,7 @@ derbEns__
 derbənste
 [_] [_] [_] [1] [_] [0]
 6 4
-IS SHORTENING REAL? ANOTHER WEIRD ST<S
+IS SHORTENING REAL? ANOTHER WEIRD ST<S #EJFL: Not weird. -te is a suffix. 
 
 dewteronom
 dewtər_nəɱ
