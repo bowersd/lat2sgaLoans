@@ -64,6 +64,7 @@ ajneeðe
 PROBLEMS IN A VV SEQ. -- I BET PAGAN LITERARY HEROS WEREN'T THE STUFF OF NATIVIZED LOANS... #EJFL: the final syllable /ðe/ in Irish is an Irish suffix. I forgot to remove Irish suffixes from the input. I don't know that this is so difficult, since it is pretty regular to me. If it were a native word it would be the following in Primtive Irish:
 *aine:adias > aine:aðiah (lenition) > aineaðiah (shortening) > aineaðeah (affection) > aineaðea (rhinoglottalic loss) > aineaðe (apocope) > aineəðe (reduction - only affects second vowels in hiatus). The stem ajneeðe is basically the same as aineəðe. So there is no problem with this word. In fact it is much more likely to be a loan than the name ajneas (below) itself, since -s- doesn't get deleted so easily. The only problem is something with autodate.
 #DAB: autodate detects a failure to syncopate (which looks right to me) and shortening, which is inconsistent. if it were borrowed before lenition, or even just borrowed after affection and got lenited/affected suffixes put on it,  , we still have the shortening/syncope problem. For clarity, if we want to go way out on a limb and say it was a post-apocope loan, we have this UR+derivation (the problem stands for earlier URs too): /ajne:a-ð(-?)e/> ajneaðe (shortening) > ajn_aðe (syncope)
+#EJFL: I just came up with this approach o the medial <ee>: the full form of the suffix in Primitive Irish is typically reconstructed as *-odias/odia/odian (masc/fem/neut), so there is actually a vowel that could undergoe syncope under the right conditions. What if this was attached to the stem: *ajne:aodias This would become something like ajnaəðe after syncope, with a VV sequence. Just a thought.
 
 
 
@@ -80,6 +81,7 @@ ewlənte
 6 4
 BUNCH OF WEIRD THINGS, AND I DON'T TRUST SHORTENING. THIS IS CLEARLY POST-SYNCOPE #EJFL: There is a problem with the stem. It should be ewlənste with an s. The -te is a suffix. There is no difference major difference between the Latin stem EolEns and the Irish stem ewləns(te), except the suffix. Maybe a post-syncope loan, but that's not guaranteed by anything.
 #DAB: as far as I can tell, with an Irish suffix the word is still trisyllabic and eligible for syncope. Perhaps shortening and syncope applied and there was later epenthesis into the cluster? Or perhaps the word was borrowed (possibly before syncope) and the extra syllable was added after syncope was no longer active ?that actually doesn't quite work, because then shortening should not have applied at all. Or the loss of length was just orthographic and this is a post-syncope loan. Are any of these less likely than the others?
+#EJFL: Epenthesis is the most likely. Epenthesis applies to syllabic r/l/n (maybe m) if these are created by syncope. 
 
 Etiob
 eθ_əb
@@ -102,6 +104,7 @@ aLe____
 SO MESSED UP. IF THIS STAYS, IT NEEDS TO BE HAND DATED (CUTTING OFF THE LAST TWO SYLLS IS NOT WHAT WE HAD IN MIND FOR SHORTENING! AND THE SYNC CALC WON'T WORK HERE), BUT I FAVOR REMOVING IT BECAUSE IT IS SO ABNORMAL. #EJFL : The sequence of events is: ale:lu:ja > ale:li:ja (probably) > alelija (shortening) > aleleja (affection) > alele (apocope) > alle (syncope with palatalization). The output is essentially /aLje/. The only "unusual" thing is the change u: > i:. I don't have any other comparanda, but it could have happened. 
 Besides this, not much problem. Hand-dating is preferable to removal.
 #DAB: cool! Any chance of /uj/>ij, instead of u:>i:? Also, is the /l/ really long? I know there's weird stuff
+#EJFL: Let's say <ll> not <L>. 
 
 ananiA
 __aNe_
@@ -109,7 +112,8 @@ __aNe_
 6 3
 WAS THIS anania->an_ne? PRE-SYNCOPE, UNCLEAR HARMONY, NEED TO DO SOMETHING SYSTEMATIC FOR FINAL V (SEQS) #EJFL: The sequence of events is: 
 anania:s > ananias (suffix-substition) > ananiah (lenition) > ananeah (affect) > ananea (rhinoglottalic loss) > anane > anne (syncope). VERY CLEAR HARMONY: i > e before a.
-#DAB: cool! needs a hand date then. Since the affection happens in a suffix, I am disinclined to say this is a pre-affection loan, but good to see that syncope applied. (I bet that transcribing this with nn instead of N would go a long way to getting a better alignment, same for hallelujah)
+#DAB: cool! needs a hand date then. Since the affection happens in a suffix, I am disinclined to say this is a pre-affection loan, but good to see that syncope applied. (I bet that transcribing this with nn instead of N would go a long way to getting a better alignment, same for hallelujah) 
+#EJFL: I doubt that -e is a real suffix here. -e as a suffix has the following three specific uses (a) -e to derive a feminine abstract noun from an adjective, e.g. áith 'sharp' --> áithe 'acuity'; (c) -e to derive a feminine verbal noun from a vebal root, e.g. slaidid 'to slay' --> slaide 'slaying/slaughter'; (c) -e to derive a neuter verbal noun from a verbal root, ar-gair 'to prohibit' --> airgaire 'prohibition'; (d) -e to derive a neuter abstract noun from a noun, e.g. táith 'thief' --> táithe 'concealment'. Annae is a masculine personal name, so -e is clearly not any of these suffixes. Final e is also found as part of other suffixes: -aire (masculine agent noun - not applicable here); -(s)aine (neuter abstract noun, e.g. clam 'leper' --> clamsaine 'leprosy — clearly this is not applicable here); -aige (masculine noun denoting someone related to the nominal base to which it is attached, e.g. scél 'story' --> scélaige 'narrator' — not applicable here); -ine or -ne a rare diminutive suffix, mostly added to common nouns. The last one is slightly possible as a model for Annae, but rather unlikely. As for <nn> vs <N>, I agree.
 
 antebEnultim
 antəbənult__
@@ -130,6 +134,7 @@ antənAn
 6 4
 I GUESS I BUY SHORTENING, BUT WHAT IS GOING ON WITH FEWER SYLLS IN LATIN THAN IRISH? #EJFL: The word is Antonius in Latin. Clearly suffix substitution (or British apocope) created the stem Anton- to which the Irish suffix -án was suffixed. The stems to be compared should be Latin: antoni-/anton- and Irish: antən
 #DAB: I don't think we can just hack off these Irish suffixes, since they create the environment for shortening and syncope, and if they were applied to the loan at the right time, we would expect these processes to be carried out. So, as above, the syncope-shortening question needs to get sorted out. If the borrowing started out orthographically, that is a good way to lose the length, right?
+#EJFL: Maybe you're right about the loss of length being conditioned by ambiguous orthography. By the way, there is a word Antoin in Modern Irish. That would be the expected descendent of Antonius, with final palatalization resulting from "British Apocope" of -ius. From Antoin (short o) Antonán is the expected diminutive. I believe that the loss of palatalization is regular in this context. So we could just analyse Antoin and leave Antonán aside.
 
 argUment
 arguɱənt
@@ -144,6 +149,8 @@ artəgəl
 6 3
 HARMONY TRIGGERED BY u-REDUCING #EJFL: Probably right.
 #DAB: We have a later reduction where /u/ reduced as well. This undercuts the u>o>@ argument for harmony right? For this case specifically, do we trust u-reduction more than the lack of syncope, or was there a way to epenthesize @ after syncope?
+#EJFL: No that's not how it works. An unharmonized u is NOT reduced by post-syncope vowel reduction to schwa. If there is any reduction it is later than that and outside of our purview which is Old Irish. My suggestion that we count u>ə as the output of harmony is based on the idea that ə can't directly come from u because u is exempt from reduction and must therefore come from /o/, i.e. the affected vowel output by harmony. The stem artəgəl shows harmony because the inflectional suffix is Latin -us (masculine o-stem) which is typically replaced with Primitive Irish -as (masculine), so *artikulas gives the right context for lowering of u to o.
+
 
 atom
 adəɱ
@@ -151,6 +158,7 @@ adəɱ
 2 2
 I DOUBT M-LENITION #EJFL: Don't be such a Debbie-Doubter. Modern Irish has adamh /adəɱ/ so, m-lenition is assured
 #DAB: How to resolve the inconsistency then? I think I saw recently that Welsh had m>ɱ.>v, so perhaps m-lenition doesn't differentiate Irish from Brittonic lenition.
+#EJFL: Probably true.
 
 awktOritAs
 awxtər_tAs
