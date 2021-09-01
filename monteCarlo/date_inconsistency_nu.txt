@@ -33,7 +33,8 @@ akitofel
 axətəfəl
 [_] [1,0] [_] [_] [_] [0]
 6 2
-INCONSISTENT LENITION. SO WHAT TO DO WITH THIS ESP. GIVEN CLEAR SYNC FAILURE? #EJFL: The orthography in Old Irish is <achitofel>. Perhaps this was just pronounced /akitofel/.
+INCONSISTENT LENITION. SO WHAT TO DO WITH THIS ESP. GIVEN CLEAR SYNC FAILURE? #EJFL: The orthography in Old Irish is <achitofel>. Perhaps this was just pronounced /akitofel/. 
+SINCE LATIN ORTH IS ACHITOPHEL, I'D SAY YOU ARE RIGHT.
 
 akrisiOn_E
 akrəs_ənde
