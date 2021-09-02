@@ -150,6 +150,8 @@ artəgəl
 HARMONY TRIGGERED BY u-REDUCING #EJFL: Probably right.
 #DAB: We have a later reduction where /u/ reduced as well. This undercuts the u>o>@ argument for harmony right? For this case specifically, do we trust u-reduction more than the lack of syncope, or was there a way to epenthesize @ after syncope?
 #EJFL: No that's not how it works. An unharmonized u is NOT reduced by post-syncope vowel reduction to schwa. If there is any reduction it is later than that and outside of our purview which is Old Irish. My suggestion that we count u>ə as the output of harmony is based on the idea that ə can't directly come from u because u is exempt from reduction and must therefore come from /o/, i.e. the affected vowel output by harmony. The stem artəgəl shows harmony because the inflectional suffix is Latin -us (masculine o-stem) which is typically replaced with Primitive Irish -as (masculine), so *artikulas gives the right context for lowering of u to o.
+#DAB: Our loanword database has a column for "later reduction", where such words as [konsul] get reduced to [kons@l]. How do we tell whether a word in our dataset with Latin [u] and Irish non-<u>=[@] got there by "later reduction" of /u/ to [@], or by harmony of /u/ to [o] and then by earlier reduction to [@]? Is it just age of text in which the form is attested? 
+#DAB: Assuming that the theory where "late reduction" made [@] is wrong,  how do we ensure a coherent timeline for this word? As things stand in pops in to the language for harmony and then goes underground during syncope. Was there later epenthesis? restructuring?
 
 
 atom
@@ -215,12 +217,14 @@ bisəxs_
 [_] [1] [1] [_] [_] [0]
 6 2
 TROUBLE FROM ks. I THIS IS HARMONY FROM ST>S? DUNNO ABOUT THIS ONE
+#DAB: another Latin <x> to Irish <x> perhaps, thus making lenition a non-factor?
 
 kad_Uk
 kaðxəx
 [_] [1] [1] [1] [0] [_]
 5 2
 SO MESSED UP. IS THIS kadUK>kad_x-@x? DOESN'T LOOK LATIN, REMOVE HEBREW? #EJFL: This is Latin <cadu:cus> > <cadu:c-> (getting rid of the suffix). Lenition and shortening happen. The Irish suffix -ach is added /kaðux/ + /əx/. Then you get syncope: /kaðx/ + /əx/. The only problem autodate has is that the Irish -ach suffix is not removed. 
+#DAB: great, this looks like a straightforward hand dating
 
 kajAfAs
 ka_ifəs
@@ -305,18 +309,21 @@ konsəl
 [_] [_] [1] [_] [_] [0]
 6 3
 IS u-HARMONY WRONG OR IS NS SENSITIVITY WRONG? #EJFL: /ns/ may be treated as voiceless and u-harmony doesn't necessarily happen across voiceless clusters.
+#DAB: Whoops, I was referring to the hypothetical lowering of /u/ to allow eventual reduction.
 
 kOnsuMAti
 ko_s_ɱəð_
 [_] [1] [_] [_] [1] [0]
 6 2
 FINAL V, ns OUTCOME, I DOUBT m-LENITION, though [t] is what is triggerig it? (DOES IRISH HAVE A NEW SUFF HERE?) #EJFL: McManus thinks this is a verbal noun of the verb cosmaid "annoints". The ending -əð is the normal verbal noun suffix. The verb is derived from Latin consumm-are > cosm-aid - So the Latin stem is incorrect. 
+#DAB: OK, is the derivation konsummare = kosum@ð (phonotactic/suffix adjustment) > kos_m@ð, so that there is no informative lenition or shortening, but there is syncope? If remove the Latin suffixes, the syncope calculation won't work. I'd say this is a case for hand dating 
 
 kiklas_ia
 kigləste_
 [_] [0,0] [0,1] [_] [_] [0]
 6 3
 WHY IS THERE st? AGAIN, s-DOESN'T LENITE. SUCCESSFUL HARMONY IS ia->e, WHICH IS MANAGEABLE BY A NATIVE SUFFIX? #EJFL: No. There was suffix substition/british apocope (second preferable to me) so that kiklasia became kiklas- and then -te is an Irish suffix. 
+#DAB: so it is a post-harmony loan (because first syllable doesn't lower) and the [e] in -te is not the result of any relevant harmony.
 
 dam_nAti
 damən___
@@ -329,6 +336,7 @@ derbənste
 [_] [_] [_] [1] [_] [0]
 6 4
 IS SHORTENING REAL? ANOTHER WEIRD ST<S #EJFL: Not weird. -te is a suffix. 
+#DAB: great! but we still have tension between an unsyncopated vowel and early enough entrance for shortening.
 
 dewteronom
 dewtər_nəɱ
