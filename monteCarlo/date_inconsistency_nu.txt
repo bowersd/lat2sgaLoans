@@ -160,7 +160,7 @@ adəɱ
 [_] [0,1] [_] [_] [_] [_]
 2 2
 I DOUBT M-LENITION #EJFL: Don't be such a Debbie-Doubter. Modern Irish has adamh /adəɱ/ so, m-lenition is assured
-#DAB: How to resolve the inconsistency then? I think I saw recently that Welsh had m>ɱ.>v, so perhaps m-lenition doesn't differentiate Irish from Brittonic lenition.
+#DAB: How to resolve the inconsistency then? I think I saw recently that Welsh had m>ɱ.>v (McCone 1996:17), so m-lenition doesn't differentiate Irish from Brittonic lenition.
 #EJFL: Probably true.
 
 awktOritAs
