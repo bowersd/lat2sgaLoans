@@ -68,7 +68,6 @@ def top_rank(candidate, tops):
     j = len(tops)-1
     while p>tops[j]: 
         if p<tops[j-1] or j == 0: 
-            #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[j], j, i))
             return j
         j -= 1
 
@@ -90,6 +89,7 @@ def random_non_genetic(rates, slot_cnt, *dates) #need procs equivalent (matrix o
         p = assess_prob(cnts, bin_procs, rates) #assess
         if any([p>x for x in top_probs]): #update pool
             loc = top_rank(p, top_probs)
+            #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
             top_probs = top_probs[:loc]+[p]+top_probs[loc:-1]
             time_bins = time_bins[:loc]+[cnts]+time_bins[loc:-1]
             verses = verses[:loc]+[s]+verses[loc:-1]
