@@ -19,13 +19,6 @@ def span(start, stop):
 
 def kullbackleibler(p,q): return sum([p[i]*math.log2(p[i]/q[i]) for i in range(len(p))])
 
-#this works just as well as kl when you have a binary variable, amirite?
-#not really. we are seeking to maximize probability, not minimize difference between expected rate and observed rate.
-#the optimum may be the same, but everything else about the calculation is different.
-def distance(q, n, d): return abs((n/d)-q)
-
-def distance_ranked(q, *nds): return sorted(nds, key=lambda nd: distance(q, nd[0], nd[1]))
-
 def binomial(n, N, p): return (math.factorial(N)/(math.factorial(n)*math.factorial(N-n)))*(p**n)*((1-p)**(N-n))#successes, trials, probability of success
 
 def product(*args): return reduce(operator.mul, [a for a in args], 1)
@@ -33,16 +26,6 @@ def product(*args): return reduce(operator.mul, [a for a in args], 1)
 def mean(*ns): return sum(ns)/len(ns)
 
 def stdev(*ns): return math.sqrt(mean(*[(ns[x]-mean(*ns)**2) for x in ns])) #not performing bessel's correction (decrease denom by 1) since we have a complete sample
-
-def fit_bin(i, low, high): return i >= low and i < high
-
-def cf(i, j): #Common Factors 
-    h = []
-    k = 2
-    while k < n:
-        if (not i%k) and (not j%k): h.append(k)
-        k += 1
-    return h
 
 def readin(filename):
     h = []
