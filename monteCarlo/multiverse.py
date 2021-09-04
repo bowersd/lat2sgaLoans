@@ -110,7 +110,7 @@ def random_non_genetic(rates, slot_cnt, *dates) #need procs equivalent (matrix o
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))]
                 for j in range(len(v)):
                     k = v[j]
-                    if j not in change: k = random.randrange(data[j][0], data[j][1]) #shouldn't this be "if j in change" if the number of changes is supposed to shrink on each iteration??
+                    if j in change: k = random.randrange(dates[j][0], dates[j][1]) #shouldn't this be "if j in change" if the number of changes is supposed to shrink on each iteration??
                     cnts[k] += 1
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
