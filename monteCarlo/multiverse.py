@@ -59,7 +59,7 @@ def top_rank(candidate, tops):
         if p<tops[j-1] or j == 0: return j
         j -= 1
 
-def random_non_genetic(rates, slot_cnt, procs, *dates) #need procs equivalent (matrix of whether Latin meets struc desc for items)
+def random_non_genetic(rates, slot_cnt, procs, *dates) 
     ##initialization
     verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
     top_probs = [0 for i in range(15)] #probabilities of verses
