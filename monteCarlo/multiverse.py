@@ -67,8 +67,7 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
 def top_rank(candidate, tops):
     j = len(tops)-1
     while p>tops[j]: 
-        if p<tops[j-1] or j == 0: 
-            return j
+        if p<tops[j-1] or j == 0: return j
         j -= 1
 
 def random_non_genetic(rates, slot_cnt, *dates) #need procs equivalent (matrix of whether Latin meets struc desc for items)
@@ -94,6 +93,39 @@ def random_non_genetic(rates, slot_cnt, *dates) #need procs equivalent (matrix o
             time_bins = time_bins[:loc]+[cnts]+time_bins[loc:-1]
             verses = verses[:loc]+[s]+verses[loc:-1]
             distributions = distributions[:loc]+[bin_procs]+distributions[loc:-1]
+    ##further runs to try to get closer to priors
+    cnt = 2
+    while cnt < 20:
+        nuverses = [x for x in verses]
+        nudistances = [x for x in distances]
+        nutime_bins = [x for x in time_bins]
+        nudistributions = [x for x in distributions]
+        for v in nuverses:
+            for i in range(10000):
+                change = random.sample(range(len(v)), len(v)//cnt)
+                cnts = [0,0,0,0,0,0,0] #0 for however many time slots there are
+                s = []
+                bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))]
+                for j in range(len(v)):
+                    k = v[j]
+                    if j not in change: k = random.randrange(data[j][0], data[j][1]) #shouldn't this be "if j in change" if the number of changes is supposed to shrink on each iteration??
+                    cnts[k] += 1
+                    s.append(k)
+                    bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
+                p = 1
+                for j in range(len(cnts)):
+                    p *= product(*[binomial(bin_procs[j][k], cnts[j], q[k]) for k in range(len(bin_procs[j]))])
+                if any([p>x for x in distances]): #rename distances to probs
+                    j = 14
+                    while p>distances[j]: 
+                        if p<distances[j-1] or j==0: 
+                            #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, distances[j], j, cnt))
+                            distances = distances[:j]+[p]+distances[j:-1]
+                            time_bins = time_bins[:j]+[cnts]+time_bins[j:-1]
+                            verses = verses[:j]+[s]+verses[j:-1]
+                            distributions = distributions[:j]+[bin_procs]+distributions[j:-1]
+                        j -= 1
+        cnt += 1
 
 if __name__ == "__main__":
     procs = [[0 for i in range(len(process_list))] for j in range(len(forms))]
