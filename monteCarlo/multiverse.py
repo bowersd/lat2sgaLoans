@@ -51,13 +51,19 @@ def readin(filename):
             h.append(",".split(l.strip()))
     return h
 
+def tally_procs(regexen, *forms):
+    procs = [[0 for i in range(len(regexen))] for j in range(len(forms))]
+    for i in range(len(forms)):
+        for j in range(len(regexen)):
+            if regexen[j].search(forms[i]): 
+                procs[i][j] = 1
+    return procs
+
 def assess_prob(sum_bins, prop_bins, prior_rates):
     p = 1
     for j in range(len(sum_bins)):
         binomial_results = []
-        for k in range(len(prop_bins[j])):
-            b = binomial(prop_bins[j][k], sum_bins[j], prior_rates[k])
-            binomial_results.append(b)
+        for k in range(len(prop_bins[j])): binomial_results.append(binomial(prop_bins[j][k], sum_bins[j], prior_rates[k]))
         #print("processes {0}".format(prop_bins[j]))
         #print("sum_bins:{0}".format(j))
         #print(product(*binomial_results))
@@ -70,64 +76,37 @@ def top_rank(candidate, tops):
         if p<tops[j-1] or j == 0: return j
         j -= 1
 
-def random_non_genetic(rates, slot_cnt, *dates) #need procs equivalent (matrix of whether Latin meets struc desc for items)
-    ##initialization with prior distributions
-    time_bins = []
-    verses = []
-    distributions = []
-    top_probs = [0 for i in range(15)]
-    for i in range(10000):
-        cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
-        s = [] #tracking individual slot placements
-        bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
-        for j in range(len(data)):  #sample
-            k = random.randrange(data[j][0], data[j][1])
-            cnts[k] += 1
-            s.append(k)
-            bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
-        p = assess_prob(cnts, bin_procs, rates) #assess
-        if any([p>x for x in top_probs]): #update pool
-            loc = top_rank(p, top_probs)
-            #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
-            top_probs = top_probs[:loc]+[p]+top_probs[loc:-1]
-            time_bins = time_bins[:loc]+[cnts]+time_bins[loc:-1]
-            verses = verses[:loc]+[s]+verses[loc:-1]
-            distributions = distributions[:loc]+[bin_procs]+distributions[loc:-1]
-    ##further runs to try to get closer to priors
-    cnt = 2
-    while cnt < 20:
-        nuverses = [x for x in verses]
-        nudistances = [x for x in distances]
-        nutime_bins = [x for x in time_bins]
-        nudistributions = [x for x in distributions]
-        for v in nuverses:
+def random_non_genetic(rates, slot_cnt, procs, *dates) #need procs equivalent (matrix of whether Latin meets struc desc for items)
+    ##initialization
+    verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
+    top_probs = [0 for i in range(15)] #probabilities of verses
+    time_bins = [] #how many words in each time slot by verse
+    distributions = [] #how many words in each time slot match phonotactics of interest
+    changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
+    rnd = 1
+    while rnd < 20:
+        for v in verses:
             for i in range(10000):
-                changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
+                cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
+                s = [] #tracking individual slot placements
+                bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
                 change = random.sample(changeable, len(changeable)//cnt)
-                #change = random.sample(range(len(v)), len(v)//cnt)
-                cnts = [0,0,0,0,0,0,0] #0 for however many time slots there are
-                s = []
-                bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))]
-                for j in range(len(v)):
+                for j in range(len(dates)):  #sample
                     k = v[j]
-                    if j in change: k = random.randrange(dates[j][0], dates[j][1]) #shouldn't this be "if j in change" if the number of changes is supposed to shrink on each iteration??
+                    if j in change: random.randrange(dates[j][0], dates[j][1])
                     cnts[k] += 1
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
-                p = 1
-                for j in range(len(cnts)):
-                    p *= product(*[binomial(bin_procs[j][k], cnts[j], q[k]) for k in range(len(bin_procs[j]))])
-                if any([p>x for x in distances]): #rename distances to probs
-                    j = 14
-                    while p>distances[j]: 
-                        if p<distances[j-1] or j==0: 
-                            #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, distances[j], j, cnt))
-                            distances = distances[:j]+[p]+distances[j:-1]
-                            time_bins = time_bins[:j]+[cnts]+time_bins[j:-1]
-                            verses = verses[:j]+[s]+verses[j:-1]
-                            distributions = distributions[:j]+[bin_procs]+distributions[j:-1]
-                        j -= 1
-        cnt += 1
+                p = assess_prob(cnts, bin_procs, rates) #assess
+                if any([p>x for x in top_probs]): #update pool
+                    loc = top_rank(p, top_probs)
+                    #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
+                    top_probs = top_probs[:loc]+[p]+top_probs[loc:-1]
+                    time_bins = time_bins[:loc]+[cnts]+time_bins[loc:-1]
+                    verses = verses[:loc]+[s]+verses[loc:-1]
+                    distributions = distributions[:loc]+[bin_procs]+distributions[loc:-1]
+        rnd += 1
+    return (verses, top_probs, time_bins, distributions)
 
 if __name__ == "__main__":
     procs = [[0 for i in range(len(process_list))] for j in range(len(forms))]
