@@ -102,7 +102,9 @@ def random_non_genetic(rates, slot_cnt, *dates) #need procs equivalent (matrix o
         nudistributions = [x for x in distributions]
         for v in nuverses:
             for i in range(10000):
-                change = random.sample(range(len(v)), len(v)//cnt)
+                changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
+                change = random.sample(changeable, len(changeable)//cnt)
+                #change = random.sample(range(len(v)), len(v)//cnt)
                 cnts = [0,0,0,0,0,0,0] #0 for however many time slots there are
                 s = []
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))]
