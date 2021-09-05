@@ -80,7 +80,7 @@ def recombine_aux(procs, slot_cnt, *offspring):
     return (time_containers, proc_containers)
 
 
-def genetic(rates, slot_cnt, procs, *dates) 
+def genetic_search(rates, slot_cnt, procs, *dates) 
     ##initialization
     verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
     top_probs = [0 for i in range(15)] #probabilities of verses
@@ -131,7 +131,7 @@ def genetic(rates, slot_cnt, procs, *dates)
         rnd += 1
     return (verses, top_probs, time_bins, distributions)
 
-def random_non_genetic(rates, slot_cnt, procs, *dates) 
+def random_search(rates, slot_cnt, procs, *dates) 
     ##initialization
     verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
     top_probs = [0 for i in range(15)] #probabilities of verses
