@@ -196,6 +196,7 @@ phonotactics = [#what to look for in Latin
         re.compile('[aeiou](?=[dg][^aeiouAEIOU])'), #compensatory lengthening
         re.compile('(st|ŋk|n(t(?!$)|s))|((?<!^e)ks)'), #(almost syncope)+st phonotactics. mp, nf removed due to overlap with missing phoneme 
         ]
+
 if __name__ == "__main__":
     #input is csv where: 
     #   column[0] is phonological latin stem, 
