@@ -59,6 +59,19 @@ def top_rank(candidate, tops):
         if p<tops[j-1] or j == 0: return j
         j -= 1
 
+def recombine(num_offspring, cands):
+    h = []
+    while cands:
+        x = cands.pop()
+        for y in cands:
+            for i in range(num_offspring):
+                nu = []
+                for j in range(len(x)):
+                    if x[j] != y[j] and random.randrange(0,2) == 0: nu.append(y[j])
+                    else: nu.append(x[j])
+                h.append(nu)
+    return h
+
 def random_non_genetic(rates, slot_cnt, procs, *dates) 
     ##initialization
     verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
