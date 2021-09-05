@@ -187,12 +187,14 @@ def date(*proc_v):
     return h
 
 phonotactics = [#what to look for in Latin
-        re.compile('[Pp]'), #pk
-        re.compile('((?<=[aeiouAEIOU])_*[tkbdgms])|f'), #lenition (f>s in, st>s removed due to post-lenition strata>strait)
-        re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
-        re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
-        re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), #compensatory lengthening
-        re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
+        re.compile('[Ppf]'), #missing phonemes what about [f:]?
+        re.compile('((?<=[aeiouAEIOU])([tkbdgm]|s(?!t|k)))'), #lenition 
+        re.compile('^[^AEIOUaeiou]*[eoiu]'), #affection ... restricted to initial syllables to avoid overlap with syll counting
+        re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$)'), #disyllables (apocope-adjacent)
+        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou])'), #trisyllables or greater (syncope, also complen-adjacent)
+        re.compile('[AEIOU]'), #long vowels (apocope/shortening/complen-adjacent)
+        re.compile('[aeiou](?=[dg][^aeiouAEIOU])'), #compensatory lengthening
+        re.compile('(st|ŋk|n(t(?!$)|s))|((?<!^e)ks)'), #(almost syncope)+st phonotactics. mp, nf removed due to overlap with missing phoneme 
         ]
 if __name__ == "__main__":
     #input is csv where: 
