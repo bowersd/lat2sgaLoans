@@ -68,6 +68,10 @@ def random_non_genetic(rates, slot_cnt, procs, *dates)
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
     rnd = 1
     while rnd < 20:
+        nu_verses       = [x for x in verses       ]
+        nu_top_probs    = [x for x in top_probs    ]
+        nu_time_bins    = [x for x in time_bins    ]
+        nu_distributions= [x for x in distributions]
         for v in verses:
             for i in range(10000):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
@@ -81,13 +85,17 @@ def random_non_genetic(rates, slot_cnt, procs, *dates)
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
                 p = assess_prob(cnts, bin_procs, rates) #assess
-                if any([p>x for x in top_probs]): #update pool
-                    loc = top_rank(p, top_probs)
+                if any([p>x for x in nu_top_probs]): #update pool
+                    loc = top_rank(p, nu_top_probs)
                     #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
-                    top_probs = top_probs[:loc]+[p]+top_probs[loc:-1]
-                    time_bins = time_bins[:loc]+[cnts]+time_bins[loc:-1]
-                    verses = verses[:loc]+[s]+verses[loc:-1]
-                    distributions = distributions[:loc]+[bin_procs]+distributions[loc:-1]
+                    nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
+                    nu_time_bins =      nu_time_bins[:loc]+[cnts]+nu_time_bins[loc:-1]
+                    nu_verses =         nu_verses[:loc]+[s]+nu_verses[loc:-1]
+                    nu_distributions =  nu_distributions[:loc]+[bin_procs]+nu_distributions[loc:-1]
+        verses       = [x for x in nu_verses       ]
+        top_probs    = [x for x in nu_top_probs    ]
+        time_bins    = [x for x in nu_time_bins    ]
+        distributions= [x for x in nu_distributions]
         rnd += 1
     return (verses, top_probs, time_bins, distributions)
 
