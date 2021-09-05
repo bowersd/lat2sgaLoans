@@ -72,6 +72,65 @@ def recombine(num_offspring, cands):
                 h.append(nu)
     return h
 
+def recombine_aux(procs, slot_cnt, *offspring):
+    time_containers = [[[x.count(j)] for j in range(slot_cnt)] for x in offspring]
+    proc_containers = [[[0 for j in range(len(procs[0]))] for k in range(slot_cnt)] for x in offspring]
+    for i in range(len(offspring)):
+        for j in range(len(offspring[i])): proc_containers[i][j][offspring[i][j]] = list(map(operator.add, procs[j], proc_containers[i][j][offspring[i][j]]))
+    return (time_containers, proc_containers)
+
+
+def genetic(rates, slot_cnt, procs, *dates) 
+    ##initialization
+    verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
+    top_probs = [0 for i in range(15)] #probabilities of verses
+    time_bins = [] #how many words in each time slot by verse
+    distributions = [] #how many words in each time slot match phonotactics of interest
+    changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
+    rnd = 1
+    while rnd < 20: #mutations and recombinations compete head-to-head, instead of mutations spreading off recombinations
+        nu_verses       = [x for x in verses       ]
+        nu_top_probs    = [x for x in top_probs    ]
+        nu_time_bins    = [x for x in time_bins    ]
+        nu_distributions= [x for x in distributions]
+        nu_gen = recombine(1000, [x for x in verses])
+        nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
+        for i in range(len(nu_gen)):
+            p = assess_prob(nu_gen_vit_stats[i][0], nu_gen_vit_stats[i][1], rates)
+            if any([p>x for x in nu_top_probs]): #update pool
+                loc = top_rank(p, nu_top_probs)
+                #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
+                nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
+                nu_time_bins =      nu_time_bins[:loc]+[nu_gen_vit_stats[i][0]]+nu_time_bins[loc:-1]
+                nu_verses =         nu_verses[:loc]+[s]+nu_verses[loc:-1]
+                nu_distributions =  nu_distributions[:loc]+[nu_gen_vit_stats[i][1]]+nu_distributions[loc:-1]
+        for v in verses:
+            for i in range(10000):
+                cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
+                s = [] #tracking individual slot placements
+                bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
+                change = random.sample(changeable, len(changeable)//cnt)
+                for j in range(len(dates)):  #sample
+                    k = v[j]
+                    if j in change: random.randrange(dates[j][0], dates[j][1])
+                    cnts[k] += 1
+                    s.append(k)
+                    bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
+                p = assess_prob(cnts, bin_procs, rates) #assess
+                if any([p>x for x in nu_top_probs]): #update pool
+                    loc = top_rank(p, nu_top_probs)
+                    #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
+                    nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
+                    nu_time_bins =      nu_time_bins[:loc]+[cnts]+nu_time_bins[loc:-1]
+                    nu_verses =         nu_verses[:loc]+[s]+nu_verses[loc:-1]
+                    nu_distributions =  nu_distributions[:loc]+[bin_procs]+nu_distributions[loc:-1]
+        verses       = [x for x in nu_verses       ]
+        top_probs    = [x for x in nu_top_probs    ]
+        time_bins    = [x for x in nu_time_bins    ]
+        distributions= [x for x in nu_distributions]
+        rnd += 1
+    return (verses, top_probs, time_bins, distributions)
+
 def random_non_genetic(rates, slot_cnt, procs, *dates) 
     ##initialization
     verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
