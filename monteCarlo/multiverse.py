@@ -4,6 +4,7 @@ import math
 import random #too many combinations to calculate exactly. original used itertools.product()
 import operator
 from functools import reduce
+import re
 #from hackydata import *
 
 #[x, y...] #FORMS
@@ -80,7 +81,7 @@ def recombine_aux(procs, slot_cnt, *offspring):
     return (time_containers, proc_containers)
 
 
-def genetic_search(rates, slot_cnt, procs, *dates) 
+def genetic_search(rates, slot_cnt, procs, *dates):
     ##initialization
     verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
     top_probs = [0 for i in range(100)] #probabilities of verses
@@ -131,7 +132,7 @@ def genetic_search(rates, slot_cnt, procs, *dates)
         rnd += 1
     return (verses, top_probs, time_bins, distributions)
 
-def random_search(rates, slot_cnt, procs, *dates) 
+def random_search(rates, slot_cnt, procs, *dates):
     ##initialization
     verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
     top_probs = [0 for i in range(15)] #probabilities of verses
@@ -172,15 +173,39 @@ def random_search(rates, slot_cnt, procs, *dates)
     return (verses, top_probs, time_bins, distributions)
 
 phonotactics = [#what to look for in Latin
-        re.compile('((?<!m)(P|p))|((?<!n)f)'), #missing phonemes what about [f:]? contextual carve-outs to allow cluster detection
+        re.compile('((?<!m)[P|p])|((?<!n)[Ff])'), #missing phonemes what about [f:]? contextual carve-outs to allow cluster detection
         re.compile('((?<=[aeiouAEIOU])([tkbdgm]|s(?!t|k)))'), #lenition 
         re.compile('^[^AEIOUaeiou]*[eoiu]'), #affection -> non-low short vowel in initial syll
-        re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$)'), #disyllables (apocope-adjacent)
-        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou])'), #trisyllables or greater (syncope, also complen-adjacent)
+        re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$'), #disyllables (apocope-adjacent)
+        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou]'), #trisyllables or greater (syncope, also complen-adjacent)
         re.compile('[AEIOU]'), #long vowels (apocope/shortening/complen-adjacent)
         re.compile('[aeiou](?=[dg][^aeiouAEIOU])'), #compensatory lengthening -> somewhat correlated with lenition, affection
         re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics. 
         ]
+
+def calc_prior(procs, *data):
+    h = []
+    for p in procs:
+        c = 0
+        for d in data:
+            if p.search(d): c += 1
+        h.append(c/len(data))
+    return h
+
+def hack_prior(filename):
+    data = []
+    with open(filename, 'r') as file_in:
+        for l in file_in:
+            if l and "UNKNOWN" not in l:
+                data.append(l.strip())
+    print(calc_prior(phonotactics, *data))
+
+
+hacked_prior = [0.2567991631799163, 0.6244769874476988, 0.44142259414225943, 0.08002092050209204, 0.14905857740585773, 0.48169456066945604, 0.017259414225941423, 0.17468619246861924]
+
+
+if __name__ == "__main__":
+    hack_prior("albright_latin_nouns_stems_reorthed.txt")
 
 #if __name__ == "__main__":
 #    procs = [[0 for i in range(len(process_list))] for j in range(len(forms))]
