@@ -171,6 +171,17 @@ def random_search(rates, slot_cnt, procs, *dates)
         rnd += 1
     return (verses, top_probs, time_bins, distributions)
 
+phonotactics = [#what to look for in Latin
+        re.compile('((?<!m)(P|p))|((?<!n)f)'), #missing phonemes what about [f:]? contextual carve-outs to allow cluster detection
+        re.compile('((?<=[aeiouAEIOU])([tkbdgm]|s(?!t|k)))'), #lenition 
+        re.compile('^[^AEIOUaeiou]*[eoiu]'), #affection -> non-low short vowel in initial syll
+        re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$)'), #disyllables (apocope-adjacent)
+        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou])'), #trisyllables or greater (syncope, also complen-adjacent)
+        re.compile('[AEIOU]'), #long vowels (apocope/shortening/complen-adjacent)
+        re.compile('[aeiou](?=[dg][^aeiouAEIOU])'), #compensatory lengthening -> somewhat correlated with lenition, affection
+        re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics. 
+        ]
+
 #if __name__ == "__main__":
 #    procs = [[0 for i in range(len(process_list))] for j in range(len(forms))]
 #    for i in range(len(forms)):

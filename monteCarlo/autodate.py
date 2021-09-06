@@ -186,17 +186,6 @@ def date(*proc_v):
         i -= 1
     return h
 
-phonotactics = [#what to look for in Latin
-        re.compile('[Ppf]'), #missing phonemes what about [f:]?
-        re.compile('((?<=[aeiouAEIOU])([tkbdgm]|s(?!t|k)))'), #lenition 
-        re.compile('^[^AEIOUaeiou]*[eoiu]'), #affection ... restricted to initial syllables to avoid overlap with syll counting
-        re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$)'), #disyllables (apocope-adjacent)
-        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou])'), #trisyllables or greater (syncope, also complen-adjacent)
-        re.compile('[AEIOU]'), #long vowels (apocope/shortening/complen-adjacent)
-        re.compile('[aeiou](?=[dg][^aeiouAEIOU])'), #compensatory lengthening
-        re.compile('(st|ŋk|n(t(?!$)|s))|((?<!^e)ks)'), #(almost syncope)+st phonotactics. mp, nf removed due to overlap with missing phoneme 
-        ]
-
 if __name__ == "__main__":
     #input is csv where: 
     #   column[0] is phonological latin stem, 
