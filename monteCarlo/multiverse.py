@@ -83,27 +83,27 @@ def recombine_aux(procs, slot_cnt, *offspring):
 def genetic_search(rates, slot_cnt, procs, *dates) 
     ##initialization
     verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
-    top_probs = [0 for i in range(15)] #probabilities of verses
+    top_probs = [0 for i in range(100)] #probabilities of verses
     time_bins = [] #how many words in each time slot by verse
     distributions = [] #how many words in each time slot match phonotactics of interest
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
     rnd = 1
-    while rnd < 20: #mutations and recombinations compete head-to-head, instead of mutations spreading off recombinations
-        nu_verses       = [x for x in verses       ]
-        nu_top_probs    = [x for x in top_probs    ]
-        nu_time_bins    = [x for x in time_bins    ]
-        nu_distributions= [x for x in distributions]
+    while rnd < 20: 
         nu_gen = recombine(1000, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
             p = assess_prob(nu_gen_vit_stats[i][0], nu_gen_vit_stats[i][1], rates)
             if any([p>x for x in nu_top_probs]): #update pool
-                loc = top_rank(p, nu_top_probs)
+                loc = top_rank(p, top_probs)
                 #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
-                nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
-                nu_time_bins =      nu_time_bins[:loc]+[nu_gen_vit_stats[i][0]]+nu_time_bins[loc:-1]
-                nu_verses =         nu_verses[:loc]+[s]+nu_verses[loc:-1]
-                nu_distributions =  nu_distributions[:loc]+[nu_gen_vit_stats[i][1]]+nu_distributions[loc:-1]
+                top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
+                time_bins =      time_bins[:loc]+[gen_vit_stats[i][0]]+time_bins[loc:-1]
+                verses =         verses[:loc]+[s]+verses[loc:-1]
+                distributions =  distributions[:loc]+[gen_vit_stats[i][1]]+distributions[loc:-1]
+        nu_verses       = [x for x in verses       ]
+        nu_top_probs    = [x for x in top_probs    ]
+        nu_time_bins    = [x for x in time_bins    ]
+        nu_distributions= [x for x in distributions]
         for v in verses:
             for i in range(10000):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
