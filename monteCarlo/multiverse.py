@@ -28,6 +28,17 @@ def mean(*ns): return sum(ns)/len(ns)
 
 def stdev(*ns): return math.sqrt(mean(*[(ns[x]-mean(*ns)**2) for x in ns])) #not performing bessel's correction (decrease denom by 1) since we have a complete sample
 
+def hamming(*subverses):
+    h = []
+    start = subverses[0]
+    for s in subverses:
+        cnt = 0
+        for i in range(len(start)):
+            if start[i] != s[i]: cnt += 1
+        h.append(cnt)
+    return h
+
+
 def readin(filename):
     h = []
     with open(filename) as file_in:
