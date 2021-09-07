@@ -57,12 +57,9 @@ def tally_procs(regexen, *forms):
 
 def assess_prob(sum_bins, prop_bins, prior_rates):
     p = 1
-    print(sum_bins)
-    print(prop_bins)
     for j in range(len(sum_bins)):
         binomial_results = []
         for k in range(len(prop_bins[j])): 
-            print(prop_bins[j][k], sum_bins[j], prior_rates[k])
             binomial_results.append(binomial(prop_bins[j][k], sum_bins[j], prior_rates[k]))
         #print("processes {0}".format(prop_bins[j]))
         #print("sum_bins:{0}".format(j))
@@ -109,15 +106,15 @@ def genetic_search(rates, slot_cnt, procs, *dates):
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
-            p = assess_prob(nu_gen_vit_stats[i][0], nu_gen_vit_stats[i][1], rates)
+            p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)
             if any([p>x for x in top_probs]): #update pool
                 loc = top_rank(p, top_probs)
                 print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
-                time_bins =      time_bins[:loc]+[gen_vit_stats[i][0]]+time_bins[loc:-1]
+                time_bins =      time_bins[:loc]+[nu_gen_vit_stats[0][i]]+time_bins[loc:-1]
                 verses =         verses[:loc]+[s]+verses[loc:-1]
-                distributions =  distributions[:loc]+[gen_vit_stats[i][1]]+distributions[loc:-1]
+                distributions =  distributions[:loc]+[nu_gen_vit_stats[1][i]]+distributions[loc:-1]
         nu_verses       = [x for x in verses       ]
         nu_top_probs    = [x for x in top_probs    ]
         nu_time_bins    = [x for x in time_bins    ]
