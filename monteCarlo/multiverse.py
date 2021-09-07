@@ -30,15 +30,11 @@ def mean(*ns): return sum(ns)/len(ns)
 
 def stdev(*ns): return math.sqrt(mean(*[(ns[x]-mean(*ns)**2) for x in ns])) #not performing bessel's correction (decrease denom by 1) since we have a complete sample
 
-def hamming(*subverses):
-    h = []
-    start = subverses[0]
-    for s in subverses:
-        cnt = 0
-        for i in range(len(start)):
-            if start[i] != s[i]: cnt += 1
-        h.append(cnt)
-    return h
+def hamming(v1, v2):
+    c = 0
+    for i in range(len(v1)):
+        if v1[i] != v2[i]: c += 1
+    return c
 
 def readin(filename):
     h = []
@@ -102,25 +98,26 @@ def genetic_search(rates, slot_cnt, procs, *dates):
     distributions = [] #how many words in each time slot match phonotactics of interest
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
     rnd = 1
-    while rnd < 20: 
+    while rnd < 13: 
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
             p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)
             if any([p>x for x in top_probs]): #update pool
                 loc = top_rank(p, top_probs)
-                print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
                 #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
                 time_bins =      time_bins[:loc]+[nu_gen_vit_stats[0][i]]+time_bins[loc:-1]
-                verses =         verses[:loc]+[s]+verses[loc:-1]
+                verses =         verses[:loc]+[nu_gen[i]]+verses[loc:-1]
                 distributions =  distributions[:loc]+[nu_gen_vit_stats[1][i]]+distributions[loc:-1]
         nu_verses       = [x for x in verses       ]
         nu_top_probs    = [x for x in top_probs    ]
         nu_time_bins    = [x for x in time_bins    ]
         nu_distributions= [x for x in distributions]
         for v in verses:
-            for i in range(10000):
+            for i in range(100):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
                 s = [] #tracking individual slot placements
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
@@ -134,7 +131,9 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                 p = assess_prob(cnts, bin_procs, rates) #assess
                 if any([p>x for x in nu_top_probs]): #update pool
                     loc = top_rank(p, nu_top_probs)
-                    print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                    if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                    if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
+                    #print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                     nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
                     nu_time_bins =      nu_time_bins[:loc]+[cnts]+nu_time_bins[loc:-1]
                     nu_verses =         nu_verses[:loc]+[s]+nu_verses[loc:-1]
@@ -222,6 +221,7 @@ if __name__ == "__main__":
     raw = autodate.read_in(sys.argv[1])
     dates = []
     procs = []
+    words = []
     #i = 1
     for r in raw:
         #print(i)
@@ -230,9 +230,27 @@ if __name__ == "__main__":
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #hack to enact british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         procs.extend(tally_procs(phonotactics, latin))
         latin_a, irish_a = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
-        if (not any([0 in x and 1 in x for x in autodate.check_procs(latin_a, irish_a)])) and autodate.date(*autodate.check_procs(latin_a, irish_a))[0] < autodate.date(*autodate.check_procs(latin_a, irish_a))[1]: dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
+        if (not any([0 in x and 1 in x for x in autodate.check_procs(latin_a, irish_a)])) and autodate.date(*autodate.check_procs(latin_a, irish_a))[0] < autodate.date(*autodate.check_procs(latin_a, irish_a))[1]: 
+            dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
+            words.append((latin, irish))
     x = genetic_search(hacked_prior, 7, procs, *dates)
-    for y in x[:15]: print(y[1], y[2])
+    for i in range(15):
+        with open("output_"+str(i), 'w') as file_out:
+            file_out.write("p: "+str(x[1][i])+'\n')
+            file_out.write("\n")
+            file_out.write("hamming distances from:\n")
+            for j in range(15):
+                file_out.write(str(j)+": "+str(hamming(x[0][i], x[0][j]))+"\n")
+            file_out.write("\n")
+            file_out.write("time slots have these many members:\n")
+            file_out.write(\str(x[2][i])+"\n")
+            for j in range(len(x[2][i])):
+                file_out.write("In time slot "+str(j)+" ("+str(x[2][i][j])+"):\n")
+                for k in range(len(x[0][i])):
+                    if x[0][i][k] == j: 
+                        file_out.write(words[k][0]+"\n")
+                        file_out.write(words[k][1]+"\n")
+                        file_out.write("\n")
     #hack_prior("albright_latin_nouns_stems_reorthed.txt")
 
 ##trial simulations
