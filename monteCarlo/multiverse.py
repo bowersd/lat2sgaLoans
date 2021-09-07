@@ -38,7 +38,6 @@ def hamming(*subverses):
         h.append(cnt)
     return h
 
-
 def readin(filename):
     h = []
     with open(filename) as file_in:
@@ -216,7 +215,8 @@ hacked_prior = [0.2567991631799163, 0.6244769874476988, 0.44142259414225943, 0.0
 
 
 if __name__ == "__main__":
-    hack_prior("albright_latin_nouns_stems_reorthed.txt")
+    pass
+    #hack_prior("albright_latin_nouns_stems_reorthed.txt")
 
 #if __name__ == "__main__":
 #    procs = [[0 for i in range(len(process_list))] for j in range(len(forms))]
