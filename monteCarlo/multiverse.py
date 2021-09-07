@@ -5,6 +5,8 @@ import random #too many combinations to calculate exactly. original used itertoo
 import operator
 from functools import reduce
 import re
+import autodate
+import needleman
 #from hackydata import *
 
 #[x, y...] #FORMS
@@ -57,7 +59,9 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
     p = 1
     for j in range(len(sum_bins)):
         binomial_results = []
-        for k in range(len(prop_bins[j])): binomial_results.append(binomial(prop_bins[j][k], sum_bins[j], prior_rates[k]))
+        for k in range(len(prop_bins[j])): 
+            print(prop_bins[j][k], sum_bins[j], prior_rates[k])
+            binomial_results.append(binomial(prop_bins[j][k], sum_bins[j], prior_rates[k]))
         #print("processes {0}".format(prop_bins[j]))
         #print("sum_bins:{0}".format(j))
         #print(product(*binomial_results))
@@ -66,8 +70,8 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
 
 def top_rank(candidate, tops):
     j = len(tops)-1
-    while p>tops[j]: 
-        if p<tops[j-1] or j == 0: return j
+    while candidate>tops[j]: 
+        if candidate<tops[j-1] or j == 0: return j
         j -= 1
 
 def recombine(num_offspring, cands):
@@ -84,28 +88,29 @@ def recombine(num_offspring, cands):
     return h
 
 def recombine_aux(procs, slot_cnt, *offspring):
-    time_containers = [[[x.count(j)] for j in range(slot_cnt)] for x in offspring]
+    time_containers = [[x.count(j) for j in range(slot_cnt)] for x in offspring]
     proc_containers = [[[0 for j in range(len(procs[0]))] for k in range(slot_cnt)] for x in offspring]
     for i in range(len(offspring)):
-        for j in range(len(offspring[i])): proc_containers[i][j][offspring[i][j]] = list(map(operator.add, procs[j], proc_containers[i][j][offspring[i][j]]))
+        for j in range(len(offspring[i])): proc_containers[i][offspring[i][j]] = list(map(operator.add, procs[j], proc_containers[i][offspring[i][j]]))
     return (time_containers, proc_containers)
 
 
 def genetic_search(rates, slot_cnt, procs, *dates):
     ##initialization
-    verses = [d[0] for d in dates] #date samples, initialized to earliest possible entry for all words
+    verses = [[d[0] for d in dates]] #date samples, initialized to earliest possible entry for all words
     top_probs = [0 for i in range(100)] #probabilities of verses
     time_bins = [] #how many words in each time slot by verse
     distributions = [] #how many words in each time slot match phonotactics of interest
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
     rnd = 1
     while rnd < 20: 
-        nu_gen = recombine(1000, [x for x in verses])
+        nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
             p = assess_prob(nu_gen_vit_stats[i][0], nu_gen_vit_stats[i][1], rates)
-            if any([p>x for x in nu_top_probs]): #update pool
+            if any([p>x for x in top_probs]): #update pool
                 loc = top_rank(p, top_probs)
+                print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
                 time_bins =      time_bins[:loc]+[gen_vit_stats[i][0]]+time_bins[loc:-1]
@@ -120,17 +125,17 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
                 s = [] #tracking individual slot placements
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
-                change = random.sample(changeable, len(changeable)//cnt)
+                change = random.sample(changeable, len(changeable)//rnd)
                 for j in range(len(dates)):  #sample
                     k = v[j]
-                    if j in change: random.randrange(dates[j][0], dates[j][1])
+                    if j in change: k = random.randrange(dates[j][0], dates[j][1])
                     cnts[k] += 1
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
                 p = assess_prob(cnts, bin_procs, rates) #assess
                 if any([p>x for x in nu_top_probs]): #update pool
                     loc = top_rank(p, nu_top_probs)
-                    #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
+                    print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                     nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
                     nu_time_bins =      nu_time_bins[:loc]+[cnts]+nu_time_bins[loc:-1]
                     nu_verses =         nu_verses[:loc]+[s]+nu_verses[loc:-1]
@@ -215,9 +220,23 @@ hacked_prior = [0.2567991631799163, 0.6244769874476988, 0.44142259414225943, 0.0
 
 
 if __name__ == "__main__":
-    pass
+    raw = autodate.read_in(sys.argv[1])
+    dates = []
+    procs = []
+    #i = 1
+    for r in raw:
+        #print(i)
+        #i += 1
+        latin, irish = autodate.clean_transcription(r[0]), autodate.clean_transcription(r[1])
+        if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #hack to enact british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
+        procs.extend(tally_procs(phonotactics, latin))
+        latin_a, irish_a = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
+        if (not any([0 in x and 1 in x for x in autodate.check_procs(latin_a, irish_a)])) and autodate.date(*autodate.check_procs(latin_a, irish_a))[0] < autodate.date(*autodate.check_procs(latin_a, irish_a))[1]: dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
+    x = genetic_search(hacked_prior, 7, procs, *dates)
+    for y in x[:15]: print(y[1], y[2])
     #hack_prior("albright_latin_nouns_stems_reorthed.txt")
 
+##trial simulations
 #if __name__ == "__main__":
 #    procs = [[0 for i in range(len(process_list))] for j in range(len(forms))]
 #    for i in range(len(forms)):
