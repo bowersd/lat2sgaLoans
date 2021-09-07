@@ -57,6 +57,8 @@ def tally_procs(regexen, *forms):
 
 def assess_prob(sum_bins, prop_bins, prior_rates):
     p = 1
+    print(sum_bins)
+    print(prop_bins)
     for j in range(len(sum_bins)):
         binomial_results = []
         for k in range(len(prop_bins[j])): 
