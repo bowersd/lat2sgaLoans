@@ -121,7 +121,8 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
                 s = [] #tracking individual slot placements
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
-                change = random.sample(changeable, len(changeable)//rnd)
+                change = random.sample(changeable, len(changeable))
+                #change = random.sample(changeable, len(changeable)//rnd)
                 for j in range(len(dates)):  #sample
                     k = v[j]
                     if j in change: k = random.randrange(dates[j][0], dates[j][1])
