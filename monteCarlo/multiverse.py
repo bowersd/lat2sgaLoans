@@ -66,7 +66,7 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
 def top_rank(candidate, tops):
     j = len(tops)-1
     while candidate>tops[j]: 
-        if candidate<tops[j-1] or j == 0: return j
+        if candidate<=tops[j-1] or j == 0: return j
         j -= 1
 
 def recombine(num_offspring, cands):
@@ -98,16 +98,16 @@ def genetic_search(rates, slot_cnt, procs, *dates):
     distributions = [] #how many words in each time slot match phonotactics of interest
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
     rnd = 1
-    while rnd < 13: 
+    while rnd < 16: 
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
             p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)
-            if any([p>x for x in top_probs]): #update pool
+            if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
                 if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
-                #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
+                #print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
                 time_bins =      time_bins[:loc]+[nu_gen_vit_stats[0][i]]+time_bins[loc:-1]
                 verses =         verses[:loc]+[nu_gen[i]]+verses[loc:-1]
@@ -129,10 +129,10 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
                 p = assess_prob(cnts, bin_procs, rates) #assess
-                if any([p>x for x in nu_top_probs]): #update pool
+                if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
                     loc = top_rank(p, nu_top_probs)
-                    if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                    if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
+                    if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                    if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
                     #print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                     nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
                     nu_time_bins =      nu_time_bins[:loc]+[cnts]+nu_time_bins[loc:-1]
@@ -234,6 +234,13 @@ if __name__ == "__main__":
             dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
             words.append((latin, irish))
     x = genetic_search(hacked_prior, 7, procs, *dates)
+    with open("output_summary", 'w') as file_out:
+        file_out.write("mean p (top 15): "+str(mean(*[x[1][i] for i in range(15)]))+'\n')
+        file_out.write("mean p (all): "+str(mean(*[x[1][i] for i in range(len(x[0]))]))+'\n')
+        means = [0 for y in x[2][0]]
+        for i in range(len(x[2][0])):
+            means[i] = mean(*[y[i] for y in x[2]])
+        file_out.write("mean bin size: "+str(means)+"\n")
     for i in range(15):
         with open("output_"+str(i), 'w') as file_out:
             file_out.write("p: "+str(x[1][i])+'\n')
@@ -243,7 +250,7 @@ if __name__ == "__main__":
                 file_out.write(str(j)+": "+str(hamming(x[0][i], x[0][j]))+"\n")
             file_out.write("\n")
             file_out.write("time slots have these many members:\n")
-            file_out.write(\str(x[2][i])+"\n")
+            file_out.write(str(x[2][i])+"\n")
             for j in range(len(x[2][i])):
                 file_out.write("In time slot "+str(j)+" ("+str(x[2][i][j])+"):\n")
                 for k in range(len(x[0][i])):
