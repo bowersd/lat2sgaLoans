@@ -98,7 +98,7 @@ def genetic_search(rates, slot_cnt, procs, *dates):
     distributions = [] #how many words in each time slot match phonotactics of interest
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
     rnd = 1
-    while rnd < 16: 
+    while rnd < 101: 
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
@@ -117,12 +117,12 @@ def genetic_search(rates, slot_cnt, procs, *dates):
         nu_time_bins    = [x for x in time_bins    ]
         nu_distributions= [x for x in distributions]
         for v in verses:
-            for i in range(100):
+            for i in range(1000):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
                 s = [] #tracking individual slot placements
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
-                change = random.sample(changeable, len(changeable))
-                #change = random.sample(changeable, len(changeable)//rnd)
+                #change = random.sample(changeable, len(changeable))
+                change = random.sample(changeable, len(changeable)//rnd)
                 for j in range(len(dates)):  #sample
                     k = v[j]
                     if j in change: k = random.randrange(dates[j][0], dates[j][1])
