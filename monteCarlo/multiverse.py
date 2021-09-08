@@ -98,7 +98,7 @@ def genetic_search(rates, slot_cnt, procs, *dates):
     distributions = [] #how many words in each time slot match phonotactics of interest
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
     rnd = 1
-    while rnd < 101: 
+    while rnd < 121: 
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
