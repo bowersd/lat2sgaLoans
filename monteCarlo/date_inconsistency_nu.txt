@@ -3,6 +3,7 @@ _arən
 [_] [_] [_] [1] [_] [0]
 6 4
 REMOVE HEBREW
+#EJFL Sure.
 
 abekedAr
 ab_ɣədər
@@ -15,19 +16,22 @@ abimelek
 avəɱələx
 [_] [1,1] [_] [_] [_] [0]
 6 2
-REMOVE HEBREW #EJFL Sure.
+REMOVE HEBREW
+#EJFL Sure.
 
 AbrahE
 avra_e
 [_] [_] [_] [1] [_] [0]
 6 4
-REMOVE HEBREW? #EJFL Sure.
+REMOVE HEBREW?
+#EJFL Sure.
 
 Abraham
 avra_aɱ
 [_] [1] [_] [_] [_] [0]
 6 2
-REMOVE HEBREW #EJFL Sure.
+REMOVE HEBREW
+#EJFL Sure.
 
 akitofel
 axətəfəl
@@ -35,6 +39,7 @@ axətəfəl
 6 2
 INCONSISTENT LENITION. SO WHAT TO DO WITH THIS ESP. GIVEN CLEAR SYNC FAILURE? #EJFL: The orthography in Old Irish is <achitofel>. Perhaps this was just pronounced /akitofel/. 
 SINCE LATIN ORTH IS ACHITOPHEL, I'D SAY YOU ARE RIGHT.
+#EJFL OK.
 
 akrisiOn_E
 akrəs_ənde
@@ -43,7 +48,6 @@ akrəs_ənde
 CLEARLY NOT SYNCOPE COMPLIANT, APOCOPE/COMP LEN INVOLVES FINAL V PROCESSING, VV SEQ. I BET THIS IS POST-SYNCOPE WITH A DASH OF CONFUSION  #EJFL The final syllable /de/ in Irish is an Irish suffix. I forgot to remove Irish suffixes from the input. The comparison should be between akrisiOn_E and akrəs_ən. 
 OK, EVEN WITH THE SUFFIX REMOVAL THERE IS A DATING INCONSISTENCY BECAUSE THERE IS SHORTENING BUT NOT SYNCOPE (JUST NON-RHYTHMIC SYNCOPATION) 
 EJFL: Syncope exhibits some weird behavior when the vowel-to-be-syncoped sits beside r and l (recall Cothraige, Cothairge "Patrick") Is there any reason not to build an override for Vr/rV or Vl/lV into autodate's syncope statement?
-
 
 Egiptiak__
 Eɣəpt_əxðe
@@ -117,7 +121,6 @@ SO MESSED UP. IF THIS STAYS, IT NEEDS TO BE HAND DATED (CUTTING OFF THE LAST TWO
 aleluja (shortening) > aleloja (affection) > aleloj (apocope) > alele: (monophthongization) > alle: (syncope + pal) > alle (reduction in unstressed syllable, long-->short). 
 For the development compare *buwe '(s)he was' > buj (apocope + palatalization) > boj (uj/oj neutralization in stressed syllables) <boí>, VS unstressed *robuwe '(s)he has been' > rovuwe (lenition) > rovuj (apocope + patalization) > rove: (monophthongization) > rove (reduction) <robae/rabae>. Change Irish stem to alle. 
 
-
 ananiA
 __aNe_
 [_] [_] [1] [_] [_] [0]
@@ -143,7 +146,7 @@ ant_xrIst
 6 2
 WASN'T CHRIST SPELLED WITH A <CH>? I MIGHT BE PERSUADED RE: LENITION IF [x] WERE THE MODERN PRONUNCIATION. NT IS THE SYNCOPE 0-TRIGGER -- NOT SURE HOW TO RESOLVE (NT CAN'T BE A 1-TRIGGER! MAYBE SOMETHING LIKE 0.5) #EJFL: I don't think that lenition of /k/ -> /x/  is phonological here. It is analogical because prefixes on nouns cause lenition. As for the prefix itself, I think that what is going on is the following. The normal Irish negative prefix (corresponding to un- in English) is an-. The word is also spelled anchríst, which must be just "Un-Christ". The spelling with ant- is basically a totally artificial/orthographci way of identifying the Irish prefix an- with the Latin prefix anti- and <t> can be ignored for the perposes of calulating date. In fact, the whole word can be removed - there should be no comparison between antichristus and an(t)chríst - the word is derived witin Irish from Críst (spelled so in Irish).
 #DAB: ok. FWIW, where are we keeping records of deletions/changes to the dataset?
-#EJFL: I have a spreadsheet — REMOVE
+#EJFL: I have a spreadsheet — REMOVE this word
 
 antO__n
 antənAn
@@ -198,42 +201,55 @@ __Usəle/
 [_] [_] [1] [_] [_] [0]
 6 3
 SO MESSED UP, AND I DON'T REALLY BUY HARMONY. 
+#EJFL: Harmony is a problem, but it is because of the way it is coded in autodate. At the moment, a>aw>u is coded as harmony, but really only a>aw is harmony.
+aw>u is a later change that affects any aw, not just those from harmony. We don't want to change autodate because Latin a become u is clearly a case of harmony. We just need to hand-date here.
 
 aksiL
 oxsəl
 [_] [1] [_] [_] [_] [0]
 6 2
 TROUBLE FROM ks. NOT SURE WHAT TO DO
+#EJFL: I don't think ks > xs is actually a change related to lenition. In this word it can be either of the following:
+(1) assimilation to the non-stop feature of s or (2) some kind of analogy with the word fochsal/foxal /foxs@l/, which is totally regular
+(/xs/ results from syncope here: *wókosselom)
 
 batism
 baθəs_
 [_] [1,0] [_] [_] [_] [_]
 2 2
 I DON'T THINK WE GET A REAL CASE OF s-LENITION AT ALL IN OUR DATA...I SUGGEST FAILURE OF [s] LENITION SHOULD NOT BE DIAGNOSTIC
+#EJFL: I agree. Hand-date?
 
 benedIk__
 ben_dəxəð
 [_] [0,1] [_] [1] [_] [1]
 2 2
 k->x due to a diff suff? IF SHORTENING REAL SHOULD BE PRE-LENGTHENING (by hand?)
+#EJFL: The comparison pair is wrong. There is no comparison betweeen Latin benedi:k-o: and Irish bendəx-əð.
+The Irish word is derived within Irish by reinterpreting the final -t in bendacht 'benediction' (<Lat. bendictio:) as a
+verbal noun ending (cf. tabairt 'giving/gift' and the verbal stem tabair- 'give'. After reinterpretation, a new verb bendach- was created.
 
 benjamin
 ben_əɱIn
 [_] [1] [_] [_] [_] [0]
 6 2
 REMOVE HEBREW
+#EJFL: OK
 
 berEEns__
 ber_ənste
 [_] [_] [_] [1] [1] [0,1]
 6 4
-SO MESSED UP, PLEASE TELL ME WHAT IS GOING ON WITH THIS WORD  #EJFL: The final syllable in the Irish is a suffix.
+SO MESSED UP, PLEASE TELL ME WHAT IS GOING ON WITH THIS WORD
+#EJFL: The final syllable in the Irish is a suffix.
+#EJFL: I don't get this word either. Too many processes are triggering.
 
 bEt_le_hEm
 beθələɱðe_
 [_] [1] [_] [1] [_] [0]
 6 2
-REMOVE HEBREW #EJFL: Maybe. The final syllable in the Irish is a suffix.
+REMOVE HEBREW
+#EJFL: OK. The final syllable in the Irish is a suffix.
 
 biSekst
 bisəxs_
@@ -241,12 +257,14 @@ bisəxs_
 6 2
 TROUBLE FROM ks. I THIS IS HARMONY FROM ST>S? DUNNO ABOUT THIS ONE
 #DAB: another Latin <x> to Irish <x> perhaps, thus making lenition a non-factor?
+#EJFL: Well, <x> was certainly /xs/ here or even /x/ but not /ks/. The word is also spelled <bissech>. I think ks>xs is not a lenition change.
 
 kad_Uk
 kaðxəx
 [_] [1] [1] [1] [0] [_]
 5 2
-SO MESSED UP. IS THIS kadUK>kad_x-@x? DOESN'T LOOK LATIN, REMOVE HEBREW? #EJFL: This is Latin <cadu:cus> > <cadu:c-> (getting rid of the suffix). Lenition and shortening happen. The Irish suffix -ach is added /kaðux/ + /əx/. Then you get syncope: /kaðx/ + /əx/. The only problem autodate has is that the Irish -ach suffix is not removed. 
+SO MESSED UP. IS THIS kadUK>kad_x-@x? DOESN'T LOOK LATIN, REMOVE HEBREW?
+#EJFL: This is Latin <cadu:cus> > <cadu:c-> (getting rid of the suffix). Lenition and shortening happen. The Irish suffix -ach is added /kaðux/ + /əx/. Then you get syncope: /kaðx/ + /əx/. The only problem autodate has is that the Irish -ach suffix is not removed.
 #DAB: great, this looks like a straightforward hand dating
 
 kajAfAs
@@ -254,6 +272,7 @@ ka_ifəs
 [_] [0] [_] [1] [_] [0]
 6 4
 REMOVE HEBREW?
+#EJFL: OK.
 
 kabiLAti
 kab_ləd_
@@ -272,42 +291,50 @@ karɱə_gəl
 [_] [_] [1] [_] [_] [0]
 6 3
 HAND DATE? nk>g! u-REDUCTION CAUSING TROUBLE?
+#EJFL: This is a case for hand-dating. Actually, there is no real relationship between the Latin and the Irish. It's a weird translation of the Latin using the word carr and mocol in a compound (mocol itself is from Latin macula).
 
 katEkUmen__
 kaθ_xəɱ_nəð
 [_] [1,1,1] [_] [_] [1,1] [0]
 6 2
 IRISH SUFFIX THROWING OFF SYNCOPE CALC
+#EJFL: Removing the suffix in this case would be good, right?
 
 kent_r
 kintər
 [_] [_] [1] [_] [_] [0]
 6 3
 HARMONY ERROR, NO? THIS IS RESULT OF MONOSYLLABLES WITH A HEIGHT CHANGE GETTING TAGGED WITH HARMONY, EVEN THOUGH RAISING CAN'T HAPPEN HERE
+#EJFL: I think there was a stem change: Latin centrum /kentrum/ became an i-stem in Irish (for some reason): /kentris/ - then raising is normal.
+#Alternatively, the attested form is in some case form (e.g. fem. dative or masc./neut. gen.) that allows raising.
 
 kerubIn
 xerufIn
 [_] [1] [0] [0] [_] [0]
 6 2
-REMOVE HEBREW. WHAT IS LENITING?? BETTER NOT BE #K <ch>
+REMOV#EJFL: It is seeing /k/>/x/, so yeah. That's dumb. I'm okay with removal.
+E HEBREW. WHAT IS LENITING?? BETTER NOT BE #K <ch>
 
 kerubIn
 _irufIn
 [_] [_] [1] [0] [_] [0]
 6 3
 REMOVE HEBREW
+#EJFL: OK
 
 kirkumfleks
 kirkunfləxs
 [_] [1] [_] [_] [_] [0,0]
 6 2
 I DON'T THINK k>x IS REAL
+#EJFL: Impossible to say - but anyway if /ks/>/xs/ is not part of lenition, as I suggested above, there is no problem.
 
 kolumb
 koluɱ_
 [_] [1] [0] [_] [_] [_]
 3 2
 I DOUBT m>M
+#EJFL: Yes. Change Irish stem to kolum. It is clear from modern Irish Colm and the derivative Colmán that the m was not lenited.
 
 koMUni
 komən_
@@ -320,61 +347,83 @@ kompərəd__
 [0] [0,0] [_] [_] [1] [0,0]
 6 5
 I DON'T THINK SHORTENING IS REAL
+#EJFL: This is a tough one. Modern Irish has comparáid, without shortening but the word is often spelled comparit in Old Irish, which
+implies that there was no long á sound in the final syllable (otherwise it would have been written!).
 
 kOnstantInobol
 konstəntənəbəl
 [_] [0] [_] [_] [1] [0,0,0]
 6 5
 I DON'T THINK SHORTENING IS REAL. 
+#EJFL: Agree.
 
 kOnsul
 konsəl
 [_] [_] [1] [_] [_] [0]
 6 3
-IS u-HARMONY WRONG OR IS NS SENSITIVITY WRONG? #EJFL: /ns/ may be treated as voiceless and u-harmony doesn't necessarily happen across voiceless clusters.
+IS u-HARMONY WRONG OR IS NS SENSITIVITY WRONG?
+#EJFL: /ns/ may be treated as voiceless and u-harmony doesn't necessarily happen across voiceless clusters.
 #DAB: Whoops, I was referring to the hypothetical lowering of /u/ to allow eventual reduction.
+#EJFL: I think you were right in thinking that there is u>o>@ cannot really work. We should remove it from autodate.
 
 kOnsuMAti
 ko_s_ɱəð_
 [_] [1] [_] [_] [1] [0]
 6 2
-FINAL V, ns OUTCOME, I DOUBT m-LENITION, though [t] is what is triggerig it? (DOES IRISH HAVE A NEW SUFF HERE?) #EJFL: McManus thinks this is a verbal noun of the verb cosmaid "annoints". The ending -əð is the normal verbal noun suffix. The verb is derived from Latin consumm-are > cosm-aid - So the Latin stem is incorrect. 
-#DAB: OK, is the derivation konsummare = kosum@ð (phonotactic/suffix adjustment) > kos_m@ð, so that there is no informative lenition or shortening, but there is syncope? If remove the Latin suffixes, the syncope calculation won't work. I'd say this is a case for hand dating 
+FINAL V, ns OUTCOME, I DOUBT m-LENITION, though [t] is what is triggerig it? (DOES IRISH HAVE A NEW SUFF HERE?)
+#EJFL: McManus thinks this is a verbal noun of the verb cosmaid "annoints". The ending -əð is the normal verbal noun suffix. The verb is derived from Latin consumm-are > cosm-aid - So the Latin stem is incorrect.
+#DAB: OK, is the derivation konsummare = kosum@ð (phonotactic/suffix adjustment) > kos_m@ð, so that there is no informative lenition or shortening, but there is syncope? If remove the Latin suffixes, the syncope calculation won't work. I'd say this is a case for hand dating.
+#EJFL: Agreed.
 
 kiklas_ia
 kigləste_
 [_] [0,0] [0,1] [_] [_] [0]
 6 3
-WHY IS THERE st? AGAIN, s-DOESN'T LENITE. SUCCESSFUL HARMONY IS ia->e, WHICH IS MANAGEABLE BY A NATIVE SUFFIX? #EJFL: No. There was suffix substition/british apocope (second preferable to me) so that kiklasia became kiklas- and then -te is an Irish suffix. 
+WHY IS THERE st? AGAIN, s-DOESN'T LENITE. SUCCESSFUL HARMONY IS ia->e, WHICH IS MANAGEABLE BY A NATIVE SUFFIX?
+#EJFL: No. There was suffix substition/british apocope (second preferable to me) so that kiklasia became kiklas- and then -te is an Irish suffix.
 #DAB: so it is a post-harmony loan (because first syllable doesn't lower) and the [e] in -te is not the result of any relevant harmony.
+#EJFL: Yes. Hand-date.
 
 dam_nAti
 damən___
 [_] [0] [_] [_] [1] [0]
 6 5
 SO MESSED UP, IF IT STAYS (WHICH IS PLAUSIBLE), I DON'T BUY SHORTENING ESPECIALLY WHEN EVERYTHING VANISHES
+#EJFL: I think there is no real comparison to be made here. There is a verb damnaid 'damns/punishes' from Latin damnare.
+The verbal noun of damnaid is regularly damnad (u-stem, *damna:tus) with gen. damanto (*damna:to:s).
+<dammaint> is a nominative i-stem derived from damanto because the genitive of i-stems and u-stems was the same.
+<dammain> is probably just an orthographic variant of dammain. – Another possibility is that dammain /damənj/ is from Latin damnum but with
+suffix substition to *damni. In this version of the derivation, there is an epenthetic schwa in the Irish form.
+
+
 
 derbEns__
 derbənste
 [_] [_] [_] [1] [_] [0]
 6 4
-IS SHORTENING REAL? ANOTHER WEIRD ST<S #EJFL: Not weird. -te is a suffix. 
+IS SHORTENING REAL? ANOTHER WEIRD ST<S
+#EJFL: Not weird. -te is a suffix.
 #DAB: great! but we still have tension between an unsyncopated vowel and early enough entrance for shortening.
+#EJFL: I am starting to thing that there is no shortening in words with the suffix -ens-, which is anyway quite a rare suffix in Irish.
 
 dewteronom
 dewtər_nəɱ
 [_] [1] [_] [_] [_] [0]
 6 2
 I DON'T THINK m>M IS REAL, IF NOT HEBREW MIGHT STILL BE KEEPABLE THOUGH LIKELY A LITERARY LOAN (NO REASON TO JUST THROW OUT LITERARY LOANS, THEY JUST ARE NOT VERY DIAGNOSABLE)
+#EJFL: Certainly not Hebrew. It is Greek. But anyway, there probably was no m-lenition.
 
 diameter
 di__əθər
 [_] [1] [0] [_] [_] [1]
 3 2
 SO MESSED UP, WOULD NEED A HAND DATE BECAUSE THIS IS A BIT BEYOND IRREGULAR
+#EJFL: Possibly not even derived from Latin.
 
 diktAtOr
 dixtədOr
 [_] [0] [0] [0] [1] [0]
 6 5
 WAS SHORTENING REAL (THOUGH IT IS WEIRD TO KEEP LENGTH IN ONE PLACE BUT NOT ANOTHER, IS THERE AN IRISH SUFFIX HERE?)? HARMONY SHOULD NOT BE A FAILURE, JUST [], 
+#EJFL: -do:r <-tór> is an Irish suffix here. Why shouldn't harmony be failure? We might have expected dextədOr! Also, since -o:r was always in the final syllable,
+even in Latin, is there a reason to expect shortening of the final syllable?FFd
