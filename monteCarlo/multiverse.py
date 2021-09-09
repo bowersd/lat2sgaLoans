@@ -61,7 +61,7 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
         #print("sum_bins:{0}".format(j))
         #print(product(*binomial_results))
         p *= product(*binomial_results)
-    return p
+    return p*-(kullbackleibler(sum_bins, [sum(sum_bins)/len(sum_bins) for x in sum_bins]))
 
 def top_rank(candidate, tops):
     j = len(tops)-1
