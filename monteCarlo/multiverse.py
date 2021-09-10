@@ -20,7 +20,10 @@ def span(start, stop):
         yield n
         n += 1
 
-def kullbackleibler(p,q): return sum([p[i]*math.log2(p[i]/q[i]) for i in range(len(p))])
+def kullbackleibler(p,q): 
+    print(p)
+    print(q)
+    return sum([p[i]*math.log2(p[i]/q[i]) for i in range(len(p))])
 
 def binomial(n, N, p): return (math.factorial(N)/(math.factorial(n)*math.factorial(N-n)))*(p**n)*((1-p)**(N-n))#successes, trials, probability of success
 
@@ -61,7 +64,7 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
         #print("sum_bins:{0}".format(j))
         #print(product(*binomial_results))
         p *= product(*binomial_results)
-    return p*-(kullbackleibler(sum_bins, [sum(sum_bins)/len(sum_bins) for x in sum_bins]))
+    return p/(kullbackleibler([x+1/(sum(sum_bins)+7) for x in sum_bins], [1/len(sum_bins) for x in sum_bins]))
 
 def top_rank(candidate, tops):
     j = len(tops)-1
