@@ -22,6 +22,7 @@ def divvy(bins, *spans):
 if __name__ == "__main__":
     raw = autodate.read_in(sys.argv[1])
     dates = []
+    words = []
     #i = 1
     for r in raw:
         #print(i)
@@ -31,9 +32,12 @@ if __name__ == "__main__":
         latin_a, irish_a = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
         if (not any([0 in x and 1 in x for x in autodate.check_procs(latin_a, irish_a)])) and autodate.date(*autodate.check_procs(latin_a, irish_a))[0] < autodate.date(*autodate.check_procs(latin_a, irish_a))[1]: 
             dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
+            words.append(r)
     print(divvy([0 for i in range(7)], *count(8, *dates)))
     c = count(8, *dates)
-    for i in range(7):
-        for t in c:
-            if t[0] == i and t[1] == 1: print(i, t[2])
+    print(words[dates.index([3,4])])
+    for t in c: print(t)
+    #for i in range(7):
+    #    for t in c:
+    #        if t[0] == i and t[1] == 1: print(i, t[2])
 
