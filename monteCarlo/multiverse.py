@@ -93,7 +93,7 @@ def recombine_aux(procs, slot_cnt, *offspring):
 def genetic_search(rates, slot_cnt, procs, *dates):
     ##initialization
     verses = [[d[0] for d in dates]] #date samples, initialized to earliest possible entry for all words
-    top_probs = [0 for i in range(100)] #probabilities of verses
+    top_probs = [-20 for i in range(100)] #probabilities of verses
     time_bins = [] #how many words in each time slot by verse
     distributions = [] #how many words in each time slot match phonotactics of interest
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
@@ -104,11 +104,12 @@ def genetic_search(rates, slot_cnt, procs, *dates):
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
-            p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(sum_bins)+7) for x in sum_bins], [1/len(sum_bins) for x in sum_bins]))
+            p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)
+            #p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
-                #if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                #if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
+                if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
                 #print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
                 time_bins =      time_bins[:loc]+[nu_gen_vit_stats[0][i]]+time_bins[loc:-1]
@@ -131,11 +132,12 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                     cnts[k] += 1
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
-                p = assess_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(sum_bins)+7) for x in sum_bins], [1/len(sum_bins) for x in sum_bins])) #assess
+                p = assess_prob(cnts, bin_procs, rates)
+                #p = assess_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
                     loc = top_rank(p, nu_top_probs)
-                    #if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                    #if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
+                    if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                    if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
                     #print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                     nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
                     nu_time_bins =      nu_time_bins[:loc]+[cnts]+nu_time_bins[loc:-1]
