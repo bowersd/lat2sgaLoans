@@ -104,7 +104,7 @@ def genetic_search(rates, slot_cnt, procs, *dates):
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
-            p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)/(kullbackleibler([(x+1)/(sum(sum_bins)+7) for x in sum_bins], [1/len(sum_bins) for x in sum_bins]))
+            p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(sum_bins)+7) for x in sum_bins], [1/len(sum_bins) for x in sum_bins]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
                 #if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
@@ -131,7 +131,7 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                     cnts[k] += 1
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
-                p = assess_prob(cnts, bin_procs, rates)/(kullbackleibler([(x+1)/(sum(sum_bins)+7) for x in sum_bins], [1/len(sum_bins) for x in sum_bins])) #assess
+                p = assess_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(sum_bins)+7) for x in sum_bins], [1/len(sum_bins) for x in sum_bins])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
                     loc = top_rank(p, nu_top_probs)
                     #if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
