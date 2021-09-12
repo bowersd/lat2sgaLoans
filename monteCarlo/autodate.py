@@ -140,6 +140,7 @@ def procs_kludge(latin, irish, values):
         print(irish)
     sylls = count_sylls.count_syll(latin)
     #print(sylls)
+    if len(sylls) == 1: values = monosyllable_repair(latin, irish, values)
     if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] == "ə": values[2].append(1) #detecting lowering>reduction of /u/ in stem-final syllables
     if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] in "Uu": 
         print("was failure due to envi not met or was loan too late?")
@@ -151,7 +152,6 @@ def procs_kludge(latin, irish, values):
         for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
             if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-2].append(1)
             elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-2].append(0)
-    if len(sylls) == 1: values = monosyllable_repair(latin, irish, values)
     return values
 
 def sync_check(irish, sylls, parity, values):
