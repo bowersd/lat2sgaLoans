@@ -94,6 +94,76 @@ def check_envi(string, *regexen):
 def check_appl(string, *regexen, **mappings):
     pass
 
+triggers = [#what to look for in Latin
+        re.compile('[Pp]'), #pk
+        re.compile('((?<=[aeiouAEIOU])_*[tkbdgms])|f'), #lenition (f>s in, st>s removed due to post-lenition strata>strait) WHAT ABOUT LONG [f:]??
+        re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
+        re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
+        re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), #compensatory lengthening
+        re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
+        ]
+processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
+        ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
+        ((re.compile('((?<=[aeiouAEIOU])_*[t]|(s|k)(?![Tt]))|f'), { "t":"θð", "k":"xɣ",  "s":"h", "f":"s"}), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", })),
+        ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"oə", "U":"ə"}),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o", "U":"u"})), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
+        ((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
+        ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"})), #compensatory lengthening
+        ((re.compile('(mp|ŋk|n(t(?!$)))|((?<!^e)ks)'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd", "ks":"_s"}),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"})), #syncope (phonotactics here, V deletion handled below)
+        ]
+
+def check_procs_nu(latin, irish, triggers, processes):
+    values = []
+    for i in range(len(triggers)):
+        #print(i)
+        pvals = []
+        if triggers[i].search(latin): 
+            #print(i)
+            for x in processes[i][0][0].finditer(latin):
+                #print(latin, irish, x.span(), processes[i][0][0])
+                if irish[x.start():x.end()] in processes[i][0][1][x.group()]:pvals.append((x.span(), 1))
+            for x in processes[i][1][0].finditer(latin):
+                if irish[x.start():x.end()] in processes[i][1][1][x.group()]:pvals.append((x.span(), 0))
+        #else: pvals.append(("?", ""))
+        #print(pvals)
+        values.append([x[1] for x in sorted(pvals)])
+    return values
+
+def procs_kludge(latin, irish, values):
+    #safe copy of values not created!
+    if any([irish[x.start():x.end()] == "s_" for x in re.finditer("st", latin)]): values[2].append(1) #st>s happened in strata>srait (a post-lenition loan) and so diagnoses pre-affection (this is latest datable occurrence of st>s)
+    if values[2] == [0] and latin[re.search('[aeiouAEIOU]', latin).start()] in 'eo' and irish[re.search('[aeiouAEIOU]', irish).start()+1] in 'xɣ': values[2] = [] #failure to raise across 'x' is not diagnostic of affection failure
+    if latin[-1] in "Ii" and irish[-1] == "e": values[2].append(1) #detecting lowering of Latin /i/ by /-a.../. Are we sure that there wasn't a post-affection suffix -e that just replaced the Latin /i/ directly? -> may need a failure watch as in monosyllable_repair() EJFL: It seems more complicated to assume morphological replacement in all cases than that lowering affects medial i causing it to become -e; the phonology is totally regular.
+    if latin[-1] in "Ii" and irish[-1] in "Ii": 
+        print("was failure due to envi not met or was loan too late?")
+        print(latin)
+        print(irish)
+    sylls = count_sylls.count_syll(latin)
+    #print(sylls)
+    if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] == "ə": values[2].append(1) #detecting lowering>reduction of /u/ in stem-final syllables
+    if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] in "Uu": 
+        print("was failure due to envi not met or was loan too late?")
+        print(latin)
+        print(irish)
+    if len(sylls) > 2: #detecting shortening of stem-internal syllables (diagnoses pre/post-compensatory lengthening), syncopation is not limited to weak positions, but it should be so limited!!
+        longv = re.compile('[AEIOU]') 
+        shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"}
+        for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
+            if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-2].append(1)
+            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-2].append(0)
+    #also need to allow for an extra syll at end in irish, check if any non-weak sylls are deleted
+    #print(parity)
+    if len(sylls) == 1: values = monosyllable_repair(latin, irish, values)
+    return values
+
+def sync_check(irish, sylls, parity, values):
+    #safe copy of values not created!
+    #parity = count_sylls.alt_w_fin_degen(sylls)
+    if all([irish[sylls[i]] == "_"  for i in range(len(sylls)) if not parity[i]]) and not all(parity) and not any([irish[sylls[i]] == "_"  for i in range(len(sylls)) if parity[i]]): values[-1].append(1)
+    elif all([irish[sylls[i]] == "_"  for i in range(len(sylls)-1) if not parity[i]]) and all(parity[-2:]) and irish[sylls[-1]] == "_" and re.match("[aeiouə]", irish[sylls[-1]+1:]): values[-1].append(1)
+    elif len(sylls)>2: values[-1].append(0)
+    #else: values.append([])
+    return values
+
 def check_procs(latin, irish):
     #print(latin, irish)
     values = []
