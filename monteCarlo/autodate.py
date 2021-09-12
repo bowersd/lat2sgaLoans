@@ -147,18 +147,18 @@ def procs_kludge(latin, irish, values):
         print(irish)
     if len(sylls) > 2: #detecting shortening of stem-internal syllables (diagnoses pre/post-compensatory lengthening), syncopation is not limited to weak positions, but it should be so limited!!
         longv = re.compile('[AEIOU]') 
-        shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"}
+        shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"} #outputs not over broad, because reduction didn't target word final open sylls IIRC
         for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
             if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-2].append(1)
             elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-2].append(0)
-    #also need to allow for an extra syll at end in irish, check if any non-weak sylls are deleted
-    #print(parity)
     if len(sylls) == 1: values = monosyllable_repair(latin, irish, values)
     return values
 
 def sync_check(irish, sylls, parity, values):
     #safe copy of values not created!
     #parity = count_sylls.alt_w_fin_degen(sylls)
+    #also need to allow for an extra syll at end in irish, check if any non-weak sylls are deleted
+    #print(parity)
     if all([irish[sylls[i]] == "_"  for i in range(len(sylls)) if not parity[i]]) and not all(parity) and not any([irish[sylls[i]] == "_"  for i in range(len(sylls)) if parity[i]]): values[-1].append(1)
     elif all([irish[sylls[i]] == "_"  for i in range(len(sylls)-1) if not parity[i]]) and all(parity[-2:]) and irish[sylls[-1]] == "_" and re.match("[aeiouə]", irish[sylls[-1]+1:]): values[-1].append(1)
     elif len(sylls)>2: values[-1].append(0)
