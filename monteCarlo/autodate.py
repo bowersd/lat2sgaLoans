@@ -133,7 +133,7 @@ def procs_kludge(latin, irish, values):
     if any([irish[x.start():x.end()] == "s_" for x in re.finditer("st", latin)]): values[2].append(1) #st>s happened in strata>srait (a post-lenition loan) and so diagnoses pre-affection (this is latest datable occurrence of st>s)
     if values[2] == [0] and latin[re.search('[aeiouAEIOU]', latin).start()] in 'eo' and irish[re.search('[aeiouAEIOU]', irish).start()+1] in 'xɣ': values[2] = [] #failure to raise across 'x' is not diagnostic of affection failure
     if latin[-1] in "Ii" and irish[-1] == "e": values[2].append(1) #detecting lowering of Latin /i/ by /-a.../. Are we sure that there wasn't a post-affection suffix -e that just replaced the Latin /i/ directly? -> may need a failure watch as in monosyllable_repair() EJFL: It seems more complicated to assume morphological replacement in all cases than that lowering affects medial i causing it to become -e; the phonology is totally regular.
-    #DAB: the question isn't whether we assume morphological replacement in all cases, but whether a potential phonological criterion is truly criterial
+    #DAB: the question isn't whether we assume morphological replacement in all cases, but whether a potential phonological criterion is truly criterial. We should not count something as showing a phonological process if it may be the result of morphology.
     if latin[-1] in "Ii" and irish[-1] in "Ii": 
         print("was failure due to envi not met or was loan too late?")
         print(latin)
