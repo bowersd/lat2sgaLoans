@@ -146,7 +146,7 @@ def procs_kludge(latin, irish, values):
         print("was failure due to envi not met or was loan too late?")
         print(latin)
         print(irish)
-    if len(sylls) > 2: #detecting shortening of stem-internal syllables (diagnoses pre/post-compensatory lengthening), syncopation is not limited to weak positions, but it should be so limited!!
+    if len(sylls) > 1: #detecting shortening of stem-internal syllables (diagnoses pre/post-compensatory lengthening), syncopation is not limited to weak positions, but it should be so limited!!
         longv = re.compile('[AEIOU]') 
         shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"} #outputs not over broad, because reduction didn't target word final open sylls IIRC
         for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
