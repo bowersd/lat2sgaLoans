@@ -257,6 +257,35 @@ def date(*proc_v):
         i -= 1
     return h
 
+def date_nu(end, *proc_v):
+    h = [0,end] #should be 6 now that apocope doesn't get a bin
+    i = 0
+    kill = False
+    meta = False
+    while i != len(proc_v) and not kill: #find first applying process/ante-relegalization
+        #if 1 in proc_v[i] and 2 in proc_v[i]:
+        #    h[1] = i
+        if 2 in proc_v[1]: #ante-relegalization
+            h[1] = i
+            kill = True
+            meta = True
+        elif 1 in proc_v[i]:
+            h[1] = i+1
+            kill = True
+        i += 1
+    i = len(proc_v)-1
+    kill = False
+    while i >= 0 and not kill: #find last non-applying process/post-relegalization
+        if 0 in proc_v[i]: 
+            h[0] = i+1
+            kill = True
+        if 3 in proc_v[i]: #post-relegalization
+            h[0] = i
+            kill = True
+        i -= 1
+    if meta and h[0] == h[1]: h[1] += 1 #true interstice belongs to next bin
+    return h
+
 if __name__ == "__main__":
     #input is csv where: 
     #   column[0] is phonological latin stem, 
