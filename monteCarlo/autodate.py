@@ -103,12 +103,12 @@ triggers = [#what to look for in Latin
         re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
         ]
 processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
-        ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"}),(re.compile('[Pp]'), {"P":"pb","p":"pb"})),
-        ((re.compile('((?<=[aeiouAEIOU])_*[t]|(s|k)(?![Tt]))|f'), { "t":"θð", "k":"xɣ",  "s":"h", "f":"s"}), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", })),
-        ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"oə", "U":"ə"}),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o", "U":"u"})), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
+        ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"},1),(re.compile('[Pp]'), {"P":"pb","p":"pb"}, 0)),
+        ((re.compile('((?<=[aeiouAEIOU])_*[t]|(s|k)(?![Tt]))|f'), { "t":"θð", "k":"xɣ",  "s":"h", "f":"s"},1), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", },0)),
+        ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"oə", "U":"ə"},1),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o", "U":"u"},0)), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
         #((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
-        ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"})), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits)
-        ((re.compile('(mp|ŋk|n(t(?!$)))|((?<!^e)ks)'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd", "ks":"_s"}),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"})), #syncope (phonotactics here, V deletion handled below)
+        ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"},1), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"},0)), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits) Is there data on failure to lengthen??
+        ((re.compile('(mp|ŋk|n(t(?!$)))|((?<!^e)ks)'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd", "ks":"_s"},2),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"},3)), #syncope (phonotactics here, V deletion handled below)
         ]
 
 def check_procs_nu(latin, irish, triggers, processes):
@@ -120,9 +120,9 @@ def check_procs_nu(latin, irish, triggers, processes):
             #print(i)
             for x in processes[i][0][0].finditer(latin):
                 #print(latin, irish, x.span(), processes[i][0][0])
-                if irish[x.start():x.end()] in processes[i][0][1][x.group()]:pvals.append((x.span(), 1))
+                if irish[x.start():x.end()] in processes[i][0][1][x.group()]:pvals.append((x.span(), processes[i][0][2]))
             for x in processes[i][1][0].finditer(latin):
-                if irish[x.start():x.end()] in processes[i][1][1][x.group()]:pvals.append((x.span(), 0))
+                if irish[x.start():x.end()] in processes[i][1][1][x.group()]:pvals.append((x.span(), processes[i][1][2]))
         #else: pvals.append(("?", ""))
         #print(pvals)
         values.append([x[1] for x in sorted(pvals)])
@@ -146,12 +146,12 @@ def procs_kludge(latin, irish, values):
         print("was failure due to envi not met or was loan too late?")
         print(latin)
         print(irish)
-    if len(sylls) > 1: #detecting shortening of stem-internal syllables (diagnoses pre/post-compensatory lengthening), syncopation is not limited to weak positions, but it should be so limited!!
+    if len(sylls) > 1: #detecting shortening of post-initial syllables (diagnoses pre/post-BEGINNING of compensatory lengthening), syncopation is not limited to weak positions, but it should be so limited!!
         longv = re.compile('[AEIOU]') 
         shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"} #outputs not over broad, because reduction didn't target word final open sylls IIRC
         for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
-            if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-2].append(1)
-            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == m[0] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-2].append(0)
+            if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-2].append(2)
+            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == m[0] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-2].append(3)
     return values
 
 def sync_check(irish, sylls, parity, values):
