@@ -151,7 +151,7 @@ def procs_kludge(latin, irish, values):
         shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"} #outputs not over broad, because reduction didn't target word final open sylls IIRC
         for m in longv.finditer(latin[sylls[1]:sylls[-1]]):
             if irish[sylls[1]:sylls[-1]][m.start():m.end()] in shortening[m[0]]: values[-2].append(1)
-            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == shortening[m[0]] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-2].append(0)
+            elif irish[sylls[1]:sylls[-1]][m.start():m.end()] == m[0] or (irish[sylls[1]:sylls[-1]][m.start():m.end()] == "O" and m[0]=="A"): values[-2].append(0)
     return values
 
 def sync_check(irish, sylls, parity, values):
