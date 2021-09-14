@@ -191,7 +191,7 @@ def random_search(rates, slot_cnt, procs, *dates):
     return (verses, top_probs, time_bins, distributions)
 
 phonotactics = [#what to look for in Latin
-        re.compile('((?<!m)[P|p])|((?<!n)[Ff])'), #missing phonemes what about [f:]? contextual carve-outs to allow cluster detection
+        re.compile('((?<!m)[Pp])|((?<!n)[Ff])'), #missing phonemes what about [f:]? contextual carve-outs to allow cluster detection
         re.compile('((?<=[aeiouAEIOU])([tkbdgm]|s(?!t|k)))'), #lenition 
         re.compile('^[^AEIOUaeiou]*[eoiu]'), #affection -> non-low short vowel in initial syll
         re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$'), #disyllables (apocope-adjacent)
@@ -200,6 +200,23 @@ phonotactics = [#what to look for in Latin
         re.compile('[aeiou](?=[dg][^aeiouAEIOU])'), #compensatory lengthening -> somewhat correlated with lenition, affection
         re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics. 
         ]
+
+phonotactics_interstitial = [#split up complex last 2?
+        re.compile('[Pp](?![tT])'), #pk
+        re.compile('([aeiouAEIOU](t|(s|k)(?![Tt])))'), #lenition 
+        re.compile('(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u|U)[^AEIOUaeiou]*[aoAO])))'), #affection (limited to initial sylls)
+        re.compile('([aeiou][dg][^aeiouAEIOU])|(.*[aeiouAEIOU].*[AEIOU])'), #comp len vCC, non-initial long vowels 
+        re.compile('(([^AEIOUaeiou]*[AEIOUaieou]){3}|((mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)))'), #trisyllables or greater, syncope phonotactics
+        ]
+
+def calc_interstit_prior(procs, *data):
+    h = []
+    for p in procs:
+        c = 0
+        for d in data:
+            if p.search(d): c += 1
+        h.append(c/len(data))
+    return h
 
 def calc_prior(procs, *data):
     h = []
