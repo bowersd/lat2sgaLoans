@@ -201,7 +201,7 @@ phonotactics = [#what to look for in Latin
         re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics. 
         ]
 
-phonotactics_interstitial = [#split up complex last 2?
+phonotactics_interstitial = [#split up complex last 2? refer to prior regex only when there is a simplex entry?
         re.compile('[Pp](?![tT])'), #pk
         re.compile('([aeiouAEIOU](t|(s|k)(?![Tt])))'), #lenition 
         re.compile('(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u|U)[^AEIOUaeiou]*[aoAO])))'), #affection (limited to initial sylls)
