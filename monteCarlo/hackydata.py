@@ -442,6 +442,7 @@ forms =[
 
 #           pk end      lenition    harmony     apocope                     lengthening     syncope   (sub-divide to pre Wb/Ml/Sg)
 #0          1           2           3           4                           5               6         7
+# apocope is gone: so 1>pl 2>len 3>harm 4>length sync>5 6>end
 #   pk
 #   fs          fs
 #   lenition    lenition
