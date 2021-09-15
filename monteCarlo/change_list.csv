@@ -1,0 +1,114 @@
+OLD_LATIN_STEM,OLD_IRISH_STEM,OLD_LATIN_WORD,OLD_IRISH_WORD,REASON_FOR_CHANGE_AND_ACTION_TAKEN,NOTES_ON_ACTION_TAKEN
+'a.a.ro:n,/ˈa.rən/,Aarōn,Aron,Hebrew>Latin>Irish,removed
+'a.bel,/ˈa.vʲe:l/,Abel,Abél,Hebrew>Latin>Irish,removed
+a.'bi.me.lek,/ˈa.vʲə.ɱʲə.lʲəx/,Abimelech,Abimelech,Hebrew>Latin>Irish,removed
+'a:.bra.he:,/ˈa.vra.e/,Ābrahae,Abrache,Hebrew>Latin>Irish,removed
+'a:.bra.ham,/ˈavra.aɱ/,Ābraham,Abraham,Hebrew>Latin>Irish,removed
+'a:.bram,/ˈa.vrəɱ/,Ābram,Abram,Hebrew>Latin>Irish,removed
+'ap.sa.lon,/ˈa.vʲə.sə.lən/,Absalon,Abisolon,Hebrew>Latin>Irish,removed
+a.'ki.to.fel,/a.xʲə.təfəl/,Achitophel,Achitofel,Hebrew>Latin>Irish,removed
+e:.gip.'ti.a.k,/ˈe:.ɣʲəp.təx.ðe/,aegyptiacus,éigept\ach\dae,suffixes to post-syncope loan,removed because it contains an already recorded stem + suffixes (Éigept): adjectival -ach, -dae;i.e. éigept\ach\dae; Explanation Aegyptus>Éigept [attested in Old Irish] + suffixes. Perhaps hand-dating is better!
+e:.mi.li.'a:.n,/ˈe.ɱʲəlʲe:nde/,aemiliānus,emilén\dae,suffixes to post-syncope loan,removed because it contains an unattested simple stem (Émil/Emil not found in OIr) + suffixes: diminutive in -én and adjectival -dae; i.e. émil\én\dae; Explanation: Lat. Aemilius>Ir. Émil [unattested in Old Irish] + én (+ dae). The diminutive was used as equivalent to Aemilianus though not directly derived from it [?]. Perhaps hand-dating is better!
+aj.'ne:a,/ˈaj.nʲe.e.ðe,Aenēās,aenee\dae,Fixed Irish/Latin stems: ˈaj.ne:.a >ˈaj.ne: and ˈaj.nʲe.e.ðe>ˈaj.nʲe:.ðe,The Latin stem is ˈaj.ne: + the inflectional ending -ās (1st declension masculine). The Irish stem is ˈaj.nʲe: + suffix. There is no change because this is post-syncope. The use <ee> is to show length. Alternatively, the suffix is -ede/ide (cf. Laurentide!)
+aj.'ne:.a:s,/ˈaj.nʲe:.a:s/,Aenēās,Aeneas,Fixed Irish stem: ˈaj.nʲe:.a:s,Length preserved (orthographic loan)
+'e:.o.le:n.s,/ˈew.lʲe:ns.te/,aeolēnsis,eolens\tae,Fixed Irish stem:ˈew.lʲəns.te>ˈew.lʲe:ns.te,Length preserved (orthographic loan + suffix)
+e:.ti.'o.bi.,/ˈe.θʲəbʲ/,Aethiobia,Ethioip,Fixed Irish/Latin stems: e:.ti.'o.bi.>e:t.'jo.bi. and ˈe.θʲəbʲ>ˈe.tʲəbʲ,orthographic loan
+a.lek.'san.der,/a.ləx.sən.dər/,Alexander,Alaxander,Fixed Irish stem: a.ləx.sən.dər>a.lək.sən.dər,x=ks not xs!
+al.le.'lu:.j,/ˈa.Lʲe/,allelūia,aille,Fixed Irish/Latin stem: al.le.'lu:.ja>al.le.'lu:.j (-a treated as suffix?) and ˈa.Lʲe>ˈalʲ.lʲe,Derivation is: aleluj-a (shortening) > aleloj-a (affection) > aleloj-a (apocope) > alele: (monophthongization) > alle: (syncope + pal) > alle (reduction in unstressed syllable, long-->short). This fix may not work allelu:j and alle still look to be related by chopping off syllable but this obscured crucial parts of the derivation. Note this is originally a Hebrew word. Remove?
+a.ˈna.ni.a:,/ˈa.Ne/,Ananiās,Annae,Fixed Irish/Latin stem: a.ˈna.ni.a:>a.ˈna.ni. and ˈa.Ne>ˈan.ne, The Latin stem is a.ˈna.ni. + the inflectional ending -ās (1st declension masculine). Note this is originally a Hebrew word. Remove?
+an.te.be:.'nul.ti.m,/ˈan.tʲə.bʲə.nʲulʲtʲ/,antepaenultima,antepeneuilt,Fixed Irish stem: ˈan.tʲə.bʲə.nʲulʲtʲ>an.tʲe.bʲe:.nʲulʲtʲ, orthographic loan. Note that the lack of the sequence -im- is due to clipping not apocope
+an.ti.'kris.t,/ˈant.xri:st/,Antichristus,Antchríst,derived within Irish: an- + Críst with lenition of second element of compound,The spelling <ant> is an orthographic loan
+an.'to:.ni.,/ˈan.tə.na:n/,Antōnius,antonán,suffixes to post-syncope loan,removed because it contains an unattested simple stem (Antoin not found in OIr) + suffix: diminutive -án; Explanation Lat. Antonius>Ir. Antoin + án (with loss of palatalization). 
+'a.ran,/ˈa.rən/,Aran,Aran,Hebrew>Latin>Irish,removed
+ar.gu:.'men.t,/ˈar.gu.ɱʲənʲtʲ/,argūmentum,argumeint,Fixed Irish stem: ˈar.gu.ɱʲənʲtʲ>ˈar.gə.mʲənʲtʲ
+'a.sap,/ˈa.səf/,Asaph,Asaph,Hebrew>Latin>Irish,removed
+awk.'to:.ri.ta:s,/ˈawx.tər.ta:s/,auctōritās,augtortás,suffixes to loan,removed because it contains an already recorded stem (auctor/augtor) + suffix: -tás. -tás was modeled on Latin but is not directly loaned from Latin.
+awk.ˈsi.li.,/ˈu:.sə.lʲe/,auxilius,úsaile,Retain but handdate,aw>ú(u) is not harmony but reduction. Autodate harmony is coded too broadly.
+'ba.al,/ˈba.al/,Baal,Bachal,Hebrew>Latin>Irish,removed
+'ba.la.am,/ˈba:.ləɱ/,Balaam,Bálam,Hebrew>Latin>Irish,removed
+ba.'rab.ba:,/ˈba.rə.va:n/,Barabbās,Barab\án,Hebrew>Latin>Irish,removed
+'bar.na.ba:,/ˈbar.nəbʲ/,Barnabās,Barnaip,Hebrew>Latin>Irish,removed
+'bar.na.ba:,/ˈbar.nə.ba:n/,Barnabās,Barnap\án,Hebrew>Latin>Irish,removed
+ba.'tis.m,/ˈba.θʲəs/,*batisma,baithes,Retain but handdate,sm>s weirdness
+'be.or,/ˈbʲe.or/,Beor,Beor,Hebrew>Latin>Irish,removed
+be.'el.ze.bub,/ˈbʲel.sə.fuθ/,Beelzebub,Belzefuth,Hebrew>Latin>Irish,removed
+be.ne.'di:.k,/ˈbʲen.də.xəðʲ/,benedīcō,bendach\aid,suffixes to new Irish stem,removed because it is created from bendacht via reinterpretation of the final segment -t as a verbal noun ending thus resulting in a new verb stem bendach-.
+'ben.ja.min,/ˈbʲe.nʲə.ɱʲi:n/,Beniamin,Beneamín,Hebrew>Latin>Irish,removed
+be.re:.'e:n.s,/ˈbʲe.rʲən.ste/,beroeēnsis,berens\dae,?
+'be.tel,/ˈbʲe.θʲəl/,Bethel,Bethel,Hebrew>Latin>Irish,removed
+be:t.le.'he:.m,/ˈbʲe.θʲlʲəɱ/,Bēthlehēmum,Beithlem,Hebrew>Latin>Irish,removed
+be:t.le.'he:.m,/ˈbʲe.θʲə.lʲəɱ.ðe/,Bēthlehēmum,bethelem\dae,Hebrew>Latin>Irish,removed
+bet.'sa.be.e,/ˈbʲer.sə.ve/',Bethsabee,Bersabae,Hebrew>Latin>Irish,removed
+bis.'sek.st,/ˈbʲi.ʃəxs/,bissextus,bissex,?
+ka.'du:.k,/ˈkað.xəx/,cadūcus,cadch\ach,Retain but handdate,too many processes triggered in autodate
+ka.'ja:.fa:s,/ˈka.i.fəs/,Caiāphās,Caïphas,Hebrew>Latin>Irish,removed
+kar.'buŋ.ku.l,/ˈkar.ɱə.gəl/,carbunculus,carmocol,compounding of Irish words,removed because the link to carbunculus is probably indirect
+ka.te:.'ku:.me.n,/ˈkaθ.xəɱʲ.nʲəð/',catēchūmenus,cathchoimn\id,?
+'ken.tr,/ˈkʲinʲ.tʲərʲ/,centrum,cinteir,Retain but handdate,case form or stem change?
+kal.'de:.,/ˈkal.de.a/,Chaldaea,Calldea,Hebrew>Latin>Irish,removed
+kal.'de:.,/ˈkald/,Chaldaeus,Cald,Hebrew>Latin>Irish,removed
+'ka.na.a:n,/ˈka.Na:n/,Chanaān,Cannán,Hebrew>Latin>Irish,removed
+'ka.na.a:n,/ˈka.Nan.de/,Chanaān,cannan\dae,Hebrew>Latin>Irish,removed
+'ke.ru.bi:n,/ˈxʲe.ru.fʲi:n/,cherubīn,Cherupín,Hebrew>Latin>Irish,removed
+'ke.ru.bi:n,/i.ru.fʲi:n/,cherubīn,Iruphín,Hebrew>Latin>Irish,removed
+ko.'lum.b,/ˈko.luɱ/,columba,columm,Fixed Irish stem: ˈko.luɱ>ˈko.ləm,m is not lenited
+kom.'mu:.ni.o:,/ˈko.mən/,commūniō,comman,?
+kom.pa.ra:.'ti:.w,/ˈkom.pə.rədʲ/,comparātīuus,comparait,?
+ko:ns.tan.ti:.'no.bo.l,/ˈkon.stənʲ.tʲə.nə.bəl/,Cōnstantīnopolis,Constantinopol,Fixed Irish stem: ˈkon.stənʲ.tʲi:.nə.bəl, orthographic loan
+ko:n.'sum.m,/ˈkos.ɱəðʲ/,cōnsummātiō,cosm\aid,Fixed Irish/Latin Stem: ko:n.sum.'ma:.ti.o:>ko:n.'sum.m (consummatio >consummo) and cosmaid>cosm/aid,The verb form consummo is more relevant than consummatio in the derivation of cosmaid. Perhaps hand-dating is better!
+ki.kla.si.a,/ˈkʲi.glə.ste/,Cyclasias,ciclas\tae,Retain but handdate,Harmony issues. But note that y in Latin may have been /y/ not /i and so not subject to harmony.
+dam.'na:.ti.o:,/ˈda.mənʲ/,damnātiō,dammain,?
+der.'be:n.s,/ˈdʲer.bən.ste/,derbēnsis,derbens\dae,?
+dew.te.ro.'no.mi.,/ˈdʲew.tər.nəɱʲ/,deuteronomium,deutornim,Fixed Irish stem: ˈdʲew.tər.nəmʲ,m is not lenited
+di.'a.me.ter,/ˈdʲiə.θʲərʲ/',diameter,díaithir,?
+dik.'ta:.to:r,/ˈdix.tə.do:rʲ/,dictātōr,dictatóir,Fixed Irish stem: ˈdix.tə./do:rʲ>ˈdik.tə.do:rʲ (dict\atóir),-atóir is an Irish suffix.
+'do.eg,/ˈdo.eg/,Doeg,Doeg,Hebrew>Latin>Irish,removed
+ˈha.ba.kuk,/ˈam.bə.kuk./,Habacuc,Ambaucuc,Hebrew>Latin>Irish,removed
+'he.saw,/e.ˈsaw/,Hesau,Esau,Hebrew>Latin>Irish,removed
+'je.bus,/ˈe.vu.ste/,Iebus,ebus\tae,Hebrew>Latin>Irish,removed
+'je.su.a,/ˈʲe.su/,Iesua,Iessu,Hebrew>Latin>Irish,removed
+jo.ab,/ˈjo.av/,Ioab,Ioäb,Hebrew>Latin>Irish,removed
+jo:b,/ˈjo:v/,Iōb,Iób,Hebrew>Latin>Irish,remove
+'jo.na.ta:n,/ˈjo.na.θan/,Ionathān,Ionathan,Hebrew>Latin>Irish,remove
+ˈi.sa.a:k,/ˈi.sa.ak/,Isaāc,Isáac,Hebrew>Latin>Irish,remove
+'is.majl,/ˈi.smajl/,Ismael,Ismaíl,Hebrew>Latin>Irish,remove
+is.ˈra:.e:l,/ˈi.sra.el/',Isrāēl,Israël,Hebrew>Latin>Irish,remove
+ju:da,/ˈju:.ðəs/',Iūdās,Iudas,Fixed Latin stem: ju:da > ju:.da:s,wrong stem
+ju:da,/ˈju:.ða/',Iūdās,Iuda,Fixed Irish/Latin stem,wrong length!
+mel.'ki.se.dek,/ˈmʲel.kə.ʃə.ðʲəx/,Melchisedech,Melchisedech,Hebrew>Latin>Irish,remove
+'mi.ka.e:l,/ˈmʲi:.xʲe:l/,Michaēl,Míchél,Hebrew>Latin>Irish,remove
+'na.tan,/ˈna.θən/,Nathan,Nathan,Hebrew>Latin>Irish,remove
+'no:.e:,/ˈno.e/,Nōē,Nóë,Hebrew>Latin>Irish,remove
+'nun,/ˈnun/,Nun,Nun,Hebrew>Latin>Irish,remove
+pur.ga.'to:.ri.,/ˈpur.gə.do:rʲ/,purgatōrium,purgatóir,Fixed Irish stem: purgatóir>purg\atóir,-atóir is an Irish suffix.
+'sa.ra,/ˈsa.rə/,Sara,Sara,Hebrew>Latin>Irish,remove
+ˈsa.ta.e:l,/ˈsa.θʲəl/,Satahēl,Sathel,Hebrew>Latin>Irish,remove
+ˈsa.u:l,/sawl/,Saūl,Saul,Hebrew>Latin>Irish,remove
+'se.me.i:,/ˈʃe.ɱʲe.i/,Semeī,Semei,Hebrew>Latin>Irish,remove
+'se.na.tor,/ˈʃe.nə.do:rʲ/,senator,sen\atóir,Fixed Irish stem: senatóir>sen\atóir,-atóir is an Irish suffix.
+'se.ra.fi:n,/ˈʃe.ru.pʲi:n/,seraphīn,Serupín,Hebrew>Latin>Irish,remove
+'ta.bor,/ˈta.vo:r/,Thabor,Tabór,Hebrew>Latin>Irish,remove
+zo.'ro.ba.bel,/ˈsor.və.vʲəl/,Zorobabel,Sorbabel,Hebrew>Latin>Irish,remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
