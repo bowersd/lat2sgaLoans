@@ -108,7 +108,7 @@ processes = [ #slightly refined regexen to apply to latin, paired with dicts to 
         ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"oə", "U":"ə"},1),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o", "U":"u"},0)), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
         #((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
         ((re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"},1), (re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"},0)), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits) Is there data on failure to lengthen??
-        ((re.compile('(mp|ŋk|n(t(?!$)))|((?<!^e)ks)'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd", "ks":"_s"},2),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"},3)), #syncope (phonotactics here, V deletion handled below)
+        ((re.compile('(mp|ŋk|n(t(?!$)|f))|((?<!^e)ks)'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd", "nf":"_v", "ks":"_s"},2),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"},3)), #syncope (phonotactics here, V deletion handled below)
         ]
 
 def check_procs_nu(latin, irish, triggers, processes):
