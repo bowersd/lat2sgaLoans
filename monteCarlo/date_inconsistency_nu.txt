@@ -224,6 +224,8 @@ __Usəle/
 SO MESSED UP, AND I DON'T REALLY BUY HARMONY. 
 #EJFL: Harmony is a problem, but it is because of the way it is coded in autodate. At the moment, a>aw>u is coded as harmony, but really only a>aw is harmony.
 aw>u is a later change that affects any aw, not just those from harmony. We don't want to change autodate because Latin a become u is clearly a case of harmony. We just need to hand-date here.
+DAB: I think harmony is the result of the final i>e, but I agree, hand dating is the way to go. it is tricky though. ks>s is a pre-syncope adaptation, but we don't have vowel deletion.
+?
 
 aksiL
 oxsəl
@@ -233,6 +235,8 @@ TROUBLE FROM ks. NOT SURE WHAT TO DO
 #EJFL: I don't think ks > xs is actually a change related to lenition. In this word it can be either of the following:
 (1) assimilation to the non-stop feature of s or (2) some kind of analogy with the word fochsal/foxal /foxs@l/, which is totally regular
 (/xs/ results from syncope here: *wókosselom)
+DAB: ks not being simplified to s is supposed to be a post-beginning-of-syncope change, so I concur that we disregard the lenition flag here.
+?
 
 batism
 baθəs_
@@ -240,6 +244,8 @@ baθəs_
 2 2
 I DON'T THINK WE GET A REAL CASE OF s-LENITION AT ALL IN OUR DATA...I SUGGEST FAILURE OF [s] LENITION SHOULD NOT BE DIAGNOSTIC
 #EJFL: I agree. Hand-date?
+DAB: this should be a pre lenition loan (0,2)
+?
 
 benedIk__
 ben_dəxəð
@@ -249,6 +255,8 @@ k->x due to a diff suff? IF SHORTENING REAL SHOULD BE PRE-LENGTHENING (by hand?)
 #EJFL: The comparison pair is wrong. There is no comparison betweeen Latin benedi:k-o: and Irish bendəx-əð.
 The Irish word is derived within Irish by reinterpreting the final -t in bendacht 'benediction' (<Lat. bendictio:) as a
 verbal noun ending (cf. tabairt 'giving/gift' and the verbal stem tabair- 'give'. After reinterpretation, a new verb bendach- was created.
+DAB: so we really should be looking at bendacht-bendictio:, which will have no lenition flags, no compensatory lengthening flags, and no syncope flags (an undatable loan)
+?
 
 benjamin
 ben_əɱIn
@@ -264,6 +272,8 @@ ber_ənste
 SO MESSED UP, PLEASE TELL ME WHAT IS GOING ON WITH THIS WORD
 #EJFL: The final syllable in the Irish is a suffix.
 #EJFL: I don't get this word either. Too many processes are triggering.
+DAB: we have faithful ns (post-beginning-of-syncope), we have a missing second syllable (pre-end-of-syncope), we have shortening (pre-beginning-of-compensatory lengthening), and we should disregard the first flag, because it was predicated on the erroneous understanding of shortening and its interaction with apocope
+?
 
 bEt_le_hEm
 beθələɱðe_
@@ -279,6 +289,8 @@ bisəxs_
 TROUBLE FROM ks. I THIS IS HARMONY FROM ST>S? DUNNO ABOUT THIS ONE
 #DAB: another Latin <x> to Irish <x> perhaps, thus making lenition a non-factor?
 #EJFL: Well, <x> was certainly /xs/ here or even /x/ but not /ks/. The word is also spelled <bissech>. I think ks>xs is not a lenition change.
+DAB: ks not being s is diagnostic of post-beginning-of-syncope, st>s is diagnostic of pre-end-of-harmony, we don't trust the k>x lenition flag. What dates do we assign?
+?
 
 kad_Uk
 kaðxəx
@@ -287,6 +299,18 @@ kaðxəx
 SO MESSED UP. IS THIS kadUK>kad_x-@x? DOESN'T LOOK LATIN, REMOVE HEBREW?
 #EJFL: This is Latin <cadu:cus> > <cadu:c-> (getting rid of the suffix). Lenition and shortening happen. The Irish suffix -ach is added /kaðux/ + /əx/. Then you get syncope: /kaðx/ + /əx/. The only problem autodate has is that the Irish -ach suffix is not removed.
 #DAB: great, this looks like a straightforward hand dating
+DAB: basically, this should be aligned like this:
+kadUk__
+kað_xəx
+and autodate would give (under the new apocope-less scheme):
+[_] [1] [_] [1] [1]
+k>x (pre-end-of-lenition)
+U>_ (pre-beginning-of-compensatory lengthening)
+U>_ pre-end of syncope
+Which is consistent
+because the alignment can't be coaxed, we just say this is a pre-lenition loan by hand
+?
+
 
 kajAfAs
 ka_ifəs
@@ -299,13 +323,18 @@ kabiLAti
 kab_ləd_
 [_] [0,0] [_] [_] [1] [0]
 6 5
-FINAL V CAUSING TROUBLE FOR LENGTHENING/SYNCOPE CALCULATION
+DAB: I take this to be a pre-compensatory lengthening loan (due to the shortening, insofar as it can be trusted). The supposed syncope failure is a mirage, giving the following "correct" vector:
+[_] [0,0] [_] [1] [0]
+so the hand date should be 0, 4 (under the apocope-less scheme)
+?
 
 karbuŋkul
 karbuŋkəl
 [_] [_] [1] [_] [_] [0,0]
 6 3
 u-REDUCTION CAUSING TROUBLE, NEED TO TRACK SYNCOPE PHONOTACTICS PRECISION
+DAB if we abandon u>@ as a pre-end-of-harmony diagnostic, this comes out neatly as a post-syncope loan, which McManus sort of endorses (he hesitates bc he doesn't believe in natural classes AFAICT, autodate does not hesitate)
+?
 
 karbuŋkul
 karɱə_gəl
@@ -313,6 +342,8 @@ karɱə_gəl
 6 3
 HAND DATE? nk>g! u-REDUCTION CAUSING TROUBLE?
 #EJFL: This is a case for hand-dating. Actually, there is no real relationship between the Latin and the Irish. It's a weird translation of the Latin using the word carr and mocol in a compound (mocol itself is from Latin macula).
+DAB It sounds instead like this should be entirely removed
+?
 
 katEkUmen__
 kaθ_xəɱ_nəð
@@ -320,6 +351,9 @@ kaθ_xəɱ_nəð
 6 2
 IRISH SUFFIX THROWING OFF SYNCOPE CALC
 #EJFL: Removing the suffix in this case would be good, right?
+DAB that wouldn't help, actually (because it doesn't like the loss of final syllables either)
+I think it is pretty clear that syncope happened here, so the hand-provided date should be (0,2)
+?
 
 kent_r
 kintər
