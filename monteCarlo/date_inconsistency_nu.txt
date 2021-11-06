@@ -215,7 +215,6 @@ I DON'T THINK SHORTENING IS REAL #EJFL But clearly is, given all derivatives in 
 DAB implementation note: I'm not sure how you intend to change the Irish stem, but doing so may be moot. We'll just have to give a hand date, justified by your analysis
 ?
 
-#DAB: sporadic replies to comments below this point
 
 awksili
 __Usəle/
@@ -354,6 +353,10 @@ IRISH SUFFIX THROWING OFF SYNCOPE CALC
 DAB that wouldn't help, actually (because it doesn't like the loss of final syllables either)
 I think it is pretty clear that syncope happened here, so the hand-provided date should be (0,2)
 ?
+
+###
+DAB still needs to flag below
+###
 
 kent_r
 kintər
