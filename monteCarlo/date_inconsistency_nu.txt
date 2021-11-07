@@ -354,10 +354,6 @@ DAB that wouldn't help, actually (because it doesn't like the loss of final syll
 I think it is pretty clear that syncope happened here, so the hand-provided date should be (0,2)
 ?
 
-###
-DAB still needs to flag below
-###
-
 kent_r
 kintər
 [_] [_] [1] [_] [_] [0]
@@ -365,6 +361,8 @@ kintər
 HARMONY ERROR, NO? THIS IS RESULT OF MONOSYLLABLES WITH A HEIGHT CHANGE GETTING TAGGED WITH HARMONY, EVEN THOUGH RAISING CAN'T HAPPEN HERE
 #EJFL: I think there was a stem change: Latin centrum /kentrum/ became an i-stem in Irish (for some reason): /kentris/ - then raising is normal.
 #Alternatively, the attested form is in some case form (e.g. fem. dative or masc./neut. gen.) that allows raising.
+DAB: nt>nt is supposed to diagnose post-beginning-of-syncope, and raising is not supposed to happen across clusters IIRC. this points to a post-syncope loan to me
+?
 
 kerubIn
 xerufIn
@@ -399,6 +397,8 @@ komən_
 [_] [_] [0] [_] [1] [0]
 6 5
 FINAL V THROWING OFF SYNC CALC, APOC V LENGTHENING
+DAB: so, this is a post-harmony, pre-lengthening loan
+?
 
 komparAtIw
 kompərəd__
@@ -407,6 +407,9 @@ kompərəd__
 I DON'T THINK SHORTENING IS REAL
 #EJFL: This is a tough one. Modern Irish has comparáid, without shortening but the word is often spelled comparit in Old Irish, which
 implies that there was no long á sound in the final syllable (otherwise it would have been written!).
+DAB: so ... you are proposing that it could have been shortened and then lengthened later? FWIW, what is the probability that length is written? It is supposed to vary by scribe right?
+More to the point, if there were shortening, we have a rupture in space-time, because it needs to enter before compensatory lengthening and after mp is legal and after rhythmic syncope stops applying.
+?
 
 kOnstantInobol
 konstəntənəbəl
@@ -452,6 +455,8 @@ The verbal noun of damnaid is regularly damnad (u-stem, *damna:tus) with gen. da
 <dammaint> is a nominative i-stem derived from damanto because the genitive of i-stems and u-stems was the same.
 <dammain> is probably just an orthographic variant of dammain. – Another possibility is that dammain /damənj/ is from Latin damnum but with
 suffix substition to *damni. In this version of the derivation, there is an epenthetic schwa in the Irish form.
+DAB: which Latin to Irish adaptation should be done, and how will we date it?
+?
 
 
 
@@ -463,6 +468,7 @@ IS SHORTENING REAL? ANOTHER WEIRD ST<S
 #EJFL: Not weird. -te is a suffix.
 #DAB: great! but we still have tension between an unsyncopated vowel and early enough entrance for shortening.
 #EJFL: I am starting to thing that there is no shortening in words with the suffix -ens-, which is anyway quite a rare suffix in Irish.
+DAB: I read your comment as saying that Irish also replaced Latin Ens with a suffix -ens, but I don't know whether the Irish suffix had a long or short vowel, nor do I know what the structure of the Irish word is supposed to be
 
 dewteronom
 dewtər_nəɱ
@@ -485,3 +491,5 @@ dixtədOr
 WAS SHORTENING REAL (THOUGH IT IS WEIRD TO KEEP LENGTH IN ONE PLACE BUT NOT ANOTHER, IS THERE AN IRISH SUFFIX HERE?)? HARMONY SHOULD NOT BE A FAILURE, JUST [], 
 #EJFL: -do:r <-tór> is an Irish suffix here. Why shouldn't harmony be failure? We might have expected dextədOr! Also, since -o:r was always in the final syllable,
 even in Latin, is there a reason to expect shortening of the final syllable?FFd
+DAB: the shortening in question is the A>@. (and I goofed on harmony, I must have looked at an [i] and thought 'harmony involving [i] does not cross clusters)
+?
