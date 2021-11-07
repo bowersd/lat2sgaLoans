@@ -11,6 +11,8 @@ ab_ɣədər
 2 2
 LENITION COUNT IS RIGHT. FAITHFUL VOICED C COUNTS AS 0. SO WHAT TO DO WITH THIS? I THINK THE TRANSCRIPTION IS WRONG <g> SPELLS [g] HERE 
 #EJFL: Actually, g is clearly lenited in modern Irish, where it is spelled aibghitir (pre-1950s reform) or aibítir (post-1950s reform). Since the g is totally effaced, it is clearly lenited. The problem is the b and t (also the modern Irish implies that the orthographic <t> is also phonetic [t]). I don't know what to do with this.
+DAB: well, it is certainly pre-compensatory lengthening, and may be pre-lenition.
+Candidate hand dates: (0,2), (2,4)
 ?
 
 abimelek
@@ -41,6 +43,8 @@ axətəfəl
 INCONSISTENT LENITION. SO WHAT TO DO WITH THIS ESP. GIVEN CLEAR SYNC FAILURE? #EJFL: The orthography in Old Irish is <achitofel>. Perhaps this was just pronounced /akitofel/. 
 SINCE LATIN ORTH IS ACHITOPHEL, I'D SAY YOU ARE RIGHT.
 #EJFL OK.
+DAB: with a change to the irish transcription, this is a post-syncope loan
+Expected autodate date: (5,6)
 
 akrisiOn_E
 akrəs_ənde
@@ -49,7 +53,8 @@ akrəs_ənde
 CLEARLY NOT SYNCOPE COMPLIANT, APOCOPE/COMP LEN INVOLVES FINAL V PROCESSING, VV SEQ. I BET THIS IS POST-SYNCOPE WITH A DASH OF CONFUSION  #EJFL The final syllable /de/ in Irish is an Irish suffix. I forgot to remove Irish suffixes from the input. The comparison should be between akrisiOn_E and akrəs_ən. 
 OK, EVEN WITH THE SUFFIX REMOVAL THERE IS A DATING INCONSISTENCY BECAUSE THERE IS SHORTENING BUT NOT SYNCOPE (JUST NON-RHYTHMIC SYNCOPATION) 
 EJFL: Syncope exhibits some weird behavior when the vowel-to-be-syncoped sits beside r and l (recall Cothraige, Cothairge "Patrick") Is there any reason not to build an override for Vr/rV or Vl/lV into autodate's syncope statement?
-DAB: ok, this needs to be discussed verbally, because I'm not sure if you are proposing that there's an epenthetic vowel that then gets deleted (or more generally what the nature of the override is supposed to be), plus I want to get the facts on vowel hiatus (especially involving [i])
+DAB: ok, this needs to be discussed verbally, because I'm not sure if you are proposing that there's an epenthetic vowel that then gets deleted like happened in Cothraige (or more generally what the nature of the override is supposed to be), plus I want to get the facts on vowel hiatus (especially involving [i])
+DAB: candidate hand dates: (5,6) (2, 4)
 ?
 
 Egiptiak__
@@ -61,6 +66,7 @@ PROBLEMS IN A VV SEQ. IS k>x REAL (PERHAPS A LATER ADDED SUFFIX)? I BET THIS IS 
 GREAT, SO A LENITED SUFFIX WAS ATTACHED TO A POST-LENITION WORD 
 EJFL: You mean post-syncope right? There is an exception to syncope involving the sequence: /Vxt/ (or /Vpt/ which consistently acts the same). This sequence does not undergo syncope (cf. Thurneysen, pg. 67; §106 "The vowel remains only before cht, e.g. cumachte 'might', cumachtach 'mighty'). Is there any reason not to build an override for Vxt/Vpt into autodate's syncope statement? Alternative, I can change the Latin and Irish stem to reflex the fact that -ach /əx/ + -de /ðe/ may have been added post-syncope to base Éigipt.
 DAB: possibility 1: -iak is replaced with -ach..., possibility 2: iV vowel hiatus loses a vowel, possibility 3: VptV shifts the syncope site rightwards
+Candidate hand dates: (5,6), (5,6), (1,5)
 ?
 
 EmiliAn__
@@ -70,7 +76,8 @@ eɱəlE_nde
 I BET THIS IS POST SYNCOPE (syncope clearly didn't happen, and we can't be sure about m lenition). PROBLEM WITH A VV SEQ #EJFL: the final syllable /de/ in Irish is an Irish suffix. I forgot to remove Irish suffixes from the input.
 WE ARE GETTING A NON-TRIVIAL AMOUNT OF VV->V SEQUENCES. WHAT IS THE ANALYSIS? I AM LEANING TOWARDS LENGTH BEING PRESERVED, WHICH MAKES A POST-APOCOPE LOAN, (THOUGH APPARENTLY THE INITIAL SYLLABLE IS SHORTENED...). ULTIMATELY WE HAVE TO DECIDE THE m>M QUESTION THOUGH. SINCE LENITION WASN'T CONSISTENTLY SPELLED FOR [m] I FAVOR SAYING IT WASN'T LENITED ... BUT OF COURSE THE MODERN LANGUAGE COULD DISPEL THAT NOTION
 #EJFL: In the moderl language, names based on this root have /m/, although names can be reborrowed at anytime. I favor changes the stem to just Emili- for Latin and E/emile for Irish (Aemilianus derives within Latin from Aemilius, which would be E/emile in Irish if it enters post syncope). -én /En/ and -de can both be seen as Irish suffixes.  
-DAB: we have equivocal evidence for lenition from the old orthography, and equivocal evidence against it from the modern language. As for syncope, we have a clearly unsyncopated vowel (albeit next to an /l/), and a missing vowel that was in hiatus, plus the possibility of Irish suffixes. Cutting the size of the word down only helps autodate, but doesn't absolve us of the analytical question
+DAB: as things stand, m > ɱ  does not diagnose Irish lenition, and we have equivocal evidence against lenition from the modern language. As for syncope, we have a clearly unsyncopated vowel (albeit next to an /l/), inconsistent length in two syllables (irish first and penult), and a missing vowel that was in hiatus/post-liquid (I need to know what the data is for rhythmic syncope around liquids. all I know right now is that Coth(V)r(V)ge was weird), plus the possibility of Irish suffixes. Cutting the size of the word down only helps autodate, but doesn't resolve these problems
+Candidate hand dates (5, 6), (4,5)
 ?
 
 ajn_E_a
@@ -82,7 +89,7 @@ PROBLEMS IN A VV SEQ. -- I BET PAGAN LITERARY HEROS WEREN'T THE STUFF OF NATIVIZ
 #DAB: autodate detects a failure to syncopate (which looks right to me) and shortening, which is inconsistent. if it were borrowed before lenition, or even just borrowed after affection and got lenited/affected suffixes put on it,  , we still have the shortening/syncope problem. For clarity, if we want to go way out on a limb and say it was a post-apocope loan, we have this UR+derivation (the problem stands for earlier URs too): /ajne:a-ð(-?)e/> ajneaðe (shortening) > ajn_aðe (syncope)
 #EJFL: I just came up with this approach o the medial <ee>: the full form of the suffix in Primitive Irish is typically reconstructed as *-odias/odia/odian (masc/fem/neut), so there is actually a vowel that could undergoe syncope under the right conditions. What if this was attached to the stem: *ajne:aodias This would become something like ajnaəðe after syncope, with a VV sequence. Just a thought.
 #EJFL: any further thoughts? If *ajne:aodias, how to deal with it?
-DAB: for further discussion. FWIW, we probably need to drop this in favor of the root below (don't want to double count)
+DAB: FWIW, we probably need to drop this in favor of the root below (don't want to double count)
 ?
 
 ajnEAs
@@ -92,6 +99,8 @@ ajneas
 PROBLEMS IN A VV SEQ.-- I BET PAGAN LITERARY HEROS WEREN'T THE STUFF OF NATIVIZED LOANS... #EJFL: OK!
 #DAB: We can keep it as well ... but I wouldn't want to claim that the vowels were necessarily shortened, since Virgil doesn't mark his long vowels and this could be an orthographic loan.
 #EJFL: Change Irish Stem
+DAB: We can't really claim that Irish had long vowels, we can only claim that we doubt they knew the original had long vowels. So, we should hand date this, or exclude it
+Candidate hand dates: (5,6)
 ?
 
 EolEn_s
@@ -103,6 +112,7 @@ BUNCH OF WEIRD THINGS, AND I DON'T TRUST SHORTENING. THIS IS CLEARLY POST-SYNCOP
 #EJFL: Epenthesis is the most likely. Epenthesis applies to syllabic r/l/n (maybe m) if these are created by syncope. 
 #EJFL: Actually, the easiest is to think that there is no shortening here. Change Irish Stem to: ewlEns- + te.
 DAB bring me up to speed on your thoughts when we talk?
+Candidate hand dates: (0,4) (5,6)
 ?
 
 Etiob
@@ -113,6 +123,7 @@ REMOVE HEBREW?  #EJFL: It's not really Hebrew. It's Greek (via Latin). Same word
 #DAB: Looks like orthographic copying to me.
 #EJFL: Change Irish stem to etəb-, but also change Latin stem to etjob; orthographic <i> is non-syllabic.
 DAB: this non-syllabic orthographic <i> seems germane to the apparent syll losses in hiatus above
+Expected autodate date: (2,6)
 ?
 
 aleksander
@@ -122,6 +133,7 @@ aləxsəndər
 k>x real? #EJFL The word is from Wb. (so 8th century at the latest). It is spelled <alaxander>. <x> typically spells /xs/ in Old Irish, but the Latin orthography has <x> for /ks/, so who knows. The only reason to suspect that this has been Irishized is the spelled <a> for for the second vowel — this indicates some kind of reduction.
 #DAB: sure, but that reduction is supposed to be later than what we are interested in. I'd say keep it and let <x> spell [ks]
 #EJFL: Change Irish stem to /aləksəndər/
+DAB: Expected autodate date (5,6)
 
 aLelUja
 aLe____
@@ -133,6 +145,9 @@ SO MESSED UP. IF THIS STAYS, IT NEEDS TO BE HAND DATED (CUTTING OFF THE LAST TWO
 #EJFL: Update: the derivation is entirely regular, but we are missing one ingredient: post-apocope dipthongs become -e: *alelu:ja >
 aleluja (shortening) > aleloja (affection) > aleloj (apocope) > alele: (monophthongization) > alle: (syncope + pal) > alle (reduction in unstressed syllable, long-->short). 
 For the development compare *buwe '(s)he was' > buj (apocope + palatalization) > boj (uj/oj neutralization in stressed syllables) <boí>, VS unstressed *robuwe '(s)he has been' > rovuwe (lenition) > rovuj (apocope + patalization) > rove: (monophthongization) > rove (reduction) <robae/rabae>. Change Irish stem to alle. 
+DAB: I'm not sure what the current Irish and Latin representations are, but autodate will get messed up on the quality of the final Irish syllable
+Candidate hand dates: (0,3) ... (0,4) would allow it to enter during compensatory lengthening, which could prevent shortening
+?
 
 ananiA
 __aNe_
@@ -143,7 +158,7 @@ anania:s > ananias (suffix-substition) > ananiah (lenition) > ananeah (affect) >
 #DAB: cool! needs a hand date then. Since the affection happens in a suffix, I am disinclined to say this is a pre-affection loan, but good to see that syncope applied. (I bet that transcribing this with nn instead of N would go a long way to getting a better alignment, same for hallelujah) 
 #EJFL: I doubt that -e is a real suffix here. -e as a suffix has the following specific uses (a) -e to derive a feminine abstract noun from an adjective, e.g. áith 'sharp' --> áithe 'acuity'; (b) -e to derive a feminine verbal noun from a vebal root, e.g. slaidid 'to slay' --> slaide 'slaying/slaughter'; (c) -e to derive a neuter verbal noun from a verbal root, ar-gair 'to prohibit' --> airgaire 'prohibition'; (d) -e to derive a neuter abstract noun from a noun, e.g. táith 'thief' --> táithe 'concealment'. Annae is a masculine personal name, so -e is clearly not any of these suffixes. Final e is also found as part of other suffixes: -aire (masculine agent noun - not applicable here); -(s)aine (neuter abstract noun, e.g. clam 'leper' --> clamsaine 'leprosy — clearly this is not applicable here); -aige (masculine noun denoting someone related to the nominal base to which it is attached, e.g. scél 'story' --> scélaige 'narrator' — not applicable here); -ine or -ne a rare diminutive suffix, mostly added to common nouns. The last one is slightly possible as a model for Annae, but rather unlikely. As for <nn> vs <N>, I agree.
 #EJFL: Change Irish stem to anne
-
+DAB: expected autodate date: (0,3)
 
 antebEnultim
 antəbənult__
@@ -152,7 +167,8 @@ antəbənult__
 I DOUBT THAT SHORTENING IS REAL (LOOKS LIKE A WORD YOU WOULD READ, AND LATIN ORTH UNCLARITY ON LENGTH WILL SCREW YOU UP). 
 #EJFL: I agree. 
 #EJFL: Change Irish stem antebEnult 
-DAB: we have evidence for the length in Irish?
+DAB: we have evidence for the length in Irish? I think the claim is that they didn't know it was long (and so didn't shorten it), not that they kept length
+Candidate hand date/expected autodate date: (5,6)
 ?
 
 antikrist
@@ -163,6 +179,7 @@ WASN'T CHRIST SPELLED WITH A <CH>? I MIGHT BE PERSUADED RE: LENITION IF [x] WERE
 #DAB: ok. FWIW, where are we keeping records of deletions/changes to the dataset?
 #EJFL: I have a spreadsheet — REMOVE this word
 
+
 antO__n
 antənAn
 [_] [_] [_] [1] [_] [0]
@@ -171,6 +188,9 @@ I GUESS I BUY SHORTENING, BUT WHAT IS GOING ON WITH FEWER SYLLS IN LATIN THAN IR
 #DAB: I don't think we can just hack off these Irish suffixes, since they create the environment for shortening and syncope, and if they were applied to the loan at the right time, we would expect these processes to be carried out. So, as above, the syncope-shortening question needs to get sorted out. If the borrowing started out orthographically, that is a good way to lose the length, right?
 #EJFL: Maybe you're right about the loss of length being conditioned by ambiguous orthography. By the way, there is a word Antoin in Modern Irish. That would be the expected descendent of Antonius, with final palatalization resulting from "British Apocope" of -ius. From Antoin (short o) Antonán is the expected diminutive. I believe that the loss of palatalization is regular in this context. So we could just analyse Antoin and leave Antonán aside.
 #EJFL: Change Irish and Latin stem: antOni. (Latin) compared to antən (Irish). -án is a suffix that can be added at any time. Here added after syncope. 
+DAB: autodate will throw a conflict here, because of the apparent shortening (pre-compensatory lengthening) and the retention of nt (post-syncope)
+Candidate hand date: (5,6)
+?
 
 argUment
 arguɱənt
@@ -180,6 +200,7 @@ IS SHORTENING REAL? I DOUBT M-LENITION #EJFL: You are right. The modern Irish is
 #DAB: Great, so the transcription needs to be fixed
 #EJFL: Change stem to argumənt
 DAB: so we still officially have a shortening problem
+Candidate hand date: (5,6)
 ?
 
 artikul
@@ -193,7 +214,8 @@ HARMONY TRIGGERED BY u-REDUCING #EJFL: Probably right.
 #DAB: Assuming that the theory where "late reduction" made [@] is wrong,  how do we ensure a coherent timeline for this word? As things stand in pops in to the language for harmony and then goes underground during syncope. Was there later epenthesis? restructuring?
 #EJFL: The column "later reduction" is wrong if it shows u > schwa. u doesn't go to schwa via later reduction. If I put it in, that was because I was confused! AS for yor second question, perhaps the Irish stem is actually wrong and the word shouldn't be artəgəl but artəgul or artəkul (I don't know yet if the <c> is pronounced /g/ or /k/). In that case, the sequence is clear: it is a post-syncope loan with no reduction of u>schwa. I would need to check how this word is pronounced in later Irish. 
 #EJFL: I think I was totally confused above. REMOVE u>o>@ harmony in autodate. Although I think there are different processes, uou're right that there is no way to distinguish between u->o->@ and u->@ in our data. 
-DAB todo
+DAB todo > done
+Expected autodate date: (5,6)
 ? (just flagging so I don't forget)
 
 atom
@@ -204,6 +226,8 @@ I DOUBT M-LENITION #EJFL: Don't be such a Debbie-Doubter. Modern Irish has adamh
 #DAB: How to resolve the inconsistency then? I think I saw recently that Welsh had m>ɱ.>v (McCone 1996:17), so m-lenition doesn't differentiate Irish from Brittonic lenition.
 #EJFL: Probably true.
 #EJFL: Remove m>ɱ in autodate as len trigger
+DAB: done
+Expected autodate date (2,6)
 
 awktOritAs
 awxtər_tAs
