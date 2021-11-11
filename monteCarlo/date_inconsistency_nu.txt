@@ -236,8 +236,10 @@ awxtər_tAs
 I DON'T THINK SHORTENING IS REAL #EJFL But clearly is, given all derivatives in Modern Irish. The probably is more with the suffix. Was it -ita:s or just ta:s in Latin? 
 #DAB: I guess that is something you would be better prepared to answer than me.
 #EJFL: Change Irish stem (and put note into proper place in database): There is an Irish word augtor /awxt@r/ which comes directly from Latin auctor /awktor/, acc. auctōrem /awkto:rem/. The shortening and reduction augtor is regular. Our word augortás is derived within Irish from augtor by adding the suffix -tás /ta:s/ to the Irish stem. The Latin/Irish pair to be compared are: awktor and awxt@r.
-DAB implementation note: I'm not sure how you intend to change the Irish stem, but doing so may be moot. We'll just have to give a hand date, justified by your analysis
-?
+DAB My only worry is that we are getting a lot of "researcher degrees of freedom" where we can pick and choose from a variety of morphological analyses in Irish (use augtor-tAs) and Latin (possibly get shortening by using the nominative instead of the accusative).
+To manage this, we need to explain the analytical options, and give a brutally clear derivation or 3. Hopefully we can shunt such distracting commentary into an appendix
+In the end, I am happiest to say this is a post-syncope loan, given the failed/incorrect/undetectable application of syncope (like, the second vowel doesn't delete but the third one did if it existed ... but maybe the second vowel does delete and then gets re-epenthesized)
+Expected autodate/candidate hand dates: (5,6) (3, 6)
 
 
 awksili
@@ -247,7 +249,8 @@ __Usəle/
 SO MESSED UP, AND I DON'T REALLY BUY HARMONY. 
 #EJFL: Harmony is a problem, but it is because of the way it is coded in autodate. At the moment, a>aw>u is coded as harmony, but really only a>aw is harmony.
 aw>u is a later change that affects any aw, not just those from harmony. We don't want to change autodate because Latin a become u is clearly a case of harmony. We just need to hand-date here.
-DAB: I think harmony is the result of the final i>e, but I agree, hand dating is the way to go. it is tricky though. ks>s is a pre-syncope adaptation, but we don't have vowel deletion.
+DAB: I think the harmony flag is the result of the final i>e, but I agree, hand dating is the way to go. it is tricky though. ks>s is a pre-syncope adaptation, but we don't have vowel deletion.
+Plus 'old loans' have final [e]. I honestly don't know how to coherently make a call here.
 ?
 
 aksiL
@@ -259,7 +262,7 @@ TROUBLE FROM ks. NOT SURE WHAT TO DO
 (1) assimilation to the non-stop feature of s or (2) some kind of analogy with the word fochsal/foxal /foxs@l/, which is totally regular
 (/xs/ results from syncope here: *wókosselom)
 DAB: ks not being simplified to s is supposed to be a post-beginning-of-syncope change, so I concur that we disregard the lenition flag here.
-?
+Candidate hand date: (4,6)
 
 batism
 baθəs_
@@ -268,7 +271,10 @@ baθəs_
 I DON'T THINK WE GET A REAL CASE OF s-LENITION AT ALL IN OUR DATA...I SUGGEST FAILURE OF [s] LENITION SHOULD NOT BE DIAGNOSTIC
 #EJFL: I agree. Hand-date?
 DAB: this should be a pre lenition loan (0,2)
-?
+###
+#Unresolved issue: dump s>h vs s>s as a lenition diagnostic in autodate
+###
+Expected autodate date (0,2)
 
 benedIk__
 ben_dəxəð
@@ -279,13 +285,15 @@ k->x due to a diff suff? IF SHORTENING REAL SHOULD BE PRE-LENGTHENING (by hand?)
 The Irish word is derived within Irish by reinterpreting the final -t in bendacht 'benediction' (<Lat. bendictio:) as a
 verbal noun ending (cf. tabairt 'giving/gift' and the verbal stem tabair- 'give'. After reinterpretation, a new verb bendach- was created.
 DAB: so we really should be looking at bendacht-bendictio:, which will have no lenition flags, no compensatory lengthening flags, and no syncope flags (an undatable loan)
-?
+Researcher degrees of freedom strikes again. Hopefully we can say something soothing to readers that most words are not crazy. At the very least, we can do a non-elaborate analysis words-only run of the search.
+Expected autodate date: (0,6)
 
 benjamin
 ben_əɱIn
 [_] [1] [_] [_] [_] [0]
 6 2
 REMOVE HEBREW
+NB: another case of hiatus i/onglide j getting dropped
 #EJFL: OK
 
 berEEns__
@@ -295,8 +303,8 @@ ber_ənste
 SO MESSED UP, PLEASE TELL ME WHAT IS GOING ON WITH THIS WORD
 #EJFL: The final syllable in the Irish is a suffix.
 #EJFL: I don't get this word either. Too many processes are triggering.
-DAB: we have faithful ns (post-beginning-of-syncope), we have a missing second syllable (pre-end-of-syncope), we have shortening (pre-beginning-of-compensatory lengthening), and we should disregard the first flag, because it was predicated on the erroneous understanding of shortening and its interaction with apocope
-?
+DAB: we have faithful ns (post-beginning-of-syncope), we have a missing second syllable (pre-end-of-syncope ... but also this is hiatus), we have shortening (pre-beginning-of-compensatory lengthening), and we should disregard the first flag, because it was predicated on the erroneous understanding of shortening and its interaction with apocope
+Candidate hand dates: (0,4) (5,6)
 
 bEt_le_hEm
 beθələɱðe_
@@ -313,7 +321,8 @@ TROUBLE FROM ks. I THIS IS HARMONY FROM ST>S? DUNNO ABOUT THIS ONE
 #DAB: another Latin <x> to Irish <x> perhaps, thus making lenition a non-factor?
 #EJFL: Well, <x> was certainly /xs/ here or even /x/ but not /ks/. The word is also spelled <bissech>. I think ks>xs is not a lenition change.
 DAB: ks not being s is diagnostic of post-beginning-of-syncope, st>s is diagnostic of pre-end-of-harmony, we don't trust the k>x lenition flag. What dates do we assign?
-?
+Candidate hand dates (4,6) (0,3)
+
 
 kad_Uk
 kaðxəx
@@ -332,7 +341,7 @@ U>_ (pre-beginning-of-compensatory lengthening)
 U>_ pre-end of syncope
 Which is consistent
 because the alignment can't be coaxed, we just say this is a pre-lenition loan by hand
-?
+Candidate hand date (0,2)
 
 
 kajAfAs
