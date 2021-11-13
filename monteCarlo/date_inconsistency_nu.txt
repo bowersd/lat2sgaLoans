@@ -358,15 +358,15 @@ kab_ləd_
 DAB: I take this to be a pre-compensatory lengthening loan (due to the shortening, insofar as it can be trusted). The supposed syncope failure is a mirage, giving the following "correct" vector:
 [_] [0,0] [_] [1] [0]
 so the hand date should be 0, 4 (under the apocope-less scheme)
-?
+Candidate hand date (0,4)
 
 karbuŋkul
 karbuŋkəl
 [_] [_] [1] [_] [_] [0,0]
 6 3
 u-REDUCTION CAUSING TROUBLE, NEED TO TRACK SYNCOPE PHONOTACTICS PRECISION
-DAB if we abandon u>@ as a pre-end-of-harmony diagnostic, this comes out neatly as a post-syncope loan, which McManus sort of endorses (he hesitates bc he doesn't believe in natural classes AFAICT, autodate does not hesitate)
-?
+DAB if we abandon u>@ as a pre-end-of-harmony diagnostic, this comes out neatly as a post-syncope loan, which McManus sort of endorses (he hesitates bc he doesn't believe in natural classes for nk>nk AFAICT, autodate does not hesitate)
+Candidate hand date (5,6)
 
 karbuŋkul
 karɱə_gəl
@@ -374,7 +374,7 @@ karɱə_gəl
 6 3
 HAND DATE? nk>g! u-REDUCTION CAUSING TROUBLE?
 #EJFL: This is a case for hand-dating. Actually, there is no real relationship between the Latin and the Irish. It's a weird translation of the Latin using the word carr and mocol in a compound (mocol itself is from Latin macula).
-DAB It sounds instead like this should be entirely removed
+DAB It sounds instead like this should be entirely removed (presumably other people would agree with your non-true loan analysis?)
 ?
 
 katEkUmen__
@@ -383,9 +383,9 @@ kaθ_xəɱ_nəð
 6 2
 IRISH SUFFIX THROWING OFF SYNCOPE CALC
 #EJFL: Removing the suffix in this case would be good, right?
-DAB that wouldn't help, actually (because it doesn't like the loss of final syllables either)
+DAB that wouldn't help, actually (because it doesn't like the loss of final syllables either, which is what would happen without the -@D)
 I think it is pretty clear that syncope happened here, so the hand-provided date should be (0,2)
-?
+Candidate hand date (0,2)
 
 kent_r
 kintər
@@ -394,8 +394,8 @@ kintər
 HARMONY ERROR, NO? THIS IS RESULT OF MONOSYLLABLES WITH A HEIGHT CHANGE GETTING TAGGED WITH HARMONY, EVEN THOUGH RAISING CAN'T HAPPEN HERE
 #EJFL: I think there was a stem change: Latin centrum /kentrum/ became an i-stem in Irish (for some reason): /kentris/ - then raising is normal.
 #Alternatively, the attested form is in some case form (e.g. fem. dative or masc./neut. gen.) that allows raising.
-DAB: nt>nt is supposed to diagnose post-beginning-of-syncope, and raising is not supposed to happen across clusters IIRC. this points to a post-syncope loan to me
-?
+DAB: nt>nt is supposed to diagnose post-beginning-of-syncope, and raising is not supposed to happen across clusters IIRC.
+Candidate hand date (4,6)
 
 kerubIn
 xerufIn
@@ -417,6 +417,8 @@ kirkunfləxs
 6 2
 I DON'T THINK k>x IS REAL
 #EJFL: Impossible to say - but anyway if /ks/>/xs/ is not part of lenition, as I suggested above, there is no problem.
+DAB: We have (almost) faithful nf (post-beginning of syncope) and failure to syncopate (post-end-of-syncope)
+Candidate hand date: (5,6)
 
 kolumb
 koluɱ_
@@ -424,6 +426,7 @@ koluɱ_
 3 2
 I DOUBT m>M
 #EJFL: Yes. Change Irish stem to kolum. It is clear from modern Irish Colm and the derivative Colmán that the m was not lenited.
+Expected autodate: (3,6)
 
 koMUni
 komən_
@@ -431,7 +434,7 @@ komən_
 6 5
 FINAL V THROWING OFF SYNC CALC, APOC V LENGTHENING
 DAB: so, this is a post-harmony, pre-lengthening loan
-?
+Candidate hand date: (3,4)
 
 komparAtIw
 kompərəd__
@@ -442,7 +445,7 @@ I DON'T THINK SHORTENING IS REAL
 implies that there was no long á sound in the final syllable (otherwise it would have been written!).
 DAB: so ... you are proposing that it could have been shortened and then lengthened later? FWIW, what is the probability that length is written? It is supposed to vary by scribe right?
 More to the point, if there were shortening, we have a rupture in space-time, because it needs to enter before compensatory lengthening and after mp is legal and after rhythmic syncope stops applying.
-?
+Candidate hand dates: (2,4) (5,6)
 
 kOnstantInobol
 konstəntənəbəl
@@ -450,6 +453,7 @@ konstəntənəbəl
 6 5
 I DON'T THINK SHORTENING IS REAL. 
 #EJFL: Agree.
+Candidate hand date: (5,6)
 
 kOnsul
 konsəl
@@ -459,6 +463,7 @@ IS u-HARMONY WRONG OR IS NS SENSITIVITY WRONG?
 #EJFL: /ns/ may be treated as voiceless and u-harmony doesn't necessarily happen across voiceless clusters.
 #DAB: Whoops, I was referring to the hypothetical lowering of /u/ to allow eventual reduction.
 #EJFL: I think you were right in thinking that there is u>o>@ cannot really work. We should remove it from autodate.
+Expected autodate: (5,6)
 
 kOnsuMAti
 ko_s_ɱəð_
@@ -468,6 +473,7 @@ FINAL V, ns OUTCOME, I DOUBT m-LENITION, though [t] is what is triggerig it? (DO
 #EJFL: McManus thinks this is a verbal noun of the verb cosmaid "annoints". The ending -əð is the normal verbal noun suffix. The verb is derived from Latin consumm-are > cosm-aid - So the Latin stem is incorrect.
 #DAB: OK, is the derivation konsummare = kosum@ð (phonotactic/suffix adjustment) > kos_m@ð, so that there is no informative lenition or shortening, but there is syncope? If remove the Latin suffixes, the syncope calculation won't work. I'd say this is a case for hand dating.
 #EJFL: Agreed.
+Candidate hand dates: (3,5) (bc if they were really shortening the initial O and simplifying the cluster, it would have been eligible for harmony, which it doesn't go)
 
 kiklas_ia
 kigləste_
@@ -477,6 +483,7 @@ WHY IS THERE st? AGAIN, s-DOESN'T LENITE. SUCCESSFUL HARMONY IS ia->e, WHICH IS 
 #EJFL: No. There was suffix substition/british apocope (second preferable to me) so that kiklasia became kiklas- and then -te is an Irish suffix.
 #DAB: so it is a post-harmony loan (because first syllable doesn't lower) and the [e] in -te is not the result of any relevant harmony.
 #EJFL: Yes. Hand-date.
+Candidate hand dates: (5,6) (3,6) (second leaves failure to syncopate unexplained ... perhaps it wasn't suffixed until after syncope?)
 
 dam_nAti
 damən___
@@ -501,7 +508,8 @@ IS SHORTENING REAL? ANOTHER WEIRD ST<S
 #EJFL: Not weird. -te is a suffix.
 #DAB: great! but we still have tension between an unsyncopated vowel and early enough entrance for shortening.
 #EJFL: I am starting to thing that there is no shortening in words with the suffix -ens-, which is anyway quite a rare suffix in Irish.
-DAB: I read your comment as saying that Irish also replaced Latin Ens with a suffix -ens, but I don't know whether the Irish suffix had a long or short vowel, nor do I know what the structure of the Irish word is supposed to be
+DAB: I read your comment as saying that Irish also replaced Latin Ens with a suffix -ens, but I don't know whether the Irish suffix had a long or short vowel, (and what was the morphological structure?)
+?
 
 dewteronom
 dewtər_nəɱ
@@ -509,6 +517,7 @@ dewtər_nəɱ
 6 2
 I DON'T THINK m>M IS REAL, IF NOT HEBREW MIGHT STILL BE KEEPABLE THOUGH LIKELY A LITERARY LOAN (NO REASON TO JUST THROW OUT LITERARY LOANS, THEY JUST ARE NOT VERY DIAGNOSABLE)
 #EJFL: Certainly not Hebrew. It is Greek. But anyway, there probably was no m-lenition.
+Expected autodate: (5,6)
 
 diameter
 di__əθər
@@ -516,6 +525,7 @@ di__əθər
 3 2
 SO MESSED UP, WOULD NEED A HAND DATE BECAUSE THIS IS A BIT BEYOND IRREGULAR
 #EJFL: Possibly not even derived from Latin.
+So, exclude, or include and respect t>T (0,2), include and say there was not syncope (5,6) (aka di.e.ter>di.e.ter)?
 
 diktAtOr
 dixtədOr
@@ -525,4 +535,4 @@ WAS SHORTENING REAL (THOUGH IT IS WEIRD TO KEEP LENGTH IN ONE PLACE BUT NOT ANOT
 #EJFL: -do:r <-tór> is an Irish suffix here. Why shouldn't harmony be failure? We might have expected dextədOr! Also, since -o:r was always in the final syllable,
 even in Latin, is there a reason to expect shortening of the final syllable?FFd
 DAB: the shortening in question is the A>@. (and I goofed on harmony, I must have looked at an [i] and thought 'harmony involving [i] does not cross clusters)
-?
+Candidate hand date: (5,6) (treating shortening as not quite real)
