@@ -426,7 +426,7 @@ koluɱ_
 3 2
 I DOUBT m>M
 #EJFL: Yes. Change Irish stem to kolum. It is clear from modern Irish Colm and the derivative Colmán that the m was not lenited.
-Expected autodate: (3,6)
+Expected autodate: (2,6)
 
 koMUni
 komən_
