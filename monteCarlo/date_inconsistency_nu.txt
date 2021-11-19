@@ -78,7 +78,7 @@ WE ARE GETTING A NON-TRIVIAL AMOUNT OF VV->V SEQUENCES. WHAT IS THE ANALYSIS? I 
 #EJFL: In the moderl language, names based on this root have /m/, although names can be reborrowed at anytime. I favor changes the stem to just Emili- for Latin and E/emile for Irish (Aemilianus derives within Latin from Aemilius, which would be E/emile in Irish if it enters post syncope). -én /En/ and -de can both be seen as Irish suffixes.  
 DAB: as things stand, m > ɱ  does not diagnose Irish lenition, and we have equivocal evidence against lenition from the modern language. As for syncope, we have a clearly unsyncopated vowel (albeit next to an /l/), inconsistent length in two syllables (irish first and penult), and a missing vowel that was in hiatus/post-liquid (I need to know what the data is for rhythmic syncope around liquids. all I know right now is that Coth(V)r(V)ge was weird), plus the possibility of Irish suffixes. Cutting the size of the word down only helps autodate, but doesn't resolve these problems
 Candidate hand dates (5, 6), (4,5)
-?
+!!!Could not find in autodate_input.csv
 
 ajn_E_a
 ajneeðe
@@ -190,7 +190,7 @@ I GUESS I BUY SHORTENING, BUT WHAT IS GOING ON WITH FEWER SYLLS IN LATIN THAN IR
 #EJFL: Change Irish and Latin stem: antOni. (Latin) compared to antən (Irish). -án is a suffix that can be added at any time. Here added after syncope. 
 DAB: autodate will throw a conflict here, because of the apparent shortening (pre-compensatory lengthening) and the retention of nt (post-syncope)
 Candidate hand date: (5,6)
-?
+!!!Could not find in autodate_input.csv
 
 argUment
 arguɱənt
