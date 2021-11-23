@@ -46,13 +46,13 @@ inconsistent = {
         ("ka.bil.'la:.ti.o:","/ˈka.blədʲ/"):[0,4],#,capillātiō,caplait
         ("kar.'buŋ.ku.l","/ˈkar.buŋ.kəlʲ/"):[5,6],#,carbunculus,carbuncail
         ("ka.te:.'ku:.me.n","/ˈkaθ.xəɱʲ.nʲəð/'"):[0,2],#,catēchūmenus,cathchoimn\id
-        ("'ken.tr","/ˈkʲinʲ.tʲərʲ/"):[4,6],#,centrum,cinteir
+        ("'ken.tr","/ˈkʲenʲ.tʲərʲ/"):[4,6],#,centrum,cinteir
         ("kir.kum.'flek.s","/ˈkʲir.kunʲ.fʲlʲəxs/"):[5,6],#,circumflexus,circunflex
         ("kom.'mu:.ni.o:","/ˈko.mən/"):[3,4],#,commūniō,comman
         ("kom.pa.ra:.'ti:.w","/ˈkom.pə.rədʲ/"):[5,6],#,comparātīuus,comparait
         ("ko:ns.tan.ti:.'no.bo.l","/ˈkon.stənʲ.tʲi:.nə.bəl/"):[5,6],#,Cōnstantīnopolis,Constantinopol
         ("ko:n.'sum.m","/ˈkos.ɱəðʲ/"):[0,5],#,cōnsummō,cosm\aid
-        ("ki.kla.si.a","/ˈkʲi.glə.ste/"):[2,6],#,Cyclasias,ciclas\tae
+        ("ki.kla.si.a","/ˈkʲi.glə.ste/"):[3,6],#,Cyclasias,ciclas\tae #EJFL: Changed date from 2,6 to 3,6 (this was the consensus we reached).
         ("der.'be:n.s","/ˈdʲer.bən.ste/"):[4,6],#,derbēnsis,derbens\dae
         ("dew.te.ro.'no.mi.","/ˈdʲew.tər.nəmʲ/"):[5,6],#,deuteronomium,deutornim
         ("dik.'ta:.to:r","/ˈdik.tə.do:rʲ/"):[5,6],#,dictātōr,dicta\tóir
@@ -60,14 +60,14 @@ inconsistent = {
 #where is emilianus, anton?
 
 retranscribed_or_autodate_modded = {
-        ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,6],#,Aethiobia,Ethioip
+        ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,6],#,Aethiobia,Ethioip   #EJFL: Should be "et.'jo.bi.", "/ˈe.tʲəbʲ/"
         ("a.lek.'san.der","/a.lək.sən.dər/"):[5,6],#,Alexander,Alaxander
         ("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae
-        ("an.te.be:.'nul.ti.m","/an.tʲe.bʲe:.nʲulʲtʲ/"):[5,6],#,antepaenultima,antepeneuilt
+        ("an.te.be:.'nul.ti.m","/an.tʲe.bʲe:.nʲulʲtʲ/"):[5,6],#,antepaenultima,antepeneuilt #EJFL: Should be "an.te.be.'nul.ti.m","/an.tʲe.bʲe.nʲulʲtʲ/"
         ("ar.'ti.ku.l","/ˈarʲ.tʲə.gəl/"):[5,6],#,articulus,articol DUMP u>@
         ("'a.to.m","/ˈa.dəɱ/"):[2,6],#,atomus,atom
         ("ba.'tis.m","/ˈba.θʲəs/"):[0,2],#,*batisma,baithes DUMP s>h!!
         ("ko.'lum.b","/ˈko.ləm/"):[3,6],#,columba,colum
         ("'ko:n.sul","/ˈkon.səl/"):[5,6],#,cōnsul,consal DUMP u>@
-        ("dam.'na:.ti.o:","/ˈda.mənʲ/"):[2,6],#,damnātiō,dammain
+        ("dam.'na:.ti.o:","/ˈda.mənʲ/"):[2,6],#,damnātiō,dammain #EJFL: Latin should be "dam.n", damnnum
         }
