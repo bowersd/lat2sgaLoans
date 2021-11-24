@@ -22,13 +22,13 @@
 #       todo: further enumeration 
 
 align_crashes = {
-        ("'dra.ko:","/ˈdrawg/"):[],#,dracō,drauc
+        ("'dra.ko:","/ˈdrawg/"):[2,6],#,dracō,drauc
         #("ˈha.ba.kuk","/ˈam.bə.kuk./"):[],#,Habacuc,Ambaucuc ... removed because hebrew
         #("i.du.'me:.","/ˈiə.ðuɱ.ðe/"):[],#,Idumaea,íadum\dae ... removed because hebrew
-        ("'li.kwi.d","/ˈlʲex.ðəɣʲ.θʲe/"):[],#,liquidus,lechd\aig\the
-        ("'no.t","/ˈno.θəθ/"):[],#,nothus,nothath
-        ("ti.'mo.te.","/ˈtʲiəɱ.θe/"):[],#,Timotheus,Tíamthe
-        ("'tri.b","/ˈtʲrʲiwv/"):[],#,tribus,triub
+        ("'li.kwi.d","/ˈlʲex.ðəɣʲ.θʲe/"):[0,2],#,liquidus,lechd\aig\the
+        ("'no.t","/ˈno.θəθ/"):[0,2],#,nothus,nothath
+        ("ti.'mo.te.","/ˈtʲiəɱ.θe/"):[0,2],#,Timotheus,Tíamthe
+        ("'tri.b","/ˈtʲrʲiwv/"):[0,6],#,tribus,triub
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
