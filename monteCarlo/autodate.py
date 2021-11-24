@@ -320,7 +320,7 @@ if __name__ == "__main__":
         if (length_mod(d[2]), length_mod(d[3])) in check: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
         if (length_mod(d[2]), length_mod(d[3])) in check and info[2] == info[3] and info not in match: match.append(info)
         elif (length_mod(d[2]), length_mod(d[3])) in check and info[2] != info[3] and info not in unmatch: unmatch.append(info)
-        elif (length_mod(d[2]), length_mod(d[3])) not in hand: autoed.append((length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check_procs(latin, irish), latin, irish)
+        elif (length_mod(d[2]), length_mod(d[3])) not in hand: autoed.append((latin, irish, check_procs(latin, irish), date(*check_procs(latin, irish)), length_mod(d[2]), length_mod(d[3]))) 
         #else: undone.append((length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)), check_procs(latin, irish), latin, irish))
 
     #for s in stems:
@@ -339,6 +339,11 @@ if __name__ == "__main__":
     #            #beware uncommenting this: will crash on key errors due to _ being included in target span
     #            #elif (length_mod(d[2]), length_mod(d[0]),  date(*check_procs(latin, irish), latin, irish)) not in undone: undone.append((length_mod(d[2]), length_mod(d[0]),  date(*check_procs(latin, irish)),latin, irish))
     #print(len(match), len(unmatch))
+    with open("autodate_hand_free_check.csv", 'w') as file_out:
+        for a in autoed:
+            file_out.write(a[0]+'\n')
+            file_out.write(",".join(a[1:])+'\n')
+
     print("####################")
     print("####################")
     print("####################")
