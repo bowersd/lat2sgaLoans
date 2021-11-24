@@ -62,7 +62,7 @@ inconsistent = {
 retranscribed_or_autodate_modded = {
         ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,6],#,Aethiobia,Ethioip   #EJFL: Should be "et.'jo.bi.", "/ˈe.tʲəbʲ/"
         ("a.lek.'san.der","/a.lək.sən.dər/"):[5,6],#,Alexander,Alaxander
-        ("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae
+        #("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae
         ("an.te.be:.'nul.ti.m","/an.tʲe.bʲe:.nʲulʲtʲ/"):[5,6],#,antepaenultima,antepeneuilt #EJFL: Should be "an.te.be.'nul.ti.m","/an.tʲe.bʲe.nʲulʲtʲ/"
         ("ar.'ti.ku.l","/ˈarʲ.tʲə.gəl/"):[5,6],#,articulus,articol DUMP u>@
         ("'a.to.m","/ˈa.dəɱ/"):[2,6],#,atomus,atom
