@@ -23,8 +23,8 @@
 
 align_crashes = {
         ("'dra.ko:","/ˈdrawg/"):[],#,dracō,drauc
-        ("ˈha.ba.kuk","/ˈam.bə.kuk./"):[],#,Habacuc,Ambaucuc
-        ("i.du.'me:.","/ˈiə.ðuɱ.ðe/"):[],#,Idumaea,íadum\dae
+        #("ˈha.ba.kuk","/ˈam.bə.kuk./"):[],#,Habacuc,Ambaucuc ... removed because hebrew
+        #("i.du.'me:.","/ˈiə.ðuɱ.ðe/"):[],#,Idumaea,íadum\dae ... removed because hebrew
         ("'li.kwi.d","/ˈlʲex.ðəɣʲ.θʲe/"):[],#,liquidus,lechd\aig\the
         ("'no.t","/ˈno.θəθ/"):[],#,nothus,nothath
         ("ti.'mo.te.","/ˈtʲiəɱ.θe/"):[],#,Timotheus,Tíamthe
