@@ -1,7 +1,8 @@
 import needleman
 import count_sylls
 import subprocess
-import hackydata
+import hand_dates
+#import hackydata
 #subprocess.call(*args)
 import re
 import sys
@@ -295,10 +296,13 @@ if __name__ == "__main__":
     data = read_in(sys.argv[1]) 
     #data = read_in("irish_latin_loans.csv")
     #stems = read_in("orthStem_ipaWord_ipaStem.csv")
-    hand = hackydata.data2
+    #hand = hackydata.data2
+    hand = hand_dates.align_crashes + hand_dates.inconsistent
+    check = hand_dates.retranscribed_or_autodate_modded
     undone = []
     match  = []
     unmatch  = []
+    autoed = []
     #i = 1
     for d in data:
         #print(i)
@@ -313,9 +317,10 @@ if __name__ == "__main__":
         #        file_out.write(" ".join(['['+','.join([str(y) for y in x])+']' if x else '[_]' for x in check_procs(latin, irish)])+'\n')
         #        file_out.write(" ".join([str(x) for x in date(*check_procs(latin, irish))])+'\n')
         #        file_out.write('\n')
-        if (length_mod(d[2]), length_mod(d[3])) in hand: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),hand[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
-        if (length_mod(d[2]), length_mod(d[3])) in hand and info[2] == info[3] and info not in match: match.append(info)
-        elif (length_mod(d[2]), length_mod(d[3])) in hand and info[2] != info[3] and info not in unmatch: unmatch.append(info)
+        if (length_mod(d[2]), length_mod(d[3])) in check: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
+        if (length_mod(d[2]), length_mod(d[3])) in check and info[2] == info[3] and info not in match: match.append(info)
+        elif (length_mod(d[2]), length_mod(d[3])) in check and info[2] != info[3] and info not in unmatch: unmatch.append(info)
+        elif (length_mod(d[2]), length_mod(d[3])) not in hand: autoed.append((length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check_procs(latin, irish), latin, irish)
         #else: undone.append((length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)), check_procs(latin, irish), latin, irish))
 
     #for s in stems:
