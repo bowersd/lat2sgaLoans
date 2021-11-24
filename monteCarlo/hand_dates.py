@@ -32,7 +32,7 @@ align_crashes = {
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
-        "a.be.ke.'da:.ri.","/ˈabʲ.ɣʲə.dʲərʲ/":[2,4],#,abecedārium,aipgitir
+        ("a.be.ke.'da:.ri.","/ˈabʲ.ɣʲə.dʲərʲ/"):[2,4],#,abecedārium,aipgitir
         ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[5,6],#,Acrisiōnē,acrision\dae
         ("aj.'ne:","/ˈaj.nʲe:.ðe"):[5,6],#,Aenēās,aenee\dae since there isn't anything different phonologically, one of these aeneas's should be removed
         ("aj.'ne:.a:s","/ˈaj.nʲe:.a:s/"):[5,6],#,Aenēās,Aeneas
@@ -62,12 +62,12 @@ inconsistent = {
 retranscribed_or_autodate_modded = {
         ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,6],#,Aethiobia,Ethioip   #EJFL: Should be "et.'jo.bi.", "/ˈe.tʲəbʲ/"
         ("a.lek.'san.der","/a.lək.sən.dər/"):[5,6],#,Alexander,Alaxander
-        #("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae
+        #("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae removed bc Hebrew
         ("an.te.be:.'nul.ti.m","/an.tʲe.bʲe:.nʲulʲtʲ/"):[5,6],#,antepaenultima,antepeneuilt #EJFL: Should be "an.te.be.'nul.ti.m","/an.tʲe.bʲe.nʲulʲtʲ/"
         ("ar.'ti.ku.l","/ˈarʲ.tʲə.gəl/"):[5,6],#,articulus,articol DUMP u>@
         ("'a.to.m","/ˈa.dəɱ/"):[2,6],#,atomus,atom
         ("ba.'tis.m","/ˈba.θʲəs/"):[0,2],#,*batisma,baithes DUMP s>h!!
         ("ko.'lum.b","/ˈko.ləm/"):[3,6],#,columba,colum
         ("'ko:n.sul","/ˈkon.səl/"):[5,6],#,cōnsul,consal DUMP u>@
-        ("dam.'na:.ti.o:","/ˈda.mənʲ/"):[2,6],#,damnātiō,dammain #EJFL: Latin should be "dam.n", damnnum
+        ("dam.n","/ˈda.mənʲ/"):[2,6],#,damnum,dammain #EJFL: Latin should be "dam.n", damnnum
         }
