@@ -297,7 +297,9 @@ if __name__ == "__main__":
     #data = read_in("irish_latin_loans.csv")
     #stems = read_in("orthStem_ipaWord_ipaStem.csv")
     #hand = hackydata.data2
-    hand = hand_dates.align_crashes + hand_dates.inconsistent
+    hand = {}
+    for x in hand_dates.align_crashes: hand[x] = hand_dates.align_crashes[x] 
+    for x in hand_dates.inconsistent: hand[x] = hand_dates.inconsistent[x]
     check = hand_dates.retranscribed_or_autodate_modded
     undone = []
     match  = []
@@ -317,9 +319,9 @@ if __name__ == "__main__":
         #        file_out.write(" ".join(['['+','.join([str(y) for y in x])+']' if x else '[_]' for x in check_procs(latin, irish)])+'\n')
         #        file_out.write(" ".join([str(x) for x in date(*check_procs(latin, irish))])+'\n')
         #        file_out.write('\n')
-        if (length_mod(d[2]), length_mod(d[3])) in check: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
-        if (length_mod(d[2]), length_mod(d[3])) in check and info[2] == info[3] and info not in match: match.append(info)
-        elif (length_mod(d[2]), length_mod(d[3])) in check and info[2] != info[3] and info not in unmatch: unmatch.append(info)
+        if (length_mod(d[2]), length_mod(d[3])) in check and (length_mod(d[2]), length_mod(d[3])) not in hand: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
+        if (length_mod(d[2]), length_mod(d[3])) in check and (length_mod(d[2]), length_mod(d[3])) not in hand and info[2] == info[3] and info not in match: match.append(info)
+        elif (length_mod(d[2]), length_mod(d[3])) in check and (length_mod(d[2]), length_mod(d[3])) not in hand and info[2] != info[3] and info not in unmatch: unmatch.append(info)
         elif (length_mod(d[2]), length_mod(d[3])) not in hand: autoed.append((latin, irish, check_procs(latin, irish), date(*check_procs(latin, irish)), length_mod(d[2]), length_mod(d[3]))) 
         #else: undone.append((length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)), check_procs(latin, irish), latin, irish))
 
@@ -339,10 +341,21 @@ if __name__ == "__main__":
     #            #beware uncommenting this: will crash on key errors due to _ being included in target span
     #            #elif (length_mod(d[2]), length_mod(d[0]),  date(*check_procs(latin, irish), latin, irish)) not in undone: undone.append((length_mod(d[2]), length_mod(d[0]),  date(*check_procs(latin, irish)),latin, irish))
     #print(len(match), len(unmatch))
-    with open("autodate_hand_free_check.csv", 'w') as file_out:
-        for a in autoed:
-            file_out.write(a[0]+'\n')
-            file_out.write(",".join(a[1:])+'\n')
+    print("####################")
+    print("####################")
+    print("####################")
+    print("AUTOED")
+    print("####################")
+    print("####################")
+    print("####################")
+    for a in autoed:
+        print(a[0])
+        print(a[1:])
+    #with open("autodate_hand_free_check.csv", 'w') as file_out:
+    #    for a in autoed:
+    #        print(a)
+    #        file_out.write(a[0]+'\n')
+    #        file_out.write(",".join(a[1:])+'\n')
 
     print("####################")
     print("####################")
