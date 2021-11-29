@@ -98,7 +98,7 @@ def check_appl(string, *regexen, **mappings):
 triggers = [#what to look for in Latin
         re.compile('[Pp]'), #pk
         re.compile('((?<=[aeiouAEIOU])_*[tkbdgms])|f'), #lenition (f>s in, st>s removed due to post-lenition strata>strait) WHAT ABOUT LONG [f:]??
-        re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
+        re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
         #re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
         re.compile('[aeiou]_*(?=[dg][^aeiouAEIOU])'), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits)
         re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
@@ -115,7 +115,7 @@ processes = [ #slightly refined regexen to apply to latin, paired with dicts to 
 def check_procs_nu(latin, irish, triggers, processes):
     values = []
     for i in range(len(triggers)):
-        #print(i)
+        print(i)
         pvals = []
         if triggers[i].search(latin): 
             #print(i)
@@ -263,10 +263,11 @@ def date_nu(end, *proc_v):
     i = 0
     kill = False
     meta = False
+    print(proc_v)
     while i != len(proc_v) and not kill: #find first applying process/ante-relegalization
         #if 1 in proc_v[i] and 2 in proc_v[i]:
         #    h[1] = i
-        if 2 in proc_v[1]: #ante-relegalization
+        if 2 in proc_v[i]: #ante-relegalization
             h[1] = i
             kill = True
             meta = True
@@ -300,6 +301,7 @@ if __name__ == "__main__":
     hand = {}
     for x in hand_dates.align_crashes: hand[x] = hand_dates.align_crashes[x] 
     for x in hand_dates.inconsistent: hand[x] = hand_dates.inconsistent[x]
+    print(hand)
     check = hand_dates.retranscribed_or_autodate_modded
     undone = []
     match  = []
@@ -309,6 +311,8 @@ if __name__ == "__main__":
     for d in data:
         #print(i)
         #i += 1
+        print(d)
+        print((d[0], d[1]))
         latin, irish = clean_transcription(d[0]), clean_transcription(d[1])
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #hack to enact british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         latin, irish = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
@@ -319,10 +323,14 @@ if __name__ == "__main__":
         #        file_out.write(" ".join(['['+','.join([str(y) for y in x])+']' if x else '[_]' for x in check_procs(latin, irish)])+'\n')
         #        file_out.write(" ".join([str(x) for x in date(*check_procs(latin, irish))])+'\n')
         #        file_out.write('\n')
-        if (length_mod(d[2]), length_mod(d[3])) in check and (length_mod(d[2]), length_mod(d[3])) not in hand: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
-        if (length_mod(d[2]), length_mod(d[3])) in check and (length_mod(d[2]), length_mod(d[3])) not in hand and info[2] == info[3] and info not in match: match.append(info)
-        elif (length_mod(d[2]), length_mod(d[3])) in check and (length_mod(d[2]), length_mod(d[3])) not in hand and info[2] != info[3] and info not in unmatch: unmatch.append(info)
-        elif (length_mod(d[2]), length_mod(d[3])) not in hand: autoed.append((latin, irish, check_procs(latin, irish), date(*check_procs(latin, irish)), length_mod(d[2]), length_mod(d[3]))) 
+        if   (d[0], d[1]) in check: info = (length_mod(d[2]), length_mod(d[3]), date_nu(6, *check_procs_nu(latin, irish, triggers, processes)),check[(d[0], d[1])][:2],check_procs_nu(latin, irish, triggers, processes), latin, irish)
+        if   (d[0], d[1]) in check and info[2] == info[3] and info not in match: match.append(info)
+        elif (d[0], d[1]) in check and info[2] != info[3] and info not in unmatch: unmatch.append(info)
+        elif (d[0], d[1]) not in hand: autoed.append((latin, irish, check_procs_nu(latin, irish, triggers, processes), date_nu(6, *check_procs_nu(latin, irish, triggers, processes)), length_mod(d[2]), length_mod(d[3]))) 
+        #if (length_mod(d[2]), length_mod(d[3])) in check: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
+        #if (length_mod(d[2]), length_mod(d[3])) in check and info[2] == info[3] and info not in match: match.append(info)
+        #elif (length_mod(d[2]), length_mod(d[3])) in check and info[2] != info[3] and info not in unmatch: unmatch.append(info)
+        #elif (length_mod(d[2]), length_mod(d[3])) not in hand: autoed.append((latin, irish, check_procs(latin, irish), date(*check_procs(latin, irish)), length_mod(d[2]), length_mod(d[3]))) 
         #else: undone.append((length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)), check_procs(latin, irish), latin, irish))
 
     #for s in stems:
@@ -348,15 +356,10 @@ if __name__ == "__main__":
     print("####################")
     print("####################")
     print("####################")
-    for a in autoed:
-        print(a[0])
-        print(a[1:])
-    #with open("autodate_hand_free_check.csv", 'w') as file_out:
-    #    for a in autoed:
-    #        print(a)
-    #        file_out.write(a[0]+'\n')
-    #        file_out.write(",".join(a[1:])+'\n')
-
+    with open("autodate_hand_free_check.csv", 'w') as file_out:
+        for a in autoed:
+            file_out.write(a[0]+'\n')
+            file_out.write(",".join([str(x) for x in a[1:]])+'\n')
     print("####################")
     print("####################")
     print("####################")
