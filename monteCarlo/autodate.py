@@ -101,7 +101,7 @@ triggers = [#what to look for in Latin
         re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
         #re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
         re.compile('[aeiou]_*(?=[dgtk][^rlnm])'), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits)
-        re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
+        re.compile('(mp|ŋk|n(t|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
         ]
 processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
         ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"},1),(re.compile('[Pp]'), {"P":"pb","p":"pb"}, 0)),
@@ -109,7 +109,7 @@ processes = [ #slightly refined regexen to apply to latin, paired with dicts to 
         ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o", },1),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o", },0)), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
         #((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
         ((re.compile('[aeiou]_*(?=[dgtk][rlnm])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"},1), (re.compile('[aeiou]_*(?=[dgtk][^rlnm])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"},0)), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits) Is there data on failure to lengthen??
-        ((re.compile('(mp|ŋk|n(t(?!$)))'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd"},2),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"},3)), #syncope (phonotactics here, V deletion handled below)
+        ((re.compile('(mp|ŋk|nt)'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd"},2),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"},3)), #syncope (phonotactics here, V deletion handled below)
         #((re.compile('(mp|ŋk|n(t(?!$)|f))|((?<!^e)ks)'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd", "nf":"_v", "ks":"_s"},2),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"},3)), #syncope (phonotactics here, V deletion handled below)
         ]
 
