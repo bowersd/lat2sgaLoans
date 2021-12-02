@@ -106,7 +106,7 @@ triggers = [#what to look for in Latin
 processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
         ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"},1),(re.compile('[Pp]'), {"P":"pb","p":"pb"}, 0)),
         ((re.compile('((?<=[aeiouAEIOU])_*[t]|(s|k)(?![Tt]))|f'), { "t":"θð", "k":"xɣ",  "s":"h", "f":"s"},1), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m|s(?![ptk])))'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "s":"s", },0)),
-        ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o", },1),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u|U)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o", },0)), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
+        ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o", },1),(re.compile('(((e|o)(?=_*[^AEIOUaeiou]?_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o", },0)), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls
         #((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
         ((re.compile('[aeiou]_*(?=[dgtk][rlnm])'), {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"},1), (re.compile('[aeiou]_*(?=[dgtk][^rlnm])'), {"a":"a", "e":"e", "i":"i", "o":"o", "u":"u"},0)), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits) Is there data on failure to lengthen??
         ((re.compile('(mp|ŋk|n(t(?!$)))'),{"mp":"mb", "ŋk":"ŋg", "nt":"nd"},2),(re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'),{"mp":"mp", "ŋk":"ŋk", "nt":"nt", "ns":"ns", "nf":"nf","ks":"xsks"},3)), #syncope (phonotactics here, V deletion handled below)
@@ -143,11 +143,11 @@ def procs_kludge(latin, irish, values):
     sylls = count_sylls.count_syll(latin)
     #print(sylls)
     if len(sylls) == 1: values = monosyllable_repair(latin, irish, values)
-    if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] == "ə": values[2].append(1) #detecting lowering>reduction of /u/ in stem-final syllables
-    if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] in "Uu": 
-        print("was failure due to envi not met or was loan too late?")
-        print(latin)
-        print(irish)
+    #if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] == "ə": values[2].append(1) #detecting lowering>reduction of /u/ in stem-final syllables
+    #if len(sylls) > 1 and latin[sylls[-1]] in "Uu" and irish[sylls[-1]] in "Uu": 
+    #    print("was failure due to envi not met or was loan too late?")
+    #    print(latin)
+    #    print(irish)
     if len(sylls) > 1: #detecting shortening of post-initial syllables (diagnoses pre/post-BEGINNING of compensatory lengthening), syncopation is not limited to weak positions, but it should be so limited!!
         longv = re.compile('[AEIOU]') 
         shortening = {"A":"aə_", "E":"eə_", "I":"iə_", "O":"oə_", "U":"uə_"} #outputs not over broad, because reduction didn't target word final open sylls IIRC
