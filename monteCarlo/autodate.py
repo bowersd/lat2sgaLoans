@@ -116,7 +116,7 @@ processes = [ #slightly refined regexen to apply to latin, paired with dicts to 
 def check_procs_nu(latin, irish, triggers, processes):
     values = []
     for i in range(len(triggers)):
-        print(i)
+        #print(i)
         pvals = []
         if triggers[i].search(latin): 
             #print(i)
@@ -264,7 +264,7 @@ def date_nu(end, *proc_v):
     i = 0
     kill = False
     meta = False
-    print(proc_v)
+    #print(proc_v)
     while i != len(proc_v) and not kill: #find first applying process/ante-relegalization
         #if 1 in proc_v[i] and 2 in proc_v[i]:
         #    h[1] = i
@@ -302,7 +302,7 @@ if __name__ == "__main__":
     hand = {}
     for x in hand_dates.align_crashes: hand[x] = hand_dates.align_crashes[x] 
     for x in hand_dates.inconsistent: hand[x] = hand_dates.inconsistent[x]
-    print(hand)
+    #print(hand)
     check = hand_dates.retranscribed_or_autodate_modded
     undone = []
     match  = []
@@ -312,8 +312,8 @@ if __name__ == "__main__":
     for d in data:
         #print(i)
         #i += 1
-        print(d)
-        print((d[0], d[1]))
+        #print(d)
+        #print((d[0], d[1]))
         latin, irish = clean_transcription(d[0]), clean_transcription(d[1])
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #hack to enact british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         latin, irish = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
