@@ -242,23 +242,23 @@ def monosyllable_repair(latin, irish, vector):
         print(irish)
     return nu
 
-def date(*proc_v):
-    h = [0,7]
-    i = 0
-    kill = False
-    while i != len(proc_v) and not kill: #find first applying process
-        if any(proc_v[i]):
-            h[1] = i+1
-            kill = True
-        i += 1
-    i = len(proc_v)-1
-    kill = False
-    while i >= 0 and not kill: #find last non-applying process
-        if any([not x for x in proc_v[i]]): 
-            h[0] = i+1
-            kill = True
-        i -= 1
-    return h
+#def date(*proc_v):
+#    h = [0,7]
+#    i = 0
+#    kill = False
+#    while i != len(proc_v) and not kill: #find first applying process
+#        if any(proc_v[i]):
+#            h[1] = i+1
+#            kill = True
+#        i += 1
+#    i = len(proc_v)-1
+#    kill = False
+#    while i >= 0 and not kill: #find last non-applying process
+#        if any([not x for x in proc_v[i]]): 
+#            h[0] = i+1
+#            kill = True
+#        i -= 1
+#    return h
 
 def date_nu(end, *proc_v):
     h = [0,end] #should be 6 now that apocope doesn't get a bin
