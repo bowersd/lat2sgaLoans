@@ -373,7 +373,7 @@ if __name__ == "__main__":
     with open("autodate_hand_free_check.csv", 'w') as file_out:
         for a in autoed:
             file_out.write(a[0]+'\n')
-            file_out.write(",".join([str(x) for x in a[1:]])+'\n')
+            file_out.write(";".join([str(x) for x in a[1:]])+'\n')
     print("####################")
     print("####################")
     print("####################")
