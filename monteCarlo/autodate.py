@@ -324,10 +324,23 @@ if __name__ == "__main__":
         #        file_out.write(" ".join(['['+','.join([str(y) for y in x])+']' if x else '[_]' for x in check_procs(latin, irish)])+'\n')
         #        file_out.write(" ".join([str(x) for x in date(*check_procs(latin, irish))])+'\n')
         #        file_out.write('\n')
-        if   (d[0], d[1]) in check: info = (length_mod(d[2]), length_mod(d[3]), date_nu(6, *check_procs_nu(latin, irish, triggers, processes)),check[(d[0], d[1])][:2],check_procs_nu(latin, irish, triggers, processes), latin, irish)
+        if   (d[0], d[1]) in check: info = (
+                length_mod(d[2]), 
+                length_mod(d[3]), 
+                date_nu(6, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes)))),
+                check[(d[0], d[1])][:2],
+                sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes))), 
+                latin, 
+                irish)
         if   (d[0], d[1]) in check and info[2] == info[3] and info not in match: match.append(info)
         elif (d[0], d[1]) in check and info[2] != info[3] and info not in unmatch: unmatch.append(info)
-        elif (d[0], d[1]) not in hand: autoed.append((latin, irish, check_procs_nu(latin, irish, triggers, processes), date_nu(6, *check_procs_nu(latin, irish, triggers, processes)), length_mod(d[2]), length_mod(d[3]))) 
+        elif (d[0], d[1]) not in hand: autoed.append((
+            latin, 
+            irish, 
+            sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes))), 
+            date_nu(6, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes)))), 
+            length_mod(d[2]), 
+            length_mod(d[3]))) 
         #if (length_mod(d[2]), length_mod(d[3])) in check: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
         #if (length_mod(d[2]), length_mod(d[3])) in check and info[2] == info[3] and info not in match: match.append(info)
         #elif (length_mod(d[2]), length_mod(d[3])) in check and info[2] != info[3] and info not in unmatch: unmatch.append(info)
