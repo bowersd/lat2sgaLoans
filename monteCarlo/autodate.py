@@ -284,7 +284,7 @@ def date_nu(end, *proc_v):
         if 0 in proc_v[i]: 
             h[0] = i+1
             kill = True
-        if 3 in proc_v[i]: #post-relegalization
+        elif 3 in proc_v[i]: #post-relegalization
             h[0] = i
             kill = True
         i -= 1
