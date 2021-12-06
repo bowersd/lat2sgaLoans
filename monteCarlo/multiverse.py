@@ -196,8 +196,8 @@ phonotactics = [#what to look for in Latin
         re.compile('^[^AEIOUaeiou]*[eoiu]'), #affection -> non-low short vowel in initial syll
         #re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$'), #disyllables (not correlated with anything in Irish)
         re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou]'), #trisyllables or greater (syncope-adjacent)
-        re.compile('[AEIOU]'), #long vowels (apocope/shortening/complen-adjacent)
-        re.compile('[aeiou](?=[dg][^aeiouAEIOU])'), #compensatory lengthening -> somewhat correlated with lenition, affection
+        re.compile('[AEIOU]'), #long vowels (shortening/complen-adjacent)
+        re.compile('[aeiouAEIOU][tkdg][rlmn]'), #compensatory lengthening 
         re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics. 
         ]
 
