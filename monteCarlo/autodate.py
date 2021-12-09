@@ -132,7 +132,7 @@ def check_procs_nu(latin, irish, triggers, processes):
     return values
 
 def procs_kludge(latin, irish, values):
-    #safe copy of values not created!
+    values = values[:3]+[[]]+values[3:] #adding a gap between harmony and compensatory lengthening
     if any([irish[x.start():x.end()] == "s_" for x in re.finditer("st", latin)]): values[2].append(1) #st>s happened in strata>srait (a post-lenition loan) and so diagnoses pre-affection (this is latest datable occurrence of st>s)
     if values[2] == [0] and latin[re.search('[aeiouAEIOU]', latin).start()] in 'eo' and irish[re.search('[aeiouAEIOU]', irish).start()+1] in 'xɣ': values[2] = [] #failure to raise across 'x' is not diagnostic of affection failure
     if latin[-1] in "Ii" and irish[-1] == "e": values[2].append(1) #detecting lowering of Latin /i/ by /-a.../. Are we sure that there wasn't a post-affection suffix -e that just replaced the Latin /i/ directly? -> may need a failure watch as in monosyllable_repair() EJFL: It seems more complicated to assume morphological replacement in all cases than that lowering affects medial i causing it to become -e; the phonology is totally regular.
@@ -262,7 +262,7 @@ def monosyllable_repair(latin, irish, vector):
 #    return h
 
 def date_nu(end, *proc_v):
-    h = [0,end] #should be 6 now that apocope doesn't get a bin
+    h = [0,end] #should be 7 now that there's a space between harmony and compensatory lengthening
     i = 0
     kill = False
     meta = False
@@ -329,7 +329,7 @@ if __name__ == "__main__":
         if   (d[0], d[1]) in check: info = (
                 length_mod(d[2]), 
                 length_mod(d[3]), 
-                date_nu(6, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes)))),
+                date_nu(7, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes)))),
                 check[(d[0], d[1])][:2],
                 sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes))), 
                 latin, 
@@ -340,7 +340,7 @@ if __name__ == "__main__":
             latin, 
             irish, 
             sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes))), 
-            date_nu(6, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes)))), 
+            date_nu(7, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes)))), 
             length_mod(d[2]), 
             length_mod(d[3]))) 
         #if (length_mod(d[2]), length_mod(d[3])) in check: info = (length_mod(d[2]), length_mod(d[3]), date(*check_procs(latin, irish)),check[(length_mod(d[2]), length_mod(d[3]))][:2],check_procs(latin, irish), latin, irish)
