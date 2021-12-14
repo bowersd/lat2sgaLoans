@@ -5,14 +5,14 @@
 #       you can think of this in the usual phrasing, where counting starts from 0, the first digit is inclusive, and the second digit is exclusive
 #       so, [0,2] represents the slice including the 0'th (first for humans) and stopping before the 2nd (third for humans) elements:
 #           [E,F,G] -> [E,F]
-#   for our purposes, there are 6 temporal bins
+#   for our purposes, there are 7 temporal bins
 #       [[pk],[len],[harm],[complen],[sync],[postsync]]
 #           bin 0: p->k
 #           bin 1: lenition
 #           bin 2: affection
 #           bin 3: compensatory lengthening
-#           bin 4: syncope
-#           bin 5: post-syncope
+#           bin 5: syncope
+#           bin 6: post-syncope
 #       being dated [0,1] means it can only fall in bin 0: the word entered some time between the beginning of borrowing and before the end of p->k
 #       being dated [0,2] means it can fall in bin 0 or 1: the word entered some time between the beginning of borrowing and before the end of lenition
 #       being dated [1,2] means it can fall in bin 1: the word entered some time between the end of p->k and before the end of lenition
@@ -22,52 +22,52 @@
 #       todo: further enumeration 
 
 align_crashes = {
-        ("'dra.ko:","/ˈdrawg/"):[2,6],#,dracō,drauc
+        ("'dra.ko:","/ˈdrawg/"):[2,7],#,dracō,drauc
         #("ˈha.ba.kuk","/ˈam.bə.kuk./"):[],#,Habacuc,Ambaucuc ... removed because hebrew
         #("i.du.'me:.","/ˈiə.ðuɱ.ðe/"):[],#,Idumaea,íadum\dae ... removed because hebrew
         ("'li.kwi.d","/ˈlʲex.ðəɣʲ.θʲe/"):[0,2],#,liquidus,lechd\aig\the
         ("'no.t","/ˈno.θəθ/"):[0,2],#,nothus,nothath
         ("ti.'mo.te.","/ˈtʲiəɱ.θe/"):[0,2],#,Timotheus,Tíamthe
-        ("'tri.b","/ˈtʲrʲiwv/"):[0,6],#,tribus,triub
+        ("'tri.b","/ˈtʲrʲiwv/"):[0,7],#,tribus,triub
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
-        ("a.be.ke.'da:.ri.","/ˈabʲ.ɣʲə.dʲərʲ/"):[2,4],#,abecedārium,aipgitir
-        ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[5,6],#,Acrisiōnē,acrision\dae
-        ("aj.'ne:","/ˈaj.nʲe:.ðe"):[5,6],#,Aenēās,aenee\dae since there isn't anything different phonologically, one of these aeneas's should be removed
-        ("aj.'ne:.a:s","/ˈaj.nʲe:.a:s/"):[5,6],#,Aenēās,Aeneas
-        ("'e:.o.le:n.s","/ˈew.lʲe:ns.te/"):[4,6],#,aeolēnsis,eolens\tae
-        ("al.le.'lu:.j","/ˈalʲ.lʲe/"):[0,3],#,allelūia,aille
-        ("ar.gu:.'men.t","/ˈar.gə.mʲənʲtʲ/"):[5,6],#,argūmentum,argumeint
-        ("awk.ˈsi.li.","/ˈu:.sə.lʲe/"):[5,6],#,auxilius,úsaile
-        ("ak.'sil.l","/ˈox.səl/"):[4,6],#,axilla,ochsal
-        ("be.re:.'e:n.s","/ˈbʲe.rʲən.ste/"):[4,6],#,beroeēnsis,berens\dae
-        ("bis.'sek.st","/ˈbʲi.ʃəxs/"):[4,6],#,bissextus,bissex
-        ("ka.bil.'la:.ti.o:","/ˈka.blədʲ/"):[0,4],#,capillātiō,caplait
-        ("kar.'buŋ.ku.l","/ˈkar.buŋ.kəlʲ/"):[5,6],#,carbunculus,carbuncail
+        ("a.be.ke.'da:.ri.","/ˈabʲ.ɣʲə.dʲərʲ/"):[2,5],#,abecedārium,aipgitir
+        ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[6,7],#,Acrisiōnē,acrision\dae
+        ("aj.'ne:","/ˈaj.nʲe:.ðe"):[6,7],#,Aenēās,aenee\dae since there isn't anything different phonologically, one of these aeneas's should be removed
+        ("aj.'ne:.a:s","/ˈaj.nʲe:.a:s/"):[6,7],#,Aenēās,Aeneas
+        ("'e:.o.le:n.s","/ˈew.lʲe:ns.te/"):[5,7],#,aeolēnsis,eolens\tae
+        ("al.le.'lu:.j","/ˈalʲ.lʲe/"):[0,4],#,allelūia,aille
+        ("ar.gu:.'men.t","/ˈar.gə.mʲənʲtʲ/"):[6,7],#,argūmentum,argumeint
+        ("awk.ˈsi.li.","/ˈu:.sə.lʲe/"):[6,7],#,auxilius,úsaile
+        ("ak.'sil.l","/ˈox.səl/"):[5,7],#,axilla,ochsal
+        ("be.re:.'e:n.s","/ˈbʲe.rʲən.ste/"):[5,7],#,beroeēnsis,berens\dae
+        ("bis.'sek.st","/ˈbʲi.ʃəxs/"):[5,7],#,bissextus,bissex
+        ("ka.bil.'la:.ti.o:","/ˈka.blədʲ/"):[0,5],#,capillātiō,caplait
+        ("kar.'buŋ.ku.l","/ˈkar.buŋ.kəlʲ/"):[6,7],#,carbunculus,carbuncail
         ("ka.te:.'ku:.me.n","/ˈkaθ.xəɱʲ.nʲəð/'"):[0,2],#,catēchūmenus,cathchoimn\id
-        ("'ken.tr","/ˈkʲenʲ.tʲərʲ/"):[4,6],#,centrum,cinteir
-        ("kir.kum.'flek.s","/ˈkʲir.kunʲ.fʲlʲəxs/"):[5,6],#,circumflexus,circunflex
-        ("kom.'mu:.ni.o:","/ˈko.mən/"):[3,4],#,commūniō,comman
-        ("kom.pa.ra:.'ti:.w","/ˈkom.pə.rədʲ/"):[5,6],#,comparātīuus,comparait
-        ("ko:ns.tan.ti:.'no.bo.l","/ˈkon.stənʲ.tʲi:.nə.bəl/"):[5,6],#,Cōnstantīnopolis,Constantinopol
-        ("ko:n.'sum.m","/ˈkos.ɱəðʲ/"):[0,5],#,cōnsummō,cosm\aid
-        ("ki.kla.si.a","/ˈkʲi.glə.ste/"):[3,6],#,Cyclasias,ciclas\tae #EJFL: Changed date from 2,6 to 3,6 (this was the consensus we reached).
-        ("der.'be:n.s","/ˈdʲer.bən.ste/"):[4,6],#,derbēnsis,derbens\dae
-        ("dew.te.ro.'no.mi.","/ˈdʲew.tər.nəmʲ/"):[5,6],#,deuteronomium,deutornim
-        ("dik.'ta:.to:r","/ˈdik.tə.do:rʲ/"):[5,6],#,dictātōr,dicta\tóir
+        ("'ken.tr","/ˈkʲenʲ.tʲərʲ/"):[5,7],#,centrum,cinteir
+        ("kir.kum.'flek.s","/ˈkʲir.kunʲ.fʲlʲəxs/"):[6,7],#,circumflexus,circunflex
+        ("kom.'mu:.ni.o:","/ˈko.mən/"):[3,5],#,commūniō,comman
+        ("kom.pa.ra:.'ti:.w","/ˈkom.pə.rədʲ/"):[6,7],#,comparātīuus,comparait
+        ("ko:ns.tan.ti:.'no.bo.l","/ˈkon.stənʲ.tʲi:.nə.bəl/"):[6,7],#,Cōnstantīnopolis,Constantinopol
+        ("ko:n.'sum.m","/ˈkos.ɱəðʲ/"):[0,6],#,cōnsummō,cosm\aid
+        ("ki.kla.si.a","/ˈkʲi.glə.ste/"):[3,7],#,Cyclasias,ciclas\tae #EJFL: Changed date from 2,6 to 3,6 (this was the consensus we reached).
+        ("der.'be:n.s","/ˈdʲer.bən.ste/"):[5,7],#,derbēnsis,derbens\dae
+        ("dew.te.ro.'no.mi.","/ˈdʲew.tər.nəmʲ/"):[6,7],#,deuteronomium,deutornim
+        ("dik.'ta:.to:r","/ˈdik.tə.do:rʲ/"):[6,7],#,dictātōr,dicta\tóir
         }
 #where is emilianus, anton?
 
 retranscribed_or_autodate_modded = {
-        ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,6],#,Aethiobia,Ethioip   #EJFL: Should be "et.'jo.bi.", "/ˈe.tʲəbʲ/"
-        ("a.lek.'san.der","/a.lək.sən.dər/"):[5,6],#,Alexander,Alaxander
+        ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,7],#,Aethiobia,Ethioip   #EJFL: Should be "et.'jo.bi.", "/ˈe.tʲəbʲ/"
+        ("a.lek.'san.der","/a.lək.sən.dər/"):[6,7],#,Alexander,Alaxander
         #("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae removed bc Hebrew
-        ("an.te.be:.'nul.ti.m","/an.tʲe.bʲe:.nʲulʲtʲ/"):[5,6],#,antepaenultima,antepeneuilt #EJFL: Should be "an.te.be.'nul.ti.m","/an.tʲe.bʲe.nʲulʲtʲ/"
-        ("ar.'ti.ku.l","/ˈarʲ.tʲə.gəl/"):[5,6],#,articulus,articol DUMP u>@
-        ("'a.to.m","/ˈa.dəɱ/"):[2,6],#,atomus,atom
+        ("an.te.be:.'nul.ti.m","/an.tʲe.bʲe:.nʲulʲtʲ/"):[6,7],#,antepaenultima,antepeneuilt #EJFL: Should be "an.te.be.'nul.ti.m","/an.tʲe.bʲe.nʲulʲtʲ/"
+        ("ar.'ti.ku.l","/ˈarʲ.tʲə.gəl/"):[6,7],#,articulus,articol DUMP u>@
+        ("'a.to.m","/ˈa.dəɱ/"):[2,7],#,atomus,atom
         ("ba.'tis.m","/ˈba.θʲəs/"):[0,2],#,*batisma,baithes DUMP s>h!!
-        ("ko.'lum.b","/ˈko.ləm/"):[3,6],#,columba,colum
-        ("'ko:n.sul","/ˈkon.səl/"):[5,6],#,cōnsul,consal DUMP u>@
-        ("dam.n","/ˈda.mənʲ/"):[2,6],#,damnum,dammain #EJFL: Latin should be "dam.n", damnnum
+        ("ko.'lum.b","/ˈko.ləm/"):[3,7],#,columba,colum
+        ("'ko:n.sul","/ˈkon.səl/"):[6,7],#,cōnsul,consal DUMP u>@
+        ("dam.n","/ˈda.mənʲ/"):[2,7],#,damnum,dammain #EJFL: Latin should be "dam.n", damnnum
         }
