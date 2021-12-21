@@ -233,7 +233,7 @@ def sync_check(irish, sylls, parity, values):
 
 def monosyllable_repair(latin, irish, vector):
     nu = [x for x in vector]
-    if nu[3]: nu[3] = [] #fixing apocope
+    #if nu[3]: nu[3] = [] #fixing apocope
     #fixing harmony
     #we have no way of knowing whether failure to harmonize was due to lack of environment or being too late. would need actual morphological class information
     if ('e' in latin and 'i' in irish) or ('i' in latin and 'e' in irish) or ('o' in latin and 'u' in irish) or ('u' in latin and 'o' in irish): nu[2] = [1] 
