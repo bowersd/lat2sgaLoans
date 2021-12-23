@@ -1,77 +1,103 @@
 'e:.o.l,/ˈewl.de/,Aeolus,eol\dae
 'e:.o.le:n.s,/ˈew.lʲe:ns.te/,aeolēnsis,eolens\tae
+related -> remove one
 
 'ke:.s,/ˈkʲi:s/,*cēsus,ces
 'ke:.s,/ˈkʲi:s/,*cēsus,cís
+Typo -> fix it
 
 'ku.b,/ˈku:.vəðʲ/,cubō,cúb\aid
 'ku.b,/ˈkuv/,cubus,cyb
+Different words, keep
 
 'le.gi.o:,/ˈle.ɣʲo:n/,legiōnem,leigeón (already considered, perhaps re-consider?)
 'le.gi.o:,/ˈle:.gʲo:n/,legiōnem,léigeón
+Lenition vs not -> keep it!
 
 'po.bu.l,/ˈpo:.bəl/,pōpulus,pópol
 'po:.bu.l,/ˈpo.bəl/,populus,popul
+different words
 
 'pu:ŋk.t,/ˈpoŋk/,pūnctum,ponc
 'pu:ŋk.t,/ˈpuŋkt/,pūnctum,punct
+different phonology
 
 'wi:.si.o:,/ˈfʲi:.ʃiw/,uīsiō,físíu
 'wi:.si.o:,/ˈfʲi:ʃ/,uīsiō,fís
+different phonology
 
 aj.'ne:,/ˈaj.nʲe:.ðe,Aenēās,aenee\dae
 aj.'ne:.a:s,/ˈaj.nʲe:.a:s/,Aenēās,Aeneas
+related -> remove one
 
 he:.'re.s,/ˈe.rʲəs/,haeresis,eres
 he:.'re.ti.k,/ˈe.rʲə.dʲəg/,haereticus,eritic
+different enough
 
 humil,/ˈuɱəl/,humilis,umal
 humilita:t,/ˈuɱəldo:dʲ/,humilitātem,umaldóit
+related -> remove one
 
 kalend,/kalənd/,kalendae,caland
 kalend,/koLəndərəxt/,kalendae,colland\oracht
+related -> remove 2nd one
 
 kle:r,/kʲlʲe:r/,clērus,clér
 kle:rik,/kʲlʲe:rʲəx/,clēricus,cléirech
+related -> remove 2nd one
 
 lati:n,/ladʲən/,Latīna,Laiten
 lati:n,/ladʲən/,Latīnus,Latin
+related -> remove one
 
 ma:rk,/mark/,Mārcus,Marc
 ma:rkell,/markəLʲ/,Mārcellus,Marcill
+related -> remove one
 
 manak,/manəx/,*manachus,manach
 manaki:,/manʲxʲe/,*manachīum,mainche
+related -> remove one (and update Latin UR)
 
 maskul,/maskul/,masculus,mascul
 maskuli:n,/maskulʲənde/,masculīnus,masculin\dae
+related -> remove one
 
 newtr,/ˈnʲewdur/,neutrum,neutur
 newtra:l,/nʲewdura:lde/,neutrālis,neuturál\dae
+related -> remove one
 
 pri:m,/pʲrʲi:ɱ/,prīmus,prím
 primiti,/pʲri:ɱədʲ/,primitiae,prímit
+phonologially distinct in Latin -> keep
 
 ro:m,/ro:ɱ/,Rōma,Rúam
 ro:ma:n,/ro:ɱa:n/,rōmānus,rómán
+related -> remove one
 
 sakerd,/sagərt/,sacerdōs,sacart
 sakerdotal,/sagərdətələxt/,sacerdotal,sacerdotal\acht
+related -> remove one (and change final t to d (reflecting milan))
 
 se:ns,/ʃe:ʃ/,sēnsus,séis
 se:ns,/ˈʃiəns/,sēnsus,síans
+phonologically different -> keep
 
 sest,/ʃest/,*sesta,sest
 sesta:ri,/ʃesre/,*sestārius,sesrae
+phonologically different -> keep
 
 sko:b,/skuəb/,scōpa,scúap
 sko:ba:ri,/ʃkʲibəl/,scōpārium,scioból
+related -> remove one (phonological difference isn't meaningful in model, and we don't understand 'sweeper')
 
 skru:t,/skru:dəðʲ/,scrūtor,scrút\aid
 skru:tini,/skru:dən/,scrūtinium,scrútan
+related -> remove one
 
 spirta:l,/ʃpʲirta:lde/,*spirtālis,spirtál\de
 spirtu,/ʃpʲiwrt/,*spirtus,spiurt
+related -> remove one
 
 tro:j,/troj/,Trōia,Troí
 tro:ja:n,/ˈtrojande/,trōiānus,troían\dae
+related -> remove one
