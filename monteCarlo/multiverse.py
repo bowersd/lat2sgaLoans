@@ -198,7 +198,8 @@ phonotactics = [#what to look for in Latin
         re.compile('((^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO]))))'), #mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH]) (weakly? correlated with trisyllables)
         #re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$'), #disyllables (not correlated with anything in Irish)
         re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou]'), #trisyllables or greater (syncope-adjacent)
-        re.compile('[AEIOU]'), #long vowels (shortening/complen-adjacent)
+        re.compile('[^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU]'), #long vowels in non-initial syllables (shortening/complen-adjacent, a bit correlated with trisyllables due to length overlap)
+        #re.compile('[AEIOU]'), #long vowels (shortening/complen-adjacent)
         re.compile('[aeiouAEIOU][tkdg][rlmn]'), #compensatory lengthening 
         re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics. 
         ]
