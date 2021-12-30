@@ -204,13 +204,13 @@ phonotactics = [#what to look for in Latin
         re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics. 
         ]
 
-phonotactics_interstitial = [#split up complex last 2? refer to prior regex only when there is a simplex entry?
-        re.compile('[Pp](?![tT])'), #pk
-        re.compile('([aeiouAEIOU](t|(k(?![Tt]))))'), #lenition 
-        re.compile('([aeiouAEIOU](d|g|b|m|t|(k(?![Tt]))))'), #post-lenition 
-        re.compile('(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))'), #affection (limited to initial sylls)
-        re.compile('([aeiouAEIOU][tkdg][rlmn])|(.*[aeiouAEIOU].*[AEIOU])'), #comp len vCC, non-initial long vowels 
-        re.compile('(([^AEIOUaeiou]*[AEIOUaieou]){3}|((mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)))'), #trisyllables or greater, syncope phonotactics
+phonotactics_interstitial = [#make sure the function for calculating interstitial probabilities is set up to handle list of 2 member tuples
+        ("", re.compile('[Pp](?![tT])')), #-, before end of pk
+        (re.compile('[Pp](?![tT])'), re.compile('([aeiouAEIOU](t|(k(?![Tt]))))')), #after end of pk, before end of lenition
+        (re.compile('([aeiouAEIOU](d|g|b|m|t|(k(?![Tt]))))'), re.compile('(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))')), #after end of lenition, before end of harmony. multisyllable only (include monosyllable too?)
+        (re.compile('(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))'), re.compile('[AEIOUaeiou].*[AEIOU]')), #after end of affection (limited to initial sylls, need to restrict to just the raising contexts where there could not have been blocking), before end of shortening/beginning of compensatory lengthening
+        (re.compile('([aeiouAEIOU].*[AEIOU])'), re.compile('([aeiouAEIOU][tkdg][rlmn])|(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks))')), #after end of shortening/beginning of comp len, before end of comp len/beginning of syncope (juxtapositions)
+        (re.compile('([aeiouAEIOU][tkdg][rlmn])|(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks))'), re.compile('([^AEIOUaeiou]*[AEIOUaieou]){3}')), #after end of comp len/beginning of syncope juxtapositions, before end of syncope (trisyllables or greater)
         ]
 
 def calc_interstit_prior(procs, *data):
