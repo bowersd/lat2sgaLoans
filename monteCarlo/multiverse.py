@@ -207,6 +207,7 @@ phonotactics = [#what to look for in Latin
 phonotactics_interstitial = [#split up complex last 2? refer to prior regex only when there is a simplex entry?
         re.compile('[Pp](?![tT])'), #pk
         re.compile('([aeiouAEIOU](t|(k(?![Tt]))))'), #lenition 
+        re.compile('([aeiouAEIOU](d|g|b|m|t|(k(?![Tt]))))'), #post-lenition 
         re.compile('(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))'), #affection (limited to initial sylls)
         re.compile('([aeiouAEIOU][tkdg][rlmn])|(.*[aeiouAEIOU].*[AEIOU])'), #comp len vCC, non-initial long vowels 
         re.compile('(([^AEIOUaeiou]*[AEIOUaieou]){3}|((mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)))'), #trisyllables or greater, syncope phonotactics
