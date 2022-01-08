@@ -66,7 +66,7 @@ inconsistent = {
 #where is emilianus, anton?
 
 retranscribed_or_autodate_modded = {
-        ("pal.la.ˈki:.n","/ˈpal.nəg.ðe/"):[6,7] #,pallacīnus,palnac\de #DAB ex x ... but orth c indicates [g]
+        ("pal.la.ˈki:.n","/ˈpal.nəg.ðe/"):[6,7], #,pallacīnus,palnac\de #DAB ex x ... but orth c indicates [g]
         ("'lak.s,","/ˈlaks/"):[5,7], #,laxus,lax #DAB ex x
         ("'sim.ma.k,","/ˈʃi.mək/"):[3,7], #,Symmachus,Simmach #DAB former Irish x
         ("i.na.k","/ˈi.nək.ðe/"):[3,7], #,Inachus,inach\dae #DAB formerly had x in Irish
