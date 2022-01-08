@@ -10,7 +10,8 @@
 #           bin 0: p->k
 #           bin 1: lenition
 #           bin 2: affection
-#           bin 3: compensatory lengthening
+#           bin 3: post-affection-pre-compensatory lengthening (shortening period)
+#           bin 4: compensatory lengthening
 #           bin 5: syncope
 #           bin 6: post-syncope
 #       being dated [0,1] means it can only fall in bin 0: the word entered some time between the beginning of borrowing and before the end of p->k
