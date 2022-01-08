@@ -64,6 +64,9 @@ inconsistent = {
 #where is emilianus, anton?
 
 retranscribed_or_autodate_modded = {
+        ("i.na.k","/ˈi.nək.ðe/"):[3,7] #,Inachus,inach\dae #DAB formerly had x in Irish
+        ("ek.ˈsor.kis.t","/ˈek.sər.kə.stəðʲ/"):[6,7], #,exorcistus,exarcist\id #DAB: formerly had x in Irish
+        ("eks.'kep.t","/ˈek.skəp.təðʲ/'"):[6,7], #,exceptus,except\aid #DAB: formerly had x in Irish
         ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,7],#,Aethiobia,Ethioip   #EJFL: Should be "et.'jo.bi.", "/ˈe.tʲəbʲ/"
         ("a.lek.'san.der","/a.lək.sən.dər/"):[6,7],#,Alexander,Alaxander
         #("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae removed bc Hebrew
