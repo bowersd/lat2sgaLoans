@@ -33,6 +33,9 @@ align_crashes = {
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
+        ("in.tel.'lek.t","/ˈinʲ.tʲluxt/"):[0,3], #,intellectus,intliucht #DAB: the loans spreadsheet has i->u occurring around affection, so that is given for the end point
+        ("me.ˈre.tri.k","/ˈmʲerʲ.dʲrʲəx/"):[2,6], #,meretricem,meirdrech #DAB the -x comes from a native suffix, so we follow the t-/->th and make it post-lenition
+        ("pa.'tri.ki.","/ˈko.θrə.ɣʲe/"):[0,1], #,Patricius,Cothrige #the syncope problems are real, but this just has to be early early
         ("a.be.ke.'da:.ri.","/ˈabʲ.ɣʲə.dʲərʲ/"):[2,5],#,abecedārium,aipgitir
         ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[6,7],#,Acrisiōnē,acrision\dae
         ("aj.'ne:","/ˈaj.nʲe:.ðe"):[6,7],#,Aenēās,aenee\dae since there isn't anything different phonologically, one of these aeneas's should be removed
@@ -61,8 +64,6 @@ inconsistent = {
 #where is emilianus, anton?
 
 retranscribed_or_autodate_modded = {
-        ("in.tel.'lek.t","/ˈinʲ.tʲluxt/"):[0,3], #,intellectus,intliucht #DAB: the loans spreadsheet has i->u occurring around affection, so that is given for the end point
-        ("me.ˈre.tri.k","/ˈmʲerʲ.dʲrʲəx/"):[2,6], #,meretricem,meirdrech #DAB the -x comes from a native suffix, so we follow the t-/->th and make it post-lenition
         ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,7],#,Aethiobia,Ethioip   #EJFL: Should be "et.'jo.bi.", "/ˈe.tʲəbʲ/"
         ("a.lek.'san.der","/a.lək.sən.dər/"):[6,7],#,Alexander,Alaxander
         #("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae removed bc Hebrew
