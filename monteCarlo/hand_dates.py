@@ -29,7 +29,7 @@ align_crashes = {
         ("'li.kwi.d","/ˈlʲex.ðəɣʲ.θʲe/"):[0,2],#,liquidus,lechd\aig\the
         ("'no.t","/ˈno.θəθ/"):[0,2],#,nothus,nothath
         ("ti.'mo.te.","/ˈtʲiəɱ.θe/"):[0,2],#,Timotheus,Tíamthe
-        ("'tri.b","/ˈtʲrʲiwv/"):[0,7],#,tribus,triub
+        ("'tri.b","/ˈtʲrʲiwv/"):[0,3],#,tribus,triub #DAB: changed from 0,7 because i->u happened
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
@@ -61,7 +61,7 @@ inconsistent = {
 #where is emilianus, anton?
 
 retranscribed_or_autodate_modded = {
-        ("in.tel.'lek.t","/ˈinʲ.tʲluxt/"):[0,3] #,intellectus,intliucht #DAB: the loans spreadsheet has i->u occurring around affection, so that is given for the end point
+        ("in.tel.'lek.t","/ˈinʲ.tʲluxt/"):[0,3], #,intellectus,intliucht #DAB: the loans spreadsheet has i->u occurring around affection, so that is given for the end point
         ("e:t.'jo.bi.","/ˈe.tʲəbʲ/"):[2,7],#,Aethiobia,Ethioip   #EJFL: Should be "et.'jo.bi.", "/ˈe.tʲəbʲ/"
         ("a.lek.'san.der","/a.lək.sən.dər/"):[6,7],#,Alexander,Alaxander
         #("a.ˈna.ni.","/ˈan.ne/"):[0,3],#,Ananiās,Annae removed bc Hebrew
