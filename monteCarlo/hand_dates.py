@@ -33,6 +33,7 @@ align_crashes = {
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
+        ("pro.'me:.te.","/ˈpro.ɱə.θʲə.ðʲe/"):[6,7], #,Promētheus,promith\ide #DAB I can imagine th spelling t (no lenition, latin pronunciation) or T (no lenition, Greek pronunciation), but this word is post-syncope
         ("o.'ra:.ti.o:","/ˈor.θə/"):[0,2], #,*orātiō,ortha #DAB: autodate was getting tripped up on syncope results
         ("in.tel.'lek.t","/ˈinʲ.tʲluxt/"):[0,3], #,intellectus,intliucht #DAB: the loans spreadsheet has i->u occurring around affection, so that is given for the end point
         ("me.ˈre.tri.k","/ˈmʲerʲ.dʲrʲəx/"):[2,6], #,meretricem,meirdrech #DAB the -x comes from a native suffix, so we follow the t-/->th and make it post-lenition
@@ -65,6 +66,7 @@ inconsistent = {
 #where is emilianus, anton?
 
 retranscribed_or_autodate_modded = {
+        ("pal.la.ˈki:.n","/ˈpal.nəg.ðe/"):[6,7] #,pallacīnus,palnac\de #DAB ex x ... but orth c indicates [g]
         ("'lak.s,","/ˈlaks/"):[5,7], #,laxus,lax #DAB ex x
         ("'sim.ma.k,","/ˈʃi.mək/"):[3,7], #,Symmachus,Simmach #DAB former Irish x
         ("i.na.k","/ˈi.nək.ðe/"):[3,7], #,Inachus,inach\dae #DAB formerly had x in Irish
