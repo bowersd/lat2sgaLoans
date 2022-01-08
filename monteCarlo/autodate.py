@@ -236,8 +236,8 @@ def monosyllable_repair(latin, irish, vector):
     #if nu[3]: nu[3] = [] #fixing apocope
     #fixing harmony
     #we have no way of knowing whether failure to harmonize was due to lack of environment or being too late. would need actual morphological class information
-    if ('e' in latin and 'i' in irish) or ('i' in latin and 'e' in irish) or ('o' in latin and 'u' in irish) or ('u' in latin and 'o' in irish): nu[2] = [1] 
-    elif ('e' in latin and 'e' in irish) or ('i' in latin and 'i' in irish) or ('o' in latin and 'o' in irish) or ('u' in latin and 'u' in irish): 
+    if ('e' in latin and irish[latin.index('e')] == 'i') or ('i' in latin and irish[latin.index('i')] == 'e') or ('o' in latin and irish[latin.index('o')] == 'u') or ('u' in latin and irish[latin.index('u')] == 'o'): nu[2] = [1] 
+    elif ('e' in latin and irish[latin.index('e')] == 'e') or ('i' in latin and irish[latin.index('i')] == 'i') or ('o' in latin and irish[latin.index('o')] == 'o') or ('u' in latin and irish[latin.index('u')] == 'u'): 
         print("was failure due to envi not met or was loan too late?")
         print(latin)
         print(irish)
