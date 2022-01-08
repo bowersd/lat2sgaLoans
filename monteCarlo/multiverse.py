@@ -201,7 +201,7 @@ phonotactics = [#what to look for in Latin
         re.compile('[^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU]'), #long vowels in non-initial syllables (shortening/complen-adjacent, a bit correlated with trisyllables due to length overlap)
         #re.compile('[AEIOU]'), #long vowels (shortening/complen-adjacent)
         re.compile('[aeiouAEIOU][tkdg][rlmn]'), #compensatory lengthening 
-        re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics. 
+        re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics... st phonotactics are different temporally though...
         ]
 
 phonotactics_interstitial = [#make sure the function for calculating interstitial probabilities is set up to handle list of 2 member tuples
