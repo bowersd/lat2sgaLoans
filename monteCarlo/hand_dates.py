@@ -33,6 +33,11 @@ align_crashes = {
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
+        ("law.'ren.ti.","/ˈlaw.rʲən.tə.ðʲe"):[0,7], #,Laurentium,laurent\ide #DAB this is probably post-syncope/literary, but restriction to root makes it too short for syncope, and even if syncope did apply, stranded sonorant epenthesis could have undone it
+        ("tri.'bla:.ti.o:","/ˈtʲrʲe.vlədʲ/"):[0,3], #,*triblātiō,treblait #DAB syncope originally flagged as going wrong due to losses at end of word.
+        ("si.'ki.li.","/ˈʃi.kʲəl.de/"):[6,7], #,Sicilia,Sicel\de #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
+        ("pu.'gla:.ri.","/ˈpo:.lə.rʲe/"):[1,3], #,*puglāria,pól\ire #DAB entered early, but the suffix got productive and exceptional to syncope
+        ("ma.ke.'do.ni.","/ˈma.kʲə.ðo:n.de/"):[6,7], #,Macedonia,Maccidón\dae #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
         ("pro.'me:.te.","/ˈpro.ɱə.θʲə.ðʲe/"):[6,7], #,Promētheus,promith\ide #DAB I can imagine th spelling t (no lenition, latin pronunciation) or T (no lenition, Greek pronunciation), but this word is post-syncope
         ("o.'ra:.ti.o:","/ˈor.θə/"):[0,2], #,*orātiō,ortha #DAB: autodate was getting tripped up on syncope results
         ("in.tel.'lek.t","/ˈinʲ.tʲluxt/"):[0,3], #,intellectus,intliucht #DAB: the loans spreadsheet has i->u occurring around affection, so that is given for the end point
