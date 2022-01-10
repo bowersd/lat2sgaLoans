@@ -33,6 +33,26 @@ align_crashes = {
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
+        ("se.'kun.di.","/ˈʃek.ne/"):[3,6] #,Secundius,Secnde #DAB took the failure to raise in the first syllable over the lowering in the last. clearly syncopated
+        ("pa.le:s.'ti:.na","/ˈpa.lə.ʃtʲə.na/"):[6,7], #Palaestīna,Palastina  #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("fi.li.pi.a.'ne:n.s","/ˈfʲi.lʲə.pʲən.ste/"):[6,7], #philipianēnsis,Philipians\tae #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("fi.'le:.mo:n","/fʲi.lə.ɱo:nʲ/"):[6,7], #Philēmōn,Philomóin #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("po.si.'ti:.w","/ˈpo.ʃədʲ/"):[6,7], #positīuus,posit #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("su.ber.la:.'ti:.w","/ˈsu.ber.lədʲ/"):[6,7], #superlātīuus,superlait #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("so:s.te.ne:s","/sus.tə.nʲəs/"):[6,7], #Sōsthenēs,Susthenes #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("tes.ti.'mo:.ni.","/ˈtʲe.ʃtʲə.ɱʲənʲ/"):[6,7], #testimōnium,teistimin #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("we:.ro:.ˈne:n.s","/ˈfʲe.rə.nʲən.ste/"):[6,7], #uērōnēnsis,ueronens\tae #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("wes.pa.si.ˈa:.n","/ˈfʲe.spə.ʃiən/"):[6,7], #Uespasiānus,Uespisían #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("mo.nas.'te:.ri.","/ˈmo.nʲə.ʃtʲərʲ/"):[6,7], #,monastērium,moinistir #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("ho.ra.ti.'a:.n","/ˈo.rə.tʲən.de/"):[6,7], #horatiānus,oratian\dae #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("op.ta:.'ti:.w","/ˈob.tədʲ/"):[6,7], #,optātīuus,optait #DAB post-syncope/literary loan
+        ("in.fi:.'ni:.t","/ˈinʲ.fʲə.nʲədʲ/"):[6,7], #,infīnītum,infinit #DAB post-syncope/literary loan
+        ("e.'fra.te:.","/ˈe.frə.dʲə.ðʲe/"):[6,7], #,Ephrataeus,Eufrat\ide #DAB post-syncope/literary loan
+        ("wes.per.'ti:.n","/ˈe.spər.tə/"):[1,4], #,(hōra) uespertīna,esparta #DAB after syncope schwa was likely inserted before the liquid
+        ("e.mi.li.'a:.n","/ˈe.mʲəlʲe:nde/"):[6,7], #,aemil-iān-us,emil\én\dae #DAB pretty clear failure to shorten
+        ("eks.kom.mu:.ni.'ka:.ti.o:","/ˈesk.ɱən/"):[0,4], #,excommūnicātiō,escmon #DAB: automatic methods thrown off by aggressive truncation. What survived into Irish clearly underwent shortening and syncope
+        ("kwiŋ.kwa:.'ge:s.m","/ˈkʲeŋ.kʲə.ɣʲəs/"):[0,3], #,*quinquāgēsma,cingciges #DAB not clear why syncope failed here, but most of the evidence points to a pre-harmony loan
+        ("a.ris.'to.te.le:s","/ˈa.rʲə.stə.təlʲ/"):[6,7], #,Aristotelēs,Aristotil #DAB literary loan
         ("fir.ˈra.di.","/ˈfʲir.ðe/"):[3,7],#,Phirradios,phir\de #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
         ("law.'ren.ti.","/ˈlaw.rʲən.tə.ðʲe"):[0,7], #,Laurentium,laurent\ide #DAB this is probably post-syncope/literary, but restriction to root makes it too short for syncope, and even if syncope did apply, stranded sonorant epenthesis could have undone it
         ("tri.'bla:.ti.o:","/ˈtʲrʲe.vlədʲ/"):[0,3], #,*triblātiō,treblait #DAB syncope originally flagged as going wrong due to losses at end of word.
