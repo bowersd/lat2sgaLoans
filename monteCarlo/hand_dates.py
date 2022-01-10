@@ -33,7 +33,7 @@ align_crashes = {
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
 }
 inconsistent = {
-        ("se.'kun.di.","/ˈʃek.ne/"):[3,6] #,Secundius,Secnde #DAB took the failure to raise in the first syllable over the lowering in the last. clearly syncopated
+        ("se.'kun.di.","/ˈʃek.ne/"):[3,6], #,Secundius,Secnde #DAB took the failure to raise in the first syllable over the lowering in the last. clearly syncopated
         ("pa.le:s.'ti:.na","/ˈpa.lə.ʃtʲə.na/"):[6,7], #Palaestīna,Palastina  #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("fi.li.pi.a.'ne:n.s","/ˈfʲi.lʲə.pʲən.ste/"):[6,7], #philipianēnsis,Philipians\tae #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("fi.'le:.mo:n","/fʲi.lə.ɱo:nʲ/"):[6,7], #Philēmōn,Philomóin #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
