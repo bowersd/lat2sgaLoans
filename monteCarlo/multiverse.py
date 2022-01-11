@@ -7,6 +7,8 @@ from functools import reduce
 import re
 import autodate
 import needleman
+import hand_dates
+import count_sylls
 #from hackydata import *
 
 #[x, y...] #FORMS
@@ -209,8 +211,8 @@ phonotactics_interstitial = [#make sure the function for calculating interstitia
         (re.compile('[Pp](?![tT])'), re.compile('([aeiouAEIOU](t|(k(?![Tt]))))')), #after end of pk, before end of lenition
         (re.compile('([aeiouAEIOU](d|g|b|m|t|(k(?![Tt]))))'), re.compile('(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))')), #after end of lenition, before end of harmony. multisyllable only (include monosyllable too?)
         (re.compile('(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))'), re.compile('[AEIOUaeiou].*[AEIOU]')), #after end of affection (limited to initial sylls, need to restrict to just the raising contexts where there could not have been blocking), before end of shortening/beginning of compensatory lengthening
-        (re.compile('([aeiouAEIOU].*[AEIOU])'), re.compile('([aeiouAEIOU][tkdg][rlmn])|(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks))')), #after end of shortening/beginning of comp len, before end of comp len/beginning of syncope (juxtapositions)
-        (re.compile('([aeiouAEIOU][tkdg][rlmn])|(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks))'), re.compile('([^AEIOUaeiou]*[AEIOUaieou]){3}')), #after end of comp len/beginning of syncope juxtapositions, before end of syncope (trisyllables or greater)
+        (re.compile('([aeiouAEIOU].*[AEIOU])'), re.compile('(([aeiouAEIOU][tkdg][rlmn])|(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks))')), #after end of shortening/beginning of comp len, before end of comp len/beginning of syncope (juxtapositions)
+        (re.compile('(([aeiouAEIOU][tkdg][rlmn])|(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks))'), re.compile('([^AEIOUaeiou]*[AEIOUaieou]){3}')), #after end of comp len/beginning of syncope juxtapositions, before end of syncope (trisyllables or greater)
         ]
 
 def calc_interstit_prior(procs, *data):
@@ -248,6 +250,9 @@ if __name__ == "__main__":
     dates = []
     procs = []
     words = []
+    hand = {}
+    for x in hand_dates.align_crashes: hand[x] = hand_dates.align_crashes[x] 
+    for x in hand_dates.inconsistent: hand[x] = hand_dates.inconsistent[x]
     #i = 1
     for r in raw:
         #print(i)
@@ -255,10 +260,16 @@ if __name__ == "__main__":
         latin, irish = autodate.clean_transcription(r[0]), autodate.clean_transcription(r[1])
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #hack to enact british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         procs.extend(tally_procs(phonotactics, latin))
-        latin_a, irish_a = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
-        if (not any([0 in x and 1 in x for x in autodate.check_procs(latin_a, irish_a)])) and autodate.date(*autodate.check_procs(latin_a, irish_a))[0] < autodate.date(*autodate.check_procs(latin_a, irish_a))[1]: 
-            dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
+        if (r[0], r[1]) in hand : 
+            dates.append(hand[(r[0], r[1])])
             words.append((latin, irish))
+        else:
+            latin_a, irish_a = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
+            dates.append(autodate.date_nu(7, *autodate.sync_check(irish_a, count_sylls.count_syll(latin_a), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin_a)), autodate.procs_kludge(latin_a, irish_a, autodate.check_procs_nu(latin_a, irish_a, autodate.triggers, autodate.processes)))))
+            words.append((latin, irish))
+        #if (not any([0 in x and 1 in x for x in autodate.check_procs(latin_a, irish_a)])) and autodate.date(*autodate.check_procs(latin_a, irish_a))[0] < autodate.date(*autodate.check_procs(latin_a, irish_a))[1]: 
+        #    dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
+        #    words.append((latin, irish))
     x = genetic_search(hacked_prior, 7, procs, *dates)
     with open("output_summary", 'w') as file_out:
         file_out.write("mean p (top 15): "+str(mean(*[x[1][i] for i in range(15)]))+'\n')
