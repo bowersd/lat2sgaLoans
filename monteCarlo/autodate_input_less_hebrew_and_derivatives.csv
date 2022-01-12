@@ -132,7 +132,7 @@ kir.kum.'flek.s,/ˈkʲir.kunʲ.fʲlʲəxs/,circumflexus,circunflex
 'kle:.r,/ˈkʲlʲe:r/,clērus,clér
 'plu:.m,/ˈklu:ɱ/,plūma,clúm
 'kan.na.b,/ˈkna:vʲ/,cannabis,cnáib
-'kaw.s,/ˈkaus/,causa,coäis
+'kaw.s,/ˈkaus/,causa,caus/coais
 ko:n.'fes.si.o:,/ˈko.vəʃ/,cōnfessiō,cobais
 ku.'kul.l,/ˈko.xəL/,cucullus,cochall
 ko.'lum.n,/ˈkol.ve/,columna,colbae
@@ -181,7 +181,7 @@ ku.'li:.n,/ˈku.lʲəN/,culīna,cuilenn [?]
 'ku.ra:s.'a.go:,/ˈku:r.sə.ɣəðʲ/,curās agō,cúrsag\aid
 kur.'ti:.n,/ˈkur.tʲi:.nəð/,curtīna,curtín\ad
 'ku.b,/ˈkuv/,cubus,cyb
-'dak.ti.l,/ˈdax.təlʲ/,dactylus,dactil
+'dak.ti.l,/ˈdak.təlʲ/,dactylus,dactil
 dam.n,/ˈda.mənʲ/,damnum,dammain
 dar.'da:.n,/ˈdar.da:n.de/,Dardānus,dardán\de
 'da.si.an,/'daʃiən/,dasian,dasian
@@ -189,11 +189,11 @@ de.'ka:.d,/ˈdʲe.kəðʲ/,decādem,deccaid
 di.'a:.ko.n,/ˈdʲe.xən/,diāconus,dechon
 dik.t,/ˈdʲex.təðʲ/,dictō,decht\aid
 de:.bre.'ka:.ti.o:,/ˈdʲe.bʲrʲə.go:dʲ/,dēprecātiō,deiprecóit
-'de:.mon,/ˈdʲe.ɱən/,daemon,demon
+'de.mon,/ˈdʲe.ɱən/,*demon,demon
 der.'be:n.s,/ˈdʲer.bən.ste/,derbēnsis,derbens\dae
 dis.'ki.bu.l,/ˈdʲe.ʃkʲə.bul/',discipulus,descipul
 dew.te.ro.'no.mi.,/ˈdʲew.tər.nəmʲ/,deuteronomium,deutornim
-di.'a.bo.l,/ˈdʲiə.vul/',diabolos,díabul
+di.'a.bo.l,/ˈdʲiə.vəl/',diabolos,díabul
 di.a.'lek.ti.k,/ˈdʲiə.lʲex.təkʲ/',dialectica,dialectaicc
 dik.'ta:.to:r,/ˈdik.tə.do:rʲ/,dictātōr,dicta\tóir
 di.'gam.m,/ˈdʲi.ɣəmʲ/',digamma,digaimm
@@ -273,7 +273,7 @@ i.'do:.ne.,/ˈi.ðən/,idōneus,idan
 i:.'do:.l,/ˈi:.ðəl/,īdōlum,ídol
 je.'na:.ri.,/ˈje.nər/,*ienārius,Ienar
 i.ˈfer.n,/ˈi.fʲərn/,*ifernum,ifern
-'i:.li.k,/ˈi.lʲəx.ðe,īlicem,ilec\de
+'i:.li.k,/ˈi.lʲək.ðe,īlicem,ilec\de
 'i:.lig.n,/ˈi.lʲəɣ.nʲə.ðʲe/,īlignus,ilign\ide
 i:.'ma:.go:,/ˈi:.ɱa:ɣʲ/,*īmāgō,ímáig
 'i.na.k,/ˈi.nək.ðe/,Inachus,inach\dae
@@ -353,7 +353,7 @@ mi:.'ra:.bi.l,/ˈmʲi:r.vəlʲ/,mīrābilis,mírbail
 'mir.t,/ˈmʲirt/,myrtus,mirt–
 ˈma.ku.l,/ˈmo.gəl/,macula,mocol
 'mo.d,/ˈmoð/,modus,mod
-mo.nas.'te:.ri.,/ˈmo.nʲə.ʃtʲərʲ/,monastērium,moinistir
+mo.nis.'te:.ri.,/ˈmo.nʲə.ʃtʲərʲ/,*monistērium,moinistir
 mor.ti.'ki.ni.,/ˈmorʲtʲ.xʲəN/,morticinium,moirtchenn
 mo.'ne:.t,/ˈmo.nəð/,monēta,monad
 mo:.'ra:.lis,/ˈmo.ra:.lus/,*morālis,morálus
@@ -403,7 +403,7 @@ pa.ra.'di:.s,/ˈpar.dəs/,paradīsus,Pardas
 pa:.'tri.ki.,/ˈpa.drəgʲ/,*Pātricius,Pátric
 pek.'ka:.t,/ˈpʲ.ekəθ/,peccātum,peccath
 pe.'le.,/ˈpʲe:.lʲəx.ðe/,Peleus,pél\ech\dae
-ˈpe:.n,/ˈpʲen/,pena,pén
+ˈpe:.n,/ˈpʲe:n/,pēna,pén
 pe:.'nul.ti.m,/ˈpʲe.nʲulʲtʲ/,pēnultima,peneuilt
 ˈpen.na,/ˈpʲeN/,penna,penn
 pen.'ten.ti.,/ˈpʲe.Nənʲdʲ/,*pententia,pennaind
@@ -430,8 +430,8 @@ pu.'gla:.ri.,/ˈpo:.lə.rʲe/,*puglāria,pól\ire
 'po.bu.l,/ˈpo:.bəl/,pōpulus,pópol
 'po:.bu.l,/ˈpo.bəl/,populus,popul
 'por.t,/ˈport/,portus,port
-po.si.'ti:.w,/ˈpo.ʃədʲ/,positīuus,posit
-pre.'kep.t,/ˈpʲrʲe.gʲəpt/,praeceptum,preicept
+po.si.'ti:.w,/ˈpo.sədʲ/,positīuus,posit
+pre.'kep.t,/ˈpʲrʲe.gʲəpt/,*preceptum,preicept
 pris.ki.'a:.n,/ˈpʲrʲes.kʲi.e:n/,Prisciānus,Prescien
 ˈpre.do:,/ˈpʲrʲe.dəðʲ/,*predō,pret\aid
 pre.'di:.k,/ˈpʲrʲið.xəðʲ/,*predīcō,pridch\aid
@@ -449,7 +449,7 @@ pur.ga.'to:.ri.,/ˈpur.gə.do:rʲ/,purgatōrium,purg\atóir
 ˈra:.m,/ˈra:ɱʲ/,rāmus,ráim
 re.'li.kwi.,/ˈre.lʲəgʲ/,reliquiae,reilic
 re.'to.ri.k,/ˈrʲe.do.rʲəgʲ/,*rhetoricē,retoiric
-'re:.a.t,/ˈrʲe:.du/,*rēatus,rétu
+'re:.a.tu:,/ˈrʲe:.du/,*rēatūs,rétu
 're:.gu.l,/ˈrʲiə.ɣəl/,rēgula,ríagol
 'rub.r,/ˈro.vur/,rubrum,robur
 'ro:.mu.l,/ˈro.ɱəlʲ/,Rōmulus,romuil
@@ -472,7 +472,7 @@ psal.'te:.ri.,/ˈsal.tərʲ/,psaltērium,saltair
 saŋk.ˈta:.ri.,/ˈsaŋk.ta:rʲ/,*sanctārium,sanctáir
 'sap.fir,/ˈsa.fʲər/,sapphir,saphir
 sa.'tur.n,/ˈsa.θərn/,*Saturnus,satharn
-sa.ˈtur.n,/ˈsa.durn/,Saturnus,Saturn
+sa.ˈtur.n,/ˈsa.durn/,*Saturnus,Saturn
 'pi.ber,/ˈʃkʲi.vər/,*piber,scibar
 'ski:.pi.o:,/ˈʃkʲip/,Scīpiō,Scip
 ˈskrip.tr,/ˈʃkʲrʲep.tər/,*scriptra,screptar
@@ -480,7 +480,7 @@ sa.ˈtur.n,/ˈsa.durn/,Saturnus,Saturn
 'skri:.b,/ˈʃkʲrʲi:.vəðʲ/,scrībō,scríb\aid
 skri:.'ben.d,/ˈʃkʲrʲi:.vʲənd/,scrībendum,scríbend
 'skri:.ni,/ˈʃkʲrʲi:n/,scrīnium,scrín
-skri:p.'tu:.r,/ˈʃkʲrʲip.turʲ/,scrīptūra,scriptuir
+skri:p.'tu:.r,/ˈʃkʲrʲip.turʲ/,*scriptūra,scriptuir
 'skru:.pu.l,/ˈskru.vəl/,scrūpulus,scrubl
 'skru:.t,/ˈskru:.dəðʲ/,scrūtor,scrút\aid
 'sko:.b,/ˈskuəb/,scōpa,scúap
@@ -488,7 +488,7 @@ se.'ka:.le,/ˈʃe.gəl/,secāle,secal
 se.kun.'di:.n,/ˈʃex.nəL/,Secundīnus,Sechnall
 ˈfik.t,/ˈʃext/,fictus,secht
 sep.ti.'ma:.n,/ˈʃext.ɱən/,septimāna,sechtmon
-se.ˈkun.dˈab.ba:,/ˈʃek.nəb/,secundus abbās,secndap
+se.ˈkun.dˈab.ba,/ˈʃek.nəb/,secundus abbas,secndap
 se.'kun.di.,/ˈʃek.ne/,Secundius,Secnde
 'fa.b,/ˈʃevʲ/,faba,seib
 se:.kre:.t,/ˈʃe.gʲrʲe:dʲ/,sēkrētus,seicréit
@@ -577,3 +577,4 @@ wul.ˈka:.n,/ˈul.ka:n/,Uulcānus,ulcán
 u.ˈna:.ri.,/ˈu.na:rʲ/,*unārius,unáir
 ˈuŋ.ki.,/ˈuŋ.ge/,uncia,ungae
 awk.ˈsi.li.,/ˈu:.sə.lʲe/,auxilius,úsaile
+ˈpsi.len,/'ʃi.lʲən/,psilen,psilen
