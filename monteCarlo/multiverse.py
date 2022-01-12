@@ -275,7 +275,7 @@ if __name__ == "__main__":
     means = [0 for y in x[2][0]]
     for i in range(len(x[2][0])):
         means[i] = mean(*[y[i] for y in x[2]])
-    with open("phonotactic_pred.csv", 'w') as file_out:
+    with open("phonotactic_predictions.csv", 'w') as file_out:
         file_out.write("period,phonotactics\n")
         file_out.write(",0\n")
         for i in range(len(means)):
