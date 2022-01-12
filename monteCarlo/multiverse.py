@@ -63,7 +63,7 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
         #print("sum_bins:{0}".format(j))
         #print(product(*binomial_results))
         p *= product(*binomial_results)
-        #p *= (sum_bins[j]+1)/(sum(sum_bins)+len(sum_bins))
+        p *= (sum_bins[j]+1)/(sum(sum_bins)+len(sum_bins))
     return p
 
 def top_rank(candidate, tops):
@@ -271,12 +271,17 @@ if __name__ == "__main__":
         #    dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
         #    words.append((latin, irish))
     x = genetic_search(hacked_prior, 7, procs, *dates)
+    names = ["p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
+    means = [0 for y in x[2][0]]
+    for i in range(len(x[2][0])):
+        means[i] = mean(*[y[i] for y in x[2]])
+    with open("phonotactic_pred.csv", 'w') as file_out:
+        file_out.write(",0\n")
+        for i in range(len(means)):
+            file_out.write(",".join((names[i], means[i]))+'\n')
     with open("output_summary", 'w') as file_out:
         file_out.write("mean p (top 15): "+str(mean(*[x[1][i] for i in range(15)]))+'\n')
-        file_out.write("mean p (all): "+str(mean(*[x[1][i] for i in range(len(x[0]))]))+'\n')
-        means = [0 for y in x[2][0]]
-        for i in range(len(x[2][0])):
-            means[i] = mean(*[y[i] for y in x[2]])
+        file_out.write("mean p (all):    "+str(mean(*[x[1][i] for i in range(len(x[0]))]))+'\n')
         file_out.write("mean bin size: "+str(means)+"\n")
     for i in range(15):
         with open("output_"+str(i), 'w') as file_out:
