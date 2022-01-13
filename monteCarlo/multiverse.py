@@ -275,8 +275,8 @@ if __name__ == "__main__":
     means = [0 for y in x[2][0]]
     for i in range(len(x[2][0])):
         means[i] = mean(*[y[i] for y in x[2]])
-    with open("phonotactic_predictions.csv", 'w') as file_out:
-        file_out.write("period,phonotactics\n")
+    with open("model_predictions.csv", 'w') as file_out:
+        file_out.write("period,model\n")
         for i in range(len(means)+1):
             file_out.write(",".join((names[i], str(sum(means[:i]))))+'\n')
     with open("output_summary", 'w') as file_out:
