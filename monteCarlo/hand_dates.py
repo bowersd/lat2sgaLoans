@@ -90,6 +90,21 @@ inconsistent = {
         }
 #where is emilianus, anton?
 
+post_lenition_fs_theory = {
+        ("ˈfik.t","/ˈʃext/"):[1,4], #,fictus,secht
+        ("'fa.b","/ˈʃevʲ/"):[1,4], #,faba,seib
+        ("fe.'nes.tr","/ˈʃe.nʲə.ʃtʲər/"):[1,4], #,fenestra,seinester
+        ("'fe:.ri.","/ˈʃe:.rʲe/"):[1,4], #,fēria,séire
+        ("'fer.ku.l","/ˈʃer.kəl/"):[1,4], #,ferculum,sercol
+        ("'fi:.bu.l","/ˈʃi:.vəl/"):[1,4], #,fībula,síbal
+        ("fle:k.t","/ˈʃlʲe:x.təðʲ/"):[1,4], #,flēctō,slécht\aid
+        ("'flo:.k","/ˈslo:x/"):[1,4], #,*flōcus,slóch
+        ("ˈfur.n","/ˈsorn/"):[1,4], #,furnus,sorn
+        ("'fre:.n","/ˈʃrʲiən/"):[1,4], #,frēnum,srían
+        ("fra.'gil.l","/ˈsro.ɣʲəl/"):[1,4], #,*fragillum,sroigel
+        ("'fu:s.t","/ˈsu:st/"):[1,4], #,fūstis,súst
+        }
+
 retranscribed_or_autodate_modded = {
         ("pal.la.ˈki:.n","/ˈpal.nəg.ðe/"):[6,7], #,pallacīnus,palnac\de #DAB ex x ... but orth c indicates [g]
         ("'lak.s,","/ˈlaks/"):[5,7], #,laxus,lax #DAB ex x
