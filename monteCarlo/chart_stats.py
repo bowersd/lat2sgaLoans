@@ -28,8 +28,8 @@ if __name__ == "__main__":
             points = date_nu(7, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes))))
             h[tuple(points)] += 1
             if points[0] >= points[1]: problems.append((d[0], d[1], points))
-            if points == [5, 6]: print("FIVE SIXER", d[0], d[1])
-            if points == [3, 4]: print("THREE FOURER", d[0], d[1])
+            #if points == [5, 6]: print("FIVE SIXER", d[0], d[1])
+            if points == [4,6 ]: print("FOUR SIXER", d[0], d[1])
     for x in h:
         #if x[1]-x[0]==1: print(x, h[x])
         if x[0]<x[1]: print(x, h[x])
