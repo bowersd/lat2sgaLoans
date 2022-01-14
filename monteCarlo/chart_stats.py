@@ -43,7 +43,7 @@ if __name__ == "__main__":
             eq[x[0]+j] += h[x]/(x[1]-x[0])
     holder = [
             ("period", "name", "minimum", "maximum", "naive"),
-            (0,"", "0", "0", "0"),
+            ("0","", "0", "0", "0"),
             ]
     prev = 0
     for i in range(8):
@@ -55,4 +55,6 @@ if __name__ == "__main__":
         if i > 0: holder.append((str(i), names[i], str(sum(mn[:i+1])), str(tot-prev), str(sum(eq[:i]))))
         prev = mx
     with open("core_data.csv", 'w') as file_out:
-        for x in holder: file_out.write(",".join(x)+'\n')
+        for x in holder: 
+            print(x)
+            file_out.write(",".join(x)+'\n')

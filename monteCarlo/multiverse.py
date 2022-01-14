@@ -271,14 +271,14 @@ if __name__ == "__main__":
         #    dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
         #    words.append((latin, irish))
     x = genetic_search(hacked_prior, 7, procs, *dates)
-    names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
+    #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
     means = [0 for y in x[2][0]]
     for i in range(len(x[2][0])):
         means[i] = mean(*[y[i] for y in x[2]])
     with open("model_predictions.csv", 'w') as file_out:
         file_out.write("period,model\n")
         for i in range(len(means)+1):
-            file_out.write(",".join((names[i], str(sum(means[:i]))))+'\n')
+            file_out.write(",".join((str(i), str(sum(means[:i]))))+'\n')
     with open("output_summary", 'w') as file_out:
         file_out.write("mean p (top 15): "+str(mean(*[x[1][i] for i in range(15)]))+'\n')
         file_out.write("mean p (all):    "+str(mean(*[x[1][i] for i in range(len(x[0]))]))+'\n')
