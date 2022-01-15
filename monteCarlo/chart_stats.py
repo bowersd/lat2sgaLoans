@@ -24,18 +24,13 @@ if __name__ == "__main__":
         latin, irish = clean_transcription(d[0]), clean_transcription(d[1])
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #hack to enact british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         latin, irish = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
-        if (d[0], d[1]) in hand : 
-            h[tuple(hand[(d[0], d[1])])] += 1
-            points = hand[(d[0], d[1])] #remove this, it is just for checking dates
+        if (d[0], d[1]) in hand : h[tuple(hand[(d[0], d[1])])] += 1
         else: 
             points = date_nu(7, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes))))
             h[tuple(points)] += 1
             if points[0] >= points[1]: problems.append((d[0], d[1], points))
             #if points == [5, 6]: print("FIVE SIXER", d[0], d[1])
             if points == [4,6 ]: print("FOUR SIXER", d[0], d[1])
-        if re.search('[aeiouAEIOU]_*[aeiouAEIOU]', latin):
-            hiatus.append((latin,))
-            hiatus.append((irish, points, sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes)))))
     for x in h:
         #if x[1]-x[0]==1: print(x, h[x])
         if x[0]<x[1]: print(x, h[x])
@@ -64,6 +59,3 @@ if __name__ == "__main__":
         for x in holder: 
             print(x)
             file_out.write(",".join(x)+'\n')
-    for x in hiatus: 
-        if len(x) == 1: print(x[0])
-        else: print(x[0], x[1], x[2])
