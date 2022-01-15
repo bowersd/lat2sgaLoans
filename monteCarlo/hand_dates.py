@@ -31,6 +31,7 @@ align_crashes = {
         ("ti.'mo.te.","/ˈtʲiəɱ.θe/"):[0,2],#,Timotheus,Tíamthe
         ("'tri.b","/ˈtʲrʲiwv/"):[0,3],#,tribus,triub #DAB: changed from 0,7 because i->u happened
         ("ka.'du:.k","/ˈkað.xəx/"):[0,2],#,cadūcus,cadch\ach
+        ("pre.'di:.k","/ˈpʲrʲið.xəðʲ/"):[1,2], #,*predīcō,pridch\aid #DAB: misalignment put the k with <d> instead of [x]
 }
 inconsistent = {
         ("pa.le:s.'ti:.na","/ˈpa.lə.ʃtʲə.na/"):[6,7], #Palaestīna,Palastina  #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
@@ -122,4 +123,9 @@ retranscribed_or_autodate_modded = {
         ("ko.'lum.b","/ˈko.ləm/"):[3,7],#,columba,colum
         ("'ko:n.sul","/ˈkon.səl/"):[6,7],#,cōnsul,consal DUMP u>@
         ("dam.n","/ˈda.mənʲ/"):[2,7],#,damnum,dammain #EJFL: Latin should be "dam.n", damnnum
+        }
+
+bigger_complen_syncope = {
+        ("tri:.n.'da:t","/ˈtʲrʲi:n.do:dʲ/"):[4,6], #,trīndātem,tríndóit #DAB just in case it wasn't British syncope
+        ("an.'da:.t","/ˈan.do:dʲ/"):[4,6], #,*andātem,andóit #DAB just in case it wasn't VL syncope from antitatem
         }
