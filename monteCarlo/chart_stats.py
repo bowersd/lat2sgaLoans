@@ -57,5 +57,4 @@ if __name__ == "__main__":
         prev = mx
     with open("core_data.csv", 'w') as file_out:
         for x in holder: 
-            print(x)
             file_out.write(",".join(x)+'\n')
