@@ -36,13 +36,13 @@ inconsistent = {
         ("pa.le:s.'ti:.na","/ˈpa.lə.ʃtʲə.na/"):[6,7], #Palaestīna,Palastina  #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("fi.li.pi.a.'ne:n.s","/ˈfʲi.lʲə.pʲən.ste/"):[6,7], #philipianēnsis,Philipians\tae #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("fi.'le:.mo:n","/fʲi.lə.ɱo:nʲ/"):[6,7], #Philēmōn,Philomóin #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
-        ("po.si.'ti:.w","/ˈpo.ʃədʲ/"):[6,7], #positīuus,posit #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("po.si.'ti:.w","/ˈpo.sədʲ/"):[6,7], #positīuus,posit #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("su.ber.la:.'ti:.w","/ˈsu.ber.lədʲ/"):[6,7], #superlātīuus,superlait #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("so:s.te.ne:s","/sus.tə.nʲəs/"):[6,7], #Sōsthenēs,Susthenes #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("tes.ti.'mo:.ni.","/ˈtʲe.ʃtʲə.ɱʲənʲ/"):[6,7], #testimōnium,teistimin #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("we:.ro:.ˈne:n.s","/ˈfʲe.rə.nʲən.ste/"):[6,7], #uērōnēnsis,ueronens\tae #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("wes.pa.si.ˈa:.n","/ˈfʲe.spə.ʃiən/"):[6,7], #Uespasiānus,Uespisían #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
-        ("mo.nas.'te:.ri.","/ˈmo.nʲə.ʃtʲərʲ/"):[6,7], #,monastērium,moinistir #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
+        ("mo.nis.'te:.ri.","/ˈmo.nʲə.ʃtʲərʲ/"):[6,7], #,*monistērium,moinistir #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("ho.ra.ti.'a:.n","/ˈo.rə.tʲən.de/"):[6,7], #horatiānus,oratian\dae #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("op.ta:.'ti:.w","/ˈob.tədʲ/"):[6,7], #,optātīuus,optait #DAB post-syncope/literary loan
         ("in.fi:.'ni:.t","/ˈinʲ.fʲə.nʲədʲ/"):[6,7], #,infīnītum,infinit #DAB post-syncope/literary loan
