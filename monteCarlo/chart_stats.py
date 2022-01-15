@@ -30,7 +30,7 @@ if __name__ == "__main__":
             h[tuple(points)] += 1
             if points[0] >= points[1]: problems.append((d[0], d[1], points))
             #if points == [5, 6]: print("FIVE SIXER", d[0], d[1])
-            if points == [4,6 ]: print("FOUR SIXER", d[0], d[1])
+            #if points == [4,6 ]: print("FOUR SIXER", d[0], d[1])
     for x in h:
         #if x[1]-x[0]==1: print(x, h[x])
         if x[0]<x[1]: print(x, h[x])
