@@ -253,6 +253,8 @@ if __name__ == "__main__":
     hand = {}
     for x in hand_dates.align_crashes: hand[x] = hand_dates.align_crashes[x] 
     for x in hand_dates.inconsistent: hand[x] = hand_dates.inconsistent[x]
+    for x in hand_dates.bigger_complen_syncope: hand[x] = hand_dates.bigger_complen_syncope[x]
+    #for x in hand_dates.post_lenition_fs_theory: hand[x] = hand_dates.post_lenition_fs_theory[x]
     #i = 1
     for r in raw:
         #print(i)
