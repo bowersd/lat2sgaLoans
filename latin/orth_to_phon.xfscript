@@ -1,0 +1,64 @@
+define digraphs [
+    p h -> f .o.
+    t h -> t .o.
+    c h -> k .o.
+    r h -> r 
+    ];
+
+define geminates [
+    p p -> P .o.
+    t t -> T .o.
+    c c -> K .o.
+    b b -> B .o.
+    d d -> D .o.
+    g g -> G .o.
+    m m -> M .o.
+    n n -> N .o.
+    s s -> S .o.
+    f f -> F .o.
+    r r -> R .o.
+    l l -> L .o.
+    v v -> W 
+    ];
+
+define othercons [
+     c -> k .o.
+     v -> w .o. 
+     q u -> k w .o.
+     x -> k s .o. 
+     n -> ŋ || _ [k|g]
+    ];
+
+define othervowels [
+    a e -> E .o.
+    o e -> E .o.
+    e i -> I .o.
+    e u -> e w .o.
+    a u -> a w .o.
+    u i -> u j .o.
+    y -> i 
+    ] ;
+
+define glides [
+    i -> j || .#. _ [a|e|i|o|u|A|E|I|O|U] .o.
+    i -> j || [a|e|i|o|u|A|E|I|O|U] _ [a|e|i|o|u|A|E|I|O|U]
+    ] ;
+
+define vowelLength [
+    i %: -> I .o.
+    e %: -> E .o.
+    u %: -> U .o.
+    o %: -> O .o.
+    a %: -> A 
+    ];
+
+regex [digraphs .o.
+        geminates .o.
+        othercons .o.
+        othervowels .o.
+        glides .o.
+        vowelLength .o.
+        %* -> 0
+        ];
+
+save stack orth_to_phon.xfst
