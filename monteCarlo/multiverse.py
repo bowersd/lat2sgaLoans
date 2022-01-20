@@ -101,8 +101,10 @@ def genetic_search(rates, slot_cnt, procs, *dates):
     distributions = [] #how many words in each time slot match phonotactics of interest
     changeable = [j  for j in range(len(dates)) if dates[j][1]-dates[j][0] > 1]
     rnd = 1
+    lst_update = 1
+    lst_mutate = 1
     while rnd < 121: 
-        print(rnd)
+        #print(rnd)
     #while rnd < 121 and (sum(top_probs) == 0 or any([x != y for x in top_probs for y in top_probs])): #pool can be split but unchangeable, so this is not a good convergence detection
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
@@ -111,8 +113,9 @@ def genetic_search(rates, slot_cnt, procs, *dates):
             #p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
-                if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
+                #if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                #if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
+                lst_update = rnd
                 #print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
                 time_bins =      time_bins[:loc]+[nu_gen_vit_stats[0][i]]+time_bins[loc:-1]
@@ -139,8 +142,10 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                 #p = assess_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
                     loc = top_rank(p, nu_top_probs)
-                    if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                    if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
+                    #if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                    #if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
+                    lst_update = rnd
+                    lst_mutate = rnd
                     #print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                     nu_top_probs =      nu_top_probs[:loc]+[p]+nu_top_probs[loc:-1]
                     nu_time_bins =      nu_time_bins[:loc]+[cnts]+nu_time_bins[loc:-1]
@@ -151,6 +156,7 @@ def genetic_search(rates, slot_cnt, procs, *dates):
         time_bins    = [x for x in nu_time_bins    ]
         distributions= [x for x in nu_distributions]
         rnd += 1
+    print("last updated: ", lst_update, "last mutated: ", lst_mutate)
     return (verses, top_probs, time_bins, distributions)
 
 def random_search(rates, slot_cnt, procs, *dates):
@@ -237,37 +243,43 @@ if __name__ == "__main__":
             words.append((latin, irish))
         #if (not any([0 in x and 1 in x for x in autodate.check_procs(latin_a, irish_a)])) and autodate.date(*autodate.check_procs(latin_a, irish_a))[0] < autodate.date(*autodate.check_procs(latin_a, irish_a))[1]: 
         #    dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
-        #    words.append((latin, irish))
-    x = genetic_search(hacked_prior, 7, procs, *dates)
-    #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
-    means = [0 for y in x[2][0]]
-    for i in range(len(x[2][0])):
-        means[i] = mean(*[y[i] for y in x[2]])
-    with open("model_predictions.csv", 'w') as file_out:
+            #    words.append((latin, irish))
+    meta_means = []
+    for ind in range(10):
+        print(ind)
+        x = genetic_search(hacked_prior, 7, procs, *dates)
+        #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
+        means = [0 for y in x[2][0]]
+        for i in range(len(x[2][0])):
+            means[i] = mean(*[y[i] for y in x[2]])
+        meta_means.append(means)
+        with open("model_predictions_{}.csv".format(str(ind)), 'w') as file_out:
+            file_out.write("period,model\n")
+            for i in range(len(means)+1): file_out.write(",".join((str(i), str(sum(means[:i]))))+'\n')
+        with open("model_summary_{}".format(str(ind)), 'w') as file_out:
+            file_out.write("mean p (top 15): "+str(mean(*[x[1][i] for i in range(15)]))+'\n')
+            file_out.write("mean p (all):    "+str(mean(*[x[1][i] for i in range(len(x[0]))]))+'\n')
+            file_out.write("mean bin size: "+str(means)+"\n")
+        for i in range(15):
+            with open("model_{}_".format(str(ind))+str(i), 'w') as file_out:
+                file_out.write("p: "+str(x[1][i])+'\n')
+                file_out.write("\n")
+                file_out.write("hamming distances from:\n")
+                for j in range(15):
+                    file_out.write(str(j)+": "+str(hamming(x[0][i], x[0][j]))+"\n")
+                file_out.write("\n")
+                file_out.write("time slots have these many members:\n")
+                file_out.write(str(x[2][i])+"\n")
+                for j in range(len(x[2][i])):
+                    file_out.write("In time slot "+str(j)+" ("+str(x[2][i][j])+"):\n")
+                    for k in range(len(x[0][i])):
+                        if x[0][i][k] == j: 
+                            file_out.write(words[k][0]+"\n")
+                            file_out.write(words[k][1]+"\n")
+                            file_out.write("\n")
+    with open("model_aggregate.csv", 'w') as file_out:
         file_out.write("period,model\n")
-        for i in range(len(means)+1):
-            file_out.write(",".join((str(i), str(sum(means[:i]))))+'\n')
-    with open("output_summary", 'w') as file_out:
-        file_out.write("mean p (top 15): "+str(mean(*[x[1][i] for i in range(15)]))+'\n')
-        file_out.write("mean p (all):    "+str(mean(*[x[1][i] for i in range(len(x[0]))]))+'\n')
-        file_out.write("mean bin size: "+str(means)+"\n")
-    for i in range(15):
-        with open("output_"+str(i), 'w') as file_out:
-            file_out.write("p: "+str(x[1][i])+'\n')
-            file_out.write("\n")
-            file_out.write("hamming distances from:\n")
-            for j in range(15):
-                file_out.write(str(j)+": "+str(hamming(x[0][i], x[0][j]))+"\n")
-            file_out.write("\n")
-            file_out.write("time slots have these many members:\n")
-            file_out.write(str(x[2][i])+"\n")
-            for j in range(len(x[2][i])):
-                file_out.write("In time slot "+str(j)+" ("+str(x[2][i][j])+"):\n")
-                for k in range(len(x[0][i])):
-                    if x[0][i][k] == j: 
-                        file_out.write(words[k][0]+"\n")
-                        file_out.write(words[k][1]+"\n")
-                        file_out.write("\n")
+        for i in range(len(means)+1): file_out.write(",".join((str(i), str(sum([meta_means[j][:i] for j in meta_means]/len(meta_means)))))+'\n')
     #hack_prior("albright_latin_nouns_stems_reorthed.txt")
 
 ##trial simulations
