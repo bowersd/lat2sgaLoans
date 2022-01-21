@@ -106,6 +106,40 @@ post_lenition_fs_theory = {
         ("fra.'gil.l","/ˈsro.ɣʲəl/"):[1,4], #,*fragillum,sroigel
         ("'fu:s.t","/ˈsu:st/"):[1,4], #,fūstis,súst
         }
+##f->f ... if treatment of f is trigger for [1,X], undo it 
+#alfa alfa [1, 7] CHANGE to 0,7
+#febrAri fev__re [1, 3] CHANGE to 0,3
+#fEminIn feɱ__ən [1, 4] CHANGE to 0,4
+#filosof fel_suv [1, 3] CHANGE to 0,3
+#figUr fiɣər [1, 4] CHANGE to 0,4
+#fOrm form [1, 7] CHANGE to 0,7
+#ifern ifərn [1, 7] CHANGE to 0,7
+#sapfir sa_fər [1, 7] CHANGE to 0,7
+
+##what about f>v? should it be treated as f>f?
+#_skiful eskəvəl [0, 7]
+#grIf grIv [0, 7]
+
+#Afrik__ afrəkðe [2, 7]
+#abostrof abəstrəf [6, 7]
+#kirkumfleks kirkunfləxs [6, 7]
+#kOnfeSi ko_vəs_ [6, 7]
+#kOnfiteor ku_vəd_ər [6, 7]
+#elefant eləfAnt [6, 7]
+#efrat__E efrədəðe [6, 7]
+#fatAl fAdəl [2, 4]
+#fEriAl fEr_Ol [4, 7]
+#faetonti_a f_etəntəðe [6, 7]
+#fIkul__ fIgulde [2, 7]
+#firmAment fir__mənt [3, 4]
+#infInIt infənəd [6, 7]
+#lUkifer lukəfər [6, 7]
+#oFerend of_rənd [0, 6]
+#filipianEns__ filəp___ənste [6, 7]
+#filEmOn filəɱOn [6, 7]
+#fiRadi fir_ðe [3, 7]
+#sakərfik sakərvək [2, 7]
+#stefAn stefAn [4, 7]
 
 retranscribed_or_autodate_modded = {
         ("pal.la.ˈki:.n","/ˈpal.nəg.ðe/"):[6,7], #,pallacīnus,palnac\de #DAB ex x ... but orth c indicates [g]
