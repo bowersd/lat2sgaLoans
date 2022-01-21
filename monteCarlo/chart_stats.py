@@ -20,15 +20,20 @@ if __name__ == "__main__":
     h = {(i, j):0 for i in range(8) for j in range(8)}
     problems = []
     hiatus = []
+    total = []
     for d in data:
         latin, irish = clean_transcription(d[0]), clean_transcription(d[1])
         if latin[-1] in "aeiouAEIOU" and not irish[-1] in "aeiouAEIOUə": latin = latin[:-1] #hack to enact british apocope/loss of stem vowel in addition to replacement of infl by zero suffixes
         latin, irish = needleman.align(latin, irish, 0.5, needleman.read_similarity_matrix('simMatrix.txt'))
-        if (d[0], d[1]) in hand : h[tuple(hand[(d[0], d[1])])] += 1
+        total.append(latin)
+        if (d[0], d[1]) in hand : 
+            h[tuple(hand[(d[0], d[1])])] += 1
+            total.append(" ".join((irish, str(hand[(d[0], d[1])]))))
         else: 
             points = date_nu(7, *sync_check(irish, count_sylls.count_syll(latin), count_sylls.alt_w_fin_degen(count_sylls.count_syll(latin)), procs_kludge(latin, irish, check_procs_nu(latin, irish, triggers, processes))))
             h[tuple(points)] += 1
             if points[0] >= points[1]: problems.append((d[0], d[1], points))
+            total.append(" ".join((irish, str(points))))
             #if points == [5, 6]: print("FIVE SIXER", d[0], d[1])
             #if points == [4,6 ]: print("FOUR SIXER", d[0], d[1])
     for x in h:
@@ -58,3 +63,5 @@ if __name__ == "__main__":
     with open("core_data.csv", 'w') as file_out:
         for x in holder: 
             file_out.write(",".join(x)+'\n')
+    with open("check", 'w') as file_out:
+        for t in total: file_out.write(t+'\n')
