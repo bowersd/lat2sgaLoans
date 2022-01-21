@@ -67,7 +67,7 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
         #p *= (sum_bins[j]+1)/(sum(sum_bins)+len(sum_bins))
     #chi-squared test gives probability that observed was drawn from expected
     #using iid expected distribution, could use the naive distribution
-    p *= chi2.pdf(sum([((x-(1/sum(sum_bins)))**2)/(1/sum(sum_bins)) for x in sum_bins]), len(sum_bins)-1)
+    p *= chi2.pdf(sum([(((x+1)-(1/sum(sum_bins)+len(sum_bins)))**2)/(1/sum(sum_bins)+len(sum_bins)) for x in sum_bins]), len(sum_bins)-1)
     return p
 
 def top_rank(candidate, tops):
@@ -117,8 +117,8 @@ def genetic_search(rates, slot_cnt, procs, *dates):
             #p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
-                #if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                #if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
+                if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
                 lst_update = rnd
                 #print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
@@ -146,8 +146,8 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                 #p = assess_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
                     loc = top_rank(p, nu_top_probs)
-                    #if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                    #if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
+                    if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                    if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
                     lst_update = rnd
                     lst_mutate = rnd
                     #print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
@@ -249,7 +249,7 @@ if __name__ == "__main__":
         #    dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
             #    words.append((latin, irish))
     meta_means = []
-    for ind in range(10):
+    for ind in range(1):
         print(ind)
         x = genetic_search(hacked_prior, 7, procs, *dates)
         #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
