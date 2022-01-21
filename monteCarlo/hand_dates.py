@@ -56,7 +56,7 @@ inconsistent = {
         ("a.ris.'to.te.le:s","/ˈa.rʲə.stə.təlʲ/"):[6,7], #,Aristotelēs,Aristotil #DAB literary loan
         ("fir.ˈra.di.","/ˈfʲir.ðe/"):[3,7],#,Phirradios,phir\de #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
         ("law.'ren.ti.","/ˈlaw.rʲən.tə.ðʲe"):[0,7], #,Laurentium,laurent\ide #DAB this is probably post-syncope/literary, but restriction to root makes it too short for syncope, and even if syncope did apply, stranded sonorant epenthesis could have undone it
-        ("tri.'bla:.ti.o:","/ˈtʲrʲe.vlədʲ/"):[0,3], #,*triblātiō,treblait #DAB syncope originally flagged as going wrong due to losses at end of word.
+        ("tri.'bla:.ti.o:","/ˈtʲrʲe.vlədʲ/"):[2,3], #,*triblātiō,treblait #DAB syncope originally flagged as going wrong due to losses at end of word.
         ("si.'ki.li.","/ˈʃi.kʲəl.de/"):[6,7], #,Sicilia,Sicel\de #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
         ("pu.'gla:.ri.","/ˈpo:.lə.rʲe/"):[1,3], #,*puglāria,pól\ire #DAB entered early, but the suffix got productive and exceptional to syncope
         ("ma.ke.'do.ni.","/ˈma.kʲə.ðo:n.de/"):[6,7], #,Macedonia,Maccidón\dae #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
