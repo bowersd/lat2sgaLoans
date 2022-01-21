@@ -67,7 +67,7 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
         #p *= (sum_bins[j]+1)/(sum(sum_bins)+len(sum_bins))
     #chi-squared test gives probability that observed was drawn from expected
     #using iid expected distribution, could use the naive distribution
-    p *= chi2.pdf(sum([(((x+1)-(1/sum(sum_bins)+len(sum_bins)))**2)/(1/sum(sum_bins)+len(sum_bins)) for x in sum_bins]), len(sum_bins)-1)
+    p *= chi2.pdf(sum([(((x+1)-((sum(sum_bins)+len(sum_bins))/len(sum_bins)))**2)/((sum(sum_bins)+len(sum_bins))/len(sum_bins)) for x in sum_bins]), len(sum_bins)-1)
     return p
 
 def top_rank(candidate, tops):
