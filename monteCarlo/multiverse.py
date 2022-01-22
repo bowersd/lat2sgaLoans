@@ -54,6 +54,12 @@ def tally_procs(regexen, *forms):
                 procs[i][j] = 1
     return procs
 
+def naive(top, *date_ranges):
+    h = [0 for i in range(top)]
+    for d in date_ranges:
+        for i in range(d[1]-d[0]): h[d[0]+j] += 1/(d[1]-d[0])
+    return h
+
 def chi_squared_pdf(observed, expected):
     #exact (not cumulative as in standard chi2 test) probability that observed was drawn from expected
     #commented line below uses iid expected distribution and laplace smoothing, could use the naive distribution
