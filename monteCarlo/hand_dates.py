@@ -160,7 +160,8 @@ retranscribed_or_autodate_modded = {
         ("dam.n","/ˈda.mənʲ/"):[2,7],#,damnum,dammain #EJFL: Latin should be "dam.n", damnnum
         }
 
-bigger_complen_syncope = {
-        ("tri:.n.'da:t","/ˈtʲrʲi:n.do:dʲ/"):[4,6], #,trīndātem,tríndóit #DAB just in case it wasn't British syncope
-        ("an.'da:.t","/ˈan.do:dʲ/"):[4,6], #,*andātem,andóit #DAB just in case it wasn't VL syncope from antitatem
-        }
+#syncope does not trigger palatalization in these loans, and so can't be Irish syncope
+#bigger_complen_syncope = {
+#        ("tri:.n.'da:t","/ˈtʲrʲi:n.do:dʲ/"):[4,6], #,trīndātem,tríndóit #DAB just in case it wasn't British syncope
+#        ("an.'da:.t","/ˈan.do:dʲ/"):[4,6], #,*andātem,andóit #DAB just in case it wasn't VL syncope from antitatem
+#        }

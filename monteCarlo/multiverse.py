@@ -57,7 +57,7 @@ def tally_procs(regexen, *forms):
 def naive(top, *date_ranges):
     h = [0 for i in range(top)]
     for d in date_ranges:
-        for i in range(d[1]-d[0]): h[d[0]+j] += 1/(d[1]-d[0])
+        for i in range(d[1]-d[0]): h[d[0]+i] += 1/(d[1]-d[0])
     return h
 
 def chi_squared_pdf(observed, expected):
@@ -108,7 +108,7 @@ def recombine_aux(procs, slot_cnt, *offspring):
     return (time_containers, proc_containers)
 
 
-def genetic_search(rates, slot_cnt, procs, *dates):
+def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
     ##initialization
     verses = [[d[0] for d in dates]] #date samples, initialized to earliest possible entry for all words
     top_probs = [-20 for i in range(100)] #probabilities of verses
@@ -125,6 +125,7 @@ def genetic_search(rates, slot_cnt, procs, *dates):
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
             p = assess_phonotactic_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)
+            p *= chi_squared_pdf(nu_gen_vit_stats[0][i], nallocation)
             #p = assess_phonotactic_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
@@ -154,6 +155,7 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
                 p = assess_phonotactic_prob(cnts, bin_procs, rates)
+                p *= chi_squared_pdf(cnts, nallocation)
                 #p = assess_phonotactic_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
                     loc = top_rank(p, nu_top_probs)
@@ -240,7 +242,6 @@ if __name__ == "__main__":
     hand = {}
     for x in hand_dates.align_crashes: hand[x] = hand_dates.align_crashes[x] 
     for x in hand_dates.inconsistent: hand[x] = hand_dates.inconsistent[x]
-    for x in hand_dates.bigger_complen_syncope: hand[x] = hand_dates.bigger_complen_syncope[x]
     #for x in hand_dates.post_lenition_fs_theory: hand[x] = hand_dates.post_lenition_fs_theory[x]
     #i = 1
     for r in raw:
@@ -260,9 +261,10 @@ if __name__ == "__main__":
         #    dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
             #    words.append((latin, irish))
     meta_means = []
+    naive_allocation = naive(7, *dates)
     for ind in range(1):
         print(ind)
-        x = genetic_search(hacked_prior, 7, procs, *dates)
+        x = genetic_search(hacked_prior, 7, procs, naive_allocation, *dates)
         #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
         means = [0 for y in x[2][0]]
         for i in range(len(x[2][0])):
