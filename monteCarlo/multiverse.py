@@ -54,7 +54,15 @@ def tally_procs(regexen, *forms):
                 procs[i][j] = 1
     return procs
 
-def assess_prob(sum_bins, prop_bins, prior_rates):
+def chi_squared_pdf(observed, expected):
+    #exact (not cumulative as in standard chi2 test) probability that observed was drawn from expected
+    #commented line below uses iid expected distribution and laplace smoothing, could use the naive distribution
+    #p *= chi2.pdf(sum([(((x+1)-((sum(sum_bins)+len(sum_bins))/len(sum_bins)))**2)/((sum(sum_bins)+len(sum_bins))/len(sum_bins)) for x in sum_bins]), len(sum_bins)-1)
+    chsq = 0
+    for i in range(len(observed)): chsq += ((observed[i]-expected[i])**2)/expected[i]
+    return chi2.pdf(chsq, len(observed)-1)
+
+def assess_phonotactic_prob(sum_bins, prop_bins, prior_rates):
     p = 1
     for j in range(len(sum_bins)):
         binomial_results = []
@@ -65,9 +73,6 @@ def assess_prob(sum_bins, prop_bins, prior_rates):
         #print(product(*binomial_results))
         p *= product(*binomial_results)
         #p *= (sum_bins[j]+1)/(sum(sum_bins)+len(sum_bins))
-    #chi-squared test gives probability that observed was drawn from expected
-    #using iid expected distribution, could use the naive distribution
-    p *= chi2.pdf(sum([(((x+1)-((sum(sum_bins)+len(sum_bins))/len(sum_bins)))**2)/((sum(sum_bins)+len(sum_bins))/len(sum_bins)) for x in sum_bins]), len(sum_bins)-1)
     return p
 
 def top_rank(candidate, tops):
@@ -113,8 +118,8 @@ def genetic_search(rates, slot_cnt, procs, *dates):
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
-            p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)
-            #p = assess_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
+            p = assess_phonotactic_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)
+            #p = assess_phonotactic_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
                 if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
@@ -142,8 +147,8 @@ def genetic_search(rates, slot_cnt, procs, *dates):
                     cnts[k] += 1
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
-                p = assess_prob(cnts, bin_procs, rates)
-                #p = assess_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
+                p = assess_phonotactic_prob(cnts, bin_procs, rates)
+                #p = assess_phonotactic_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
                     loc = top_rank(p, nu_top_probs)
                     if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
@@ -188,7 +193,7 @@ def random_search(rates, slot_cnt, procs, *dates):
                     cnts[k] += 1
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
-                p = assess_prob(cnts, bin_procs, rates) #assess
+                p = assess_phonotactic_prob(cnts, bin_procs, rates) #assess
                 if any([p>x for x in nu_top_probs]): #update pool
                     loc = top_rank(p, nu_top_probs)
                     #print("{0} overturns {1} (i:{2}, rnd:{3})".format(p, tops[loc], loc, i))
