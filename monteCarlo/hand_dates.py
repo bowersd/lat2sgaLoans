@@ -105,6 +105,15 @@ post_lenition_fs_theory = {
         ("'fre:.n","/ˈʃrʲiən/"):[1,4], #,frēnum,srían
         ("fra.'gil.l","/ˈsro.ɣʲəl/"):[1,4], #,*fragillum,sroigel
         ("'fu:s.t","/ˈsu:st/"):[1,4], #,fūstis,súst
+        #f->f
+        ("'al.fa","/ˈal.fa/",):[0,7], #alpha,alfa
+        ("fe.'bra:.ri.","/ˈfʲe.vre/",):[0,3], #*febrārius,Febrae
+        ("fe:.mi.'ni:.n","/ˈfʲe.ɱʲən/",):[0,4], #fēminīnus,feimen 1
+        ("fi.'lo.so.f","/ˈfʲel.suv/",):[0,3], #philosophus,felsub
+        ("'fi.gu:.r","/ˈfʲi.ɣər/"):[0,4], #figūra,figor
+        ("ˈfo:r.m","/ˈforʲmʲ/",):[0,7], #fōrma,foirm
+        ("i.ˈfer.n","/ˈi.fʲərn/",):[0,7], #*ifernum,ifern
+        ("'sap.fir","/ˈsa.fʲər/",):[0,7], #sapphir,saphir
         }
 ##f->f ... if treatment of f is trigger for [1,X], undo it 
 #alfa alfa [1, 7] CHANGE to 0,7
@@ -120,6 +129,7 @@ post_lenition_fs_theory = {
 #_skiful eskəvəl [0, 7]
 #grIf grIv [0, 7]
 
+#Unaffected by f-liberation
 #Afrik__ afrəkðe [2, 7]
 #abostrof abəstrəf [6, 7]
 #kirkumfleks kirkunfləxs [6, 7]
