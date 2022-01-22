@@ -108,7 +108,7 @@ def genetic_search(rates, slot_cnt, procs, *dates):
     lst_update = 1
     lst_mutate = 1
     while rnd < 121: 
-        #print(rnd)
+        print(rnd)
     #while rnd < 121 and (sum(top_probs) == 0 or any([x != y for x in top_probs for y in top_probs])): #pool can be split but unchangeable, so this is not a good convergence detection
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
