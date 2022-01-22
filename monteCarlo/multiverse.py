@@ -125,7 +125,7 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
             p = assess_phonotactic_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)
-            p *= chi_squared_pdf(nu_gen_vit_stats[0][i], nallocation)
+            #p *= chi_squared_pdf(nu_gen_vit_stats[0][i], nallocation)
             #p = assess_phonotactic_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
@@ -155,7 +155,7 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
                     s.append(k)
                     bin_procs[k] = list(map(operator.add, procs[j], bin_procs[k]))
                 p = assess_phonotactic_prob(cnts, bin_procs, rates)
-                p *= chi_squared_pdf(cnts, nallocation)
+                #p *= chi_squared_pdf(cnts, nallocation)
                 #p = assess_phonotactic_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
                     loc = top_rank(p, nu_top_probs)
