@@ -118,8 +118,10 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
     rnd = 1
     lst_update = 1
     lst_mutate = 1
+    mutated = True
+    mut_rt = 0.05
     while rnd < 121: 
-        print(rnd)
+        #print(rnd)
     #while rnd < 121 and (sum(top_probs) == 0 or any([x != y for x in top_probs for y in top_probs])): #pool can be split but unchangeable, so this is not a good convergence detection
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
@@ -129,8 +131,8 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
             #p = assess_phonotactic_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
-                if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
+                #if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                #if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
                 lst_update = rnd
                 #print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
@@ -141,13 +143,17 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
         nu_top_probs    = [x for x in top_probs    ]
         nu_time_bins    = [x for x in time_bins    ]
         nu_distributions= [x for x in distributions]
+        if not mutated and mut_rt > 0.0: mut_rt -= 0.001
+        mutated = False
         for v in verses:
             for i in range(1000):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
                 s = [] #tracking individual slot placements
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
                 #change = random.sample(changeable, len(changeable))
-                change = random.sample(changeable, len(changeable)//rnd)
+                if rnd == 1: change = random.sample(changeable, len(changeable))
+                if rnd > 1: change = random.sample(changeable, round(len(changeable)*mut_rt))
+                #change = random.sample(changeable, len(changeable)//rnd)
                 for j in range(len(dates)):  #sample
                     k = v[j]
                     if j in change: k = random.randrange(dates[j][0], dates[j][1])
@@ -158,9 +164,10 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
                 #p *= chi_squared_pdf(cnts, nallocation)
                 #p = assess_phonotactic_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
+                    mutated = True
                     loc = top_rank(p, nu_top_probs)
-                    if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                    if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
+                    #if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                    #if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
                     lst_update = rnd
                     lst_mutate = rnd
                     #print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
@@ -262,7 +269,7 @@ if __name__ == "__main__":
             #    words.append((latin, irish))
     meta_means = []
     naive_allocation = naive(7, *dates)
-    for ind in range(1):
+    for ind in range(5):
         print(ind)
         x = genetic_search(hacked_prior, 7, procs, naive_allocation, *dates)
         #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
