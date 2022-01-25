@@ -143,7 +143,9 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
         nu_top_probs    = [x for x in top_probs    ]
         nu_time_bins    = [x for x in time_bins    ]
         nu_distributions= [x for x in distributions]
-        if not mutated and mut_rt > 0.0: mut_rt -= 0.001
+        if not mutated : 
+            mut_rt = mut_rt/2
+            print(rnd, mut_rt)
         mutated = False
         for v in verses:
             for i in range(1000):
