@@ -110,7 +110,7 @@ def recombine_aux(procs, slot_cnt, *offspring):
 
 def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
     ##initialization
-    verses = [[d[0] for d in dates]] #date samples, initialized to earliest possible entry for all words
+    verses = [[random.randrange(d[0], d[1]) for d in dates]] #date samples, initialized to random values
     top_probs = [-20 for i in range(100)] #probabilities of verses
     time_bins = [] #how many words in each time slot by verse
     distributions = [] #how many words in each time slot match phonotactics of interest
