@@ -119,10 +119,12 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
     lst_update = 1
     lst_mutate = 1
     mutated = True
+    recombd = True
     mut_rt = 0.05
-    while rnd < 71: 
+    while (recombd or mutated) or round(len(changeable))*mut_rt >= 1: 
         #print(rnd)
     #while rnd < 121 and (sum(top_probs) == 0 or any([x != y for x in top_probs for y in top_probs])): #pool can be split but unchangeable, so this is not a good convergence detection
+        recombd = False
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
@@ -134,6 +136,7 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
                 #if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 #if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
                 lst_update = rnd
+                recombd = True
                 #print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
                 time_bins =      time_bins[:loc]+[nu_gen_vit_stats[0][i]]+time_bins[loc:-1]
@@ -271,7 +274,7 @@ if __name__ == "__main__":
             #    words.append((latin, irish))
     meta_means = []
     naive_allocation = naive(7, *dates)
-    for ind in range(5):
+    for ind in range(10):
         print(ind)
         x = genetic_search(hacked_prior, 7, procs, naive_allocation, *dates)
         #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
