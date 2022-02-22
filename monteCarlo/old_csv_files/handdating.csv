@@ -1,0 +1,53 @@
+Word,Dustin's Hand Date,My Hand Date,Concensus,Description of Date,Note,Exclusion Reason
+aipgitir,"0,2 / 2,4","2,4","2,4","After Len, Before Com",The lenition of /k/ to /G/ is exceptional!,
+Abimelech,-,,-,,EXCLUDED,Hebrew
+Abrachae,-,,-,,EXCLUDED,Hebrew
+Abraham,-,,-,,EXCLUDED,Hebrew
+Achitofel,"5,6","5,6",-,After Syncope,EXCLUDED,Hebrew
+acrision-dae,"5,6 / 2,4","5,6","5,6",After Syncope,Latin length of o was not recognized.,
+éigept-ach-dae,"5,6 / 5,6 /1,5",-,"[5,6 if kept]",,EXCLUDED,Derivative
+emil-én-dae,"5,6 / 4,5","5,6","5,6",After Syncope,Change Latin stem!,
+aenee-dae,-,"5,6","5,6",After Syncope,"The Greek Latin Aeneadae is reanalyzed as Aenee+dae. Not derived immediately from Aeneas. No omission. ;;;; LITERARY LOANS: Saying something is a literary loan depends on the context of attestation and frequency of attestation. Many 5,6 words are words that are found in Sg. (850 - 200 years after Syncope), in a grammatical context glossing particular examples from Virgil. Very specific and once-off context. Derivatives are only excluded if the root/stem is attested as such in Irish e.g. éigept-ach-dae ~ éigept). They are not excluded if the stems are different, e.g. Aeneas vs aenee-dae.",
+Aeneas,"5,6","5,6","5,6",After Syncope,,
+eolens-tae,"0,4 / 5,6","0,5 / 5,6 (= 0,6?)","4,6",Either Before or After Syncope,"It is essentially impossible to tell when this was borrowed. The form /ewlensX/ would have become /ewlnsX/ by syncope and the /lns/ cluster would have been resolved to /l@ns/ by insertion of epenthetic vowel. The only requirement is that the word is borrowed when /ns/ is possible. If that is a post-syncope trait, then it is after syncope.",
+Ethioip,"2,6","2,6","2,6",After Len,The preservation of /p/ as /b/ (British lenition) rather than /p/>/f/ or/p/>/b/>v/,
+Alaxander,"5,6","5,6","5,6",After Syncope,,
+aille,"0,3 / 0,4","0,3","0,3",Before Harmony,alel_ia > alel_i_ [SUFSUB]> alelui_ [SHORT] > aleloi_ [HARM] > aliloi [APOC] > alil_ [DEDIPHTH] > alile [SHORT 2] > alle /allje/ [SYNC],
+Annae,"0,3","0,3","0,3",Before Harmony,Anani_s > Ananias [SUFSUB] > Ananiah [LEN] > Ananeah [HARM] > Anane [APOC] > Anne [SYNC],
+antepenuilt,"5,6","5,6","5,6",After Syncope,Irish stem has no length.,
+an[t]-chríst,-,-,-,,EXCLUDED,Derivative
+Anton-án,"5,6","5,6","5,6",After Syncope,"Change Irish stem to Antón-án; Modern Irish has Antóin, Antónán.",
+argumeint,"5,6","5,6","5,6",After Syncope,Latin length of u was not recognized.,
+artecal/articol,"5,6","5,6","5,6",After Syncope,The palatalization of /rt/ is a spelling pronunciation [?],
+atom,"2,6","2,6","2,6",After Len,,
+augtor-tás,"5,6/3,6",-,"[5,6 if kept]",,Clearly derived within Irish. -tás is just etymological orthography but it was pronounced -thás.,
+úsaile,-,"5,6","5,6",After Syncope,/xs/ > /s/ is a known Vulgar Latin change,
+ochsal,"4,6","4,6","4,6",During or After Syncope,,
+baithes,"0,2","0,2","0,2",Before Len,The preservation of s is not a problem if the derivation is /sm/>/ss/ (before lenition) > /s/ (by lenition),
+bendach-aid,-,-,,,"see bendacht (0,6); EXCLUDED",Derivative
+Beniamin,-,-,,,NOTE: NO j dropping - Autodate does that erroneously; EXCLUDED,Hebrew
+berens-tae,"0,4 / 5,6","0,5 / 5,6 (= 0,6?)","4,6",Either Before or After Syncope,"It is essentially impossible to tell when this was borrowed. The form /berensX would have become /berns/ by syncope and the /lns/ cluster would have been resolved to /r@ns/ by insertion of epenthetic vowel. The only requirement is that the word is borrowed when /ns/ is possible. If that is a post-syncope trait, then it is after syncope. Note that I assume that Beroensis was /bere:nsis/ or /berensis/ in Vulgar Latin; cf. the pronunciation of <ae> or <oe> in other loans.",
+bethelem-dae,-,-,-,,EXCLUDED,Hebrew
+bissex,"4,6/0,3",?,"4,6",,,
+cadch-ach,"0,2","0,2","0,2",Before Len,,
+Caiphas,-,-,-,,EXCLUDED,Hebrew
+caplait,"0,4","0,4","0,4",Before Comp,,
+carbuncail,"5,6","0,5 / 5,6 (= 0,6?)","4,6",Either Before or After Syncope,"It is essentially impossible to tell when this was borrowed. The form /karbunkul/ would have become /karbnkul/ by syncope and the /bnk/ cluster would have been resolved to /b@nk/ by insertion of epenthetic vowel. The only requirement is that the word is borrowed when /nk/ is possible. If that is a post-syncope trait, then it is after syncope.",
+car-mocol,-,-,-,,EXCLUDED,Derivative
+cathchoimn-id,"0,2","0,2","0,2",Before Len,,
+cinteir/centir,"4,6","5,6","4,6",After Syncope,Change Irish stem to /kent@r/; /nt/ is made legal by syncope.,
+Cheruphín,-,-,-,,EXCLUDED,Hebrew
+Iruphín,-,-,-,,EXCLUDED,Hebrew
+circunflex,"5,6","5,6","5,6",After Syncope,/nf/ only allowed after syncope. ,
+colum(m),"3,6","0,6","3,6",,,
+com(m)an,"3,4","2,3","3,4","After Harm, Before Com",,
+comparait,"2,4/5,6",,"5,6",,"comparait, posit, infinit, superlait, optait, (Irish stem: indid-it). Shortening is not real - or in otherwords, it is real in whichever word it originally applied to (e.g. opt-ait), and then the suffix was applied to other words where the shortening appears anomalous.",
+Constantinopoil,"5,6","5,6","5,6",After Syncope,,
+consal,"5,6","4,6","4,6",,,
+cosm-aid,"3,5","0,5","3,5",Before Syncope,Shortening of o: to o.,
+ciclas-tae,"5,6/3,6","2,6","3,6",After Harm,,
+dammain,?,?,"0,6",After Lenition,Change Latin stem to damnum,
+derbens-tae,?,"0,5 / 5,6 (= 0,6?)","4,6",Either Before or After Syncope,"It is essentially impossible to tell when this was borrowed. The form /derbensX/ would have become /derbnsX/ by syncope and the /bns/ cluster would have been resolved to /b@ns/ by insertion of epenthetic vowel. The only requirement is that the word is borrowed when /ns/ is possible. If that is a post-syncope trait, then it is after syncope.",
+deutornim,"5,6",?,"5,6",,,
+diaithir,"0,2 / 5,6",?,-,,EXCLUDE,
+dict-atóir,"5,6","3,6","5,6",After Comp,?,
