@@ -109,10 +109,10 @@ post_lenition_fs_theory = {
         ("'al.fa","/ˈal.fa/",):[0,7], #alpha,alfa
         ("fe.'bra:.ri.","/ˈfʲe.vre/",):[0,3], #*febrārius,Febrae
         ("fe:.mi.'ni:.n","/ˈfʲe.ɱʲən/",):[0,4], #fēminīnus,feimen 1
-        ("fi.'lo.so.f","/ˈfʲel.suv/",):[0,3], #philosophus,felsub
+        ("fi.'lo.so.f","/ˈfʲel.suv/",):[0,3], #philosophus,felsub  ----> or 2,3 if the survival of medial f is indicative of post-lenition (otherwise f in this position would likely have disappeared)
         ("'fi.gu:.r","/ˈfʲi.ɣər/"):[0,4], #figūra,figor
         ("ˈfo:r.m","/ˈforʲmʲ/",):[0,7], #fōrma,foirm
-        ("i.ˈfer.n","/ˈi.fʲərn/",):[0,7], #*ifernum,ifern
+        ("i.ˈfer.n","/ˈi.fʲərn/",):[0,7], #*ifernum,ifern ----> or 2,3 if the survival of medial f is indicative of post-lenition (otherwise f in this position would likely have disappeared)
         ("'sap.fir","/ˈsa.fʲər/",):[0,7], #sapphir,saphir
         }
 ##f->f ... if treatment of f is trigger for [1,X], undo it 
