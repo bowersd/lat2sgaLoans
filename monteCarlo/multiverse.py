@@ -110,7 +110,7 @@ def recombine_aux(procs, slot_cnt, *offspring):
 
 def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
     ##initialization
-    verses = [[d[0] for d in dates]] #date samples, initialized to earliest possible entry for all words
+    verses = [[random.randrange(d[0], d[1]) for d in dates]] #date samples, initialized to random values
     top_probs = [-20 for i in range(100)] #probabilities of verses
     time_bins = [] #how many words in each time slot by verse
     distributions = [] #how many words in each time slot match phonotactics of interest
@@ -118,9 +118,13 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
     rnd = 1
     lst_update = 1
     lst_mutate = 1
-    while rnd < 121: 
-        print(rnd)
+    mutated = True
+    recombd = True
+    mut_rt = 0.05
+    while (recombd or mutated) or round(len(changeable))*mut_rt >= 1: 
+        #print(rnd)
     #while rnd < 121 and (sum(top_probs) == 0 or any([x != y for x in top_probs for y in top_probs])): #pool can be split but unchangeable, so this is not a good convergence detection
+        recombd = False
         nu_gen = recombine(20, [x for x in verses])
         nu_gen_vit_stats = recombine_aux(procs, slot_cnt, *nu_gen)
         for i in range(len(nu_gen)):
@@ -129,9 +133,10 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
             #p = assess_phonotactic_prob(nu_gen_vit_stats[0][i], nu_gen_vit_stats[1][i], rates)-(kullbackleibler([(x+1)/(sum(nu_gen[i])+7) for x in nu_gen[i]], [1/len(nu_gen[i]) for x in nu_gen[i]]))
             if any([p>x for x in top_probs]) and nu_gen[i] not in verses: #update pool
                 loc = top_rank(p, top_probs)
-                if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
+                #if len(verses)<100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                #if len(verses)>=100: print("RECOMBIN  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(nu_gen[i], verses[loc])))
                 lst_update = rnd
+                recombd = True
                 #print("RECOMBIN  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
                 top_probs =      top_probs[:loc]+[p]+top_probs[loc:-1]
                 time_bins =      time_bins[:loc]+[nu_gen_vit_stats[0][i]]+time_bins[loc:-1]
@@ -141,13 +146,19 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
         nu_top_probs    = [x for x in top_probs    ]
         nu_time_bins    = [x for x in time_bins    ]
         nu_distributions= [x for x in distributions]
+        if not mutated : 
+            mut_rt = mut_rt/2
+            print(rnd, mut_rt)
+        mutated = False
         for v in verses:
             for i in range(1000):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
                 s = [] #tracking individual slot placements
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
                 #change = random.sample(changeable, len(changeable))
-                change = random.sample(changeable, len(changeable)//rnd)
+                if rnd == 1: change = random.sample(changeable, len(changeable))
+                if rnd > 1: change = random.sample(changeable, round(len(changeable)*mut_rt))
+                #change = random.sample(changeable, len(changeable)//rnd)
                 for j in range(len(dates)):  #sample
                     k = v[j]
                     if j in change: k = random.randrange(dates[j][0], dates[j][1])
@@ -158,9 +169,10 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
                 #p *= chi_squared_pdf(cnts, nallocation)
                 #p = assess_phonotactic_prob(cnts, bin_procs, rates)-(kullbackleibler([(x+1)/(sum(cnts)+7) for x in cnts], [1/len(cnts) for x in cnts])) #assess
                 if any([p>x for x in nu_top_probs]) and s not in nu_verses: #update pool
+                    mutated = True
                     loc = top_rank(p, nu_top_probs)
-                    if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
-                    if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
+                    #if len(verses)<100: print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
+                    #if len(verses)>=100: print("MUTATION  overturns {1} (p:{0}, rnd:{2}, ham:{3})".format(p, loc, rnd, hamming(s, verses[loc])))
                     lst_update = rnd
                     lst_mutate = rnd
                     #print("MUTATION  overturns {1} (p:{0}, rnd:{2})".format(p, loc, rnd))
@@ -221,13 +233,13 @@ phonotactics = [#what to look for in Latin
         re.compile('((?<!m)[Pp])|((?<!n)[Ff])'), #missing phonemes what about [f:]? contextual carve-outs to allow cluster detection
         re.compile('((?<=[aeiouAEIOU])(([tkdg](?![rlmn]))|[bm]))'), #lenition excluding compensatory lengthening
         #re.compile('^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$'), #monosyllable affection -> non-low short vowel 
-        re.compile('((^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO]))))'), #mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH]) (weakly? correlated with trisyllables) ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
+        re.compile('((st)|(^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO]))))'), #st and mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH]) (weakly? correlated with trisyllables) ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
         #re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$'), #disyllables (not correlated with anything in Irish)
         re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou]'), #trisyllables or greater (syncope-adjacent)
         re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU])|([aeiouAEIOU][tkdg][rlmn]))'), #long vowels in non-initial syllables OR lengthening clusters (shortening/complen-adjacent, a bit correlated with trisyllables due to length overlap)
         #re.compile('[AEIOU]'), #long vowels (shortening/complen-adjacent)
         #re.compile('[aeiouAEIOU][tkdg][rlmn]'), #compensatory lengthening ... moved to the shortening/complen test (long vowels in non-initial syllables
-        re.compile('(st|mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics... st phonotactics are different temporally though...
+        re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope phonotactics
         ]
 
 hacked_prior = [0.2711864406779661, 0.5747303543913713, 0.1997945557267591, 0.1561376476630714, 0.37493579866461224, 0.17565485362095531]
@@ -262,7 +274,7 @@ if __name__ == "__main__":
             #    words.append((latin, irish))
     meta_means = []
     naive_allocation = naive(7, *dates)
-    for ind in range(1):
+    for ind in range(10):
         print(ind)
         x = genetic_search(hacked_prior, 7, procs, naive_allocation, *dates)
         #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
@@ -296,7 +308,7 @@ if __name__ == "__main__":
                             file_out.write("\n")
     with open("model_aggregate.csv", 'w') as file_out:
         file_out.write("period,model\n")
-        for i in range(len(means)+1): file_out.write(",".join((str(i), str(sum([meta_means[j][:i] for j in range(len(meta_means))]/len(meta_means)))))+'\n')
+        for i in range(len(means)+1): file_out.write(",".join((str(i), str(sum([meta_means[j][:i] for j in range(len(meta_means))])/len(meta_means))))+'\n')
     #hack_prior("albright_latin_nouns_stems_reorthed.txt")
 
 ##trial simulations
