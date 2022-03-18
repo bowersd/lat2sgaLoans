@@ -13,7 +13,8 @@ if __name__ == "__main__":
     #   column[1] is phonological irish form, 
     #   column[2] is orthographic latin word (don't worry about replacing macrons)
     #   column[3] is orthographic irish word (don't worry about replacing acute accents)
-    data = read_in(sys.argv[1]) 
+    data = read_in(sys.argv[1])[1:] 
+    #data = [d for d in data if "McManus" in d[4]]
     hand = {}
     for x in hand_dates.align_crashes: hand[x] = hand_dates.align_crashes[x] 
     for x in hand_dates.inconsistent: hand[x] = hand_dates.inconsistent[x]
@@ -34,6 +35,8 @@ if __name__ == "__main__":
             h[tuple(points)] += 1
             if points[0] >= points[1]: problems.append((d[0], d[1], points))
             total.append(" ".join((irish, str(points))))
+            #if points[1] == 7: print(points, d[0:4])
+            #if points == [3, 4]: print("ThREE FOURER", d)
             #if points == [5, 6]: print("FIVE SIXER", d[0], d[1])
             #if points == [4,6 ]: print("FOUR SIXER", d[0], d[1])
     for x in h:
