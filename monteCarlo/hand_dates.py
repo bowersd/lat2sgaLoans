@@ -34,7 +34,8 @@ align_crashes = {
         ("pre.'di:.k","/ˈpʲrʲið.xəðʲ/"):[1,2], #,*predīcō,pridch\aid #DAB: misalignment put the k with <d> instead of [x]
 }
 inconsistent = {
-        ("mas.ku.'li:.n","/ˈma.sku.lʲən.de/"):[6,7] #,masculīnus,masculin\dae,Sg. #valuing lack of syncope over potential orthographic omission of length
+        ("ko:n.'fes.si.o:","/ˈko.vəʃ/"):[0,5], #,cōnfessiō,cobais,"Ml.,MG" #nf>v is pre-syncope. post-syncope date was triggered by aggressive British apocope, so disregarding 
+        ("mas.ku.'li:.n","/ˈma.sku.lʲən.de/"):[6,7], #,masculīnus,masculin\dae,Sg. #valuing lack of syncope over potential orthographic omission of length
         ("'no.ta:.ri","/ˈno.də.rʲe/"):[2,3], #,notārius,not/aire,Wb. #lack of syncope is due to (later) exceptionality of -aire
         ("fe:.ri.'a:.l","/ˈfʲe:.ro:lʲ/"):[4,7], #,fēriālis,féróil #DAB if the mapping were from the original Latin, [i] would be lost by syncope. But [a:]>[o:] shows it came through British Latin, where /i/ in hiatus became [j] (there was also British syncope), so Irish syncope actually had no vowel to target when this word came in.
         ("pa.le:s.'ti:.na","/ˈpa.lə.ʃtʲə.na/"):[6,7], #Palaestīna,Palastina  #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
