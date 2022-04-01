@@ -34,7 +34,7 @@ align_crashes = {
         ("pre.'di:.k","/ˈpʲrʲið.xəðʲ/"):[1,2], #,*predīcō,pridch\aid #DAB: misalignment put the k with <d> instead of [x]
 }
 inconsistent = {
-        ("de:.bre.'ka:.ti.o:","/ˈdʲe.bʲrʲə.go:dʲ/"):[5,7], #,dēprecātiō,deiprecóit,McManus/Other #DAB not inconsistent, but there's a chance this syncopated to debrgo:d and then became debr@go:d
+        ("de:.bre.'ka:.ti.o:","/ˈdʲe.bʲrʲə.go:dʲ/"):[4,7], #,dēprecātiō,deiprecóit,McManus/Other #DAB not inconsistent, but there's a chance this syncopated to debrgo:d and then became debr@go:d
         ("ko:n.'fes.si.o:","/ˈko.vəʃ/"):[0,5], #,cōnfessiō,cobais,"Ml.,MG" #nf>v is pre-syncope. post-syncope date was triggered by aggressive British apocope, so disregarding 
         ("mas.ku.'li:.n","/ˈma.sku.lʲən.de/"):[6,7], #,masculīnus,masculin\dae,Sg. #valuing lack of syncope over potential orthographic omission of length
         ("'no.ta:.ri","/ˈno.də.rʲe/"):[2,3], #,notārius,not/aire,Wb. #lack of syncope is due to (later) exceptionality of -aire
