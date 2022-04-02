@@ -274,13 +274,13 @@ if __name__ == "__main__":
             #    words.append((latin, irish))
     meta_means = []
     naive_allocation = naive(7, *dates)
-    for ind in range(10):
+    for ind in range(1):
         print(ind)
         x = genetic_search(hacked_prior, 7, procs, naive_allocation, *dates)
         #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
         means = [0 for y in x[2][0]]
         for i in range(len(x[2][0])):
-            means[i] = mean(*[y[i] for y in x[2]])
+           means[i] = mean(*[y[i] for y in x[2]])
         meta_means.append(means)
         with open("model_predictions_{}.csv".format(str(ind)), 'w') as file_out:
             file_out.write("period,model\n")
@@ -308,7 +308,7 @@ if __name__ == "__main__":
                             file_out.write("\n")
     with open("model_aggregate.csv", 'w') as file_out:
         file_out.write("period,model\n")
-        for i in range(len(means)+1): file_out.write(",".join((str(i), str(sum([meta_means[j][:i] for j in range(len(meta_means))])/len(meta_means))))+'\n')
+        for i in range(len(means)+1): file_out.write(",".join((str(i), str(sum([sum(meta_means[j][:i]) for j in range(len(meta_means))])/len(meta_means))))+'\n')
     #hack_prior("albright_latin_nouns_stems_reorthed.txt")
 
 ##trial simulations
