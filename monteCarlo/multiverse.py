@@ -238,7 +238,7 @@ phonotactics = [#what to look for in Latin
         re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou]'), #trisyllables or greater (syncope-adjacent)
         re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU])|([aeiouAEIOU][tkdg][rlmn]))'), #long vowels in non-initial syllables OR lengthening clusters (shortening/complen-adjacent, a bit correlated with trisyllables due to length overlap)
         #re.compile('[AEIOU]'), #long vowels (shortening/complen-adjacent)
-        #re.compile('[aeiouAEIOU][tkdg][rlmn]'), #compensatory lengthening ... moved to the shortening/complen test (long vowels in non-initial syllables
+        #re.compile('[aeiouAEIOU][tkdg][rlmn]'), #compensatory lengthening ... moved to the shortening/complen test (long vowels in non-initial syllables)
         re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope phonotactics
         ]
 
@@ -247,7 +247,7 @@ hacked_prior = [0.2711864406779661, 0.5747303543913713, 0.1997945557267591, 0.15
 #}
 
 if __name__ == "__main__":
-    raw = autodate.read_in(sys.argv[1])
+    raw = autodate.read_in(sys.argv[1])[1:]
     dates = []
     procs = []
     words = []
