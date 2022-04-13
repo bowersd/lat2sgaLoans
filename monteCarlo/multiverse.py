@@ -276,7 +276,7 @@ if __name__ == "__main__":
             #    words.append((latin, irish))
     meta_means = []
     naive_allocation = naive(7, *dates)
-    for ind in range(2):
+    for ind in range(10):
         print(ind)
         x = genetic_search(hacked_prior, 7, procs, naive_allocation, *dates)
         #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
