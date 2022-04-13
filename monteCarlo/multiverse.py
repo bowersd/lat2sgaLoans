@@ -32,7 +32,7 @@ def product(*args): return reduce(operator.mul, [a for a in args], 1)
 
 def mean(*ns): return sum(ns)/len(ns)
 
-def stdev(*ns): return math.sqrt(mean(*[(ns[x]-mean(*ns)**2) for x in range(len(ns))])) #not performing bessel's correction (decrease denom by 1) since we have a complete sample
+def stdev(*ns): return math.sqrt(mean(*[(ns[x]-mean(*ns))**2 for x in range(len(ns))])) #not performing bessel's correction (decrease denom by 1) since we have a complete sample
 
 def hamming(v1, v2):
     c = 0
