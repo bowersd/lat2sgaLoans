@@ -13,7 +13,7 @@ def tikz(file_out, *lines):
     with open(file_out, 'w') as fout:
         fout.write("\documentclass{standalone}"+"\n")
         fout.write("\\usepackage{tikz}"+"\n")
-        fout.write("\begin{document}"+"\n")
+        fout.write("\\begin{document}"+"\n")
         fout.write("\\begin{tikzpicture}"+"\n")
         for l in lines:
             fout.write(l)
