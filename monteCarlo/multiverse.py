@@ -307,7 +307,7 @@ if __name__ == "__main__":
                             file_out.write(words[k][0]+"\n")
                             file_out.write(words[k][1]+"\n")
                             file_out.write("\n")
-    with open("aggregated_models_mean.csv", 'w') as file_out:
+    with open("aggregated_models.csv", 'w') as file_out:
         file_out.write("period,mean,std"+",".join(["model"+str(i) for i in range(len(meta_means))])+"\n")
         for i in range(len(means)+1): file_out.write(",".join((str(i), str(mean(*[meta_means[j][i] for j in range(len(meta_means))])), str(stdev(*[meta_means[j][i] for j in range(len(meta_means))])))+tuple([str(meta_means[j][i]) for j in range(len(meta_means))]))+'\n')
     #hack_prior("albright_latin_nouns_stems_reorthed.txt")
