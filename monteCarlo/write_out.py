@@ -1,11 +1,12 @@
 
-def blocks(*num_pairs):
+def blocks(*num_seqs):
     h = []
     edge = 0.0
-    for n in num_pairs:
-        h.append("\draw[fill=black!50]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format(edge, edge+n[0], n[0]))
-        h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(n[0]/2)-(n[1]/2)), (edge+(n[0]/2)+(n[1]/2)), n[1]))
-        edge += n[0]
+    for s in num_seqs:
+        h.append("\draw[fill=black!50]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format(edge, edge+s[0], s[0]))
+        h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(s[0]/2)-(s[1]/2)), (edge+(s[0]/2)+(s[1]/2)), s[1]))
+        for x in s[2:]: h.append("\draw[fill=black!100,opacity=0.5]({0}pt,{1}pt) circle (5pt);\n".format((edge+(s[0]/2)), x))
+        edge += s[0]
     return h
 
 def tikz(file_out, *lines):
