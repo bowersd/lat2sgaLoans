@@ -10,6 +10,7 @@ import autodate
 import needleman
 import hand_dates
 import count_sylls
+import write_out
 #from hackydata import *
 
 #[x, y...] #FORMS
