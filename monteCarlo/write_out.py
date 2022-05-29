@@ -23,7 +23,7 @@ def blocks(*num_seqs):
         h.append("\draw({0}pt,0) rectangle ({1}pt, {2}pt);\n".format(edge, edge+num_seqs[i][0], num_seqs[i][0]))
         h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(num_seqs[i][0]/2)-(num_seqs[i][1]/2)), (edge+(num_seqs[i][0]/2)+(num_seqs[i][1]/2)), num_seqs[i][1]))
         for x in s[2:]: h.append("\draw({0}pt,{1}pt) circle (1pt);\n".format((edge+(num_seqs[i][0]/2)), x))
-        boiler.append("\draw ({0}, -36pt) node {\huge {1}};".format(edge+(s[0]/2), names[i]))
+        boiler.append("\draw ({0}, -36pt) node {\huge {1}};".format(edge+(num_seqs[i][0]/2), names[i]))
         edge += num_seqs[i][0]
     return boiler + h
 
@@ -50,9 +50,9 @@ def logblocks(*num_seqs):
             ]
     for i in range(len(num_seqs)):
         h.append("\draw({0}cm,0) rectangle ({1}cm, {2}cm);\n".format(edge, edge+math.log(num_seqs[i][0],2), math.log(num_seqs[i][0],2)))
-        h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(num_seqs[i][0]/2)-(num_seqs[i][1]/2)), (edge+(num_seqs[i][0]/2)+(num_seqs[i][1]/2)), num_seqs[i][1]))
-        for x in s[2:]: h.append("\draw({0}pt,{1}pt) circle (1pt);\n".format((edge+(num_seqs[i][0]/2)), x))
-        boiler.append("\draw ({0}, -36pt) node {\huge {1}};".format(edge+(s[0]/2), names[i]))
+        h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(math.log(num_seqs[i][0], 2)/2)-(math.log(num_seqs[i][1], 2)/2)), (edge+(math.log(num_seqs[i][0], 2)/2)+(math.log(num_seqs[i][1], 2)/2)), math.log(num_seqs[i][1], 2)))
+        for x in s[2:]: h.append("\draw({0}pt,{1}pt) circle (1pt);\n".format((edge+(math.log(num_seqs[i][0], 2)/2)), math.log(x, 2)))
+        boiler.append("\draw ({0}, -36pt) node {\huge {1}};".format(edge+(math.log(num_seqs[i][0], 2)/2), names[i]))
         edge += num_seqs[i][0]
     return boiler + h
 
