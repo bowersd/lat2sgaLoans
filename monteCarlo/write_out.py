@@ -1,3 +1,4 @@
+import math
 
 def blocks(*num_seqs):
     h = []
