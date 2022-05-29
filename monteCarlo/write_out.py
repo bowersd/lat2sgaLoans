@@ -27,6 +27,7 @@ def blocks(*num_seqs):
         edge += num_seqs[i][0]
     return boiler + h
 
+def log2(x): return math.log(x)/math.log(2)
 
 def logblocks(*num_seqs):
     h = []
