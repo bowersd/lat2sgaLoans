@@ -27,13 +27,15 @@ def blocks(*num_seqs):
         edge += num_seqs[i][0]
     return boiler + h
 
-def log2(x): return math.log(x)/math.log(2)
+def upto1(x): 
+    if x < 1: return 1
+    return x
 
 def logblocks(*num_seqs):
     h = []
     edge = 0.0
-    top = max([math.log(s[0])/math.log(2) for s in num_seqs])
-    right = sum([s[0] for s in num_seqs])
+    top = max([math.log(upto1(s[0]), 2) for s in num_seqs])
+    right = sum([math.log(upto1(s[0]), 2) for s in num_seqs])
     boiler = ["\draw[xstep=0, ystep=1cm, opacity=0.1] (0pt,0pt) grid ({0}cm, 8cm);".format(right),
         "\\foreach \y / \label in {50pt/50, 150pt/150, 250pt/250}",
         "   {\draw (-18pt, \y) node {\huge \label} ;};",
