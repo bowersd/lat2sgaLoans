@@ -5,7 +5,7 @@ def blocks(*num_seqs):
     for s in num_seqs:
         h.append("\draw({0}pt,0) rectangle ({1}pt, {2}pt);\n".format(edge, edge+s[0], s[0]))
         h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(s[0]/2)-(s[1]/2)), (edge+(s[0]/2)+(s[1]/2)), s[1]))
-        for x in s[2:]: h.append("\draw[fill=black!100,opacity=0.5]({0}pt,{1}pt) circle (5pt);\n".format((edge+(s[0]/2)), x))
+        for x in s[2:]: h.append("\draw[fill=black!100,opacity=0.5]({0}pt,{1}pt) circle (1pt);\n".format((edge+(s[0]/2)), x))
         edge += s[0]
     return h
 
