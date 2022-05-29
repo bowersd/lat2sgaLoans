@@ -10,6 +10,14 @@ def blocks(*num_seqs):
         "\\foreach \y / \label in {50pt/50, 150pt/150, 250pt/250}",
         "   {\draw (-18pt, \y) node {\huge \label} ;};",
             ]
+    names = ["[p]$\\to$[k]",
+            "Len.",
+            "Harm.",
+            "Shorten.",
+            "Lengthen",
+            "Syncope",
+            "Post-Syncope",
+            ]
     for s in num_seqs:
         h.append("\draw({0}pt,0) rectangle ({1}pt, {2}pt);\n".format(edge, edge+s[0], s[0]))
         h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(s[0]/2)-(s[1]/2)), (edge+(s[0]/2)+(s[1]/2)), s[1]))
