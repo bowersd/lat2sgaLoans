@@ -31,7 +31,7 @@ def logblocks(*num_seqs):
     edge = 0.0
     top = max([s[0] for s in num_seqs])
     right = sum([s[0] for s in num_seqs])
-    boiler = ["\draw[xstep=40pt, ystep=50pt, opacity=0.1] (0pt,0pt) grid (560pt, 250pt);",
+    boiler = ["\draw[xstep=0, ystep=1cm, opacity=0.1] (0pt,0pt) grid ({0}cm, 8cm);".format(right),
         "\\foreach \y / \label in {50pt/50, 150pt/150, 250pt/250}",
         "   {\draw (-18pt, \y) node {\huge \label} ;};",
             ]
