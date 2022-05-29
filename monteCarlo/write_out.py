@@ -22,6 +22,7 @@ def blocks(*num_seqs):
         h.append("\draw({0}pt,0) rectangle ({1}pt, {2}pt);\n".format(edge, edge+s[0], s[0]))
         h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(s[0]/2)-(s[1]/2)), (edge+(s[0]/2)+(s[1]/2)), s[1]))
         for x in s[2:]: h.append("\draw({0}pt,{1}pt) circle (1pt);\n".format((edge+(s[0]/2)), x))
+        #boiler.append("\draw ({0}, -36pt) node {\huge {1}};".format(edge+(s[0]/2), names[i])
         edge += s[0]
     return boiler + h
 
