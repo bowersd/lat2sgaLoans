@@ -4,7 +4,12 @@ def blocks(*num_seqs):
     edge = 0.0
     top = max([s[0] for s in num_seqs])
     right = sum([s[0] for s in num_seqs])
-    boiler = ["\draw[xstep=40pt, ystep=50pt, opacity=0.1] (0pt,0pt) grid (560pt, 250pt);"]
+    boiler = ["\draw[xstep=40pt, ystep=50pt, opacity=0.1] (0pt,0pt) grid (560pt, 250pt);",
+        "\\foreach \x / \label in {120pt/120, 240pt/240, 360pt/360, 480pt/480, 560pt/560}",
+        "    {\draw (\x, -10pt) node {\huge \label} ;};",
+        "\\foreach \y / \label in {50pt/50, 150pt/150, 250pt/250}",
+        "   {\draw (-18pt, \y) node {\huge \label} ;};",
+            ]
     for s in num_seqs:
         h.append("\draw({0}pt,0) rectangle ({1}pt, {2}pt);\n".format(edge, edge+s[0], s[0]))
         h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(s[0]/2)-(s[1]/2)), (edge+(s[0]/2)+(s[1]/2)), s[1]))
