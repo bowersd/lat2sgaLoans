@@ -3,12 +3,13 @@ def blocks(*num_seqs):
     h = []
     edge = 0.0
     top = max([s[0] for s in num_seqs])
+    boiler = []
     for s in num_seqs:
         h.append("\draw({0}pt,0) rectangle ({1}pt, {2}pt);\n".format(edge, edge+s[0], s[0]))
         h.append("\draw[fill=black!100]({0}pt,0) rectangle ({1}pt, {2}pt);\n".format((edge+(s[0]/2)-(s[1]/2)), (edge+(s[0]/2)+(s[1]/2)), s[1]))
         for x in s[2:]: h.append("\draw({0}pt,{1}pt) circle (1pt);\n".format((edge+(s[0]/2)), x))
         edge += s[0]
-    return h
+    return boiler + h
 
 def tikz(file_out, *lines):
     with open(file_out, 'w') as fout:
