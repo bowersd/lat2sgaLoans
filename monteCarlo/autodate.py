@@ -97,10 +97,10 @@ def check_appl(string, *regexen, **mappings):
 
 triggers = [#what to look for in Latin
         re.compile('[Pp]'), #pk
-        re.compile('((?<=[aeiouAEIOU])_*[tkbdgm])|f'), #lenition (f>s in, st>s removed due to post-lenition strata>strait) WHAT ABOUT LONG [f:]??
+        re.compile('((?<=[aeiouAEIOU])_*[tkbdgm])'), #lenition (f>s in, st>s removed due to post-lenition strata>strait) WHAT ABOUT LONG [f:]??
         re.compile('(((e|o)(?=_*[^AEIOUaeiou]*_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
         #re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
-        re.compile('(?<=[aeiouAEIOU])_*[dgtk][rlnm]'), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits)
+        re.compile('((?<=[aeiouAEIOU])_*[dgtk][rlnm])|f'), #compensatory lengthening (shortening handled in procs_kludge() to avoid lookbehind limits)
         re.compile('(mp|ŋk|n(t|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
         ]
 processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
