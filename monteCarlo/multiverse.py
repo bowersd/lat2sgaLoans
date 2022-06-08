@@ -249,7 +249,7 @@ hacked_prior = [0.18746789933230612, 0.6122239342578326, 0.25218284540318436, 0.
 #}
 
 if __name__ == "__main__":
-    raw = autodate.read_in(sys.argv[1])[1:]
+    raw = autodate.read_in(sys.argv[1])[1:]+autodate.read_in(sys.argv[2])[1:]
     dates = []
     procs = []
     words = []
@@ -312,14 +312,14 @@ if __name__ == "__main__":
         file_out.write("period,mean,std,"+",".join(["model"+str(i) for i in range(len(meta_means))])+"\n")
         for i in range(len(means)): file_out.write(",".join((str(i), str(mean(*[meta_means[j][i] for j in range(len(meta_means))])), str(stdev(*[meta_means[j][i] for j in range(len(meta_means))])))+tuple([str(meta_means[j][i]) for j in range(len(meta_means))]))+'\n')
     seqs = []
-    interstitial = [18, 3, 10, 2, 0, 0, 72] #number of loans obligatorily in each period
+    interstitial = [18, 3, 10, 0, 0, 0, 72] #number of loans obligatorily in each period
     for i in range(len(means)):
         subseq = []
         subseq.append(mean(*[meta_means[j][i] for j in range(len(meta_means))]))
         subseq.append(interstitial[i])
         for j in range(len(meta_means)): subseq.append(meta_means[j][i])
         seqs.append(subseq)
-    write_out.tikz("aggregated_models_visualized.tex", *write_out.blocks(*seqs))
+    write_out.tikz("aggregated_models_visualized.tex", *write_out.logBlocks(*seqs))
     #hack_prior("albright_latin_nouns_stems_reorthed.txt")
 
 ##trial simulations
