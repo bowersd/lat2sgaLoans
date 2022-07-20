@@ -35,6 +35,9 @@ align_crashes = {
 }
 inconsistent = {
         ("de:.bre.'ka:.ti.o:","/ˈdʲe.bʲrʲə.go:dʲ/"):[4,7], #,dēprecātiō,deiprecóit,McManus/Other #DAB not inconsistent, but there's a chance this syncopated to debrgo:d and then became debr@go:d
+        ("me:.'tro.bo.l","/ˈme.drə.bəlʲ/"):[2,7], #,mētropolis,metrapoil,Ml. deiprecoit class
+        ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[2,7], #,Acrisiōnē,acrision\dae,Sg. deiprecoit class
+        ("ki.kla.si.a","/ˈkʲi.glə.ste/"):[2,7], #,Cyclasias,ciclas\tae,Sg. deiprecoit class
         ("ko:n.'fes.si.o:","/ˈko.vəʃ/"):[0,5], #,cōnfessiō,cobais,"Ml.,MG" #nf>v is pre-syncope. post-syncope date was triggered by aggressive British apocope, so disregarding 
         ("mas.ku.'li:.n","/ˈma.sku.lʲən.de/"):[6,7], #,masculīnus,masculin\dae,Sg. #valuing lack of syncope over potential orthographic omission of length
         ("'no.ta:.ri","/ˈno.də.rʲe/"):[2,3], #,notārius,not/aire,Wb. #lack of syncope is due to (later) exceptionality of -aire
