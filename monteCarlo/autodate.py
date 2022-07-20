@@ -96,7 +96,7 @@ def check_appl(string, *regexen, **mappings):
     pass
 
 triggers = [#what to look for in Latin
-        re.compile('[Pp]'), #pk
+        re.compile('[Pp]|((?<=[aeiouAEIOU])_*[tk])'), #pk with lenition check for british lenition
         re.compile('((?<=[aeiouAEIOU])_*[tkbdgm])'), #lenition (f>s in, st>s removed due to post-lenition strata>strait) WHAT ABOUT LONG [f:]??
         re.compile('(((e|o)(?=_*[^AEIOUaeiou]*_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), #affection ... just identifying all possible targets and letting process ID weed out the rest (non-initial syllables will be @ in Irish). ideally would also check morph class information on monosylables.
         #re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), #apocope
@@ -104,7 +104,7 @@ triggers = [#what to look for in Latin
         re.compile('(mp|ŋk|n(t|s|f))|((?<!^e)ks)'), #syncope (phonotactics here, V deletion handled below) mp has different pre-history (we don't know when it vanished/what was the outcome), but part of natural class and made legal by syncope
         ]
 processes = [ #slightly refined regexen to apply to latin, paired with dicts to check if the rule applied or not. these need to be alignment-proof (overlook _)
-        ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"},1),(re.compile('[Pp]'), {"P":"pb","p":"pb"}, 0)),
+        ((re.compile('[Pp](?!_*t)'), {"p":"kxɣ", "P":"kxɣ"},1),(re.compile('[Pp]|((?<=[aeiouAEIOU])_*(t|k))'), {"P":"pb","p":"pb", "t":"d", "k":"g"}, 0)),
         ((re.compile('((?<=[aeiouAEIOU])_*[t]|(k)(?![Tt]))'), { "t":"θð", "k":"xɣ"},1), (re.compile('((?<=[aeiouAEIOU])_*(t|k|b|d|g|m))'), {"t":"td", "k":"kg", "b":"b", "d":"d", "g":"g", "m":"m", "f":"f"},0)),
         ((re.compile('(((e|o)(?=_*[^AEIOUaeiou]*_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'),{"e":"i", "o":"u", "i":"e", "u":"o", },1),(re.compile('(((e|o)(?=_*([bdgmnrlBDGMNRL]|(nd|mb|ml|mr|db|dr|gl|Dr|Gl))_*[iuIU]))|((i|u)(?=[^AEIOUaeiou]*[aoAO])))'), {"i":"i", "e":"e", "u":"u", "o":"o", },0)), #just dropping the string-initial requirement and relying on @ in Irish to rule out non-initial sylls ... allowing [k] as a permitter is a problem. if lenited it could block. it is only if unlenited that it permitted (apparently) --- EJFL: If you say so. I don't remember anything about this.
         #((re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"aə", "E":"eə", "I":"iə", "O":"oə", "U":"uə"}),(re.compile('[AEIOU](?=[^aeiouAEIOU]*$)'), {"A":"AO", "E":"E", "I":"I", "O":"O", "U":"U"})), #apocope
