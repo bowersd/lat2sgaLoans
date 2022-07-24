@@ -23,7 +23,7 @@
 #       todo: further enumeration 
 
 align_crashes = {
-        ("'dra.ko:","/ˈdrawg/"):[2,7],#,dracō,drauc
+        ("'dra.ko:","/ˈdrawg/"):[1,7],#,dracō,drauc
         #("ˈha.ba.kuk","/ˈam.bə.kuk./"):[],#,Habacuc,Ambaucuc ... removed because hebrew
         #("i.du.'me:.","/ˈiə.ðuɱ.ðe/"):[],#,Idumaea,íadum\dae ... removed because hebrew
         ("'li.kwi.d","/ˈlʲex.ðəɣʲ.θʲe/"):[0,2],#,liquidus,lechd\aig\the
@@ -35,13 +35,13 @@ align_crashes = {
 }
 inconsistent = {
         ("de:.bre.'ka:.ti.o:","/ˈdʲe.bʲrʲə.go:dʲ/"):[4,7], #,dēprecātiō,deiprecóit,McManus/Other #DAB not inconsistent, but there's a chance this syncopated to debrgo:d and then became debr@go:d
-        ("me:.'tro.bo.l","/ˈme.drə.bəlʲ/"):[2,7], #,mētropolis,metrapoil,Ml. deiprecoit class
-        ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[2,7], #,Acrisiōnē,acrision\dae,Sg. deiprecoit class
+        ("me:.'tro.bo.l","/ˈme.drə.bəlʲ/"):[1,7], #,mētropolis,metrapoil,Ml. deiprecoit class
+        ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[1,7], #,Acrisiōnē,acrision\dae,Sg. deiprecoit class
         #("ki.kla.si.a","/ˈkʲi.glə.ste/"):[3,7], #,Cyclasias,ciclas\tae,Sg. deiprecoit class > only kiklas was borrowed, the latter portion is an Irish suffix, so the borrowed portion would have been too short to syncopate, and this does not belong with deiprecoit
         ("ki.kla.si.a","/ˈkʲi.glə.ste/"):[3,7],#,Cyclasias,ciclas\tae #EJFL: Changed date from 2,6 to 3,6 (this was the consensus we reached). > due to failure to lower
         ("ko:n.'fes.si.o:","/ˈko.vəʃ/"):[0,5], #,cōnfessiō,cobais,"Ml.,MG" #nf>v is pre-syncope. post-syncope date was triggered by aggressive British apocope, so disregarding 
         ("mas.ku.'li:.n","/ˈma.sku.lʲən.de/"):[6,7], #,masculīnus,masculin\dae,Sg. #valuing lack of syncope over potential orthographic omission of length
-        ("'no.ta:.ri","/ˈno.də.rʲe/"):[2,3], #,notārius,not/aire,Wb. #lack of syncope is due to (later) exceptionality of -aire
+        ("'no.ta:.ri","/ˈno.də.rʲe/"):[1,3], #,notārius,not/aire,Wb. #lack of syncope is due to (later) exceptionality of -aire
         ("fe:.ri.'a:.l","/ˈfʲe:.ro:lʲ/"):[4,7], #,fēriālis,féróil #DAB if the mapping were from the original Latin, [i] would be lost by syncope. But [a:]>[o:] shows it came through British Latin, where /i/ in hiatus became [j] (there was also British syncope), so Irish syncope actually had no vowel to target when this word came in.
         ("pa.le:s.'ti:.na","/ˈpa.lə.ʃtʲə.na/"):[6,7], #Palaestīna,Palastina  #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
         ("fi.li.pi.a.'ne:n.s","/ˈfʲi.lʲə.pʲən.ste/"):[6,7], #philipianēnsis,Philipians\tae #DAB literary loan. given inconsistent written length in Latin, we put more weight on the failure to syncopate than the apparent shortening
@@ -64,16 +64,16 @@ inconsistent = {
         ("a.ris.'to.te.le:s","/ˈa.rʲə.stə.təlʲ/"):[6,7], #,Aristotelēs,Aristotil #DAB literary loan
         ("fir.ˈra.di.","/ˈfʲir.ðe/"):[3,7],#,Phirradios,phir\de #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
         ("law.'ren.ti.","/ˈlaw.rʲən.tə.ðʲe"):[0,7], #,Laurentium,laurent\ide #DAB this is probably post-syncope/literary, but restriction to root makes it too short for syncope, and even if syncope did apply, stranded sonorant epenthesis could have undone it
-        ("tri.'bla:.ti.o:","/ˈtʲrʲe.vlədʲ/"):[2,3], #,*triblātiō,treblait #DAB syncope originally flagged as going wrong due to losses at end of word.
+        ("tri.'bla:.ti.o:","/ˈtʲrʲe.vlədʲ/"):[1,3], #,*triblātiō,treblait #DAB syncope originally flagged as going wrong due to losses at end of word.
         ("si.'ki.li.","/ˈʃi.kʲəl.de/"):[6,7], #,Sicilia,Sicel\de #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
         ("pu.'gla:.ri.","/ˈpo:.lə.rʲe/"):[1,3], #,*puglāria,pól\ire #DAB entered early, but the suffix got productive and exceptional to syncope
         ("ma.ke.'do.ni.","/ˈma.kʲə.ðo:n.de/"):[6,7], #,Macedonia,Maccidón\dae #DAB i#>e# ignores that there is an Irish suffix here, so no reason for harmony
         ("pro.'me:.te.","/ˈpro.ɱə.θʲə.ðʲe/"):[6,7], #,Promētheus,promith\ide #DAB I can imagine th spelling t (no lenition, latin pronunciation) or T (no lenition, Greek pronunciation), but this word is post-syncope
         ("o.'ra:.ti.o:","/ˈor.θə/"):[0,2], #,*orātiō,ortha #DAB: autodate was getting tripped up on syncope results
         ("in.tel.'lek.t","/ˈinʲ.tʲluxt/"):[0,3], #,intellectus,intliucht #DAB: the loans spreadsheet has i->u occurring around affection, so that is given for the end point --- a pronunciation with /inʲ.dʲluxt/ is attested (seee Ml. 18c11) 
-        ("me.ˈre.tri.k","/ˈmʲerʲ.dʲrʲəx/"):[2,6], #,meretricem,meirdrech #DAB the -x comes from a native suffix, so we follow the t-/->th and make it post-lenition
+        ("me.ˈre.tri.k","/ˈmʲerʲ.dʲrʲəx/"):[1,6], #,meretricem,meirdrech #DAB the -x comes from a native suffix, so we follow the t-/->th and make it post-lenition
         ("pa.'tri.ki.","/ˈko.θrə.ɣʲe/"):[0,1], #,Patricius,Cothrige #the syncope problems are real, but this just has to be early early
-        ("a.be.ke.'da:.ri.","/ˈabʲ.ɣʲə.dʲərʲ/"):[2,5],#,abecedārium,aipgitir
+        ("a.be.ke.'da:.ri.","/ˈabʲ.ɣʲə.dʲərʲ/"):[1,5],#,abecedārium,aipgitir
         ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[6,7],#,Acrisiōnē,acrision\dae
         ("aj.'ne:","/ˈaj.nʲe:.ðe"):[6,7],#,Aenēās,aenee\dae since there isn't anything different phonologically, one of these aeneas's should be removed
         ("aj.'ne:.a:s","/ˈaj.nʲe:.a:s/"):[6,7],#,Aenēās,Aeneas
