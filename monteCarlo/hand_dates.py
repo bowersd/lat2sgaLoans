@@ -34,7 +34,7 @@ align_crashes = {
         ("pre.'di:.k","/ˈpʲrʲið.xəðʲ/"):[1,2], #,*predīcō,pridch\aid #DAB: misalignment put the k with <d> instead of [x]
 }
 inconsistent = {
-        ("de:.bre.'ka:.ti.o:","/ˈdʲe.bʲrʲə.go:dʲ/"):[4,7], #,dēprecātiō,deiprecóit,McManus/Other #DAB not inconsistent, but there's a chance this syncopated to debrgo:d and then became debr@go:d
+        ("de:.bre.'ka:.ti.o:","/ˈdʲe.bʲrʲə.go:dʲ/"):[4,6], #,dēprecātiō,deiprecóit,McManus/Other #DAB not inconsistent, but there's a chance this syncopated to debrgo:d and then became debr@go:d
         ("me:.'tro.bo.l","/ˈme.drə.bəlʲ/"):[2,7], #,mētropolis,metrapoil,Ml. deiprecoit class
         ("a.kri.si.'o:.ne:","/ˈa.kʲrʲə.ʃən.de/"):[2,7], #,Acrisiōnē,acrision\dae,Sg. deiprecoit class
         #("ki.kla.si.a","/ˈkʲi.glə.ste/"):[3,7], #,Cyclasias,ciclas\tae,Sg. deiprecoit class > only kiklas was borrowed, the latter portion is an Irish suffix, so the borrowed portion would have been too short to syncopate, and this does not belong with deiprecoit
