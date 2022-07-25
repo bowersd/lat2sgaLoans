@@ -314,7 +314,7 @@ if __name__ == "__main__":
         file_out.write("period,mean,std,"+",".join(["model"+str(i) for i in range(len(meta_means))])+"\n")
         for i in range(len(means)): file_out.write(",".join((str(i), str(mean(*[meta_means[j][i] for j in range(len(meta_means))])), str(stdev(*[meta_means[j][i] for j in range(len(meta_means))])))+tuple([str(meta_means[j][i]) for j in range(len(meta_means))]))+'\n')
     seqs = []
-    interstitial = [18, 3, 10, 0, 0, 0, 72] #number of loans obligatorily in each period
+    interstitial = [18, 3, 0, 0, 0, 0, 70] #number of loans obligatorily in each period
     for i in range(len(means)):
         subseq = []
         subseq.append(mean(*[meta_means[j][i] for j in range(len(meta_means))]))
