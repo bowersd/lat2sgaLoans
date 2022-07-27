@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{times}
+\usepackage{graphicx}
+\begin{document}
+\begin{tikzpicture}
+\draw[xstep=0, ystep=1cm, opacity=0.1] (0,0) grid (43.33750544044777cm, 8cm);
+\foreach \y / \label in {1cm/2, 2cm/4, 3cm/8, 4cm/16, 5cm/32, 6cm/64, 7cm/128, 8cm/256}
+    {\draw (-18pt, \y) node {\huge \label} ;};
+\draw (3.1975477255635503, -36pt) node {\huge [p]$\to$[k]};
+\draw (9.535745866973539, -36pt) node {\huge Lenition};
+\draw (15.854396901696386, -36pt) node {\huge Harmony};
+\draw (22.002620743339982, -36pt) node {\huge Short.};
+\draw (27.835604190492752, -36pt) node {\huge Length};
+\draw (33.568134183793354, -36pt) node {\huge Syncope};
+\draw (39.88770469657807, -36pt) node {\huge Post-Syncope};
+\draw(0.0cm,0) rectangle (6.3950954511271005cm, 6.3950954511271005cm);
+\draw[fill=black!100](1.1125852248423942cm,0) rectangle (5.282510226284707cm, 4.169925001442312cm);
+\draw(6.3950954511271005cm,0) rectangle (12.676396282819976cm, 6.281300831692876cm);
+\draw[fill=black!100](8.74326461661296cm,0) rectangle (10.328227117334118cm, 1.5849625007211563cm);
+\draw(12.676396282819976cm,0) rectangle (19.032397520572797cm, 6.356001237752822cm);
+\draw[fill=black!100](14.193432854252706cm,0) rectangle (17.515360949140067cm, 3.3219280948873626cm);
+\draw(19.032397520572797cm,0) rectangle (24.972843966107163cm, 5.940446445534368cm);
+\draw[fill=black!100](22.002620743339982cm,0) rectangle (22.002620743339982cm, 0.0cm);
+\draw(24.972843966107163cm,0) rectangle (30.69836441487834cm, 5.725520448771178cm);
+\draw[fill=black!100](27.835604190492752cm,0) rectangle (27.835604190492752cm, 0.0cm);
+\draw(30.69836441487834cm,0) rectangle (36.437903952708375cm, 5.739539537830033cm);
+\draw[fill=black!100](33.568134183793354cm,0) rectangle (33.568134183793354cm, 0.0cm);
+\draw(36.437903952708375cm,0) rectangle (43.33750544044777cm, 6.899601487739395cm);
+\draw[fill=black!100](36.823063188105586cm,0) rectangle (42.95234620505055cm, 6.129283016944967cm);
+\end{tikzpicture}
+\end{document}
