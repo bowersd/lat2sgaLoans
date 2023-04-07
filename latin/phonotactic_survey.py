@@ -5,7 +5,7 @@ processes = [#what to look for in Latin
         re.compile('((?<=[aeiouAEIOU])[tkdgbm])'), #lenition 
         re.compile('((^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO]))))'), #mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH])  ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
         re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU])|)'), #shortening (long vowels in non-initial syllables)
-        re.compile('([aeiouAEIOU][tkdg][rlmn])') #compensatory lengthening
+        re.compile('([aeiouAEIOU][tkdg][rlmn])'), #compensatory lengthening
         re.compile('([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou])|([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOU][^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou][AEIOUaeiou])'), #syncope up to 6 syllables... phonotactics version has only long vowels in second syll by mistake. need to fix that and re-run multiverse
         ]
 phonotactics = [#what to look for in Latin
@@ -55,7 +55,7 @@ def hack_prior(filename):
         for l in file_in:
             if l and "UNKNOWN" not in l:
                 data.append(l.strip())
-    print(calc_prior(phonotactics, *data))
+    print(calc_prior(processe, *data))
 
 
 
