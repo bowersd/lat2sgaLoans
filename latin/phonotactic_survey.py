@@ -6,10 +6,7 @@ processes = [#what to look for in Latin
         re.compile('((^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO]))))'), #mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH])  ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
         re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU])|)'), #shortening (long vowels in non-initial syllables)
         re.compile('([aeiouAEIOU][tkdg][rlmn])') #compensatory lengthening
-        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou]'), #trisyllables or greater (syncope-adjacent)
-        #re.compile('[AEIOU]'), #long vowels (shortening/complen-adjacent)
-        #re.compile('[aeiouAEIOU][tkdg][rlmn]'), #compensatory lengthening ... moved to the shortening/complen test (long vowels in non-initial syllables) before move this was like 4.5%, but it only boosted the bigger regex by about 2% ... highly correlated!
-        re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics... st phonotactics are different temporally though...
+        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou]'), #syncope
         ]
 phonotactics = [#what to look for in Latin
         re.compile('((?<!m)[Pp])'), #p, contextual carve-out to allow cluster detection
