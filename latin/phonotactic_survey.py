@@ -55,7 +55,7 @@ def hack_prior(filename):
         for l in file_in:
             if l and "UNKNOWN" not in l:
                 data.append(l.strip())
-    print(calc_prior(processes, *data))
+    print(calc_prior(phonotactics, *data))
 
 
 
