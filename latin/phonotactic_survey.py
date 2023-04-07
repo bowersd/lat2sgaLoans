@@ -6,7 +6,7 @@ processes = [#what to look for in Latin
         re.compile('((^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO]))))'), #mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH])  ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
         re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU])|)'), #shortening (long vowels in non-initial syllables)
         re.compile('([aeiouAEIOU][tkdg][rlmn])') #compensatory lengthening
-        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou]'), #syncope
+        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou]'), #syncope ... phonotactics version has only long vowels in second syll by mistake. need to fix that and re-run multiverse
         ]
 phonotactics = [#what to look for in Latin
         re.compile('((?<!m)[Pp])'), #p, contextual carve-out to allow cluster detection
