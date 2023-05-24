@@ -1,4 +1,5 @@
 import re
+import regexen as rxn
 
 processes = [#what to look for in Latin
         re.compile('[Pp]'), #pk
@@ -55,7 +56,9 @@ def hack_prior(filename):
         for l in file_in:
             if l and "UNKNOWN" not in l:
                 data.append(l.strip())
-    print(calc_prior(phonotactics, *data))
+    x = calc_prior(rxn.full_suite, *data)
+    for i in range(len(rxn.full_suite)): print(x[i], rxn.full_suite[i])
+    #print(calc_prior(phonotactics, *data))
 
 
 
