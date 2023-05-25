@@ -266,7 +266,7 @@ hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0
 #}
 
 if __name__ == "__main__":
-    raw = autodate.read_in(sys.argv[1])[1:]+autodate.read_in(sys.argv[2])[1:]
+    raw = autodate.read_in(sys.argv[1])[1:]#+autodate.read_in(sys.argv[2])[1:]
     dates = []
     procs = []
     words = []
