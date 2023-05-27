@@ -1,5 +1,18 @@
 import re
 
+minimal = [
+        re.compile('(?<!m)[Pp](?!t)'), #p->k pre
+        re.compile('(?<!m)[Pp](?=t)'), #p->k post
+        re.compile('((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))'), #lenition pre
+        re.compile('((?<=[aeiouAEIOU])(b|([dgm](?![rlmn]))))'), #lenition post
+        re.compile('(^[^AEIOUaeiou]*[eoiu])'), #radically slimmed harmony
+        re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOUaeiou]))'), #polysyllabicity
+        re.compile('([aeiouAEIOU][tkdg][rlmn])'), #compensatory lengthening --fine tune lenition!
+        re.compile('st'), #st pre-affection
+        re.compile('(?<!n)f'), #f up to comp len (that's a bit much!)
+        re.compile('(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))'), #syncope phonotactics
+        ]
+
 full_suite = [
         re.compile('(?<!m)[Pp](?!t)'), #p->k pre
         re.compile('(?<!m)[Pp](?=t)'), #p->k post
