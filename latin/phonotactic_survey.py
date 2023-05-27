@@ -61,20 +61,23 @@ def hack_prior(filename):
     print(calc_prior(rxn.minimal, *data))
 
 def overlap(bare_regexes, data):
+    h = []
     while bare_regexes:
         x = bare_regexes.pop()
         px = sum([1 if re.search(x, d) else 0 for d in data])/len(data)
-        print(x)
-        print(px)
+        h.append([[x, px], []])
         for y in bare_regexes:
             py = sum([1 if re.search(y, d) else 0 for d in data])/len(data)
             pxy = sum([1 if re.search("|".join([y, x]), d) else 0 for d in data])/len(data)
             intersection = -(pxy-py-px)
             expected = py*px
-            print('\t', y)
-            print('\t', py, pxy, intersection, expected)
-            print('\t', intersection>expected, intersection<expected)
+            h[-1][-1].append([[y, py], [intersection]])
+    return h
             
+def pprint_overlap(overlap_matrix):
+    for i, x in enumerate(overlap_matrix): print(i, round(x[0][1], 3), x[0][0])
+    rows = [x for x in reversed(range(len(overlap_matrix)))]
+    print("    "+"    ".join([i for i in range(len(overlap_matrix))]))
 
 hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.46070878274268107, 0.7447354904982023, 0.04519774011299435, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #minimal overlap
 #hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.1997945557267591, 0.3533641499743195, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #full suite
@@ -92,6 +95,6 @@ if __name__  == "__main__":
                 data.append(l.strip())
     overlap(rxn.minimal_bare, data)
     print('\n')
-    overlap(rxn.full_suite_bare, data)
+    pprint_overlap(overlap(rxn.full_suite_bare, data))
 
 
