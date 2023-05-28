@@ -77,9 +77,9 @@ def overlap(bare_regexes, data):
 def pprint_overlap(overlap_matrix):
     for i in reversed(range(len((overlap_matrix)))): print(i, round(overlap_matrix[i][0][1], 3), overlap_matrix[i][0][0])
     #rows = [x for x in reversed(range(len(overlap_matrix)))]
-    print("     "+"        ".join([str(i) for i in reversed(range(len(overlap_matrix)))]))
-    for i in range(len(overlap_matrix)):
-        print(i, "    ".join([str(round(x[-1][0]/x[-1][-1], 3)) for x in overlap_matrix[i][-1]]))
+    print("      "+"         ".join([str(i) for i in reversed(range(len(overlap_matrix)))]))
+    for i in reversed(range(len(overlap_matrix))):
+        print(i, "    ".join([str(round((x[-1][0]/x[-1][-1])-1, 3)).rjust(6, ' ') for x in overlap_matrix[i][-1]]))
 
 
 hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.46070878274268107, 0.7447354904982023, 0.04519774011299435, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #minimal overlap
@@ -96,7 +96,7 @@ if __name__  == "__main__":
         for l in file_in:
             if l and "UNKNOWN" not in l:
                 data.append(l.strip())
-    overlap(rxn.minimal_bare, data)
+    pprint_overlap(overlap(rxn.minimal_bare, data))
     print('\n')
     pprint_overlap(overlap(rxn.full_suite_bare, data))
 
