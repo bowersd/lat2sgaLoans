@@ -152,7 +152,7 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
             print(rnd, mut_rt)
         mutated = False
         for v in verses:
-            for i in range(500):
+            for i in range(2000):
                 cnts = [0 for j in range(slot_cnt)] #0 for however many time slots there are
                 s = [] #tracking individual slot placements
                 bin_procs = [[0 for j in range(len(procs[0]))] for k in range(len(cnts))] #how many instances of proc are in each bin (for prob calc)
