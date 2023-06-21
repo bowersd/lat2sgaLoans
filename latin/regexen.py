@@ -33,14 +33,15 @@ minimal = [
         re.compile('((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))'), #lenition pre
         re.compile('((?<=[aeiouAEIOU])(b|([dgm](?![rlmn]))))'), #lenition post
         re.compile('(^[^AEIOUaeiou]*[eoiu])'), #radically slimmed harmony
-        re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOUaeiou]))'), #polysyllabicity
+        re.compile('([AEIOU])'), #radically slimmed shortening (long vowels anywhere)
         re.compile('([aeiouAEIOU][tkdg][rlmn])'), #compensatory lengthening --fine tune lenition!
+        re.compile('([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou])|([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOU][^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou][AEIOUaeiou])'), #syncope up to 6 syllables... phonotactics version has only long vowels in second syll by mistake. need to fix that and re-run multiverse
         re.compile('st'), #st pre-affection
         re.compile('(?<!n)f'), #f up to comp len (that's a bit much!)
         re.compile('(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))'), #syncope phonotactics
         ]
 
-full_suite = [
+middle = [
         re.compile('(?<!m)[Pp](?!t)'), #p->k pre
         re.compile('(?<!m)[Pp](?=t)'), #p->k post
         re.compile('((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))'), #lenition pre
@@ -52,6 +53,20 @@ full_suite = [
         re.compile('st'), #st pre-affection
         re.compile('(?<!n)f'), #f up to comp len (that's a bit much!)
         re.compile('(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))'), #syncope phonotactics
+        ]
+
+maximal = [
+        re.compile('(?<!m)[Pp](?!t)'), #p->k pre
+        re.compile('(?<!m)[Pp](?=t)'), #p->k post
+        re.compile('((?<=[aeiouAEIOU])(t|k(?!s)))'), #lenition pre
+        re.compile('((?<=[aeiouAEIOU])([bdgm]))'), #lenition post
+        re.compile('((^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^([^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))))'), #mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH])  ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
+        re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU]))'), #shortening (long vowels in non-initial syllables)
+        re.compile('([aeiouAEIOU][tkdg][rlmn])'), #compensatory lengthening --fine tune lenition!
+        re.compile('([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou])|([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOU][^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou][AEIOUaeiou])'), #syncope up to 6 syllables... phonotactics version has only long vowels in second syll by mistake. need to fix that and re-run multiverse
+        re.compile('st'), #st pre-affection
+        re.compile('f'), #f up to comp len (that's a bit much!)
+        re.compile('(mp|ŋk|nt|n(s|f)|(?<!^e)ks)'), #syncope phonotactics
         ]
 
 processes = [#what to look for in Latin
