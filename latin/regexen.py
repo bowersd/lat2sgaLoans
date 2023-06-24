@@ -13,7 +13,7 @@ minimal_bare = [
         '(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))', #syncope phonotactics
         ]
 
-full_suite_bare = [
+full_suite_bare = [ #corresponds to middle, currently nothing for maximal
         '(?<!m)[Pp](?!t)', #p->k pre
         '(?<!m)[Pp](?=t)', #p->k post
         '((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))', #lenition pre
