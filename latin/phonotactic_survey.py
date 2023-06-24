@@ -58,7 +58,7 @@ def hack_prior(filename):
                 data.append(l.strip())
     #x = calc_prior(rxn.full_suite, *data)
     #for i in range(len(rxn.full_suite)): print(x[i], rxn.full_suite[i])
-    print(calc_prior(rxn.minimal, *data))
+    print(calc_prior(rxn.maximal, *data))
 
 def overlap(bare_regexes, data):
     h = []
@@ -100,14 +100,14 @@ hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0
 #hacked_prior = [0.2567991631799163, 0.6244769874476988, 0.44142259414225943, 0.08002092050209204, 0.14905857740585773, 0.48169456066945604, 0.017259414225941423, 0.17468619246861924]
 
 if __name__  == "__main__":
-    #hack_prior("stemmed_latin_nouns_phon.txt")
-    data = []
-    with open("stemmed_latin_nouns_phon.txt") as file_in:
-        for l in file_in:
-            if l and "UNKNOWN" not in l:
-                data.append(l.strip())
-    pprint_overlap(overlap(rxn.minimal_bare, data))
-    print('\n')
-    pprint_overlap(overlap(rxn.full_suite_bare, data))
+    hack_prior("stemmed_latin_nouns_phon.txt")
+    #data = []
+    #with open("stemmed_latin_nouns_phon.txt") as file_in:
+    #    for l in file_in:
+    #        if l and "UNKNOWN" not in l:
+    #            data.append(l.strip())
+    #pprint_overlap(overlap(rxn.minimal_bare, data))
+    #print('\n')
+    #pprint_overlap(overlap(rxn.full_suite_bare, data))
 
 
