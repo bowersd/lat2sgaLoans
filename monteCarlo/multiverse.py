@@ -230,20 +230,35 @@ def random_search(rates, slot_cnt, procs, *dates):
     return (verses, top_probs, time_bins, distributions)
 
 #{these really live in latin/phonotactic_survey, duplicated here temporarily
-phonotactics = [ #nee minimal in latin/regexen.py
+phonotactics = [ #maximal in latin/regexen.py
         re.compile('(?<!m)[Pp](?!t)'), #p->k pre
         re.compile('(?<!m)[Pp](?=t)'), #p->k post
-        re.compile('((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))'), #lenition pre
-        re.compile('((?<=[aeiouAEIOU])(b|([dgm](?![rlmn]))))'), #lenition post
-        re.compile('(^[^AEIOUaeiou]*[eoiu])'), #radically slimmed harmony
-        re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOUaeiou]))'), #polysyllabicity
+        re.compile('((?<=[aeiouAEIOU])(t|k(?!s)))'), #lenition pre
+        re.compile('((?<=[aeiouAEIOU])([bdgm]))'), #lenition post
+        re.compile('((^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^([^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))))'), #mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH])  ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
+        re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU]))'), #shortening (long vowels in non-initial syllables)
         re.compile('([aeiouAEIOU][tkdg][rlmn])'), #compensatory lengthening --fine tune lenition!
+        re.compile('([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou])|([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOU][^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou][AEIOUaeiou])'), #syncope up to 6 syllables... phonotactics version has only long vowels in second syll by mistake. need to fix that and re-run multiverse
         re.compile('st'), #st pre-affection
-        re.compile('(?<!n)f'), #f up to comp len (that's a bit much!)
-        re.compile('(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))'), #syncope phonotactics
+        re.compile('f'), #f up to comp len (that's a bit much!)
+        re.compile('(mp|ŋk|nt|n(s|f)|(?<!^e)ks)'), #syncope phonotactics
         ]
 
-#phonotactics = [ #nee latin/regexen.py full_suite
+#phonotactics = [ #minimal in latin/regexen.py
+#        re.compile('(?<!m)[Pp](?!t)'), #p->k pre
+#        re.compile('(?<!m)[Pp](?=t)'), #p->k post
+#        re.compile('((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))'), #lenition pre
+#        re.compile('((?<=[aeiouAEIOU])(b|([dgm](?![rlmn]))))'), #lenition post
+#        re.compile('(^[^AEIOUaeiou]*[eoiu])'), #radically slimmed harmony
+#        re.compile('([AEIOU])'), #radically slimmed shortening (long vowels anywhere)
+#        re.compile('([aeiouAEIOU][tkdg][rlmn])'), #compensatory lengthening --fine tune lenition!
+#        re.compile('([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou])|([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOU][^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou][AEIOUaeiou])'), #syncope up to 6 syllables... phonotactics version has only long vowels in second syll by mistake. need to fix that and re-run multiverse
+#        re.compile('st'), #st pre-affection
+#        re.compile('(?<!n)f'), #f up to comp len (that's a bit much!)
+#        re.compile('(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))'), #syncope phonotactics
+#        ]
+
+#phonotactics = [ #nee latin/regexen.py full_suite now middle regexen
 #        re.compile('(?<!m)[Pp](?!t)'), #p->k pre
 #        re.compile('(?<!m)[Pp](?=t)'), #p->k post
 #        re.compile('((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))'), #lenition pre
@@ -271,8 +286,9 @@ phonotactics = [ #nee minimal in latin/regexen.py
 #        re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics... st phonotactics are different temporally though...
 #        ]
 
-hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.46070878274268107, 0.7447354904982023, 0.04519774011299435, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #minimal overlap
-#hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.1997945557267591, 0.3533641499743195, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #full suite
+#hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.46070878274268107, 0.544427324088341, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #minimal overlap
+#hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.1997945557267591, 0.3533641499743195, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #full suite->middle overlap
+hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.38366718027734975, 0.3081664098613251, 0.1997945557267591, 0.3533641499743195, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08885464817668208, 0.15767847971237803] #maximum (uninhibited) overlap
 #hacked_prior = [0.18746789933230612, 0.5747303543913713, 0.08885464817668208, 0.25218284540318436, 0.1561376476630714, 0.37493579866461224, 0.12378017462763226]
 #hacked_prior = [0.18746789933230612, 0.6122239342578326, 0.25218284540318436, 0.1561376476630714, 0.37493579866461224, 0.12378017462763226]
 #hacked_prior = [0.2711864406779661, 0.5747303543913713, 0.1997945557267591, 0.1561376476630714, 0.37493579866461224, 0.17565485362095531]
