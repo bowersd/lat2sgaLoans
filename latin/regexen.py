@@ -6,14 +6,15 @@ minimal_bare = [
         '((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))', #lenition pre
         '((?<=[aeiouAEIOU])(b|([dgm](?![rlmn]))))', #lenition post
         '(^[^AEIOUaeiou]*[eoiu])', #radically slimmed harmony
-        '(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOUaeiou]))', #polysyllabicity
+        '([AEIOU])', #radically slimmed shortening (long vowels anywhere)
         '([aeiouAEIOU][tkdg][rlmn])', #compensatory lengthening --fine tune lenition!
-        '(st)', #st pre-affection
-        '((?<!n)f)', #f up to comp len (that's a bit much!)
+        '([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou])|([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOU][^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou][AEIOUaeiou])', #syncope up to 6 syllables... phonotactics version has only long vowels in second syll by mistake. need to fix that and re-run multiverse
+        'st', #st pre-affection
+        '(?<!n)f', #f up to comp len (that's a bit much!)
         '(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))', #syncope phonotactics
         ]
 
-full_suite_bare = [ #corresponds to middle, currently nothing for maximal
+middle_bare = [ #corresponds to middle, currently nothing for maximal
         '(?<!m)[Pp](?!t)', #p->k pre
         '(?<!m)[Pp](?=t)', #p->k post
         '((?<=[aeiouAEIOU])(t|k(?!s))(?![rlmn]))', #lenition pre
@@ -25,6 +26,20 @@ full_suite_bare = [ #corresponds to middle, currently nothing for maximal
         '(st)', #st pre-affection
         '((?<!n)f)', #f up to comp len (that's a bit much!)
         '(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))', #syncope phonotactics
+        ]
+
+maximal_bare = [
+        '(?<!m)[Pp](?!t)', #p->k pre
+        '(?<!m)[Pp](?=t)', #p->k post
+        '((?<=[aeiouAEIOU])(t|k(?!s)))', #lenition pre
+        '((?<=[aeiouAEIOU])([bdgm]))', #lenition post
+        '((^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^([^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO])))))', #mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH])  ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
+        '(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU]))', #shortening (long vowels in non-initial syllables)
+        '([aeiouAEIOU][tkdg][rlmn])', #compensatory lengthening --fine tune lenition!
+        '([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou]*[AEIOUaieou])|([^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOU][^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[aeiou][^AEIOUaeiou][AEIOUaeiou])', #syncope up to 6 syllables... phonotactics version has only long vowels in second syll by mistake. need to fix that and re-run multiverse
+        'st', #st pre-affection
+        'f', #f up to comp len (that's a bit much!)
+        '(mp|ŋk|nt|n(s|f)|(?<!^e)ks)', #syncope phonotactics
         ]
 
 minimal = [
