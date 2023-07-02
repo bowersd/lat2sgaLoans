@@ -69,7 +69,7 @@ def overlap(bare_regexes, data):
         for y in bare_regexes:
             py = sum([1 if re.search(y, d) else 0 for d in data])/len(data)
             pxy = sum([1 if re.search("|".join([y, x]), d) else 0 for d in data])/len(data)
-            intersection = -(pxy-py-px)
+            intersection = abs(pxy-py-px)
             expected = py*px
             h[-1][-1].append([[y, py], [intersection, expected]])
     return h
@@ -82,11 +82,11 @@ def pprint_overlap(overlap_matrix):
     for i in reversed(range(len(overlap_matrix))):
         #print(i, "    ".join([str(round((x[-1][0]/x[-1][-1])-1, 3)).rjust(6, ' ') for x in overlap_matrix[i][-1]])) #intersection is more or less than expected
         print(i, "    ".join([str(round((x[-1][0]), 3)).rjust(6, ' ') for x in overlap_matrix[i][-1]])) #intersection
-    print("Observed Conditional Probability P(Col|Row)")
+    print("Observed/Expected Conditional Probability P(Col|Row)")
     print("      "+"         ".join([str(i) for i in reversed(range(len(overlap_matrix)))]))
     for i in reversed(range(len(overlap_matrix))):
         print(i, "    ".join([str(round((x[-1][0]/overlap_matrix[i][0][1]), 3)).rjust(6, ' ') for x in overlap_matrix[i][-1]])) #intersection|row
-    print("Observed Conditional Probability P(Row|Col)")
+    print("Observed/Expected Conditional Probability P(Row|Col)")
     print("      "+"         ".join([str(i) for i in reversed(range(len(overlap_matrix)))]))
     for i in reversed(range(len(overlap_matrix))):
         print(i, "    ".join([str(round((x[-1][0]/x[0][-1]), 3)).rjust(6, ' ') for x in overlap_matrix[i][-1]])) #intersection|col
