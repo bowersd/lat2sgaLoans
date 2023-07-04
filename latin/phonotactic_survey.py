@@ -91,7 +91,7 @@ def pprint_overlap(overlap_matrix):
     for i in reversed(range(len(overlap_matrix))):
         print(i, "    ".join([str(round((x[-1][0]/x[0][-1]), 3)).rjust(6, ' ') for x in overlap_matrix[i][-1]])) #intersection|col
 
-def graph_observed_expected(overlap_matrix):
+def print_observed_expected(overlap_matrix):
     for x in overlap_matrix:
         for y in x[-1]: print(x[0][0], y[0][0], y[1][0], y[1][1])
 
@@ -112,10 +112,15 @@ if __name__  == "__main__":
         for l in file_in:
             if l and "UNKNOWN" not in l:
                 data.append(l.strip())
-    pprint_overlap(overlap(rxn.minimal_bare, data))
+    #pprint_overlap(overlap(rxn.minimal_bare, data))
+    #print('\n')
+    #pprint_overlap(overlap(rxn.middle_bare, data))
+    #print('\n')
+    #pprint_overlap(overlap(rxn.maximal_bare, data))
+    print_observed_expected(overlap(rxn.minimal_bare, data))
     print('\n')
-    pprint_overlap(overlap(rxn.middle_bare, data))
+    print_observed_expected(overlap(rxn.middle_bare, data))
     print('\n')
-    pprint_overlap(overlap(rxn.maximal_bare, data))
+    print_observed_expected(overlap(rxn.maximal_bare, data))
 
 
