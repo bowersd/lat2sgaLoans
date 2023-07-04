@@ -91,6 +91,10 @@ def pprint_overlap(overlap_matrix):
     for i in reversed(range(len(overlap_matrix))):
         print(i, "    ".join([str(round((x[-1][0]/x[0][-1]), 3)).rjust(6, ' ') for x in overlap_matrix[i][-1]])) #intersection|col
 
+def graph_observed_expected(overlap_matrix):
+    for x in overlap_matrix:
+        for y in x[-1]: print(x[0][0], y[0][0], y[1][0], y[1][1])
+
 
 hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.46070878274268107, 0.544427324088341, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #minimal overlap
 #hacked_prior = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.46070878274268107, 0.7447354904982023, 0.04519774011299435, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #OBSOLETE minimal overlap
