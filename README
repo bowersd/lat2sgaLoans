@@ -1,0 +1,2 @@
+This repo contains the data and code used in Bowers and Lash (2024) 'Assessing the Pace of Language Change via Estimated Loan Word Volumes: Implications for Irish'.
+The directory timelineSearches/ is where the main code is used, while in the directory latin/ there is the data and code we used to determine the rate of attestation in Latin for the various phonotactic statements used in our model.
