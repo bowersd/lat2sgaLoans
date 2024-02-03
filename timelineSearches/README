@@ -1,10 +1,11 @@
-This directory contains the data and code to search timelines of Latin loans.
-There are also the results of simulations (figures and reports) that are mentioned in Bowers and Lash (2024), as well as others that ultimately were not considered worth discussing.
+This directory contains the data and code to search timelines of loan words based on phonological criteria as described by Bowers and Lash (2024).
+There are also the results of simulations (figures and reports) that are mentioned in Bowers and Lash (2024) for the Latin loans in Irish, as well as others that ultimately were not considered worth discussing.
 
-To perform a run of the genetic search algorithm, enter the following into your shell:
+To perform a run of the genetic search algorithm using the Latin loan data, enter the following into your shell:
 
-python3 multiverse.py autodate_input_clean.csv
+python3 genetic_search.py autodate_input_clean.csv
 
-Very briefly, multiverse.py reads in the Latin loan data (tuples of latin and irish forms, essentially), passes it to a string alignment algorithm, uses the aligned strings to calculate when the loan could have entered (or it directly obtains dates of entry provided by hand), and then starts applying the genetic search algorithm as described in the article.
+Very briefly, genetic_search.py reads in the Latin loan data (tuples of Latin and Irish forms, essentially), passes it to a string alignment algorithm, uses the aligned strings to calculate when the loan could have entered (or it directly obtains dates of entry provided by hand), and then starts applying the genetic search algorithm as described in the article.
 The results are written to files in this directory.
-Note this takes a while (about 10 hours on a reasonably recent laptop in 2024, dramatically longer on older computers), so be patient.
+Note that each run of the algorithm takes a while (about 2 hours per run of the algorithm on a reasonably recent laptop in 2024, dramatically longer on older computers), and for the sake of robustness, the algorithm is run 10 times.
+So, be patient.
