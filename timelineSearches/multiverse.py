@@ -66,11 +66,7 @@ def assess_phonotactic_prob(sum_bins, prop_bins, prior_rates):
         binomial_results = []
         for k in range(len(prop_bins[j])): 
             binomial_results.append(binomial(prop_bins[j][k], sum_bins[j], prior_rates[k]))
-        #print("processes {0}".format(prop_bins[j]))
-        #print("sum_bins:{0}".format(j))
-        #print(product(*binomial_results))
         p *= product(*binomial_results)
-        #p *= (sum_bins[j]+1)/(sum(sum_bins)+len(sum_bins))
     return p
 
 def top_rank(candidate, tops):
@@ -100,7 +96,11 @@ def recombine_aux(procs, slot_cnt, *offspring):
     return (time_containers, proc_containers)
 
 
-def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
+def genetic_search(rates, slot_cnt, procs, *dates):
+    #rates: list of rates at which phonotactic parameters were observed in donor language
+    #slot_cnt: number of phonological periods
+    #procs: which phonotactic parameters are observed in individual loans [[0,1...],[1,0...]]
+    #dates: possible dates of entry (stop, start)
     ##initialization
     verses = [[random.randrange(d[0], d[1]) for d in dates]] #date samples, initialized to random values
     top_probs = [-20 for i in range(100)] #probabilities of verses
@@ -178,6 +178,7 @@ def genetic_search(rates, slot_cnt, procs, nallocation, *dates):
 
 #{these regexen are used to calculate the phonotactic parameter values
 #they can be found in the latin/phonotactic_survey.py file, and are copied here for use in the genetic search algorithm
+#there are different versions to attempt to counteract excessive or insufficient overlap between parameters
 #the corresponding phonotactic parameter values are in the variable phonotactic_rates
 phonotactics = [ #maximal in latin/regexen.py
         re.compile('(?<!m)[Pp](?!t)'), #p->k pre
@@ -253,10 +254,9 @@ if __name__ == "__main__":
         #    dates.append(autodate.date(*autodate.check_procs(latin_a, irish_a)))
             #    words.append((latin, irish))
     meta_means = []
-    naive_allocation = naive(7, *dates)
     for ind in range(10):
         print(ind)
-        x = genetic_search(phonotactic_rates, 7, procs, naive_allocation, *dates)
+        x = genetic_search(phonotactic_rates, 7, procs, *dates)
         #names = ["","p→k", "lenition", "harmony", "shortening", "compensatory lengthening", "syncope", "MS"]
         means = [0 for y in x[2][0]]
         for i in range(len(x[2][0])):
