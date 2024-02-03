@@ -221,27 +221,9 @@ phonotactics = [ #maximal in latin/regexen.py
 #        re.compile('(mp|ŋk|nt|n(s(?!t)|f)|(?<!^e)ks(?!t))'), #syncope phonotactics
 #        ]
 
-#phonotactics = [#what to look for in Latin
-#        re.compile('((?<!m)[Pp])'), #p, contextual carve-out to allow cluster detection
-#        re.compile('((?<=[aeiouAEIOU])(([tkdg](?![rlmn]))|[bm]))'), #lenition excluding compensatory lengthening 
-#        re.compile('((?<!n)[Ff])'), #f, contextual carve-out to allow cluster detection
-#        #re.compile('^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$'), #monosyllable affection -> non-low short vowel 
-#        re.compile('((st)|(^[^AEIOUaeiou]*[eoiu][^AEIOUaeiou]*$)|(^[^AEIOUaeiou]*(((e|o)[^AEIOUaeiou]?[iuIU])|((i|u)[^AEIOUaeiou]*[aoAO]))))'), #st and mono/multisyllable affection -> non-low short vowel in initial syll (followed by V with opposite value of [HIGH]) (weakly? correlated with trisyllables) ... this could be sensitive to type of consonant in the raising specification ... no, because there isn't a hard and fast blocking condition
-#        #re.compile('^[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*$'), #disyllables (not correlated with anything in Irish)
-#        re.compile('[^AEIOUaeiou]*[AEIOUaieou][^AEIOUaeiou]*[AEIOUAEIOU][^AEIOUaeiou]*[AEIOUaieou]'), #trisyllables or greater (syncope-adjacent)
-#        re.compile('(([^AEIOUaeiou]*[AEIOUaeiou].*[AEIOU])|([aeiouAEIOU][tkdg][rlmn]))'), #long vowels in non-initial syllables OR lengthening clusters (shortening/complen-adjacent, a bit correlated with trisyllables due to length overlap)
-#        #re.compile('[AEIOU]'), #long vowels (shortening/complen-adjacent)
-#        #re.compile('[aeiouAEIOU][tkdg][rlmn]'), #compensatory lengthening ... moved to the shortening/complen test (long vowels in non-initial syllables) before move this was like 4.5%, but it only boosted the bigger regex by about 2% ... highly correlated!
-#        re.compile('(mp|ŋk|n(t(?!$)|s|f))|((?<!^e)ks)'), #syncope+st phonotactics... st phonotactics are different temporally though...
-#        ]
-
 #phonotactic_rates = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.46070878274268107, 0.544427324088341, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #minimal overlap
 #phonotactic_rates = [0.17822290703646637, 0.011299435028248588, 0.3682588597842835, 0.2824858757062147, 0.1997945557267591, 0.3533641499743195, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08371854134566, 0.15305598356445815] #full suite->middle overlap
 phonotactic_rates = [0.17822290703646637, 0.011299435028248588, 0.38366718027734975, 0.3081664098613251, 0.1997945557267591, 0.3533641499743195, 0.04519774011299435, 0.3194658448895737, 0.06266050333846944, 0.08885464817668208, 0.15767847971237803] #maximum (uninhibited) overlap
-#phonotactic_rates = [0.18746789933230612, 0.5747303543913713, 0.08885464817668208, 0.25218284540318436, 0.1561376476630714, 0.37493579866461224, 0.12378017462763226]
-#phonotactic_rates = [0.18746789933230612, 0.6122239342578326, 0.25218284540318436, 0.1561376476630714, 0.37493579866461224, 0.12378017462763226]
-#phonotactic_rates = [0.2711864406779661, 0.5747303543913713, 0.1997945557267591, 0.1561376476630714, 0.37493579866461224, 0.17565485362095531]
-#phonotactic_rates = [0.2567991631799163, 0.6244769874476988, 0.44142259414225943, 0.08002092050209204, 0.14905857740585773, 0.48169456066945604, 0.017259414225941423, 0.17468619246861924]
 #}
 
 if __name__ == "__main__":
