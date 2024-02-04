@@ -1,4 +1,3 @@
-##todo: the best 15 probability log isn't working right (0 stays at top)...
 import sys
 import math
 import random #too many combinations to calculate exactly. original used itertools.product()
