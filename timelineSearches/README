@@ -3,7 +3,7 @@ There are also the results of simulations (figures and reports) that are mention
 
 To perform a run of the genetic search algorithm using the Latin loan data, enter the following into your shell:
 
-python3 genetic_search.py autodate_input_clean.csv
+python3 genetic_search.py latin_loans_main_dataset.csv
 
 Very briefly, genetic_search.py reads in the Latin loan data (tuples of Latin and Irish forms, essentially), passes it to a string alignment algorithm, uses the aligned strings to calculate when the loan could have entered (or it directly obtains dates of entry provided by hand), and then starts applying the genetic search algorithm as described in the article.
 The results are written to files in this directory.
