@@ -301,7 +301,7 @@ if __name__ == "__main__":
     data = read_in(sys.argv[1]) 
     #data = read_in("irish_latin_loans.csv")
     #stems = read_in("orthStem_ipaWord_ipaStem.csv")
-    #hand = hackydata.data2
+    #hand = latin_loans_prototype_dataset.data2
     hand = {}
     for x in hand_dates.align_crashes: hand[x] = hand_dates.align_crashes[x] 
     for x in hand_dates.inconsistent: hand[x] = hand_dates.inconsistent[x]
