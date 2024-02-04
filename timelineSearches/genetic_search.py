@@ -11,7 +11,7 @@ import needleman
 import hand_dates
 import count_sylls
 import write_out
-#from hackydata import *
+#from latin_loans_prototype_dataset import *
 
 #[x, y...] #FORMS
 #[(start, stop), (start, stop)...] #eligible DATES

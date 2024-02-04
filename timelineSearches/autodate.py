@@ -2,7 +2,7 @@ import needleman
 import count_sylls
 import subprocess
 import hand_dates
-#import hackydata
+#import latin_loans_prototype_dataset
 #subprocess.call(*args)
 import re
 import sys
