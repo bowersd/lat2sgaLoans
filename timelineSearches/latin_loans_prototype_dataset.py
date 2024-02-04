@@ -586,7 +586,7 @@ data2 = {
         ("macula",          "mocol"):[2,7,0,0,0,0,0,0],
         ("meretricem",     "meirtrech"):[2,6,0,0,0,0,0,0],
         ("nota",            "not"):[2,7,0,0,0,0,0,0], 
-#        ("nota:rius",       "notire"):[2,5,0,0,0,0,0,0],##problem derivation (within scope) ---> EJFL: I think that this is derived within Irish from not + -aire. As such it should be removed from hackydata.
+#        ("nota:rius",       "notire"):[2,5,0,0,0,0,0,0],##problem derivation (within scope) ---> EJFL: I think that this is derived within Irish from not + -aire. As such it should be removed from this dataset.
         ("*natālicius",     "notlaic"):[2,5,0,0,0,0,0,0], ##shortening might be pre-irish
         ("*pa:tricius",       "pa:traic"):[2,7,0,0,0,0,0,0], ##idiosyncratic changes applied (initial v lengthening, due to VL?)
         ("pa:cem",          "po:c"):[2,7,0,0,0,0,0,0],
