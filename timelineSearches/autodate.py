@@ -13,6 +13,7 @@ import sys
 # It is typically dated after raising but before lowering: */kalunas/ > ROUNDING: */kaulunas/ > LOWERING: */kaulonas/ > APOCOPE */kaulon/ > REDUCTION */kaul@n/: Attested as the name <Caulann>.
 # Later: /au/>/u/ so <Culann>, which is also attested. I wouldn't say that a>u is one change. It is two changes: (1) dipthongization/rounding of a to au (and i to iu and e to eu if raising of e
 # can't apply). (2) /a/ to /u/.
+# elected not to pursue this (also had a lot of difficulty trying to get useful information out of the presence of unreduced [u], and gave up on that)
 
 
 def read_in(filename):
